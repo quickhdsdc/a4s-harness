@@ -45,6 +45,8 @@ ECLASS14_0_Dictionary_ADVANCED_XML_EN/
 # for this repository stays.
 docs/*
 !docs/*.md
+!docs/videos/
+!docs/videos/**
 
 data/reference/eclass/14.0/
 

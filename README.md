@@ -11,6 +11,28 @@ The repository includes a web interface, command line tools, AAS discovery and
 editing, OPC UA clients, MES integration points, and an Operations view with a
 local simulation for trying the workflow without connecting equipment.
 
+## Use cases
+
+### AAS Creation for machine integration
+
+Discover an asset, create its AAS from a blueprint, and enrich it with structured
+information extracted from documents. The AAS keeps machine data and interface
+bindings available to connected applications and agents.
+
+[![AAS Creation demo preview](docs/videos/aas-creation-machine-integration.jpg)](docs/videos/aas-creation-machine-integration.mp4)
+
+[▶ Watch the AAS Creation demo (2:39)](docs/videos/aas-creation-machine-integration.mp4)
+
+### Agentic Shopfloor Management
+
+An agent combines live OPC UA observations with AAS and MES context to
+investigate a shopfloor event, explain its evidence, and prepare a reviewed
+maintenance and production response.
+
+[![Agentic Shopfloor Management demo preview](docs/videos/agentic-shopfloor-management.jpg)](docs/videos/agentic-shopfloor-management.mp4)
+
+[▶ Watch the Agentic Shopfloor Management demo (1:55)](docs/videos/agentic-shopfloor-management.mp4)
+
 ## Start locally
 
 See [the tutorial](docs/tutorial.md) for setup. In brief, install the Python
