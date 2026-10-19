@@ -1,0 +1,14 @@
+# Retain the tested local OpenMES application and rebuild the reviewed planner.
+# Runtime credentials and database contents are supplied separately.
+FROM a4s-openmes-backend:latest
+COPY backend/app/Http/Controllers/Api/V1/MaintenanceEventController.php /var/www/html/app/Http/Controllers/Api/V1/MaintenanceEventController.php
+COPY backend/app/Http/Controllers/Api/V1/DemoResetController.php /var/www/html/app/Http/Controllers/Api/V1/DemoResetController.php
+COPY backend/routes/api.php /var/www/html/routes/api.php
+COPY packages/ /var/www/packages/
+COPY backend/resources/js/Pages/admin/schedule/planner/views.jsx /var/www/html/resources/js/Pages/admin/schedule/planner/views.jsx
+RUN php -l app/Http/Controllers/Api/V1/MaintenanceEventController.php \
+    && php -l app/Http/Controllers/Api/V1/DemoResetController.php \
+    && php -l routes/api.php \
+    && npm ci --no-audit --no-fund \
+    && npm run build \
+    && rm -rf node_modules /var/www/packages

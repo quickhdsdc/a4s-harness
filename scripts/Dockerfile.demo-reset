@@ -1,0 +1,12 @@
+# PostgreSQL tools must match the bundled PostgreSQL major version.
+FROM postgres:17-alpine
+RUN apk add --no-cache python3 py3-pip tzdata \
+    && python3 -m venv /opt/reset \
+    && /opt/reset/bin/pip install --no-cache-dir httpx==0.28.1 \
+    && adduser -D -u 10001 demo \
+    && mkdir /backups /app && chown demo:demo /backups /app
+COPY a4s/ /app/a4s/
+ENV PATH="/opt/reset/bin:${PATH}" PYTHONPATH=/app PYTHONUNBUFFERED=1
+USER 10001:10001
+WORKDIR /app
+ENTRYPOINT ["python", "-m", "a4s.machines.festo_cp_lab.reset_service"]

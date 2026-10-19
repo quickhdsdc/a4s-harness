@@ -1,0 +1,45 @@
+--- a/backend/app/Http/Controllers/Api/V1/MaintenanceEventController.php
++++ b/backend/app/Http/Controllers/Api/V1/MaintenanceEventController.php
+@@ -7,6 +7,8 @@
+ use Illuminate\Http\JsonResponse;
+ use Illuminate\Http\Request;
+ use Illuminate\Validation\Rule;
++use Illuminate\Validation\ValidationException;
++use Carbon\Carbon;
+ 
+ class MaintenanceEventController extends Controller
+ {
+@@ -69,7 +71,8 @@
+             'workstation_id' => ['nullable', 'integer', 'exists:workstations,id'],
+             'cost_source_id' => ['nullable', 'integer', 'exists:cost_sources,id'],
+             'assigned_to_id' => ['nullable', 'integer', 'exists:users,id'],
+-            'scheduled_at' => ['nullable', 'date'],
++            'scheduled_at' => ['required', 'date'],
++            'scheduled_end_at' => ['required', 'date', 'after:scheduled_at'],
+             'description' => ['nullable', 'string'],
+             'actual_cost' => ['nullable', 'numeric', 'min:0'],
+             'currency' => ['nullable', 'string', 'max:10'],
+@@ -93,12 +96,22 @@
+             'workstation_id' => ['sometimes', 'nullable', 'integer', 'exists:workstations,id'],
+             'cost_source_id' => ['sometimes', 'nullable', 'integer', 'exists:cost_sources,id'],
+             'assigned_to_id' => ['sometimes', 'nullable', 'integer', 'exists:users,id'],
+-            'scheduled_at' => ['sometimes', 'nullable', 'date'],
++            'scheduled_at' => ['sometimes', 'required', 'date'],
++            'scheduled_end_at' => ['sometimes', 'required', 'date'],
+             'description' => ['sometimes', 'nullable', 'string'],
+             'resolution_notes' => ['sometimes', 'nullable', 'string'],
+             'actual_cost' => ['sometimes', 'nullable', 'numeric', 'min:0'],
+             'currency' => ['sometimes', 'nullable', 'string', 'max:10'],
+         ]);
++        if (array_key_exists('scheduled_at', $data) || array_key_exists('scheduled_end_at', $data)) {
++            $start = $data['scheduled_at'] ?? $maintenanceEvent->scheduled_at;
++            $end = $data['scheduled_end_at'] ?? $maintenanceEvent->scheduled_end_at;
++            if (!$start || !$end || Carbon::parse($end)->lessThanOrEqualTo(Carbon::parse($start))) {
++                throw ValidationException::withMessages([
++                    'scheduled_end_at' => 'A planned start and end are required, with end after start.',
++                ]);
++            }
++        }
+         $maintenanceEvent->update($data);
+         return response()->json([
+             'message' => 'Maintenance event updated',

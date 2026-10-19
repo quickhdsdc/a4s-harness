@@ -1,0 +1,71 @@
+--- a/packages/ui/src/lib/planner.ts
++++ b/packages/ui/src/lib/planner.ts
+@@ -235,17 +235,16 @@
+ }
+ 
+ /**
+- * The coarse (day + shift) slot an order occupies. Placed by due_date;
+- * minute-planned orders still appear, falling back to the planned date and
++ * The coarse (day + shift) slot an order occupies. Exact plans take precedence
++ * over the delivery due date,
+  * deriving the shift from the planned hour when no explicit shift_number is set.
+  */
+ export function weeklySlot(
+   wo: PlannerOrder,
+   shiftsPerDay: number,
+ ): { date: string | null; shift: number } {
+-  let date = wo.due_date;
+-  let shift = wo.shift_number;
+-  if (!date && wo.planned_start_at) date = wo.planned_start_at.slice(0, 10);
++  const date = wo.planned_start_at ? wo.planned_start_at.slice(0, 10) : wo.due_date;
++  let shift = wo.planned_start_at ? null : wo.shift_number;
+   if (!shift && wo.planned_start_at) {
+     const h = Math.floor(minuteOfDay(wo.planned_start_at) / 60);
+     shift = Math.min(shiftsPerDay, Math.floor(h / (24 / shiftsPerDay)) + 1);
+@@ -256,14 +255,14 @@
+ /**
+  * Which calendar day a work order shows on in the monthly view. Mirrors
+  * weeklySlot's precedence so coarsely-placed orders aren't dropped: explicit
+- * due_date, else the planned-start day, else the Monday of its ISO week, else
++ * planned-start day, else due_date, else the Monday of its ISO week, else
+  * (month-only) the 1st of its month.
+  */
+ export function onMonthlyDay(wo: PlannerOrder, iso: string, dayNum: number, monthNum: number): boolean {
+   // Extra segments occupy their own days too.
+   if ((wo.placements ?? []).some((p) => p.due_date === iso)) return true;
++  if (wo.planned_start_at) return wo.planned_start_at.slice(0, 10) === iso;
+   if (wo.due_date) return wo.due_date === iso;
+-  if (wo.planned_start_at) return wo.planned_start_at.slice(0, 10) === iso;
+   if (wo.week_number) {
+     const d = parseDate(iso);
+     return !!d && d.getDay() === 1 && isoWeek(iso) === wo.week_number;
+@@ -307,7 +306,17 @@
+       const startCol = colOf(sl.date, sl.shift);
+       if (startCol < 0) return;
+       let endCol = startCol;
+-      if (wo.end_date && wo.end_date in dayIdx) {
++      if (wo.planned_start_at && wo.planned_end_at) {
++        // End is exclusive. Subtract one millisecond in the supplied wall time
++        // so a midnight end does not occupy the following day.
++        const wallEnd = Date.parse(wo.planned_end_at.slice(0, 19) + 'Z');
++        if (Number.isFinite(wallEnd)) {
++          const last = new Date(wallEnd - 1).toISOString();
++          const lastDate = last.slice(0, 10);
++          const lastShift = Math.min(shiftsPerDay, Math.floor(minuteOfDay(last) / (1440 / shiftsPerDay)) + 1);
++          endCol = lastDate in dayIdx ? colOf(lastDate, lastShift) : N - 1;
++        }
++      } else if (wo.end_date && wo.end_date in dayIdx) {
+         endCol = colOf(wo.end_date, wo.end_shift_number || sl.shift);
+       } else if (wo.end_shift_number && wo.end_shift_number > sl.shift) {
+         endCol = colOf(sl.date, wo.end_shift_number);
+--- a/backend/resources/js/Pages/admin/schedule/planner/views.jsx
++++ b/backend/resources/js/Pages/admin/schedule/planner/views.jsx
+@@ -274,7 +274,7 @@
+     // Keyed on EVERY order's placement fields — moving any block can reflow
+     // the lane packing and shift a chained segment to a different lane.
+     const layoutKey = ctx.data.workOrders
+-        .map((o) => [o.id, o.line_id, o.due_date, o.shift_number, o.end_date, o.end_shift_number, JSON.stringify(o.placements || [])].join('|'))
++        .map((o) => [o.id, o.line_id, o.planned_start_at, o.planned_end_at, o.due_date, o.shift_number, o.end_date, o.end_shift_number, JSON.stringify(o.placements || [])].join('|'))
+         .join(';')
+         // maintenance pills reserve row height, so they reflow lanes too
+         + '#' + (ctx.data.maintenance || []).map((m) => `${m.line_id}@${m.scheduled_at_date}`).join(',');

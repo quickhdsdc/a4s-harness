@@ -1,0 +1,23 @@
+.git/
+.venv/
+.env
+.env.*
+.claude/
+work/temp/
+exp/
+_others/
+data/reference/
+ECLASS14_0_Dictionary_ADVANCED_XML_EN/
+node_modules/
+frontend/node_modules/
+frontend/dist/
+**/__pycache__/
+**/.pytest_cache/
+*.db
+*.db-*
+*.aasx.bak
+fault_context.json
+replanning.json
+
+# Disposable local work and generated releases.
+/work/

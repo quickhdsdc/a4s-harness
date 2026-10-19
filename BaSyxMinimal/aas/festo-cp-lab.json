@@ -1,0 +1,4724 @@
+{
+  "assetAdministrationShells": [
+    {
+      "modelType": "AssetAdministrationShell",
+      "idShort": "FestoWorkCenterStamping",
+      "description": [
+        {
+          "language": "en",
+          "text": "Festo demo work center for metal stamping: press tending and turning over, at Example Manufacturer"
+        }
+      ],
+      "id": "https://example.com/ids/aas/FestoWorkCenterStamping",
+      "assetInformation": {
+        "assetKind": "Instance",
+        "globalAssetId": "https://example.com/ids/asset/FestoWorkCenterStamping"
+      },
+      "submodels": [
+        {
+          "type": "ModelReference",
+          "keys": [
+            {
+              "type": "Submodel",
+              "value": "https://example.com/ids/sm/Nameplate_FestoWorkCenterStamping"
+            }
+          ]
+        },
+        {
+          "type": "ModelReference",
+          "keys": [
+            {
+              "type": "Submodel",
+              "value": "https://example.com/ids/sm/TechnicalData_FestoWorkCenterStamping"
+            }
+          ]
+        },
+        {
+          "type": "ModelReference",
+          "keys": [
+            {
+              "type": "Submodel",
+              "value": "https://example.com/ids/sm/BillOfMaterial_FestoWorkCenterStamping"
+            }
+          ]
+        },
+        {
+          "type": "ModelReference",
+          "keys": [
+            {
+              "type": "Submodel",
+              "value": "https://example.com/ids/sm/UAServerDataSheet_TurningPLC"
+            }
+          ]
+        },
+        {
+          "type": "ModelReference",
+          "keys": [
+            {
+              "type": "Submodel",
+              "value": "https://example.com/ids/sm/UAServerDataSheet_PressPLC"
+            }
+          ]
+        },
+        {
+          "type": "ModelReference",
+          "keys": [
+            {
+              "type": "Submodel",
+              "value": "https://example.com/ids/sm/UAServerDataSheet_PressRevPi"
+            }
+          ]
+        },
+        {
+          "type": "ModelReference",
+          "keys": [
+            {
+              "type": "Submodel",
+              "value": "https://example.com/ids/sm/services_delegated_FestoWorkCenterStamping"
+            }
+          ]
+        },
+        {
+          "type": "ModelReference",
+          "keys": [
+            {
+              "type": "Submodel",
+              "value": "https://example.com/ids/sm/OperationalData_FestoWorkCenterStamping"
+            }
+          ]
+        },
+        {
+          "type": "ModelReference",
+          "keys": [
+            {
+              "type": "Submodel",
+              "value": "https://example.com/ids/aas/FestoWorkCenterStamping/sm/ProductionContext"
+            }
+          ]
+        },
+        {
+          "type": "ModelReference",
+          "keys": [
+            {
+              "type": "Submodel",
+              "value": "https://example.com/ids/aas/FestoWorkCenterStamping/sm/MaintenanceInstructions"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "submodels": [
+    {
+      "modelType": "Submodel",
+      "idShort": "Nameplate",
+      "semanticId": {
+        "type": "ExternalReference",
+        "keys": [
+          {
+            "type": "GlobalReference",
+            "value": "https://admin-shell.io/idta/SubmodelTemplate/DigitalNameplate/2/0"
+          }
+        ]
+      },
+      "description": [
+        {
+          "language": "en",
+          "text": "Digital nameplate of the Festo demo work center"
+        }
+      ],
+      "id": "https://example.com/ids/sm/Nameplate_FestoWorkCenterStamping",
+      "kind": "Instance",
+      "submodelElements": [
+        {
+          "modelType": "Property",
+          "idShort": "URIOfTheProduct",
+          "valueType": "xs:string",
+          "value": "https://example.com/ids/asset/FestoWorkCenterStamping"
+        },
+        {
+          "modelType": "Property",
+          "idShort": "SerialNumber",
+          "description": [
+            {
+              "language": "en",
+              "text": "not recorded in any available source"
+            }
+          ],
+          "valueType": "xs:string",
+          "value": null
+        },
+        {
+          "modelType": "Property",
+          "idShort": "DateOfManufacture",
+          "description": [
+            {
+              "language": "en",
+              "text": "not recorded in any available source"
+            }
+          ],
+          "valueType": "xs:date",
+          "value": null
+        },
+        {
+          "modelType": "Property",
+          "idShort": "UniqueFacilityIdentifier",
+          "valueType": "xs:string",
+          "value": "Example Manufacturer, Stuttgart"
+        },
+        {
+          "modelType": "Property",
+          "idShort": "LifeCycleStage",
+          "valueType": "xs:string",
+          "value": "InUse"
+        },
+        {
+          "modelType": "Property",
+          "idShort": "ManufacturerIdentifier",
+          "valueType": "xs:string",
+          "value": "Festo"
+        },
+        {
+          "modelType": "MultiLanguageProperty",
+          "idShort": "ManufacturerName",
+          "value": [
+            {
+              "language": "en",
+              "text": "Festo"
+            }
+          ]
+        },
+        {
+          "modelType": "MultiLanguageProperty",
+          "idShort": "ManufacturerProductDesignation",
+          "value": [
+            {
+              "language": "en",
+              "text": "Demo work center for metal stamping"
+            }
+          ]
+        },
+        {
+          "modelType": "SubmodelElementCollection",
+          "idShort": "AddressInformation",
+          "value": [
+            {
+              "modelType": "Property",
+              "idShort": "Street",
+              "valueType": "xs:string",
+              "value": null
+            },
+            {
+              "modelType": "Property",
+              "idShort": "Zipcode",
+              "valueType": "xs:string",
+              "value": null
+            },
+            {
+              "modelType": "Property",
+              "idShort": "CityTown",
+              "valueType": "xs:string",
+              "value": "Stuttgart"
+            },
+            {
+              "modelType": "Property",
+              "idShort": "NationalCode",
+              "valueType": "xs:string",
+              "value": "DE"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "modelType": "Submodel",
+      "idShort": "TechnicalData",
+      "description": [
+        {
+          "language": "en",
+          "text": "Technical data of the Festo demo work center"
+        }
+      ],
+      "id": "https://example.com/ids/sm/TechnicalData_FestoWorkCenterStamping",
+      "kind": "Instance",
+      "submodelElements": [
+        {
+          "modelType": "SubmodelElementCollection",
+          "idShort": "GeneralInformation",
+          "value": [
+            {
+              "modelType": "Property",
+              "idShort": "ManufacturerName",
+              "valueType": "xs:string",
+              "value": "Festo"
+            },
+            {
+              "modelType": "Property",
+              "idShort": "ManufacturerProductDesignation",
+              "valueType": "xs:string",
+              "value": "Demo work center for metal stamping"
+            },
+            {
+              "modelType": "Property",
+              "idShort": "ManufacturerArticleNumber",
+              "description": [
+                {
+                  "language": "en",
+                  "text": "not recorded in any available source"
+                }
+              ],
+              "valueType": "xs:string",
+              "value": null
+            },
+            {
+              "modelType": "Property",
+              "idShort": "ManufacturerOrderCode",
+              "description": [
+                {
+                  "language": "en",
+                  "text": "not recorded in any available source"
+                }
+              ],
+              "valueType": "xs:string",
+              "value": null
+            }
+          ]
+        },
+        {
+          "modelType": "SubmodelElementCollection",
+          "idShort": "ProductClassifications",
+          "value": [
+            {
+              "modelType": "Property",
+              "idShort": "ProductClassificationSystem",
+              "valueType": "xs:string",
+              "value": "Festo CP Lab"
+            },
+            {
+              "modelType": "Property",
+              "idShort": "ProductClass",
+              "valueType": "xs:string",
+              "value": "Cyber-physical laboratory work center"
+            }
+          ]
+        },
+        {
+          "modelType": "SubmodelElementCollection",
+          "idShort": "TechnicalProperties",
+          "value": [
+            {
+              "modelType": "Property",
+              "idShort": "NumberOfWorkCells",
+              "valueType": "xs:int",
+              "value": "2"
+            },
+            {
+              "modelType": "Property",
+              "idShort": "NumberOfOpcUaServers",
+              "valueType": "xs:int",
+              "value": "3"
+            },
+            {
+              "modelType": "SubmodelElementCollection",
+              "idShort": "Networks",
+              "value": [
+                {
+                  "modelType": "SubmodelElementCollection",
+                  "idShort": "TurningPLC",
+                  "value": [
+                    {
+                      "modelType": "Property",
+                      "idShort": "Subnet",
+                      "valueType": "xs:string",
+                      "value": "192.0.2.0/24"
+                    },
+                    {
+                      "modelType": "Property",
+                      "idShort": "InternalEndpoint",
+                      "valueType": "xs:string",
+                      "value": "opc.tcp://opc-internal.example.org:4840"
+                    },
+                    {
+                      "modelType": "Property",
+                      "idShort": "GuestNetworkEndpoint",
+                      "valueType": "xs:string",
+                      "value": "opc.tcp://opc.example.org:4041"
+                    }
+                  ]
+                },
+                {
+                  "modelType": "SubmodelElementCollection",
+                  "idShort": "PressPLC",
+                  "value": [
+                    {
+                      "modelType": "Property",
+                      "idShort": "Subnet",
+                      "valueType": "xs:string",
+                      "value": "192.0.2.64/26"
+                    },
+                    {
+                      "modelType": "Property",
+                      "idShort": "InternalEndpoint",
+                      "valueType": "xs:string",
+                      "value": "opc.tcp://opc-internal.example.org:4840"
+                    },
+                    {
+                      "modelType": "Property",
+                      "idShort": "GuestNetworkEndpoint",
+                      "valueType": "xs:string",
+                      "value": "opc.tcp://opc.example.org:4042"
+                    }
+                  ]
+                },
+                {
+                  "modelType": "SubmodelElementCollection",
+                  "idShort": "PressRevPi",
+                  "value": [
+                    {
+                      "modelType": "Property",
+                      "idShort": "Subnet",
+                      "valueType": "xs:string",
+                      "value": "192.0.2.64/26"
+                    },
+                    {
+                      "modelType": "Property",
+                      "idShort": "InternalEndpoint",
+                      "valueType": "xs:string",
+                      "value": "opc.tcp://opc-internal.example.org:4840"
+                    },
+                    {
+                      "modelType": "Property",
+                      "idShort": "GuestNetworkEndpoint",
+                      "valueType": "xs:string",
+                      "value": "opc.tcp://opc.example.org:4043"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "modelType": "Submodel",
+      "idShort": "BillOfMaterial",
+      "description": [
+        {
+          "language": "en",
+          "text": "Components of the Festo demo work center, by work cell"
+        }
+      ],
+      "id": "https://example.com/ids/sm/BillOfMaterial_FestoWorkCenterStamping",
+      "kind": "Instance",
+      "submodelElements": [
+        {
+          "modelType": "SubmodelElementCollection",
+          "idShort": "Press",
+          "description": [
+            {
+              "language": "en",
+              "text": "work cell 1: press tending"
+            }
+          ],
+          "value": [
+            {
+              "modelType": "SubmodelElementCollection",
+              "idShort": "PressPLC",
+              "value": [
+                {
+                  "modelType": "Property",
+                  "idShort": "ComponentName",
+                  "valueType": "xs:string",
+                  "value": "PressPLC"
+                },
+                {
+                  "modelType": "Property",
+                  "idShort": "ComponentType",
+                  "valueType": "xs:string",
+                  "value": "PLC"
+                },
+                {
+                  "modelType": "Property",
+                  "idShort": "Note",
+                  "valueType": "xs:string",
+                  "value": "SIMATIC S7-1500"
+                },
+                {
+                  "modelType": "Property",
+                  "idShort": "OpcUaEndpoint",
+                  "valueType": "xs:string",
+                  "value": "opc.tcp://opc.example.org:4042"
+                }
+              ]
+            },
+            {
+              "modelType": "SubmodelElementCollection",
+              "idShort": "PressRevolutionPi",
+              "value": [
+                {
+                  "modelType": "Property",
+                  "idShort": "ComponentName",
+                  "valueType": "xs:string",
+                  "value": "PressRevolutionPi"
+                },
+                {
+                  "modelType": "Property",
+                  "idShort": "ComponentType",
+                  "valueType": "xs:string",
+                  "value": "EdgeController"
+                },
+                {
+                  "modelType": "Property",
+                  "idShort": "Note",
+                  "valueType": "xs:string",
+                  "value": "Revolution Pi, open62541 server for the sensors"
+                },
+                {
+                  "modelType": "Property",
+                  "idShort": "OpcUaEndpoint",
+                  "valueType": "xs:string",
+                  "value": "opc.tcp://opc.example.org:4043"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "modelType": "SubmodelElementCollection",
+          "idShort": "Turning",
+          "description": [
+            {
+              "language": "en",
+              "text": "work cell 2: turning over"
+            }
+          ],
+          "value": [
+            {
+              "modelType": "SubmodelElementCollection",
+              "idShort": "TurningPLC",
+              "value": [
+                {
+                  "modelType": "Property",
+                  "idShort": "ComponentName",
+                  "valueType": "xs:string",
+                  "value": "TurningPLC"
+                },
+                {
+                  "modelType": "Property",
+                  "idShort": "ComponentType",
+                  "valueType": "xs:string",
+                  "value": "PLC"
+                },
+                {
+                  "modelType": "Property",
+                  "idShort": "Note",
+                  "valueType": "xs:string",
+                  "value": "SIMATIC S7-1500"
+                },
+                {
+                  "modelType": "Property",
+                  "idShort": "OpcUaEndpoint",
+                  "valueType": "xs:string",
+                  "value": "opc.tcp://opc.example.org:4041"
+                }
+              ]
+            },
+            {
+              "modelType": "SubmodelElementCollection",
+              "idShort": "TurningRevolutionPi",
+              "value": [
+                {
+                  "modelType": "Property",
+                  "idShort": "ComponentName",
+                  "valueType": "xs:string",
+                  "value": "TurningRevolutionPi"
+                },
+                {
+                  "modelType": "Property",
+                  "idShort": "ComponentType",
+                  "valueType": "xs:string",
+                  "value": "EdgeController"
+                },
+                {
+                  "modelType": "Property",
+                  "idShort": "Note",
+                  "valueType": "xs:string",
+                  "value": "Revolution Pi; publishes no OPC UA server"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "modelType": "Submodel",
+      "idShort": "UAServerDataSheet_TurningPLC",
+      "semanticId": {
+        "type": "ExternalReference",
+        "keys": [
+          {
+            "type": "GlobalReference",
+            "value": "https://example.com/ids/sm/UAServerDataSheet"
+          }
+        ]
+      },
+      "description": [
+        {
+          "language": "en",
+          "text": "OPC UA server of TurningPLC (work cell 2: turning over)"
+        }
+      ],
+      "id": "https://example.com/ids/sm/UAServerDataSheet_TurningPLC",
+      "kind": "Instance",
+      "submodelElements": [
+        {
+          "modelType": "SubmodelElementCollection",
+          "idShort": "Configuration",
+          "value": [
+            {
+              "modelType": "Property",
+              "idShort": "AllowAnonymousUser",
+              "valueType": "xs:boolean",
+              "value": "true"
+            },
+            {
+              "modelType": "Property",
+              "idShort": "SupportSecurityModeNone",
+              "valueType": "xs:boolean",
+              "value": "true"
+            },
+            {
+              "modelType": "Property",
+              "idShort": "SupportSecurityModeSign",
+              "valueType": "xs:boolean",
+              "value": "false"
+            },
+            {
+              "modelType": "Property",
+              "idShort": "SupportSecurityModeSignEncrypt",
+              "valueType": "xs:boolean",
+              "value": "false"
+            },
+            {
+              "modelType": "Property",
+              "idShort": "SupportSecurityPolicyBasic256Sha256",
+              "valueType": "xs:boolean",
+              "value": "false"
+            }
+          ]
+        },
+        {
+          "modelType": "SubmodelElementCollection",
+          "idShort": "Identification",
+          "value": [
+            {
+              "modelType": "Property",
+              "idShort": "ProductUri",
+              "valueType": "xs:string",
+              "value": "urn:SIMATIC.S7-1500.OPC-UAServer:plcTurning"
+            },
+            {
+              "modelType": "Property",
+              "idShort": "ManufacturerName",
+              "valueType": "xs:string",
+              "value": "SIEMENS AG"
+            },
+            {
+              "modelType": "Property",
+              "idShort": "ProductName",
+              "valueType": "xs:string",
+              "value": "SIMATIC S7-1500 OPC UA"
+            },
+            {
+              "modelType": "Property",
+              "idShort": "SoftwareVersion",
+              "valueType": "xs:string",
+              "value": "V02.06.01"
+            },
+            {
+              "modelType": "Property",
+              "idShort": "BuildNumber",
+              "valueType": "xs:string",
+              "value": null
+            },
+            {
+              "modelType": "Property",
+              "idShort": "BuildDate",
+              "valueType": "xs:string",
+              "value": null
+            }
+          ]
+        },
+        {
+          "modelType": "SubmodelElementCollection",
+          "idShort": "EndpointDescription",
+          "value": [
+            {
+              "modelType": "Property",
+              "idShort": "EndpointUri",
+              "valueType": "xs:string",
+              "value": "opc.tcp://opc.example.org:4041"
+            },
+            {
+              "modelType": "Property",
+              "idShort": "securityLevel",
+              "valueType": "xs:int",
+              "value": "0"
+            },
+            {
+              "modelType": "Property",
+              "idShort": "securityMode",
+              "valueType": "xs:string",
+              "value": "None"
+            },
+            {
+              "modelType": "Property",
+              "idShort": "transportProfileUri",
+              "valueType": "xs:string",
+              "value": "http://opcfoundation.org/UA-Profile/Transport/uatcp-uasc-uabinary"
+            },
+            {
+              "modelType": "Property",
+              "idShort": "securityPolicyUri",
+              "valueType": "xs:string",
+              "value": "http://opcfoundation.org/UA/SecurityPolicy#None"
+            },
+            {
+              "modelType": "Property",
+              "idShort": "userIdentityTokens",
+              "description": [
+                {
+                  "language": "en",
+                  "text": "anonymous access; no token type observed"
+                }
+              ],
+              "valueType": "xs:string",
+              "value": null
+            },
+            {
+              "modelType": "Property",
+              "idShort": "InternalEndpointUri",
+              "description": [
+                {
+                  "language": "en",
+                  "text": "the address inside the cell's own subnet"
+                }
+              ],
+              "valueType": "xs:string",
+              "value": "opc.tcp://opc-internal.example.org:4840"
+            },
+            {
+              "modelType": "SubmodelElementCollection",
+              "idShort": "Server",
+              "value": [
+                {
+                  "modelType": "Property",
+                  "idShort": "ApplicationUri",
+                  "valueType": "xs:string",
+                  "value": "urn:SIMATIC.S7-1500.OPC-UAServer:plcTurning"
+                },
+                {
+                  "modelType": "Property",
+                  "idShort": "ProductUri",
+                  "valueType": "xs:string",
+                  "value": "urn:SIMATIC.S7-1500.OPC-UAServer:plcTurning"
+                },
+                {
+                  "modelType": "Property",
+                  "idShort": "ApplicationName",
+                  "valueType": "xs:string",
+                  "value": "SIMATIC S7-1500 OPC UA (TurningPLC)"
+                },
+                {
+                  "modelType": "Property",
+                  "idShort": "ApplicationType",
+                  "valueType": "xs:string",
+                  "value": "Server"
+                },
+                {
+                  "modelType": "Property",
+                  "idShort": "GatewayServerUri",
+                  "description": [
+                    {
+                      "language": "en",
+                      "text": "no gateway; the server is reached directly"
+                    }
+                  ],
+                  "valueType": "xs:string",
+                  "value": null
+                },
+                {
+                  "modelType": "Property",
+                  "idShort": "DiscoveryProfileUri",
+                  "valueType": "xs:string",
+                  "value": null
+                },
+                {
+                  "modelType": "Property",
+                  "idShort": "DiscoveryUrl",
+                  "valueType": "xs:string",
+                  "value": "opc.tcp://opc.example.org:4041"
+                }
+              ]
+            },
+            {
+              "modelType": "Blob",
+              "idShort": "serverCertificate",
+              "description": [
+                {
+                  "language": "en",
+                  "text": "none; the endpoint runs SecurityMode None"
+                }
+              ],
+              "contentType": "application/pkix-cert"
+            }
+          ]
+        },
+        {
+          "modelType": "Property",
+          "idShort": "DiscoveryUrl",
+          "valueType": "xs:string",
+          "value": "opc.tcp://opc.example.org:4041"
+        }
+      ]
+    },
+    {
+      "modelType": "Submodel",
+      "idShort": "UAServerDataSheet_PressPLC",
+      "semanticId": {
+        "type": "ExternalReference",
+        "keys": [
+          {
+            "type": "GlobalReference",
+            "value": "https://example.com/ids/sm/UAServerDataSheet"
+          }
+        ]
+      },
+      "description": [
+        {
+          "language": "en",
+          "text": "OPC UA server of PressPLC (work cell 1: press tending)"
+        }
+      ],
+      "id": "https://example.com/ids/sm/UAServerDataSheet_PressPLC",
+      "kind": "Instance",
+      "submodelElements": [
+        {
+          "modelType": "SubmodelElementCollection",
+          "idShort": "Configuration",
+          "value": [
+            {
+              "modelType": "Property",
+              "idShort": "AllowAnonymousUser",
+              "valueType": "xs:boolean",
+              "value": "true"
+            },
+            {
+              "modelType": "Property",
+              "idShort": "SupportSecurityModeNone",
+              "valueType": "xs:boolean",
+              "value": "true"
+            },
+            {
+              "modelType": "Property",
+              "idShort": "SupportSecurityModeSign",
+              "valueType": "xs:boolean",
+              "value": "false"
+            },
+            {
+              "modelType": "Property",
+              "idShort": "SupportSecurityModeSignEncrypt",
+              "valueType": "xs:boolean",
+              "value": "false"
+            },
+            {
+              "modelType": "Property",
+              "idShort": "SupportSecurityPolicyBasic256Sha256",
+              "valueType": "xs:boolean",
+              "value": "false"
+            }
+          ]
+        },
+        {
+          "modelType": "SubmodelElementCollection",
+          "idShort": "Identification",
+          "value": [
+            {
+              "modelType": "Property",
+              "idShort": "ProductUri",
+              "valueType": "xs:string",
+              "value": "urn:SIMATIC.S7-1500.OPC-UAServer:plcPress"
+            },
+            {
+              "modelType": "Property",
+              "idShort": "ManufacturerName",
+              "valueType": "xs:string",
+              "value": "SIEMENS AG"
+            },
+            {
+              "modelType": "Property",
+              "idShort": "ProductName",
+              "valueType": "xs:string",
+              "value": "SIMATIC S7-1500 OPC UA"
+            },
+            {
+              "modelType": "Property",
+              "idShort": "SoftwareVersion",
+              "valueType": "xs:string",
+              "value": "V02.06.01"
+            },
+            {
+              "modelType": "Property",
+              "idShort": "BuildNumber",
+              "valueType": "xs:string",
+              "value": null
+            },
+            {
+              "modelType": "Property",
+              "idShort": "BuildDate",
+              "valueType": "xs:string",
+              "value": null
+            }
+          ]
+        },
+        {
+          "modelType": "SubmodelElementCollection",
+          "idShort": "EndpointDescription",
+          "value": [
+            {
+              "modelType": "Property",
+              "idShort": "EndpointUri",
+              "valueType": "xs:string",
+              "value": "opc.tcp://opc.example.org:4042"
+            },
+            {
+              "modelType": "Property",
+              "idShort": "securityLevel",
+              "valueType": "xs:int",
+              "value": "0"
+            },
+            {
+              "modelType": "Property",
+              "idShort": "securityMode",
+              "valueType": "xs:string",
+              "value": "None"
+            },
+            {
+              "modelType": "Property",
+              "idShort": "transportProfileUri",
+              "valueType": "xs:string",
+              "value": "http://opcfoundation.org/UA-Profile/Transport/uatcp-uasc-uabinary"
+            },
+            {
+              "modelType": "Property",
+              "idShort": "securityPolicyUri",
+              "valueType": "xs:string",
+              "value": "http://opcfoundation.org/UA/SecurityPolicy#None"
+            },
+            {
+              "modelType": "Property",
+              "idShort": "userIdentityTokens",
+              "description": [
+                {
+                  "language": "en",
+                  "text": "anonymous access; no token type observed"
+                }
+              ],
+              "valueType": "xs:string",
+              "value": null
+            },
+            {
+              "modelType": "Property",
+              "idShort": "InternalEndpointUri",
+              "description": [
+                {
+                  "language": "en",
+                  "text": "the address inside the cell's own subnet"
+                }
+              ],
+              "valueType": "xs:string",
+              "value": "opc.tcp://opc-internal.example.org:4840"
+            },
+            {
+              "modelType": "SubmodelElementCollection",
+              "idShort": "Server",
+              "value": [
+                {
+                  "modelType": "Property",
+                  "idShort": "ApplicationUri",
+                  "valueType": "xs:string",
+                  "value": "urn:SIMATIC.S7-1500.OPC-UAServer:plcPress"
+                },
+                {
+                  "modelType": "Property",
+                  "idShort": "ProductUri",
+                  "valueType": "xs:string",
+                  "value": "urn:SIMATIC.S7-1500.OPC-UAServer:plcPress"
+                },
+                {
+                  "modelType": "Property",
+                  "idShort": "ApplicationName",
+                  "valueType": "xs:string",
+                  "value": "SIMATIC S7-1500 OPC UA (PressPLC)"
+                },
+                {
+                  "modelType": "Property",
+                  "idShort": "ApplicationType",
+                  "valueType": "xs:string",
+                  "value": "Server"
+                },
+                {
+                  "modelType": "Property",
+                  "idShort": "GatewayServerUri",
+                  "description": [
+                    {
+                      "language": "en",
+                      "text": "no gateway; the server is reached directly"
+                    }
+                  ],
+                  "valueType": "xs:string",
+                  "value": null
+                },
+                {
+                  "modelType": "Property",
+                  "idShort": "DiscoveryProfileUri",
+                  "valueType": "xs:string",
+                  "value": null
+                },
+                {
+                  "modelType": "Property",
+                  "idShort": "DiscoveryUrl",
+                  "valueType": "xs:string",
+                  "value": "opc.tcp://opc.example.org:4042"
+                }
+              ]
+            },
+            {
+              "modelType": "Blob",
+              "idShort": "serverCertificate",
+              "description": [
+                {
+                  "language": "en",
+                  "text": "none; the endpoint runs SecurityMode None"
+                }
+              ],
+              "contentType": "application/pkix-cert"
+            }
+          ]
+        },
+        {
+          "modelType": "Property",
+          "idShort": "DiscoveryUrl",
+          "valueType": "xs:string",
+          "value": "opc.tcp://opc.example.org:4042"
+        }
+      ]
+    },
+    {
+      "modelType": "Submodel",
+      "idShort": "UAServerDataSheet_PressRevPi",
+      "semanticId": {
+        "type": "ExternalReference",
+        "keys": [
+          {
+            "type": "GlobalReference",
+            "value": "https://example.com/ids/sm/UAServerDataSheet"
+          }
+        ]
+      },
+      "description": [
+        {
+          "language": "en",
+          "text": "OPC UA server of PressRevPi (work cell 1: press tending)"
+        }
+      ],
+      "id": "https://example.com/ids/sm/UAServerDataSheet_PressRevPi",
+      "kind": "Instance",
+      "submodelElements": [
+        {
+          "modelType": "SubmodelElementCollection",
+          "idShort": "Configuration",
+          "value": [
+            {
+              "modelType": "Property",
+              "idShort": "AllowAnonymousUser",
+              "valueType": "xs:boolean",
+              "value": "true"
+            },
+            {
+              "modelType": "Property",
+              "idShort": "SupportSecurityModeNone",
+              "valueType": "xs:boolean",
+              "value": "true"
+            },
+            {
+              "modelType": "Property",
+              "idShort": "SupportSecurityModeSign",
+              "valueType": "xs:boolean",
+              "value": "false"
+            },
+            {
+              "modelType": "Property",
+              "idShort": "SupportSecurityModeSignEncrypt",
+              "valueType": "xs:boolean",
+              "value": "false"
+            },
+            {
+              "modelType": "Property",
+              "idShort": "SupportSecurityPolicyBasic256Sha256",
+              "valueType": "xs:boolean",
+              "value": "false"
+            }
+          ]
+        },
+        {
+          "modelType": "SubmodelElementCollection",
+          "idShort": "Identification",
+          "value": [
+            {
+              "modelType": "Property",
+              "idShort": "ProductUri",
+              "valueType": "xs:string",
+              "value": "urn:unconfigured:application"
+            },
+            {
+              "modelType": "Property",
+              "idShort": "ManufacturerName",
+              "valueType": "xs:string",
+              "value": "open62541"
+            },
+            {
+              "modelType": "Property",
+              "idShort": "ProductName",
+              "valueType": "xs:string",
+              "value": "open62541 OPC UA Server"
+            },
+            {
+              "modelType": "Property",
+              "idShort": "SoftwareVersion",
+              "valueType": "xs:string",
+              "value": "0.3.0"
+            },
+            {
+              "modelType": "Property",
+              "idShort": "BuildNumber",
+              "valueType": "xs:string",
+              "value": null
+            },
+            {
+              "modelType": "Property",
+              "idShort": "BuildDate",
+              "valueType": "xs:string",
+              "value": null
+            }
+          ]
+        },
+        {
+          "modelType": "SubmodelElementCollection",
+          "idShort": "EndpointDescription",
+          "value": [
+            {
+              "modelType": "Property",
+              "idShort": "EndpointUri",
+              "valueType": "xs:string",
+              "value": "opc.tcp://opc.example.org:4043"
+            },
+            {
+              "modelType": "Property",
+              "idShort": "securityLevel",
+              "valueType": "xs:int",
+              "value": "0"
+            },
+            {
+              "modelType": "Property",
+              "idShort": "securityMode",
+              "valueType": "xs:string",
+              "value": "None"
+            },
+            {
+              "modelType": "Property",
+              "idShort": "transportProfileUri",
+              "valueType": "xs:string",
+              "value": "http://opcfoundation.org/UA-Profile/Transport/uatcp-uasc-uabinary"
+            },
+            {
+              "modelType": "Property",
+              "idShort": "securityPolicyUri",
+              "valueType": "xs:string",
+              "value": "http://opcfoundation.org/UA/SecurityPolicy#None"
+            },
+            {
+              "modelType": "Property",
+              "idShort": "userIdentityTokens",
+              "description": [
+                {
+                  "language": "en",
+                  "text": "anonymous access; no token type observed"
+                }
+              ],
+              "valueType": "xs:string",
+              "value": null
+            },
+            {
+              "modelType": "Property",
+              "idShort": "InternalEndpointUri",
+              "description": [
+                {
+                  "language": "en",
+                  "text": "the address inside the cell's own subnet"
+                }
+              ],
+              "valueType": "xs:string",
+              "value": "opc.tcp://opc-internal.example.org:4840"
+            },
+            {
+              "modelType": "SubmodelElementCollection",
+              "idShort": "Server",
+              "value": [
+                {
+                  "modelType": "Property",
+                  "idShort": "ApplicationUri",
+                  "valueType": "xs:string",
+                  "value": "urn:unconfigured:application"
+                },
+                {
+                  "modelType": "Property",
+                  "idShort": "ProductUri",
+                  "valueType": "xs:string",
+                  "value": "urn:unconfigured:application"
+                },
+                {
+                  "modelType": "Property",
+                  "idShort": "ApplicationName",
+                  "valueType": "xs:string",
+                  "value": "open62541 OPC UA Server (PressRevPi)"
+                },
+                {
+                  "modelType": "Property",
+                  "idShort": "ApplicationType",
+                  "valueType": "xs:string",
+                  "value": "Server"
+                },
+                {
+                  "modelType": "Property",
+                  "idShort": "GatewayServerUri",
+                  "description": [
+                    {
+                      "language": "en",
+                      "text": "no gateway; the server is reached directly"
+                    }
+                  ],
+                  "valueType": "xs:string",
+                  "value": null
+                },
+                {
+                  "modelType": "Property",
+                  "idShort": "DiscoveryProfileUri",
+                  "valueType": "xs:string",
+                  "value": null
+                },
+                {
+                  "modelType": "Property",
+                  "idShort": "DiscoveryUrl",
+                  "valueType": "xs:string",
+                  "value": "opc.tcp://opc.example.org:4043"
+                }
+              ]
+            },
+            {
+              "modelType": "Blob",
+              "idShort": "serverCertificate",
+              "description": [
+                {
+                  "language": "en",
+                  "text": "none; the endpoint runs SecurityMode None"
+                }
+              ],
+              "contentType": "application/pkix-cert"
+            }
+          ]
+        },
+        {
+          "modelType": "Property",
+          "idShort": "DiscoveryUrl",
+          "valueType": "xs:string",
+          "value": "opc.tcp://opc.example.org:4043"
+        }
+      ]
+    },
+    {
+      "modelType": "Submodel",
+      "idShort": "services_delegated",
+      "description": [
+        {
+          "language": "en",
+          "text": "What the work center can be asked to do, over OPC UA"
+        }
+      ],
+      "id": "https://example.com/ids/sm/services_delegated_FestoWorkCenterStamping",
+      "kind": "Instance",
+      "submodelElements": [
+        {
+          "modelType": "Property",
+          "idShort": "ServiceEndpointBase",
+          "valueType": "xs:string",
+          "value": "opc.tcp://opc.example.org:4042"
+        },
+        {
+          "modelType": "Property",
+          "idShort": "ServiceStatus",
+          "valueType": "xs:string",
+          "value": ""
+        },
+        {
+          "modelType": "Property",
+          "idShort": "ProtocolType",
+          "valueType": "xs:string",
+          "value": "OPC UA"
+        },
+        {
+          "modelType": "SubmodelElementCollection",
+          "idShort": "DelegatedServices",
+          "value": [
+            {
+              "modelType": "Operation",
+              "idShort": "AcknowledgeFaultPress",
+              "description": [
+                {
+                  "language": "en",
+                  "text": "Set ns=3;s=\"dbVar\".\"Err\".\"xQuit\" true on PressPLC (work cell 1: press tending). acknowledge the station's fault so it can be started again. Writes `dbVar.Err.xQuit`, which is the input the station's own configuration names -- not the module's `xReset`."
+                }
+              ],
+              "qualifiers": [
+                {
+                  "type": "invocationDelegation",
+                  "valueType": "xs:string",
+                  "value": "opc.tcp://opc.example.org:4042#ns=3;s=\"dbVar\".\"Err\".\"xQuit\""
+                },
+                {
+                  "type": "requiresSafetyApproval",
+                  "valueType": "xs:boolean",
+                  "value": "true"
+                }
+              ],
+              "inputVariables": [
+                {
+                  "value": {
+                    "modelType": "Property",
+                    "idShort": "value",
+                    "description": [
+                      {
+                        "language": "en",
+                        "text": "true unless the bit is being cleared; defaults to true"
+                      }
+                    ],
+                    "valueType": "xs:boolean",
+                    "value": null
+                  }
+                }
+              ],
+              "outputVariables": [
+                {
+                  "value": {
+                    "modelType": "Property",
+                    "idShort": "accepted",
+                    "description": [
+                      {
+                        "language": "en",
+                        "text": "whether the write was acknowledged"
+                      }
+                    ],
+                    "valueType": "xs:boolean",
+                    "value": null
+                  }
+                }
+              ]
+            },
+            {
+              "modelType": "Operation",
+              "idShort": "StartPress",
+              "description": [
+                {
+                  "language": "en",
+                  "text": "Set ns=3;s=\"dbVar\".\"RemoteControlAutomatic_Start\" true on PressPLC (work cell 1: press tending). start the station in automatic mode. This is the remote-control input; it is not the module's internal `xStart`, which a remote caller is not meant to drive and which four writes moved nothing with."
+                }
+              ],
+              "qualifiers": [
+                {
+                  "type": "invocationDelegation",
+                  "valueType": "xs:string",
+                  "value": "opc.tcp://opc.example.org:4042#ns=3;s=\"dbVar\".\"RemoteControlAutomatic_Start\""
+                },
+                {
+                  "type": "requiresSafetyApproval",
+                  "valueType": "xs:boolean",
+                  "value": "true"
+                }
+              ],
+              "inputVariables": [
+                {
+                  "value": {
+                    "modelType": "Property",
+                    "idShort": "value",
+                    "description": [
+                      {
+                        "language": "en",
+                        "text": "true unless the bit is being cleared; defaults to true"
+                      }
+                    ],
+                    "valueType": "xs:boolean",
+                    "value": null
+                  }
+                }
+              ],
+              "outputVariables": [
+                {
+                  "value": {
+                    "modelType": "Property",
+                    "idShort": "accepted",
+                    "description": [
+                      {
+                        "language": "en",
+                        "text": "whether the write was acknowledged"
+                      }
+                    ],
+                    "valueType": "xs:boolean",
+                    "value": null
+                  }
+                }
+              ]
+            },
+            {
+              "modelType": "Operation",
+              "idShort": "StopPress",
+              "description": [
+                {
+                  "language": "en",
+                  "text": "Set ns=3;s=\"dbVar\".\"RemoteControlAutomatic_Stop\" true on PressPLC (work cell 1: press tending). stop the station running in automatic mode."
+                }
+              ],
+              "qualifiers": [
+                {
+                  "type": "invocationDelegation",
+                  "valueType": "xs:string",
+                  "value": "opc.tcp://opc.example.org:4042#ns=3;s=\"dbVar\".\"RemoteControlAutomatic_Stop\""
+                },
+                {
+                  "type": "requiresSafetyApproval",
+                  "valueType": "xs:boolean",
+                  "value": "true"
+                }
+              ],
+              "inputVariables": [
+                {
+                  "value": {
+                    "modelType": "Property",
+                    "idShort": "value",
+                    "description": [
+                      {
+                        "language": "en",
+                        "text": "true unless the bit is being cleared; defaults to true"
+                      }
+                    ],
+                    "valueType": "xs:boolean",
+                    "value": null
+                  }
+                }
+              ],
+              "outputVariables": [
+                {
+                  "value": {
+                    "modelType": "Property",
+                    "idShort": "accepted",
+                    "description": [
+                      {
+                        "language": "en",
+                        "text": "whether the write was acknowledged"
+                      }
+                    ],
+                    "valueType": "xs:boolean",
+                    "value": null
+                  }
+                }
+              ]
+            },
+            {
+              "modelType": "Operation",
+              "idShort": "ModuleStartPress",
+              "description": [
+                {
+                  "language": "en",
+                  "text": "Set ns=3;s=\"ApplicationModule_DB\".\"xStart\" true on PressPLC (work cell 1: press tending). set the module's internal start bit. **Not the remote start** -- use `Start`. Four writes here were accepted by the server and nothing moved."
+                }
+              ],
+              "qualifiers": [
+                {
+                  "type": "invocationDelegation",
+                  "valueType": "xs:string",
+                  "value": "opc.tcp://opc.example.org:4042#ns=3;s=\"ApplicationModule_DB\".\"xStart\""
+                },
+                {
+                  "type": "requiresSafetyApproval",
+                  "valueType": "xs:boolean",
+                  "value": "true"
+                }
+              ],
+              "inputVariables": [
+                {
+                  "value": {
+                    "modelType": "Property",
+                    "idShort": "value",
+                    "description": [
+                      {
+                        "language": "en",
+                        "text": "true unless the bit is being cleared; defaults to true"
+                      }
+                    ],
+                    "valueType": "xs:boolean",
+                    "value": null
+                  }
+                }
+              ],
+              "outputVariables": [
+                {
+                  "value": {
+                    "modelType": "Property",
+                    "idShort": "accepted",
+                    "description": [
+                      {
+                        "language": "en",
+                        "text": "whether the write was acknowledged"
+                      }
+                    ],
+                    "valueType": "xs:boolean",
+                    "value": null
+                  }
+                }
+              ]
+            },
+            {
+              "modelType": "Operation",
+              "idShort": "ModuleInitialisePress",
+              "description": [
+                {
+                  "language": "en",
+                  "text": "Set ns=3;s=\"ApplicationModule_DB\".\"xInit\" true on PressPLC (work cell 1: press tending). home the module to its initialisation position. `InInitPosition` reports when it has arrived."
+                }
+              ],
+              "qualifiers": [
+                {
+                  "type": "invocationDelegation",
+                  "valueType": "xs:string",
+                  "value": "opc.tcp://opc.example.org:4042#ns=3;s=\"ApplicationModule_DB\".\"xInit\""
+                },
+                {
+                  "type": "requiresSafetyApproval",
+                  "valueType": "xs:boolean",
+                  "value": "true"
+                }
+              ],
+              "inputVariables": [
+                {
+                  "value": {
+                    "modelType": "Property",
+                    "idShort": "value",
+                    "description": [
+                      {
+                        "language": "en",
+                        "text": "true unless the bit is being cleared; defaults to true"
+                      }
+                    ],
+                    "valueType": "xs:boolean",
+                    "value": null
+                  }
+                }
+              ],
+              "outputVariables": [
+                {
+                  "value": {
+                    "modelType": "Property",
+                    "idShort": "accepted",
+                    "description": [
+                      {
+                        "language": "en",
+                        "text": "whether the write was acknowledged"
+                      }
+                    ],
+                    "valueType": "xs:boolean",
+                    "value": null
+                  }
+                }
+              ]
+            },
+            {
+              "modelType": "Operation",
+              "idShort": "ModuleSelectAutoModePress",
+              "description": [
+                {
+                  "language": "en",
+                  "text": "Set ns=3;s=\"ApplicationModule_DB\".\"xAuto\" true on PressPLC (work cell 1: press tending). set the module's auto-mode bit. Its relationship to the remote start is not documented; the station has its own `OpMode` input, which is write-only and not modelled here."
+                }
+              ],
+              "qualifiers": [
+                {
+                  "type": "invocationDelegation",
+                  "valueType": "xs:string",
+                  "value": "opc.tcp://opc.example.org:4042#ns=3;s=\"ApplicationModule_DB\".\"xAuto\""
+                },
+                {
+                  "type": "requiresSafetyApproval",
+                  "valueType": "xs:boolean",
+                  "value": "true"
+                }
+              ],
+              "inputVariables": [
+                {
+                  "value": {
+                    "modelType": "Property",
+                    "idShort": "value",
+                    "description": [
+                      {
+                        "language": "en",
+                        "text": "true unless the bit is being cleared; defaults to true"
+                      }
+                    ],
+                    "valueType": "xs:boolean",
+                    "value": null
+                  }
+                }
+              ],
+              "outputVariables": [
+                {
+                  "value": {
+                    "modelType": "Property",
+                    "idShort": "accepted",
+                    "description": [
+                      {
+                        "language": "en",
+                        "text": "whether the write was acknowledged"
+                      }
+                    ],
+                    "valueType": "xs:boolean",
+                    "value": null
+                  }
+                }
+              ]
+            },
+            {
+              "modelType": "Operation",
+              "idShort": "ModuleSelectManualModePress",
+              "description": [
+                {
+                  "language": "en",
+                  "text": "Set ns=3;s=\"ApplicationModule_DB\".\"xManual\" true on PressPLC (work cell 1: press tending). set the module's manual-mode bit. Observed: while this was true on the Press, `Ready` was false; when it cleared, `Ready` went true."
+                }
+              ],
+              "qualifiers": [
+                {
+                  "type": "invocationDelegation",
+                  "valueType": "xs:string",
+                  "value": "opc.tcp://opc.example.org:4042#ns=3;s=\"ApplicationModule_DB\".\"xManual\""
+                },
+                {
+                  "type": "requiresSafetyApproval",
+                  "valueType": "xs:boolean",
+                  "value": "true"
+                }
+              ],
+              "inputVariables": [
+                {
+                  "value": {
+                    "modelType": "Property",
+                    "idShort": "value",
+                    "description": [
+                      {
+                        "language": "en",
+                        "text": "true unless the bit is being cleared; defaults to true"
+                      }
+                    ],
+                    "valueType": "xs:boolean",
+                    "value": null
+                  }
+                }
+              ],
+              "outputVariables": [
+                {
+                  "value": {
+                    "modelType": "Property",
+                    "idShort": "accepted",
+                    "description": [
+                      {
+                        "language": "en",
+                        "text": "whether the write was acknowledged"
+                      }
+                    ],
+                    "valueType": "xs:boolean",
+                    "value": null
+                  }
+                }
+              ]
+            },
+            {
+              "modelType": "Operation",
+              "idShort": "ModuleResetErrorPress",
+              "description": [
+                {
+                  "language": "en",
+                  "text": "Set ns=3;s=\"ApplicationModule_DB\".\"xReset\" true on PressPLC (work cell 1: press tending). the module's own reset input. **Not the station's fault acknowledge** -- that is `AcknowledgeFault`, which writes `dbVar.Err.xQuit`."
+                }
+              ],
+              "qualifiers": [
+                {
+                  "type": "invocationDelegation",
+                  "valueType": "xs:string",
+                  "value": "opc.tcp://opc.example.org:4042#ns=3;s=\"ApplicationModule_DB\".\"xReset\""
+                },
+                {
+                  "type": "requiresSafetyApproval",
+                  "valueType": "xs:boolean",
+                  "value": "true"
+                }
+              ],
+              "inputVariables": [
+                {
+                  "value": {
+                    "modelType": "Property",
+                    "idShort": "value",
+                    "description": [
+                      {
+                        "language": "en",
+                        "text": "true unless the bit is being cleared; defaults to true"
+                      }
+                    ],
+                    "valueType": "xs:boolean",
+                    "value": null
+                  }
+                }
+              ],
+              "outputVariables": [
+                {
+                  "value": {
+                    "modelType": "Property",
+                    "idShort": "accepted",
+                    "description": [
+                      {
+                        "language": "en",
+                        "text": "whether the write was acknowledged"
+                      }
+                    ],
+                    "valueType": "xs:boolean",
+                    "value": null
+                  }
+                }
+              ]
+            },
+            {
+              "modelType": "Operation",
+              "idShort": "AcknowledgeFaultTurning",
+              "description": [
+                {
+                  "language": "en",
+                  "text": "Set ns=3;s=\"dbVar\".\"Err\".\"xQuit\" true on TurningPLC (work cell 2: turning over). acknowledge the station's fault so it can be started again. Writes `dbVar.Err.xQuit`, which is the input the station's own configuration names -- not the module's `xReset`."
+                }
+              ],
+              "qualifiers": [
+                {
+                  "type": "invocationDelegation",
+                  "valueType": "xs:string",
+                  "value": "opc.tcp://opc.example.org:4041#ns=3;s=\"dbVar\".\"Err\".\"xQuit\""
+                },
+                {
+                  "type": "requiresSafetyApproval",
+                  "valueType": "xs:boolean",
+                  "value": "true"
+                }
+              ],
+              "inputVariables": [
+                {
+                  "value": {
+                    "modelType": "Property",
+                    "idShort": "value",
+                    "description": [
+                      {
+                        "language": "en",
+                        "text": "true unless the bit is being cleared; defaults to true"
+                      }
+                    ],
+                    "valueType": "xs:boolean",
+                    "value": null
+                  }
+                }
+              ],
+              "outputVariables": [
+                {
+                  "value": {
+                    "modelType": "Property",
+                    "idShort": "accepted",
+                    "description": [
+                      {
+                        "language": "en",
+                        "text": "whether the write was acknowledged"
+                      }
+                    ],
+                    "valueType": "xs:boolean",
+                    "value": null
+                  }
+                }
+              ]
+            },
+            {
+              "modelType": "Operation",
+              "idShort": "StartTurning",
+              "description": [
+                {
+                  "language": "en",
+                  "text": "Set ns=3;s=\"dbVar\".\"RemoteControlAutomatic_Start\" true on TurningPLC (work cell 2: turning over). start the station in automatic mode. This is the remote-control input; it is not the module's internal `xStart`, which a remote caller is not meant to drive and which four writes moved nothing with."
+                }
+              ],
+              "qualifiers": [
+                {
+                  "type": "invocationDelegation",
+                  "valueType": "xs:string",
+                  "value": "opc.tcp://opc.example.org:4041#ns=3;s=\"dbVar\".\"RemoteControlAutomatic_Start\""
+                },
+                {
+                  "type": "requiresSafetyApproval",
+                  "valueType": "xs:boolean",
+                  "value": "true"
+                }
+              ],
+              "inputVariables": [
+                {
+                  "value": {
+                    "modelType": "Property",
+                    "idShort": "value",
+                    "description": [
+                      {
+                        "language": "en",
+                        "text": "true unless the bit is being cleared; defaults to true"
+                      }
+                    ],
+                    "valueType": "xs:boolean",
+                    "value": null
+                  }
+                }
+              ],
+              "outputVariables": [
+                {
+                  "value": {
+                    "modelType": "Property",
+                    "idShort": "accepted",
+                    "description": [
+                      {
+                        "language": "en",
+                        "text": "whether the write was acknowledged"
+                      }
+                    ],
+                    "valueType": "xs:boolean",
+                    "value": null
+                  }
+                }
+              ]
+            },
+            {
+              "modelType": "Operation",
+              "idShort": "StopTurning",
+              "description": [
+                {
+                  "language": "en",
+                  "text": "Set ns=3;s=\"dbVar\".\"RemoteControlAutomatic_Stop\" true on TurningPLC (work cell 2: turning over). stop the station running in automatic mode."
+                }
+              ],
+              "qualifiers": [
+                {
+                  "type": "invocationDelegation",
+                  "valueType": "xs:string",
+                  "value": "opc.tcp://opc.example.org:4041#ns=3;s=\"dbVar\".\"RemoteControlAutomatic_Stop\""
+                },
+                {
+                  "type": "requiresSafetyApproval",
+                  "valueType": "xs:boolean",
+                  "value": "true"
+                }
+              ],
+              "inputVariables": [
+                {
+                  "value": {
+                    "modelType": "Property",
+                    "idShort": "value",
+                    "description": [
+                      {
+                        "language": "en",
+                        "text": "true unless the bit is being cleared; defaults to true"
+                      }
+                    ],
+                    "valueType": "xs:boolean",
+                    "value": null
+                  }
+                }
+              ],
+              "outputVariables": [
+                {
+                  "value": {
+                    "modelType": "Property",
+                    "idShort": "accepted",
+                    "description": [
+                      {
+                        "language": "en",
+                        "text": "whether the write was acknowledged"
+                      }
+                    ],
+                    "valueType": "xs:boolean",
+                    "value": null
+                  }
+                }
+              ]
+            },
+            {
+              "modelType": "Operation",
+              "idShort": "ModuleStartTurning",
+              "description": [
+                {
+                  "language": "en",
+                  "text": "Set ns=3;s=\"ApplicationModule_DB\".\"xStart\" true on TurningPLC (work cell 2: turning over). set the module's internal start bit. **Not the remote start** -- use `Start`. Four writes here were accepted by the server and nothing moved."
+                }
+              ],
+              "qualifiers": [
+                {
+                  "type": "invocationDelegation",
+                  "valueType": "xs:string",
+                  "value": "opc.tcp://opc.example.org:4041#ns=3;s=\"ApplicationModule_DB\".\"xStart\""
+                },
+                {
+                  "type": "requiresSafetyApproval",
+                  "valueType": "xs:boolean",
+                  "value": "true"
+                }
+              ],
+              "inputVariables": [
+                {
+                  "value": {
+                    "modelType": "Property",
+                    "idShort": "value",
+                    "description": [
+                      {
+                        "language": "en",
+                        "text": "true unless the bit is being cleared; defaults to true"
+                      }
+                    ],
+                    "valueType": "xs:boolean",
+                    "value": null
+                  }
+                }
+              ],
+              "outputVariables": [
+                {
+                  "value": {
+                    "modelType": "Property",
+                    "idShort": "accepted",
+                    "description": [
+                      {
+                        "language": "en",
+                        "text": "whether the write was acknowledged"
+                      }
+                    ],
+                    "valueType": "xs:boolean",
+                    "value": null
+                  }
+                }
+              ]
+            },
+            {
+              "modelType": "Operation",
+              "idShort": "ModuleInitialiseTurning",
+              "description": [
+                {
+                  "language": "en",
+                  "text": "Set ns=3;s=\"ApplicationModule_DB\".\"xInit\" true on TurningPLC (work cell 2: turning over). home the module to its initialisation position. `InInitPosition` reports when it has arrived."
+                }
+              ],
+              "qualifiers": [
+                {
+                  "type": "invocationDelegation",
+                  "valueType": "xs:string",
+                  "value": "opc.tcp://opc.example.org:4041#ns=3;s=\"ApplicationModule_DB\".\"xInit\""
+                },
+                {
+                  "type": "requiresSafetyApproval",
+                  "valueType": "xs:boolean",
+                  "value": "true"
+                }
+              ],
+              "inputVariables": [
+                {
+                  "value": {
+                    "modelType": "Property",
+                    "idShort": "value",
+                    "description": [
+                      {
+                        "language": "en",
+                        "text": "true unless the bit is being cleared; defaults to true"
+                      }
+                    ],
+                    "valueType": "xs:boolean",
+                    "value": null
+                  }
+                }
+              ],
+              "outputVariables": [
+                {
+                  "value": {
+                    "modelType": "Property",
+                    "idShort": "accepted",
+                    "description": [
+                      {
+                        "language": "en",
+                        "text": "whether the write was acknowledged"
+                      }
+                    ],
+                    "valueType": "xs:boolean",
+                    "value": null
+                  }
+                }
+              ]
+            },
+            {
+              "modelType": "Operation",
+              "idShort": "ModuleSelectAutoModeTurning",
+              "description": [
+                {
+                  "language": "en",
+                  "text": "Set ns=3;s=\"ApplicationModule_DB\".\"xAuto\" true on TurningPLC (work cell 2: turning over). set the module's auto-mode bit. Its relationship to the remote start is not documented; the station has its own `OpMode` input, which is write-only and not modelled here."
+                }
+              ],
+              "qualifiers": [
+                {
+                  "type": "invocationDelegation",
+                  "valueType": "xs:string",
+                  "value": "opc.tcp://opc.example.org:4041#ns=3;s=\"ApplicationModule_DB\".\"xAuto\""
+                },
+                {
+                  "type": "requiresSafetyApproval",
+                  "valueType": "xs:boolean",
+                  "value": "true"
+                }
+              ],
+              "inputVariables": [
+                {
+                  "value": {
+                    "modelType": "Property",
+                    "idShort": "value",
+                    "description": [
+                      {
+                        "language": "en",
+                        "text": "true unless the bit is being cleared; defaults to true"
+                      }
+                    ],
+                    "valueType": "xs:boolean",
+                    "value": null
+                  }
+                }
+              ],
+              "outputVariables": [
+                {
+                  "value": {
+                    "modelType": "Property",
+                    "idShort": "accepted",
+                    "description": [
+                      {
+                        "language": "en",
+                        "text": "whether the write was acknowledged"
+                      }
+                    ],
+                    "valueType": "xs:boolean",
+                    "value": null
+                  }
+                }
+              ]
+            },
+            {
+              "modelType": "Operation",
+              "idShort": "ModuleSelectManualModeTurning",
+              "description": [
+                {
+                  "language": "en",
+                  "text": "Set ns=3;s=\"ApplicationModule_DB\".\"xManual\" true on TurningPLC (work cell 2: turning over). set the module's manual-mode bit. Observed: while this was true on the Press, `Ready` was false; when it cleared, `Ready` went true."
+                }
+              ],
+              "qualifiers": [
+                {
+                  "type": "invocationDelegation",
+                  "valueType": "xs:string",
+                  "value": "opc.tcp://opc.example.org:4041#ns=3;s=\"ApplicationModule_DB\".\"xManual\""
+                },
+                {
+                  "type": "requiresSafetyApproval",
+                  "valueType": "xs:boolean",
+                  "value": "true"
+                }
+              ],
+              "inputVariables": [
+                {
+                  "value": {
+                    "modelType": "Property",
+                    "idShort": "value",
+                    "description": [
+                      {
+                        "language": "en",
+                        "text": "true unless the bit is being cleared; defaults to true"
+                      }
+                    ],
+                    "valueType": "xs:boolean",
+                    "value": null
+                  }
+                }
+              ],
+              "outputVariables": [
+                {
+                  "value": {
+                    "modelType": "Property",
+                    "idShort": "accepted",
+                    "description": [
+                      {
+                        "language": "en",
+                        "text": "whether the write was acknowledged"
+                      }
+                    ],
+                    "valueType": "xs:boolean",
+                    "value": null
+                  }
+                }
+              ]
+            },
+            {
+              "modelType": "Operation",
+              "idShort": "ModuleResetErrorTurning",
+              "description": [
+                {
+                  "language": "en",
+                  "text": "Set ns=3;s=\"ApplicationModule_DB\".\"xReset\" true on TurningPLC (work cell 2: turning over). the module's own reset input. **Not the station's fault acknowledge** -- that is `AcknowledgeFault`, which writes `dbVar.Err.xQuit`."
+                }
+              ],
+              "qualifiers": [
+                {
+                  "type": "invocationDelegation",
+                  "valueType": "xs:string",
+                  "value": "opc.tcp://opc.example.org:4041#ns=3;s=\"ApplicationModule_DB\".\"xReset\""
+                },
+                {
+                  "type": "requiresSafetyApproval",
+                  "valueType": "xs:boolean",
+                  "value": "true"
+                }
+              ],
+              "inputVariables": [
+                {
+                  "value": {
+                    "modelType": "Property",
+                    "idShort": "value",
+                    "description": [
+                      {
+                        "language": "en",
+                        "text": "true unless the bit is being cleared; defaults to true"
+                      }
+                    ],
+                    "valueType": "xs:boolean",
+                    "value": null
+                  }
+                }
+              ],
+              "outputVariables": [
+                {
+                  "value": {
+                    "modelType": "Property",
+                    "idShort": "accepted",
+                    "description": [
+                      {
+                        "language": "en",
+                        "text": "whether the write was acknowledged"
+                      }
+                    ],
+                    "valueType": "xs:boolean",
+                    "value": null
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "modelType": "Submodel",
+      "idShort": "OperationalData",
+      "description": [
+        {
+          "language": "en",
+          "text": "Process values of the work center, read over OPC UA"
+        }
+      ],
+      "id": "https://example.com/ids/sm/OperationalData_FestoWorkCenterStamping",
+      "kind": "Instance",
+      "submodelElements": [
+        {
+          "modelType": "SubmodelElementCollection",
+          "idShort": "Press",
+          "description": [
+            {
+              "language": "en",
+              "text": "work cell 1: press tending"
+            }
+          ],
+          "value": [
+            {
+              "modelType": "Property",
+              "idShort": "Ready",
+              "description": [
+                {
+                  "language": "en",
+                  "text": "the module reports itself ready to run"
+                }
+              ],
+              "qualifiers": [
+                {
+                  "type": "valueSource",
+                  "valueType": "xs:string",
+                  "value": "opc.tcp://opc.example.org:4042#ns=3;s=\"ApplicationModule_DB\".\"xReady\""
+                },
+                {
+                  "type": "requiresSafetyApproval",
+                  "valueType": "xs:boolean",
+                  "value": "false"
+                }
+              ],
+              "valueType": "xs:boolean",
+              "value": null
+            },
+            {
+              "modelType": "Property",
+              "idShort": "Busy",
+              "description": [
+                {
+                  "language": "en",
+                  "text": "the module's own activity flag. **Do not use it to decide whether the station is running.** Measured on 2026-08-31: the conveyor ran for 5.6 seconds under a remote start and this bit stayed false the whole time. `ConveyorForward` is the signal that moved."
+                }
+              ],
+              "qualifiers": [
+                {
+                  "type": "valueSource",
+                  "valueType": "xs:string",
+                  "value": "opc.tcp://opc.example.org:4042#ns=3;s=\"ApplicationModule_DB\".\"xBusy\""
+                },
+                {
+                  "type": "requiresSafetyApproval",
+                  "valueType": "xs:boolean",
+                  "value": "false"
+                }
+              ],
+              "valueType": "xs:boolean",
+              "value": null
+            },
+            {
+              "modelType": "Property",
+              "idShort": "Error",
+              "description": [
+                {
+                  "language": "en",
+                  "text": "the module's own error flag. **Not the station's fault word.** It stayed false through a start that faulted; the fault appeared in `Fault` (`dbVar.Err.xSF`) instead."
+                }
+              ],
+              "qualifiers": [
+                {
+                  "type": "valueSource",
+                  "valueType": "xs:string",
+                  "value": "opc.tcp://opc.example.org:4042#ns=3;s=\"ApplicationModule_DB\".\"xError\""
+                },
+                {
+                  "type": "requiresSafetyApproval",
+                  "valueType": "xs:boolean",
+                  "value": "false"
+                }
+              ],
+              "valueType": "xs:boolean",
+              "value": null
+            },
+            {
+              "modelType": "Property",
+              "idShort": "InInitPosition",
+              "description": [
+                {
+                  "language": "en",
+                  "text": "the module is at its initialisation position"
+                }
+              ],
+              "qualifiers": [
+                {
+                  "type": "valueSource",
+                  "valueType": "xs:string",
+                  "value": "opc.tcp://opc.example.org:4042#ns=3;s=\"ApplicationModule_DB\".\"xInitPos\""
+                },
+                {
+                  "type": "requiresSafetyApproval",
+                  "valueType": "xs:boolean",
+                  "value": "false"
+                }
+              ],
+              "valueType": "xs:boolean",
+              "value": null
+            },
+            {
+              "modelType": "Property",
+              "idShort": "ReturnCode",
+              "description": [
+                {
+                  "language": "en",
+                  "text": "the module's return code"
+                }
+              ],
+              "qualifiers": [
+                {
+                  "type": "valueSource",
+                  "valueType": "xs:string",
+                  "value": "opc.tcp://opc.example.org:4042#ns=3;s=\"ApplicationModule_DB\".\"iRetCode\""
+                },
+                {
+                  "type": "requiresSafetyApproval",
+                  "valueType": "xs:boolean",
+                  "value": "false"
+                }
+              ],
+              "valueType": "xs:int",
+              "value": null
+            },
+            {
+              "modelType": "Property",
+              "idShort": "ModuleStartRequested",
+              "description": [
+                {
+                  "language": "en",
+                  "text": "the xStart input, as the PLC currently holds it"
+                }
+              ],
+              "qualifiers": [
+                {
+                  "type": "valueSource",
+                  "valueType": "xs:string",
+                  "value": "opc.tcp://opc.example.org:4042#ns=3;s=\"ApplicationModule_DB\".\"xStart\""
+                },
+                {
+                  "type": "requiresSafetyApproval",
+                  "valueType": "xs:boolean",
+                  "value": "false"
+                }
+              ],
+              "valueType": "xs:boolean",
+              "value": null
+            },
+            {
+              "modelType": "Property",
+              "idShort": "ModuleInitialiseRequested",
+              "description": [
+                {
+                  "language": "en",
+                  "text": "the xInit input, as the PLC currently holds it"
+                }
+              ],
+              "qualifiers": [
+                {
+                  "type": "valueSource",
+                  "valueType": "xs:string",
+                  "value": "opc.tcp://opc.example.org:4042#ns=3;s=\"ApplicationModule_DB\".\"xInit\""
+                },
+                {
+                  "type": "requiresSafetyApproval",
+                  "valueType": "xs:boolean",
+                  "value": "false"
+                }
+              ],
+              "valueType": "xs:boolean",
+              "value": null
+            },
+            {
+              "modelType": "Property",
+              "idShort": "ModuleSelectAutoModeRequested",
+              "description": [
+                {
+                  "language": "en",
+                  "text": "the xAuto input, as the PLC currently holds it"
+                }
+              ],
+              "qualifiers": [
+                {
+                  "type": "valueSource",
+                  "valueType": "xs:string",
+                  "value": "opc.tcp://opc.example.org:4042#ns=3;s=\"ApplicationModule_DB\".\"xAuto\""
+                },
+                {
+                  "type": "requiresSafetyApproval",
+                  "valueType": "xs:boolean",
+                  "value": "false"
+                }
+              ],
+              "valueType": "xs:boolean",
+              "value": null
+            },
+            {
+              "modelType": "Property",
+              "idShort": "ModuleSelectManualModeRequested",
+              "description": [
+                {
+                  "language": "en",
+                  "text": "the xManual input, as the PLC currently holds it"
+                }
+              ],
+              "qualifiers": [
+                {
+                  "type": "valueSource",
+                  "valueType": "xs:string",
+                  "value": "opc.tcp://opc.example.org:4042#ns=3;s=\"ApplicationModule_DB\".\"xManual\""
+                },
+                {
+                  "type": "requiresSafetyApproval",
+                  "valueType": "xs:boolean",
+                  "value": "false"
+                }
+              ],
+              "valueType": "xs:boolean",
+              "value": null
+            },
+            {
+              "modelType": "Property",
+              "idShort": "ModuleResetErrorRequested",
+              "description": [
+                {
+                  "language": "en",
+                  "text": "the xReset input, as the PLC currently holds it"
+                }
+              ],
+              "qualifiers": [
+                {
+                  "type": "valueSource",
+                  "valueType": "xs:string",
+                  "value": "opc.tcp://opc.example.org:4042#ns=3;s=\"ApplicationModule_DB\".\"xReset\""
+                },
+                {
+                  "type": "requiresSafetyApproval",
+                  "valueType": "xs:boolean",
+                  "value": "false"
+                }
+              ],
+              "valueType": "xs:boolean",
+              "value": null
+            },
+            {
+              "modelType": "Property",
+              "idShort": "AcknowledgeFaultRequested",
+              "description": [
+                {
+                  "language": "en",
+                  "text": "the Err\".\"xQuit remote-control input, as the PLC holds it"
+                }
+              ],
+              "qualifiers": [
+                {
+                  "type": "valueSource",
+                  "valueType": "xs:string",
+                  "value": "opc.tcp://opc.example.org:4042#ns=3;s=\"dbVar\".\"Err\".\"xQuit\""
+                },
+                {
+                  "type": "requiresSafetyApproval",
+                  "valueType": "xs:boolean",
+                  "value": "false"
+                }
+              ],
+              "valueType": "xs:boolean",
+              "value": null
+            },
+            {
+              "modelType": "Property",
+              "idShort": "StartRequested",
+              "description": [
+                {
+                  "language": "en",
+                  "text": "the RemoteControlAutomatic_Start remote-control input, as the PLC holds it"
+                }
+              ],
+              "qualifiers": [
+                {
+                  "type": "valueSource",
+                  "valueType": "xs:string",
+                  "value": "opc.tcp://opc.example.org:4042#ns=3;s=\"dbVar\".\"RemoteControlAutomatic_Start\""
+                },
+                {
+                  "type": "requiresSafetyApproval",
+                  "valueType": "xs:boolean",
+                  "value": "false"
+                }
+              ],
+              "valueType": "xs:boolean",
+              "value": null
+            },
+            {
+              "modelType": "Property",
+              "idShort": "StopRequested",
+              "description": [
+                {
+                  "language": "en",
+                  "text": "the RemoteControlAutomatic_Stop remote-control input, as the PLC holds it"
+                }
+              ],
+              "qualifiers": [
+                {
+                  "type": "valueSource",
+                  "valueType": "xs:string",
+                  "value": "opc.tcp://opc.example.org:4042#ns=3;s=\"dbVar\".\"RemoteControlAutomatic_Stop\""
+                },
+                {
+                  "type": "requiresSafetyApproval",
+                  "valueType": "xs:boolean",
+                  "value": "false"
+                }
+              ],
+              "valueType": "xs:boolean",
+              "value": null
+            },
+            {
+              "modelType": "Property",
+              "idShort": "Fault",
+              "description": [
+                {
+                  "language": "en",
+                  "text": "collective fault (Sammelstörung). Set 2.8 s after a remote start, and what stops the cell."
+                }
+              ],
+              "qualifiers": [
+                {
+                  "type": "valueSource",
+                  "valueType": "xs:string",
+                  "value": "opc.tcp://opc.example.org:4042#ns=3;s=\"dbVar\".\"Err\".\"xSF\""
+                },
+                {
+                  "type": "requiresSafetyApproval",
+                  "valueType": "xs:boolean",
+                  "value": "false"
+                }
+              ],
+              "valueType": "xs:boolean",
+              "value": null
+            },
+            {
+              "modelType": "Property",
+              "idShort": "Fault0",
+              "description": [
+                {
+                  "language": "en",
+                  "text": "individual fault bit 0. Observed pulsing every few seconds after a failed start."
+                }
+              ],
+              "qualifiers": [
+                {
+                  "type": "valueSource",
+                  "valueType": "xs:string",
+                  "value": "opc.tcp://opc.example.org:4042#ns=3;s=\"dbVar\".\"Err\".\"xSF0\""
+                },
+                {
+                  "type": "requiresSafetyApproval",
+                  "valueType": "xs:boolean",
+                  "value": "false"
+                }
+              ],
+              "valueType": "xs:boolean",
+              "value": null
+            },
+            {
+              "modelType": "Property",
+              "idShort": "Fault1",
+              "description": [
+                {
+                  "language": "en",
+                  "text": "individual fault bit 1"
+                }
+              ],
+              "qualifiers": [
+                {
+                  "type": "valueSource",
+                  "valueType": "xs:string",
+                  "value": "opc.tcp://opc.example.org:4042#ns=3;s=\"dbVar\".\"Err\".\"xSF1\""
+                },
+                {
+                  "type": "requiresSafetyApproval",
+                  "valueType": "xs:boolean",
+                  "value": "false"
+                }
+              ],
+              "valueType": "xs:boolean",
+              "value": null
+            },
+            {
+              "modelType": "Property",
+              "idShort": "Fault2",
+              "description": [
+                {
+                  "language": "en",
+                  "text": "individual fault bit 2"
+                }
+              ],
+              "qualifiers": [
+                {
+                  "type": "valueSource",
+                  "valueType": "xs:string",
+                  "value": "opc.tcp://opc.example.org:4042#ns=3;s=\"dbVar\".\"Err\".\"xSF2\""
+                },
+                {
+                  "type": "requiresSafetyApproval",
+                  "valueType": "xs:boolean",
+                  "value": "false"
+                }
+              ],
+              "valueType": "xs:boolean",
+              "value": null
+            },
+            {
+              "modelType": "Property",
+              "idShort": "Fault01",
+              "description": [
+                {
+                  "language": "en",
+                  "text": "individual fault bit 01. Set together with the collective fault."
+                }
+              ],
+              "qualifiers": [
+                {
+                  "type": "valueSource",
+                  "valueType": "xs:string",
+                  "value": "opc.tcp://opc.example.org:4042#ns=3;s=\"dbVar\".\"Err\".\"xSF01\""
+                },
+                {
+                  "type": "requiresSafetyApproval",
+                  "valueType": "xs:boolean",
+                  "value": "false"
+                }
+              ],
+              "valueType": "xs:boolean",
+              "value": null
+            },
+            {
+              "modelType": "Property",
+              "idShort": "FaultHint",
+              "description": [
+                {
+                  "language": "en",
+                  "text": "hint rather than fault"
+                }
+              ],
+              "qualifiers": [
+                {
+                  "type": "valueSource",
+                  "valueType": "xs:string",
+                  "value": "opc.tcp://opc.example.org:4042#ns=3;s=\"dbVar\".\"Err\".\"xHint\""
+                },
+                {
+                  "type": "requiresSafetyApproval",
+                  "valueType": "xs:boolean",
+                  "value": "false"
+                }
+              ],
+              "valueType": "xs:boolean",
+              "value": null
+            },
+            {
+              "modelType": "Property",
+              "idShort": "FaultAcknowledged",
+              "description": [
+                {
+                  "language": "en",
+                  "text": "the acknowledge input, as the PLC currently holds it"
+                }
+              ],
+              "qualifiers": [
+                {
+                  "type": "valueSource",
+                  "valueType": "xs:string",
+                  "value": "opc.tcp://opc.example.org:4042#ns=3;s=\"dbVar\".\"Err\".\"xQuit\""
+                },
+                {
+                  "type": "requiresSafetyApproval",
+                  "valueType": "xs:boolean",
+                  "value": "false"
+                }
+              ],
+              "valueType": "xs:boolean",
+              "value": null
+            },
+            {
+              "modelType": "Property",
+              "idShort": "ConveyorForward",
+              "description": [
+                {
+                  "language": "en",
+                  "text": "Band Rechtslauf -- the conveyor is running forward. This is the reliable indication that the station is moving."
+                }
+              ],
+              "qualifiers": [
+                {
+                  "type": "valueSource",
+                  "valueType": "xs:string",
+                  "value": "opc.tcp://opc.example.org:4042#ns=3;s=\"xQA1_A1\""
+                },
+                {
+                  "type": "requiresSafetyApproval",
+                  "valueType": "xs:boolean",
+                  "value": "false"
+                }
+              ],
+              "valueType": "xs:boolean",
+              "value": null
+            },
+            {
+              "modelType": "Property",
+              "idShort": "ConveyorReverse",
+              "description": [
+                {
+                  "language": "en",
+                  "text": "Band Linkslauf"
+                }
+              ],
+              "qualifiers": [
+                {
+                  "type": "valueSource",
+                  "valueType": "xs:string",
+                  "value": "opc.tcp://opc.example.org:4042#ns=3;s=\"xQA1_A2\""
+                },
+                {
+                  "type": "requiresSafetyApproval",
+                  "valueType": "xs:boolean",
+                  "value": "false"
+                }
+              ],
+              "valueType": "xs:boolean",
+              "value": null
+            },
+            {
+              "modelType": "Property",
+              "idShort": "CarrierAtModule",
+              "description": [
+                {
+                  "language": "en",
+                  "text": "WT in Modulposition"
+                }
+              ],
+              "qualifiers": [
+                {
+                  "type": "valueSource",
+                  "valueType": "xs:string",
+                  "value": "opc.tcp://opc.example.org:4042#ns=3;s=\"xBG1\""
+                },
+                {
+                  "type": "requiresSafetyApproval",
+                  "valueType": "xs:boolean",
+                  "value": "false"
+                }
+              ],
+              "valueType": "xs:boolean",
+              "value": null
+            },
+            {
+              "modelType": "Property",
+              "idShort": "CarrierAtBeltStart",
+              "description": [
+                {
+                  "language": "en",
+                  "text": "WT am Bandanfang"
+                }
+              ],
+              "qualifiers": [
+                {
+                  "type": "valueSource",
+                  "valueType": "xs:string",
+                  "value": "opc.tcp://opc.example.org:4042#ns=3;s=\"xBG5\""
+                },
+                {
+                  "type": "requiresSafetyApproval",
+                  "valueType": "xs:boolean",
+                  "value": "false"
+                }
+              ],
+              "valueType": "xs:boolean",
+              "value": null
+            },
+            {
+              "modelType": "Property",
+              "idShort": "CarrierAtBeltEnd",
+              "description": [
+                {
+                  "language": "en",
+                  "text": "WT am Bandende"
+                }
+              ],
+              "qualifiers": [
+                {
+                  "type": "valueSource",
+                  "valueType": "xs:string",
+                  "value": "opc.tcp://opc.example.org:4042#ns=3;s=\"xBG6\""
+                },
+                {
+                  "type": "requiresSafetyApproval",
+                  "valueType": "xs:boolean",
+                  "value": "false"
+                }
+              ],
+              "valueType": "xs:boolean",
+              "value": null
+            },
+            {
+              "modelType": "Property",
+              "idShort": "EmergencyStopCircuit",
+              "description": [
+                {
+                  "language": "en",
+                  "text": "Notschalter. Polarity not confirmed: true on both stations while the cell was neither stopped nor running, so it may mean the safety circuit is closed rather than that the button is pressed."
+                }
+              ],
+              "qualifiers": [
+                {
+                  "type": "valueSource",
+                  "valueType": "xs:string",
+                  "value": "opc.tcp://opc.example.org:4042#ns=3;s=\"xSF5\""
+                },
+                {
+                  "type": "requiresSafetyApproval",
+                  "valueType": "xs:boolean",
+                  "value": "false"
+                }
+              ],
+              "valueType": "xs:boolean",
+              "value": null
+            },
+            {
+              "modelType": "Property",
+              "idShort": "AnalogueIn1",
+              "description": [
+                {
+                  "language": "en",
+                  "text": "8-bit analogue input on the PLC itself, separate from the Revolution Pi's sensors"
+                }
+              ],
+              "qualifiers": [
+                {
+                  "type": "valueSource",
+                  "valueType": "xs:string",
+                  "value": "opc.tcp://opc.example.org:4042#ns=3;s=\"byAnaIn_8Bit\""
+                },
+                {
+                  "type": "requiresSafetyApproval",
+                  "valueType": "xs:boolean",
+                  "value": "false"
+                }
+              ],
+              "valueType": "xs:int",
+              "value": null
+            },
+            {
+              "modelType": "Property",
+              "idShort": "AnalogueIn2",
+              "description": [
+                {
+                  "language": "en",
+                  "text": "second 8-bit analogue input"
+                }
+              ],
+              "qualifiers": [
+                {
+                  "type": "valueSource",
+                  "valueType": "xs:string",
+                  "value": "opc.tcp://opc.example.org:4042#ns=3;s=\"byAnaIn2_8Bit\""
+                },
+                {
+                  "type": "requiresSafetyApproval",
+                  "valueType": "xs:boolean",
+                  "value": "false"
+                }
+              ],
+              "valueType": "xs:int",
+              "value": null
+            },
+            {
+              "modelType": "Property",
+              "idShort": "RfidCode",
+              "description": [
+                {
+                  "language": "en",
+                  "text": "the code read from the carrier"
+                }
+              ],
+              "qualifiers": [
+                {
+                  "type": "valueSource",
+                  "valueType": "xs:string",
+                  "value": "opc.tcp://opc.example.org:4042#ns=3;s=\"dbRfidData\".\"ID1\".\"iCode\""
+                },
+                {
+                  "type": "requiresSafetyApproval",
+                  "valueType": "xs:boolean",
+                  "value": "false"
+                }
+              ],
+              "valueType": "xs:int",
+              "value": null
+            },
+            {
+              "modelType": "Property",
+              "idShort": "RfidCarrierId",
+              "description": [
+                {
+                  "language": "en",
+                  "text": "the carrier's identifier"
+                }
+              ],
+              "qualifiers": [
+                {
+                  "type": "valueSource",
+                  "valueType": "xs:string",
+                  "value": "opc.tcp://opc.example.org:4042#ns=3;s=\"dbRfidData\".\"ID1\".\"iCarrierID\""
+                },
+                {
+                  "type": "requiresSafetyApproval",
+                  "valueType": "xs:boolean",
+                  "value": "false"
+                }
+              ],
+              "valueType": "xs:int",
+              "value": null
+            },
+            {
+              "modelType": "Property",
+              "idShort": "Pressure1",
+              "description": [
+                {
+                  "language": "en",
+                  "text": "pressure at sensor 1 -- raw Int16 count; the scale to a physical unit is not established"
+                }
+              ],
+              "qualifiers": [
+                {
+                  "type": "valueSource",
+                  "valueType": "xs:string",
+                  "value": "opc.tcp://opc.example.org:4043#ns=1;s=Pressure_1"
+                },
+                {
+                  "type": "requiresSafetyApproval",
+                  "valueType": "xs:boolean",
+                  "value": "false"
+                }
+              ],
+              "valueType": "xs:int",
+              "value": null
+            },
+            {
+              "modelType": "Property",
+              "idShort": "Pressure2",
+              "description": [
+                {
+                  "language": "en",
+                  "text": "pressure at sensor 2 -- raw Int16 count; the scale to a physical unit is not established"
+                }
+              ],
+              "qualifiers": [
+                {
+                  "type": "valueSource",
+                  "valueType": "xs:string",
+                  "value": "opc.tcp://opc.example.org:4043#ns=1;s=Pressure_2"
+                },
+                {
+                  "type": "requiresSafetyApproval",
+                  "valueType": "xs:boolean",
+                  "value": "false"
+                }
+              ],
+              "valueType": "xs:int",
+              "value": null
+            },
+            {
+              "modelType": "Property",
+              "idShort": "Flow1",
+              "description": [
+                {
+                  "language": "en",
+                  "text": "flow at sensor 1 -- raw Int16 count; the scale to a physical unit is not established"
+                }
+              ],
+              "qualifiers": [
+                {
+                  "type": "valueSource",
+                  "valueType": "xs:string",
+                  "value": "opc.tcp://opc.example.org:4043#ns=1;s=Flow_1"
+                },
+                {
+                  "type": "requiresSafetyApproval",
+                  "valueType": "xs:boolean",
+                  "value": "false"
+                }
+              ],
+              "valueType": "xs:int",
+              "value": null
+            },
+            {
+              "modelType": "Property",
+              "idShort": "Flow2",
+              "description": [
+                {
+                  "language": "en",
+                  "text": "flow at sensor 2 -- raw Int16 count; the scale to a physical unit is not established"
+                }
+              ],
+              "qualifiers": [
+                {
+                  "type": "valueSource",
+                  "valueType": "xs:string",
+                  "value": "opc.tcp://opc.example.org:4043#ns=1;s=Flow_2"
+                },
+                {
+                  "type": "requiresSafetyApproval",
+                  "valueType": "xs:boolean",
+                  "value": "false"
+                }
+              ],
+              "valueType": "xs:int",
+              "value": null
+            },
+            {
+              "modelType": "Property",
+              "idShort": "BG8",
+              "description": [
+                {
+                  "language": "en",
+                  "text": "PLC process-image Boolean, browsed on 2026-10-06. Polarity and auxiliary logic have not been confirmed from the PLC program. Fetch live values through valueSource; consult applicable equipment documentation for semantics."
+                }
+              ],
+              "qualifiers": [
+                {
+                  "type": "valueSource",
+                  "valueType": "xs:string",
+                  "value": "opc.tcp://opc.example.org:4042#ns=3;s=\"xG1_KG2_BG8\""
+                },
+                {
+                  "type": "requiresSafetyApproval",
+                  "valueType": "xs:boolean",
+                  "value": "false"
+                }
+              ],
+              "valueType": "xs:boolean",
+              "value": null
+            },
+            {
+              "modelType": "Property",
+              "idShort": "BG8Auxiliary",
+              "description": [
+                {
+                  "language": "en",
+                  "text": "PLC process-image Boolean, browsed on 2026-10-06. Polarity and auxiliary logic have not been confirmed from the PLC program. Fetch live values through valueSource; consult applicable equipment documentation for semantics."
+                }
+              ],
+              "qualifiers": [
+                {
+                  "type": "valueSource",
+                  "valueType": "xs:string",
+                  "value": "opc.tcp://opc.example.org:4042#ns=3;s=\"xHL_BG8\""
+                },
+                {
+                  "type": "requiresSafetyApproval",
+                  "valueType": "xs:boolean",
+                  "value": "false"
+                }
+              ],
+              "valueType": "xs:boolean",
+              "value": null
+            }
+          ]
+        },
+        {
+          "modelType": "SubmodelElementCollection",
+          "idShort": "Turning",
+          "description": [
+            {
+              "language": "en",
+              "text": "work cell 2: turning over"
+            }
+          ],
+          "value": [
+            {
+              "modelType": "Property",
+              "idShort": "Ready",
+              "description": [
+                {
+                  "language": "en",
+                  "text": "the module reports itself ready to run"
+                }
+              ],
+              "qualifiers": [
+                {
+                  "type": "valueSource",
+                  "valueType": "xs:string",
+                  "value": "opc.tcp://opc.example.org:4041#ns=3;s=\"ApplicationModule_DB\".\"xReady\""
+                },
+                {
+                  "type": "requiresSafetyApproval",
+                  "valueType": "xs:boolean",
+                  "value": "false"
+                }
+              ],
+              "valueType": "xs:boolean",
+              "value": null
+            },
+            {
+              "modelType": "Property",
+              "idShort": "Busy",
+              "description": [
+                {
+                  "language": "en",
+                  "text": "the module's own activity flag. **Do not use it to decide whether the station is running.** Measured on 2026-08-31: the conveyor ran for 5.6 seconds under a remote start and this bit stayed false the whole time. `ConveyorForward` is the signal that moved."
+                }
+              ],
+              "qualifiers": [
+                {
+                  "type": "valueSource",
+                  "valueType": "xs:string",
+                  "value": "opc.tcp://opc.example.org:4041#ns=3;s=\"ApplicationModule_DB\".\"xBusy\""
+                },
+                {
+                  "type": "requiresSafetyApproval",
+                  "valueType": "xs:boolean",
+                  "value": "false"
+                }
+              ],
+              "valueType": "xs:boolean",
+              "value": null
+            },
+            {
+              "modelType": "Property",
+              "idShort": "Error",
+              "description": [
+                {
+                  "language": "en",
+                  "text": "the module's own error flag. **Not the station's fault word.** It stayed false through a start that faulted; the fault appeared in `Fault` (`dbVar.Err.xSF`) instead."
+                }
+              ],
+              "qualifiers": [
+                {
+                  "type": "valueSource",
+                  "valueType": "xs:string",
+                  "value": "opc.tcp://opc.example.org:4041#ns=3;s=\"ApplicationModule_DB\".\"xError\""
+                },
+                {
+                  "type": "requiresSafetyApproval",
+                  "valueType": "xs:boolean",
+                  "value": "false"
+                }
+              ],
+              "valueType": "xs:boolean",
+              "value": null
+            },
+            {
+              "modelType": "Property",
+              "idShort": "InInitPosition",
+              "description": [
+                {
+                  "language": "en",
+                  "text": "the module is at its initialisation position"
+                }
+              ],
+              "qualifiers": [
+                {
+                  "type": "valueSource",
+                  "valueType": "xs:string",
+                  "value": "opc.tcp://opc.example.org:4041#ns=3;s=\"ApplicationModule_DB\".\"xInitPos\""
+                },
+                {
+                  "type": "requiresSafetyApproval",
+                  "valueType": "xs:boolean",
+                  "value": "false"
+                }
+              ],
+              "valueType": "xs:boolean",
+              "value": null
+            },
+            {
+              "modelType": "Property",
+              "idShort": "ReturnCode",
+              "description": [
+                {
+                  "language": "en",
+                  "text": "the module's return code"
+                }
+              ],
+              "qualifiers": [
+                {
+                  "type": "valueSource",
+                  "valueType": "xs:string",
+                  "value": "opc.tcp://opc.example.org:4041#ns=3;s=\"ApplicationModule_DB\".\"iRetCode\""
+                },
+                {
+                  "type": "requiresSafetyApproval",
+                  "valueType": "xs:boolean",
+                  "value": "false"
+                }
+              ],
+              "valueType": "xs:int",
+              "value": null
+            },
+            {
+              "modelType": "Property",
+              "idShort": "ModuleStartRequested",
+              "description": [
+                {
+                  "language": "en",
+                  "text": "the xStart input, as the PLC currently holds it"
+                }
+              ],
+              "qualifiers": [
+                {
+                  "type": "valueSource",
+                  "valueType": "xs:string",
+                  "value": "opc.tcp://opc.example.org:4041#ns=3;s=\"ApplicationModule_DB\".\"xStart\""
+                },
+                {
+                  "type": "requiresSafetyApproval",
+                  "valueType": "xs:boolean",
+                  "value": "false"
+                }
+              ],
+              "valueType": "xs:boolean",
+              "value": null
+            },
+            {
+              "modelType": "Property",
+              "idShort": "ModuleInitialiseRequested",
+              "description": [
+                {
+                  "language": "en",
+                  "text": "the xInit input, as the PLC currently holds it"
+                }
+              ],
+              "qualifiers": [
+                {
+                  "type": "valueSource",
+                  "valueType": "xs:string",
+                  "value": "opc.tcp://opc.example.org:4041#ns=3;s=\"ApplicationModule_DB\".\"xInit\""
+                },
+                {
+                  "type": "requiresSafetyApproval",
+                  "valueType": "xs:boolean",
+                  "value": "false"
+                }
+              ],
+              "valueType": "xs:boolean",
+              "value": null
+            },
+            {
+              "modelType": "Property",
+              "idShort": "ModuleSelectAutoModeRequested",
+              "description": [
+                {
+                  "language": "en",
+                  "text": "the xAuto input, as the PLC currently holds it"
+                }
+              ],
+              "qualifiers": [
+                {
+                  "type": "valueSource",
+                  "valueType": "xs:string",
+                  "value": "opc.tcp://opc.example.org:4041#ns=3;s=\"ApplicationModule_DB\".\"xAuto\""
+                },
+                {
+                  "type": "requiresSafetyApproval",
+                  "valueType": "xs:boolean",
+                  "value": "false"
+                }
+              ],
+              "valueType": "xs:boolean",
+              "value": null
+            },
+            {
+              "modelType": "Property",
+              "idShort": "ModuleSelectManualModeRequested",
+              "description": [
+                {
+                  "language": "en",
+                  "text": "the xManual input, as the PLC currently holds it"
+                }
+              ],
+              "qualifiers": [
+                {
+                  "type": "valueSource",
+                  "valueType": "xs:string",
+                  "value": "opc.tcp://opc.example.org:4041#ns=3;s=\"ApplicationModule_DB\".\"xManual\""
+                },
+                {
+                  "type": "requiresSafetyApproval",
+                  "valueType": "xs:boolean",
+                  "value": "false"
+                }
+              ],
+              "valueType": "xs:boolean",
+              "value": null
+            },
+            {
+              "modelType": "Property",
+              "idShort": "ModuleResetErrorRequested",
+              "description": [
+                {
+                  "language": "en",
+                  "text": "the xReset input, as the PLC currently holds it"
+                }
+              ],
+              "qualifiers": [
+                {
+                  "type": "valueSource",
+                  "valueType": "xs:string",
+                  "value": "opc.tcp://opc.example.org:4041#ns=3;s=\"ApplicationModule_DB\".\"xReset\""
+                },
+                {
+                  "type": "requiresSafetyApproval",
+                  "valueType": "xs:boolean",
+                  "value": "false"
+                }
+              ],
+              "valueType": "xs:boolean",
+              "value": null
+            },
+            {
+              "modelType": "Property",
+              "idShort": "AcknowledgeFaultRequested",
+              "description": [
+                {
+                  "language": "en",
+                  "text": "the Err\".\"xQuit remote-control input, as the PLC holds it"
+                }
+              ],
+              "qualifiers": [
+                {
+                  "type": "valueSource",
+                  "valueType": "xs:string",
+                  "value": "opc.tcp://opc.example.org:4041#ns=3;s=\"dbVar\".\"Err\".\"xQuit\""
+                },
+                {
+                  "type": "requiresSafetyApproval",
+                  "valueType": "xs:boolean",
+                  "value": "false"
+                }
+              ],
+              "valueType": "xs:boolean",
+              "value": null
+            },
+            {
+              "modelType": "Property",
+              "idShort": "StartRequested",
+              "description": [
+                {
+                  "language": "en",
+                  "text": "the RemoteControlAutomatic_Start remote-control input, as the PLC holds it"
+                }
+              ],
+              "qualifiers": [
+                {
+                  "type": "valueSource",
+                  "valueType": "xs:string",
+                  "value": "opc.tcp://opc.example.org:4041#ns=3;s=\"dbVar\".\"RemoteControlAutomatic_Start\""
+                },
+                {
+                  "type": "requiresSafetyApproval",
+                  "valueType": "xs:boolean",
+                  "value": "false"
+                }
+              ],
+              "valueType": "xs:boolean",
+              "value": null
+            },
+            {
+              "modelType": "Property",
+              "idShort": "StopRequested",
+              "description": [
+                {
+                  "language": "en",
+                  "text": "the RemoteControlAutomatic_Stop remote-control input, as the PLC holds it"
+                }
+              ],
+              "qualifiers": [
+                {
+                  "type": "valueSource",
+                  "valueType": "xs:string",
+                  "value": "opc.tcp://opc.example.org:4041#ns=3;s=\"dbVar\".\"RemoteControlAutomatic_Stop\""
+                },
+                {
+                  "type": "requiresSafetyApproval",
+                  "valueType": "xs:boolean",
+                  "value": "false"
+                }
+              ],
+              "valueType": "xs:boolean",
+              "value": null
+            },
+            {
+              "modelType": "Property",
+              "idShort": "Fault",
+              "description": [
+                {
+                  "language": "en",
+                  "text": "collective fault (Sammelstörung). Set 2.8 s after a remote start, and what stops the cell."
+                }
+              ],
+              "qualifiers": [
+                {
+                  "type": "valueSource",
+                  "valueType": "xs:string",
+                  "value": "opc.tcp://opc.example.org:4041#ns=3;s=\"dbVar\".\"Err\".\"xSF\""
+                },
+                {
+                  "type": "requiresSafetyApproval",
+                  "valueType": "xs:boolean",
+                  "value": "false"
+                }
+              ],
+              "valueType": "xs:boolean",
+              "value": null
+            },
+            {
+              "modelType": "Property",
+              "idShort": "Fault0",
+              "description": [
+                {
+                  "language": "en",
+                  "text": "individual fault bit 0. Observed pulsing every few seconds after a failed start."
+                }
+              ],
+              "qualifiers": [
+                {
+                  "type": "valueSource",
+                  "valueType": "xs:string",
+                  "value": "opc.tcp://opc.example.org:4041#ns=3;s=\"dbVar\".\"Err\".\"xSF0\""
+                },
+                {
+                  "type": "requiresSafetyApproval",
+                  "valueType": "xs:boolean",
+                  "value": "false"
+                }
+              ],
+              "valueType": "xs:boolean",
+              "value": null
+            },
+            {
+              "modelType": "Property",
+              "idShort": "Fault1",
+              "description": [
+                {
+                  "language": "en",
+                  "text": "individual fault bit 1"
+                }
+              ],
+              "qualifiers": [
+                {
+                  "type": "valueSource",
+                  "valueType": "xs:string",
+                  "value": "opc.tcp://opc.example.org:4041#ns=3;s=\"dbVar\".\"Err\".\"xSF1\""
+                },
+                {
+                  "type": "requiresSafetyApproval",
+                  "valueType": "xs:boolean",
+                  "value": "false"
+                }
+              ],
+              "valueType": "xs:boolean",
+              "value": null
+            },
+            {
+              "modelType": "Property",
+              "idShort": "Fault2",
+              "description": [
+                {
+                  "language": "en",
+                  "text": "individual fault bit 2"
+                }
+              ],
+              "qualifiers": [
+                {
+                  "type": "valueSource",
+                  "valueType": "xs:string",
+                  "value": "opc.tcp://opc.example.org:4041#ns=3;s=\"dbVar\".\"Err\".\"xSF2\""
+                },
+                {
+                  "type": "requiresSafetyApproval",
+                  "valueType": "xs:boolean",
+                  "value": "false"
+                }
+              ],
+              "valueType": "xs:boolean",
+              "value": null
+            },
+            {
+              "modelType": "Property",
+              "idShort": "Fault01",
+              "description": [
+                {
+                  "language": "en",
+                  "text": "individual fault bit 01. Set together with the collective fault."
+                }
+              ],
+              "qualifiers": [
+                {
+                  "type": "valueSource",
+                  "valueType": "xs:string",
+                  "value": "opc.tcp://opc.example.org:4041#ns=3;s=\"dbVar\".\"Err\".\"xSF01\""
+                },
+                {
+                  "type": "requiresSafetyApproval",
+                  "valueType": "xs:boolean",
+                  "value": "false"
+                }
+              ],
+              "valueType": "xs:boolean",
+              "value": null
+            },
+            {
+              "modelType": "Property",
+              "idShort": "FaultHint",
+              "description": [
+                {
+                  "language": "en",
+                  "text": "hint rather than fault"
+                }
+              ],
+              "qualifiers": [
+                {
+                  "type": "valueSource",
+                  "valueType": "xs:string",
+                  "value": "opc.tcp://opc.example.org:4041#ns=3;s=\"dbVar\".\"Err\".\"xHint\""
+                },
+                {
+                  "type": "requiresSafetyApproval",
+                  "valueType": "xs:boolean",
+                  "value": "false"
+                }
+              ],
+              "valueType": "xs:boolean",
+              "value": null
+            },
+            {
+              "modelType": "Property",
+              "idShort": "FaultAcknowledged",
+              "description": [
+                {
+                  "language": "en",
+                  "text": "the acknowledge input, as the PLC currently holds it"
+                }
+              ],
+              "qualifiers": [
+                {
+                  "type": "valueSource",
+                  "valueType": "xs:string",
+                  "value": "opc.tcp://opc.example.org:4041#ns=3;s=\"dbVar\".\"Err\".\"xQuit\""
+                },
+                {
+                  "type": "requiresSafetyApproval",
+                  "valueType": "xs:boolean",
+                  "value": "false"
+                }
+              ],
+              "valueType": "xs:boolean",
+              "value": null
+            },
+            {
+              "modelType": "Property",
+              "idShort": "ConveyorForward",
+              "description": [
+                {
+                  "language": "en",
+                  "text": "Band Rechtslauf -- the conveyor is running forward. This is the reliable indication that the station is moving."
+                }
+              ],
+              "qualifiers": [
+                {
+                  "type": "valueSource",
+                  "valueType": "xs:string",
+                  "value": "opc.tcp://opc.example.org:4041#ns=3;s=\"xQA1_A1\""
+                },
+                {
+                  "type": "requiresSafetyApproval",
+                  "valueType": "xs:boolean",
+                  "value": "false"
+                }
+              ],
+              "valueType": "xs:boolean",
+              "value": null
+            },
+            {
+              "modelType": "Property",
+              "idShort": "ConveyorReverse",
+              "description": [
+                {
+                  "language": "en",
+                  "text": "Band Linkslauf"
+                }
+              ],
+              "qualifiers": [
+                {
+                  "type": "valueSource",
+                  "valueType": "xs:string",
+                  "value": "opc.tcp://opc.example.org:4041#ns=3;s=\"xQA1_A2\""
+                },
+                {
+                  "type": "requiresSafetyApproval",
+                  "valueType": "xs:boolean",
+                  "value": "false"
+                }
+              ],
+              "valueType": "xs:boolean",
+              "value": null
+            },
+            {
+              "modelType": "Property",
+              "idShort": "CarrierAtModule",
+              "description": [
+                {
+                  "language": "en",
+                  "text": "WT in Modulposition"
+                }
+              ],
+              "qualifiers": [
+                {
+                  "type": "valueSource",
+                  "valueType": "xs:string",
+                  "value": "opc.tcp://opc.example.org:4041#ns=3;s=\"xBG1\""
+                },
+                {
+                  "type": "requiresSafetyApproval",
+                  "valueType": "xs:boolean",
+                  "value": "false"
+                }
+              ],
+              "valueType": "xs:boolean",
+              "value": null
+            },
+            {
+              "modelType": "Property",
+              "idShort": "CarrierAtBeltStart",
+              "description": [
+                {
+                  "language": "en",
+                  "text": "WT am Bandanfang"
+                }
+              ],
+              "qualifiers": [
+                {
+                  "type": "valueSource",
+                  "valueType": "xs:string",
+                  "value": "opc.tcp://opc.example.org:4041#ns=3;s=\"xBG5\""
+                },
+                {
+                  "type": "requiresSafetyApproval",
+                  "valueType": "xs:boolean",
+                  "value": "false"
+                }
+              ],
+              "valueType": "xs:boolean",
+              "value": null
+            },
+            {
+              "modelType": "Property",
+              "idShort": "CarrierAtBeltEnd",
+              "description": [
+                {
+                  "language": "en",
+                  "text": "WT am Bandende"
+                }
+              ],
+              "qualifiers": [
+                {
+                  "type": "valueSource",
+                  "valueType": "xs:string",
+                  "value": "opc.tcp://opc.example.org:4041#ns=3;s=\"xBG6\""
+                },
+                {
+                  "type": "requiresSafetyApproval",
+                  "valueType": "xs:boolean",
+                  "value": "false"
+                }
+              ],
+              "valueType": "xs:boolean",
+              "value": null
+            },
+            {
+              "modelType": "Property",
+              "idShort": "EmergencyStopCircuit",
+              "description": [
+                {
+                  "language": "en",
+                  "text": "Notschalter. Polarity not confirmed: true on both stations while the cell was neither stopped nor running, so it may mean the safety circuit is closed rather than that the button is pressed."
+                }
+              ],
+              "qualifiers": [
+                {
+                  "type": "valueSource",
+                  "valueType": "xs:string",
+                  "value": "opc.tcp://opc.example.org:4041#ns=3;s=\"xSF5\""
+                },
+                {
+                  "type": "requiresSafetyApproval",
+                  "valueType": "xs:boolean",
+                  "value": "false"
+                }
+              ],
+              "valueType": "xs:boolean",
+              "value": null
+            },
+            {
+              "modelType": "Property",
+              "idShort": "AnalogueIn1",
+              "description": [
+                {
+                  "language": "en",
+                  "text": "8-bit analogue input on the PLC itself, separate from the Revolution Pi's sensors"
+                }
+              ],
+              "qualifiers": [
+                {
+                  "type": "valueSource",
+                  "valueType": "xs:string",
+                  "value": "opc.tcp://opc.example.org:4041#ns=3;s=\"byAnaIn_8Bit\""
+                },
+                {
+                  "type": "requiresSafetyApproval",
+                  "valueType": "xs:boolean",
+                  "value": "false"
+                }
+              ],
+              "valueType": "xs:int",
+              "value": null
+            },
+            {
+              "modelType": "Property",
+              "idShort": "AnalogueIn2",
+              "description": [
+                {
+                  "language": "en",
+                  "text": "second 8-bit analogue input"
+                }
+              ],
+              "qualifiers": [
+                {
+                  "type": "valueSource",
+                  "valueType": "xs:string",
+                  "value": "opc.tcp://opc.example.org:4041#ns=3;s=\"byAnaIn2_8Bit\""
+                },
+                {
+                  "type": "requiresSafetyApproval",
+                  "valueType": "xs:boolean",
+                  "value": "false"
+                }
+              ],
+              "valueType": "xs:int",
+              "value": null
+            },
+            {
+              "modelType": "Property",
+              "idShort": "RfidCode",
+              "description": [
+                {
+                  "language": "en",
+                  "text": "the code read from the carrier"
+                }
+              ],
+              "qualifiers": [
+                {
+                  "type": "valueSource",
+                  "valueType": "xs:string",
+                  "value": "opc.tcp://opc.example.org:4041#ns=3;s=\"dbRfidData\".\"ID1\".\"iCode\""
+                },
+                {
+                  "type": "requiresSafetyApproval",
+                  "valueType": "xs:boolean",
+                  "value": "false"
+                }
+              ],
+              "valueType": "xs:int",
+              "value": null
+            },
+            {
+              "modelType": "Property",
+              "idShort": "RfidCarrierId",
+              "description": [
+                {
+                  "language": "en",
+                  "text": "the carrier's identifier"
+                }
+              ],
+              "qualifiers": [
+                {
+                  "type": "valueSource",
+                  "valueType": "xs:string",
+                  "value": "opc.tcp://opc.example.org:4041#ns=3;s=\"dbRfidData\".\"ID1\".\"iCarrierID\""
+                },
+                {
+                  "type": "requiresSafetyApproval",
+                  "valueType": "xs:boolean",
+                  "value": "false"
+                }
+              ],
+              "valueType": "xs:int",
+              "value": null
+            },
+            {
+              "modelType": "Property",
+              "idShort": "BG8",
+              "description": [
+                {
+                  "language": "en",
+                  "text": "PLC process-image Boolean, browsed on 2026-10-06. Polarity and auxiliary logic have not been confirmed from the PLC program. Fetch live values through valueSource; consult applicable equipment documentation for semantics."
+                }
+              ],
+              "qualifiers": [
+                {
+                  "type": "valueSource",
+                  "valueType": "xs:string",
+                  "value": "opc.tcp://opc.example.org:4041#ns=3;s=\"xG1_KG2_BG8\""
+                },
+                {
+                  "type": "requiresSafetyApproval",
+                  "valueType": "xs:boolean",
+                  "value": "false"
+                }
+              ],
+              "valueType": "xs:boolean",
+              "value": null
+            },
+            {
+              "modelType": "Property",
+              "idShort": "BG8Auxiliary",
+              "description": [
+                {
+                  "language": "en",
+                  "text": "PLC process-image Boolean, browsed on 2026-10-06. Polarity and auxiliary logic have not been confirmed from the PLC program. Fetch live values through valueSource; consult applicable equipment documentation for semantics."
+                }
+              ],
+              "qualifiers": [
+                {
+                  "type": "valueSource",
+                  "valueType": "xs:string",
+                  "value": "opc.tcp://opc.example.org:4041#ns=3;s=\"xGM_BG8\""
+                },
+                {
+                  "type": "requiresSafetyApproval",
+                  "valueType": "xs:boolean",
+                  "value": "false"
+                }
+              ],
+              "valueType": "xs:boolean",
+              "value": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "modelType": "Submodel",
+      "kind": "Template",
+      "id": "https://example.com/ids/aas/FestoWorkCenterStamping/sm/ProductionContext",
+      "idShort": "ProductionContext",
+      "description": [
+        {
+          "language": "en",
+          "text": "Static Festo business linkage. The MES endpoint and stable line codes identify the equipment; query OpenMES for current orders, IDs and schedules. Instantiation rebinds the maintenance submodel to the new instance."
+        }
+      ],
+      "submodelElements": [
+        {
+          "modelType": "Property",
+          "idShort": "MESBaseUrl",
+          "valueType": "xs:string",
+          "value": "http://localhost:8092"
+        },
+        {
+          "modelType": "Property",
+          "idShort": "MESLineCode",
+          "valueType": "xs:string",
+          "value": "A4S-FESTO"
+        },
+        {
+          "modelType": "Property",
+          "idShort": "MESProductTypeCode",
+          "valueType": "xs:string",
+          "value": "A4S-DEMO-PART"
+        },
+        {
+          "modelType": "Property",
+          "idShort": "MaintenanceSubmodelId",
+          "valueType": "xs:string",
+          "value": "https://example.com/ids/aas/FestoWorkCenterStamping/sm/MaintenanceInstructions"
+        },
+        {
+          "modelType": "Property",
+          "idShort": "DemoProduct",
+          "valueType": "xs:string",
+          "value": "Phone housing - aluminium"
+        },
+        {
+          "modelType": "Property",
+          "idShort": "DemoRoute",
+          "valueType": "xs:string",
+          "value": "Stamp, turn over 180 degrees, inspect"
+        },
+        {
+          "modelType": "Property",
+          "idShort": "KnowledgeCommand",
+          "valueType": "xs:string",
+          "value": "python -m a4s.machines.festo_cp_lab.knowledge"
+        },
+        {
+          "modelType": "Property",
+          "idShort": "ReplanningPolicy",
+          "valueType": "xs:string",
+          "value": "One Festo device, Cell 1, one unstarted production order. Default maintenance to the day after the later of the original production date and current MES local date, retaining the original production start time, with at least 180 minutes reserved. Postpone production until the persisted maintenance end plus one day (24 hours) of planning allowance. Apply the approved schedule immediately while maintenance is pending. Preserve quantity and production duration. No backup resource or replacement order."
+        },
+        {
+          "modelType": "Property",
+          "idShort": "MaintenancePlanningMinutes",
+          "valueType": "xs:string",
+          "value": "60"
+        },
+        {
+          "modelType": "Property",
+          "idShort": "DemoMaintenanceWindowMinutes",
+          "valueType": "xs:integer",
+          "value": "180",
+          "description": [
+            {
+              "language": "en",
+              "text": "Authored demo planning configuration, not a measured repair duration or physical release authorization. Exact timestamps require combined plan approval."
+            }
+          ]
+        },
+        {
+          "modelType": "Property",
+          "idShort": "DemoMaintenanceStartDayOffset",
+          "valueType": "xs:integer",
+          "value": "1",
+          "description": [
+            {
+              "language": "en",
+              "text": "Authored demo planning configuration, not a measured repair duration or physical release authorization. Exact timestamps require combined plan approval."
+            }
+          ]
+        },
+        {
+          "modelType": "Property",
+          "idShort": "DemoProductionReleaseBufferMinutes",
+          "valueType": "xs:integer",
+          "value": "1440",
+          "description": [
+            {
+              "language": "en",
+              "text": "Authored demo planning configuration, not a measured repair duration or physical release authorization. Exact timestamps require combined plan approval."
+            }
+          ]
+        }
+      ],
+      "qualifiers": [
+        {
+          "type": "A4S/Instantiation/KeepConfiguredValues",
+          "valueType": "xs:boolean",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "idShort": "MaintenanceInstructions",
+      "displayName": [
+        {
+          "language": "de",
+          "text": "Wartungsanleitung"
+        },
+        {
+          "language": "en",
+          "text": "Maintenance Instructions"
+        }
+      ],
+      "description": [
+        {
+          "language": "en",
+          "text": "A4S application profile based on IDTA 02018, with reused element semantics. Not a claim of complete IDTA template conformance, manufacturer approval, predictive maintenance, or a validated physical recovery procedure. No manufacturer interval or measured RUL is asserted. Scenario thresholds are explicitly fictional, not calibrated equipment limits."
+        }
+      ],
+      "administration": {
+        "version": "1",
+        "revision": "0",
+        "templateId": "https://admin-shell-io/idta-02018"
+      },
+      "id": "https://example.com/ids/aas/FestoWorkCenterStamping/sm/MaintenanceInstructions",
+      "kind": "Template",
+      "semanticId": {
+        "type": "ExternalReference",
+        "keys": [
+          {
+            "type": "GlobalReference",
+            "value": "urn:a4s:submodel:maintenance-instructions-profile:1:0"
+          }
+        ]
+      },
+      "submodelElements": [
+        {
+          "category": "CONSTANT",
+          "idShort": "ConditionTriggeredReview",
+          "displayName": [
+            {
+              "language": "de",
+              "text": "Wartungsanweisungen für bestimmtes Intervall 00"
+            },
+            {
+              "language": "en",
+              "text": "Maintenance Instructions For Specific Interval 00"
+            }
+          ],
+          "description": [
+            {
+              "language": "de",
+              "text": "Wartungsdetails für eine spezifischen Zeitinterval - Beispiel Wartung nach 6 Monaten"
+            },
+            {
+              "language": "en",
+              "text": "Collection that includes all the details of a maintenance interval."
+            }
+          ],
+          "semanticId": {
+            "type": "ExternalReference",
+            "keys": [
+              {
+                "type": "GlobalReference",
+                "value": "https://admin-shell.io/idta/maintenanceinstructions/maintenanceinstructionsforspecificinterval/1/0"
+              }
+            ]
+          },
+          "value": [
+            {
+              "category": "CONSTANT",
+              "idShort": "BasicMaintenanceInformation",
+              "displayName": [
+                {
+                  "language": "de",
+                  "text": "Grundlegende Wartungsinformationen"
+                },
+                {
+                  "language": "en",
+                  "text": "Basic Maintenance Information"
+                }
+              ],
+              "description": [
+                {
+                  "language": "de",
+                  "text": "Grundlegende Informationen für dieses Wartungsinterval"
+                },
+                {
+                  "language": "en",
+                  "text": "Basic information for this maintenance interval"
+                }
+              ],
+              "semanticId": {
+                "type": "ModelReference",
+                "keys": [
+                  {
+                    "type": "Identifiable",
+                    "value": "https://admin-shell.io/idta/maintenanceinstructions/basicmaintenanceinformation/1/0"
+                  }
+                ]
+              },
+              "value": [
+                {
+                  "category": "CONSTANT",
+                  "idShort": "MaintenanceID",
+                  "displayName": [
+                    {
+                      "language": "de",
+                      "text": "Wartungs-ID"
+                    },
+                    {
+                      "language": "en",
+                      "text": "Maintenance ID"
+                    }
+                  ],
+                  "description": [
+                    {
+                      "language": "de",
+                      "text": "ID für diese Wartung"
+                    },
+                    {
+                      "language": "en",
+                      "text": "ID for this maintenance"
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/idta/maintenanceinstructions/maintenanceid/1/0"
+                      }
+                    ]
+                  },
+                  "valueType": "xs:string",
+                  "modelType": "Property",
+                  "value": "A4S-FESTO-CONDITION-REVIEW"
+                },
+                {
+                  "category": "CONSTANT",
+                  "idShort": "NameOfMaintenance",
+                  "displayName": [
+                    {
+                      "language": "de",
+                      "text": "Name der Wartung"
+                    },
+                    {
+                      "language": "en",
+                      "text": "Name Of Maintenance"
+                    }
+                  ],
+                  "description": [
+                    {
+                      "language": "de",
+                      "text": "Name für diesen Wartung"
+                    },
+                    {
+                      "language": "en",
+                      "text": "Name for this maintenance"
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/idta/maintenanceinstructions/nameofmaintenance/1/0"
+                      }
+                    ]
+                  },
+                  "modelType": "MultiLanguageProperty",
+                  "value": [
+                    {
+                      "language": "en",
+                      "text": "Condition-triggered production readiness review"
+                    }
+                  ]
+                },
+                {
+                  "category": "CONSTANT",
+                  "idShort": "SourceOfMaintenanceInstructions",
+                  "displayName": [
+                    {
+                      "language": "de",
+                      "text": "Quelle der Wartungsanweisungen"
+                    },
+                    {
+                      "language": "en",
+                      "text": "Source Of Maintenance Instructions"
+                    }
+                  ],
+                  "description": [
+                    {
+                      "language": "de",
+                      "text": "Herkunft der Wartungsinformationen - Beispiele: Komponentenhersteller, Maschinenbauer oder Anlagenbauer, Überwachungsbehörden"
+                    },
+                    {
+                      "language": "en",
+                      "text": "Origin of maintenance information - examples: Component manufacturers, machine or plant manufacturers, monitoring authorities"
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/idta/maintenanceinstructions/sourceofmaintenanceinstructions/1/0"
+                      }
+                    ]
+                  },
+                  "modelType": "MultiLanguageProperty",
+                  "value": [
+                    {
+                      "language": "en",
+                      "text": "Anleitung - Festo CP Lab.pptx, slides 4-9, 17-18; Festo CP & Module.pptx, slide 1. A4S-authored review workflow, not manufacturer-approved maintenance instructions."
+                    }
+                  ]
+                },
+                {
+                  "category": "CONSTANT",
+                  "idShort": "SafetyRegulationsToBeObserved",
+                  "displayName": [
+                    {
+                      "language": "de",
+                      "text": "Zu beachtende Sicherheitsvorschriften"
+                    },
+                    {
+                      "language": "en",
+                      "text": "Safety Regulations To Be Observed"
+                    }
+                  ],
+                  "description": [
+                    {
+                      "language": "de",
+                      "text": "Sicherheitshinweise und Vorschriften, die bei der Wartung beachtet werden müssen"
+                    },
+                    {
+                      "language": "en",
+                      "text": "Safety instructions and regulations that must be observed during maintenance"
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/idta/maintenanceinstructions/safetyregulationstobeobserved/1/0"
+                      }
+                    ]
+                  },
+                  "modelType": "MultiLanguageProperty",
+                  "value": [
+                    {
+                      "language": "en",
+                      "text": "Qualified operator and approved site procedures required for physical intervention. This demo authorizes MES business actions only; no PLC reset, start or parameter write."
+                    }
+                  ]
+                }
+              ],
+              "modelType": "SubmodelElementCollection"
+            },
+            {
+              "category": "CONSTANT",
+              "idShort": "ListMaintenanceSteps",
+              "displayName": [
+                {
+                  "language": "de",
+                  "text": "Wartungsschritte auflisten"
+                },
+                {
+                  "language": "en",
+                  "text": "List Maintenance Steps"
+                }
+              ],
+              "description": [
+                {
+                  "language": "de",
+                  "text": "Auflistung der einzelnen Wartungsschritte inkl. aller benötigten Details je Wartungsschritt"
+                },
+                {
+                  "language": "en",
+                  "text": "Listing of the individual maintenance steps incl. all required details per maintenance step"
+                }
+              ],
+              "semanticId": {
+                "type": "ExternalReference",
+                "keys": [
+                  {
+                    "type": "GlobalReference",
+                    "value": "https://admin-shell.io/idta/maintenanceinstructions/listmaintenancesteps/1/0"
+                  }
+                ]
+              },
+              "value": [
+                {
+                  "category": "CONSTANT",
+                  "idShort": "MaintenanceStep01",
+                  "displayName": [
+                    {
+                      "language": "de",
+                      "text": "Wartungsschritt 00"
+                    },
+                    {
+                      "language": "en",
+                      "text": "Maintenance Step 00"
+                    }
+                  ],
+                  "description": [
+                    {
+                      "language": "de",
+                      "text": "Sammlung aller Details und Informationen zu einem Wartungsschritt"
+                    },
+                    {
+                      "language": "en",
+                      "text": "Collection of all details and information about a maintenance site"
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/idta/maintenanceinstructions/maintenancestep/1/0"
+                      }
+                    ]
+                  },
+                  "value": [
+                    {
+                      "category": "CONSTANT",
+                      "idShort": "MaintenanceStepID",
+                      "displayName": [
+                        {
+                          "language": "de",
+                          "text": "Wartungsschritt-ID"
+                        },
+                        {
+                          "language": "en",
+                          "text": "Maintenance Step ID"
+                        }
+                      ],
+                      "description": [
+                        {
+                          "language": "de",
+                          "text": "ID oder Nummer des Wartungsschritts für eine klare Strukturierung der Wartung"
+                        },
+                        {
+                          "language": "en",
+                          "text": "ID or number of the maintenance step for a clear structuring of the maintenance"
+                        }
+                      ],
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://admin-shell.io/idta/maintenanceinstructions/maintenancestepid/1/0"
+                          }
+                        ]
+                      },
+                      "valueType": "xs:string",
+                      "modelType": "Property",
+                      "value": "CaptureEvidence"
+                    },
+                    {
+                      "category": "CONSTANT",
+                      "idShort": "MaintenanceStepName",
+                      "displayName": [
+                        {
+                          "language": "de",
+                          "text": "Name des Wartungsschritts"
+                        },
+                        {
+                          "language": "en",
+                          "text": "Maintenance Step Name"
+                        }
+                      ],
+                      "description": [
+                        {
+                          "language": "de",
+                          "text": "Benennung des Wartungsschritt - Beispiel Wartungsstart"
+                        },
+                        {
+                          "language": "en",
+                          "text": "Naming of the maintenance step - example maintenance start"
+                        }
+                      ],
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://admin-shell.io/idta/maintenanceinstructions/maintenancestepname/1/0"
+                          }
+                        ]
+                      },
+                      "modelType": "MultiLanguageProperty",
+                      "value": [
+                        {
+                          "language": "en",
+                          "text": "Capture evidence without operating equipment"
+                        }
+                      ]
+                    },
+                    {
+                      "category": "CONSTANT",
+                      "idShort": "InstructionMaintenanceStep",
+                      "displayName": [
+                        {
+                          "language": "de",
+                          "text": "Anweisungswartungsschritt"
+                        },
+                        {
+                          "language": "en",
+                          "text": "Instruction Maintenance Step"
+                        }
+                      ],
+                      "description": [
+                        {
+                          "language": "de",
+                          "text": "Arbeitsanweisung/ Beschreibung eines Wartungsschritts als Alternative zu dem Sprung in eine Wartungsinformation von unterlagerten Komponenten."
+                        },
+                        {
+                          "language": "en",
+                          "text": "Work instruction/ description of a maintenance step as an alternative to jumping to a maintenance information of subordinate components."
+                        }
+                      ],
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://admin-shell.io/idta/maintenanceinstructions/instructionmaintenancestep/1/0"
+                          }
+                        ]
+                      },
+                      "modelType": "MultiLanguageProperty",
+                      "value": [
+                        {
+                          "language": "en",
+                          "text": "Record the station fault word, signal timestamps and communication errors. An application xError=false is not proof that the workstation is healthy. A simulated fault is not an OPC observation."
+                        }
+                      ]
+                    }
+                  ],
+                  "modelType": "SubmodelElementCollection"
+                },
+                {
+                  "category": "CONSTANT",
+                  "idShort": "MaintenanceStep02",
+                  "displayName": [
+                    {
+                      "language": "de",
+                      "text": "Wartungsschritt 00"
+                    },
+                    {
+                      "language": "en",
+                      "text": "Maintenance Step 00"
+                    }
+                  ],
+                  "description": [
+                    {
+                      "language": "de",
+                      "text": "Sammlung aller Details und Informationen zu einem Wartungsschritt"
+                    },
+                    {
+                      "language": "en",
+                      "text": "Collection of all details and information about a maintenance site"
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/idta/maintenanceinstructions/maintenancestep/1/0"
+                      }
+                    ]
+                  },
+                  "value": [
+                    {
+                      "category": "CONSTANT",
+                      "idShort": "MaintenanceStepID",
+                      "displayName": [
+                        {
+                          "language": "de",
+                          "text": "Wartungsschritt-ID"
+                        },
+                        {
+                          "language": "en",
+                          "text": "Maintenance Step ID"
+                        }
+                      ],
+                      "description": [
+                        {
+                          "language": "de",
+                          "text": "ID oder Nummer des Wartungsschritts für eine klare Strukturierung der Wartung"
+                        },
+                        {
+                          "language": "en",
+                          "text": "ID or number of the maintenance step for a clear structuring of the maintenance"
+                        }
+                      ],
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://admin-shell.io/idta/maintenanceinstructions/maintenancestepid/1/0"
+                          }
+                        ]
+                      },
+                      "valueType": "xs:string",
+                      "modelType": "Property",
+                      "value": "OperatorAssessment"
+                    },
+                    {
+                      "category": "CONSTANT",
+                      "idShort": "MaintenanceStepName",
+                      "displayName": [
+                        {
+                          "language": "de",
+                          "text": "Name des Wartungsschritts"
+                        },
+                        {
+                          "language": "en",
+                          "text": "Maintenance Step Name"
+                        }
+                      ],
+                      "description": [
+                        {
+                          "language": "de",
+                          "text": "Benennung des Wartungsschritt - Beispiel Wartungsstart"
+                        },
+                        {
+                          "language": "en",
+                          "text": "Naming of the maintenance step - example maintenance start"
+                        }
+                      ],
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://admin-shell.io/idta/maintenanceinstructions/maintenancestepname/1/0"
+                          }
+                        ]
+                      },
+                      "modelType": "MultiLanguageProperty",
+                      "value": [
+                        {
+                          "language": "en",
+                          "text": "Request qualified operator assessment"
+                        }
+                      ]
+                    },
+                    {
+                      "category": "CONSTANT",
+                      "idShort": "InstructionMaintenanceStep",
+                      "displayName": [
+                        {
+                          "language": "de",
+                          "text": "Anweisungswartungsschritt"
+                        },
+                        {
+                          "language": "en",
+                          "text": "Instruction Maintenance Step"
+                        }
+                      ],
+                      "description": [
+                        {
+                          "language": "de",
+                          "text": "Arbeitsanweisung/ Beschreibung eines Wartungsschritts als Alternative zu dem Sprung in eine Wartungsinformation von unterlagerten Komponenten."
+                        },
+                        {
+                          "language": "en",
+                          "text": "Work instruction/ description of a maintenance step as an alternative to jumping to a maintenance information of subordinate components."
+                        }
+                      ],
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://admin-shell.io/idta/maintenanceinstructions/instructionmaintenancestep/1/0"
+                          }
+                        ]
+                      },
+                      "modelType": "MultiLanguageProperty",
+                      "value": [
+                        {
+                          "language": "en",
+                          "text": "DEMO FICTION: a pneumatic connector leak lowers synthetic pressure from 6.0 bar; below 4.8 bar for 3 seconds raises the scenario alarm. These are not calibrated PLC limits. The reference describes a press controlled through RevPi and a turning-over module controlled through a microcontroller, each communicating with a Siemens PLC. Ask the qualified operator to assess readiness and communication using the approved site procedure. Do not infer a root cause or send reset/start commands."
+                        }
+                      ]
+                    }
+                  ],
+                  "modelType": "SubmodelElementCollection"
+                },
+                {
+                  "category": "CONSTANT",
+                  "idShort": "MaintenanceStep03",
+                  "displayName": [
+                    {
+                      "language": "de",
+                      "text": "Wartungsschritt 00"
+                    },
+                    {
+                      "language": "en",
+                      "text": "Maintenance Step 00"
+                    }
+                  ],
+                  "description": [
+                    {
+                      "language": "de",
+                      "text": "Sammlung aller Details und Informationen zu einem Wartungsschritt"
+                    },
+                    {
+                      "language": "en",
+                      "text": "Collection of all details and information about a maintenance site"
+                    }
+                  ],
+                  "semanticId": {
+                    "type": "ExternalReference",
+                    "keys": [
+                      {
+                        "type": "GlobalReference",
+                        "value": "https://admin-shell.io/idta/maintenanceinstructions/maintenancestep/1/0"
+                      }
+                    ]
+                  },
+                  "value": [
+                    {
+                      "category": "CONSTANT",
+                      "idShort": "MaintenanceStepID",
+                      "displayName": [
+                        {
+                          "language": "de",
+                          "text": "Wartungsschritt-ID"
+                        },
+                        {
+                          "language": "en",
+                          "text": "Maintenance Step ID"
+                        }
+                      ],
+                      "description": [
+                        {
+                          "language": "de",
+                          "text": "ID oder Nummer des Wartungsschritts für eine klare Strukturierung der Wartung"
+                        },
+                        {
+                          "language": "en",
+                          "text": "ID or number of the maintenance step for a clear structuring of the maintenance"
+                        }
+                      ],
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://admin-shell.io/idta/maintenanceinstructions/maintenancestepid/1/0"
+                          }
+                        ]
+                      },
+                      "valueType": "xs:string",
+                      "modelType": "Property",
+                      "value": "VerifyRecovery"
+                    },
+                    {
+                      "category": "CONSTANT",
+                      "idShort": "MaintenanceStepName",
+                      "displayName": [
+                        {
+                          "language": "de",
+                          "text": "Name des Wartungsschritts"
+                        },
+                        {
+                          "language": "en",
+                          "text": "Maintenance Step Name"
+                        }
+                      ],
+                      "description": [
+                        {
+                          "language": "de",
+                          "text": "Benennung des Wartungsschritt - Beispiel Wartungsstart"
+                        },
+                        {
+                          "language": "en",
+                          "text": "Naming of the maintenance step - example maintenance start"
+                        }
+                      ],
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://admin-shell.io/idta/maintenanceinstructions/maintenancestepname/1/0"
+                          }
+                        ]
+                      },
+                      "modelType": "MultiLanguageProperty",
+                      "value": [
+                        {
+                          "language": "en",
+                          "text": "Separate physical recovery from business recovery"
+                        }
+                      ]
+                    },
+                    {
+                      "category": "CONSTANT",
+                      "idShort": "InstructionMaintenanceStep",
+                      "displayName": [
+                        {
+                          "language": "de",
+                          "text": "Anweisungswartungsschritt"
+                        },
+                        {
+                          "language": "en",
+                          "text": "Instruction Maintenance Step"
+                        }
+                      ],
+                      "description": [
+                        {
+                          "language": "de",
+                          "text": "Arbeitsanweisung/ Beschreibung eines Wartungsschritts als Alternative zu dem Sprung in eine Wartungsinformation von unterlagerten Komponenten."
+                        },
+                        {
+                          "language": "en",
+                          "text": "Work instruction/ description of a maintenance step as an alternative to jumping to a maintenance information of subordinate components."
+                        }
+                      ],
+                      "semanticId": {
+                        "type": "ExternalReference",
+                        "keys": [
+                          {
+                            "type": "GlobalReference",
+                            "value": "https://admin-shell.io/idta/maintenanceinstructions/instructionmaintenancestep/1/0"
+                          }
+                        ]
+                      },
+                      "modelType": "MultiLanguageProperty",
+                      "value": [
+                        {
+                          "language": "en",
+                          "text": "After the operator confirms the physical condition, collect fresh independent evidence. Resolve the MES issue only with an explicit explanation and read back the order. A closed issue or changed schedule does not prove that the machine is repaired."
+                        }
+                      ]
+                    }
+                  ],
+                  "modelType": "SubmodelElementCollection"
+                }
+              ],
+              "modelType": "SubmodelElementCollection"
+            }
+          ],
+          "modelType": "SubmodelElementCollection"
+        },
+        {
+          "modelType": "Property",
+          "idShort": "ProfileStatus",
+          "valueType": "xs:string",
+          "value": "EngineeringReviewRequired"
+        },
+        {
+          "modelType": "Property",
+          "idShort": "SourceReferences",
+          "valueType": "xs:string",
+          "value": "Anleitung - Festo CP Lab.pptx, slides 4-9, 17-18; Festo CP & Module.pptx, slide 1"
+        },
+        {
+          "modelType": "Property",
+          "idShort": "FaultManual",
+          "valueType": "xs:string",
+          "value": "Festo-Fault-and-Maintenance-Manual.pdf"
+        }
+      ],
+      "modelType": "Submodel",
+      "qualifiers": [
+        {
+          "type": "basedOnTemplate",
+          "valueType": "xs:anyURI",
+          "value": "https://admin-shell.io/idta/SubmodelTemplate/MaintenanceInstructions/1/0"
+        },
+        {
+          "type": "A4S/Instantiation/KeepConfiguredValues",
+          "valueType": "xs:boolean",
+          "value": "true"
+        }
+      ]
+    }
+  ],
+  "conceptDescriptions": []
+}

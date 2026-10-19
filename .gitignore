@@ -1,0 +1,88 @@
+__pycache__/
+*.py[cod]
+.venv/
+.pytest_cache/
+.pytest_tmp_*/
+.ruff_cache/
+.env
+.env.openmes
+.env.*
+!.env.example
+*.db
+*.db-wal
+*.db-shm
+trajectories*.jsonl
+work/temp/
+
+# frontend
+node_modules/
+frontend/dist/
+
+# Directories created by a shell that did not expand `~`. They hold index
+# caches and scratch output, not source, and one of them is 48 MB of embedding
+# vectors.
+/~/
+exp/~/
+exp/temp/
+exp/work/
+
+# Third-party projects vendored in for reference. Not ours to redistribute,
+# and 315 MB of someone else's git history.
+_others/
+
+# The ECLASS 14.0 ADVANCED dictionary: 1.7 GB, licensed, and referenced by no
+# code in this repository. Whoever needs it downloads it from ECLASS.
+ECLASS14_0_Dictionary_ADVANCED_XML_EN/
+
+# Working copies of AAS packages, kept beside the originals while a change is
+# being reviewed.
+*.aasx.bak
+
+
+# Reference material and generated presentations under docs/. Vendor
+# datasheets and a UaExpert workspace are not ours to redistribute, and a
+# deck that a script rebuilds is an artifact, not source. Markdown written
+# for this repository stays.
+docs/*
+!docs/*.md
+
+data/reference/eclass/14.0/
+
+# Local licensed/vendor reference resources; never included in runtime builds.
+data/reference/idta/
+data/reference/vendor/
+
+# Disposable local work and generated releases.
+/work/
+
+# Machine credentials and legacy disposable scratch.
+.env.*
+.claude/settings.local.json
+/temp/
+
+# Local deployment records and vendor-specific release tooling are not part
+# of the public source snapshot.
+/PROGRESS.md
+/frontend/README.md
+/docs/deployment-*.md
+/docs/*festo*.md
+/docs/*fabos*.md
+/scripts/fabos-offline/
+/scripts/colleague-deploy/
+/scripts/*fabos*.py
+/scripts/*festo*.py
+/data/demos/
+
+# Superseded generated manuals retained locally for reference.
+a4s/machines/festo_cp_lab/documents/archive/
+/a4s/machines/festo_cp_lab/documents/
+/frontend/public/assets/festo cp lab.png
+/data/reference/
+/exp/
+/scripts/prepare-*-release.py
+/scripts/export-mes-demo.php
+/scripts/import-mes-demo.php
+/scripts/openmes-provision.php
+/scripts/provision-demo-reset-token.php
+/scripts/update-vm-model-config.py
+*.aasx
