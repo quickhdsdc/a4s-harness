@@ -75,3 +75,19 @@ or exported production data. Use example hostnames in shared blueprints and put
 deployment-specific values in local configuration. Simulation demonstrates
 software behavior only; it does not validate or authorize physical equipment
 actions.
+
+## License
+
+**Non-commercial research use only. Commercial use is prohibited.**
+
+Original contributions controlled by the project licensors are offered under
+the [Dachuan Shi Non-Commercial Research License 1.0](LICENSE)
+(`LicenseRef-Dachuan-Shi-NC-1.0`). This includes a prohibition on commercial products,
+paid services, customer projects, internal business use, commercial R&D and
+commercial model training. A separate prior written authorization is required
+for commercial use; this license grants none.
+
+Third-party software, assets, datasets and previously granted rights retain
+their applicable terms. See the repository's `LICENSING.md` for scope and
+licensing history. This is source-available software, not OSI-approved
+open-source software.
