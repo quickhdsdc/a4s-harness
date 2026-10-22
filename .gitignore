@@ -88,7 +88,8 @@ a4s/machines/festo_cp_lab/documents/archive/
 /scripts/provision-demo-reset-token.php
 /scripts/update-vm-model-config.py
 *.aasx
-!BaSyxMinimal/aas/CollectionofSMTs.aasx
+# Publish the maintained seed blueprints and standardized template collection.
+!BaSyxMinimal/aas/*.aasx
 
 # Original local blueprint backup; never publish with source updates.
 /BaSyxMinimal/aas_backup.zip

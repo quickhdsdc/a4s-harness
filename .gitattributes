@@ -3,5 +3,8 @@
 *.pdf binary
 *.aasx binary
 
+# Keep published seed checksums stable across Windows and Linux checkouts.
+BaSyxMinimal/aas/*.json -text
+
 # Preserve archived third-party XML verbatim, including XML whitespace.
 BaSyxMinimal/catalog/*.xml -text -whitespace

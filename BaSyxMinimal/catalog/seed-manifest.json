@@ -1,0 +1,79 @@
+{
+  "recordedOn": "2026-10-22",
+  "directory": "BaSyxMinimal/aas",
+  "packages": 14,
+  "collection": "CollectionofSMTs.aasx",
+  "backupIncluded": false,
+  "files": [
+    {
+      "file": "agv.aasx",
+      "bytes": 384326,
+      "sha256": "76edd5204f571476a972931637ba8d687b120c6bcd356d3927a4c6ebc6234145"
+    },
+    {
+      "file": "aps.aasx",
+      "bytes": 16692,
+      "sha256": "cfcd98ac0354e1ffa36b1fd48f0001d3659ecc59da24783564e5bfe93f526496"
+    },
+    {
+      "file": "assembly shop.aasx",
+      "bytes": 95085,
+      "sha256": "249b81b5591fe9400cdfe965bfe24cb2115ce5c5722634da805a0c20a47ae761"
+    },
+    {
+      "file": "CollectionofSMTs.aasx",
+      "bytes": 773511,
+      "sha256": "0445d540604235c173bd357aed1fff42d57141c439059f15f0c60bb5eade8677"
+    },
+    {
+      "file": "festo-cp-lab.json",
+      "bytes": 166167,
+      "sha256": "5fe2325bc7184684447e42cb1685c91b30b7d0c247a325a456e4f2ff065d166c"
+    },
+    {
+      "file": "injection molding machine.aasx",
+      "bytes": 951527,
+      "sha256": "cd60c0c9ddec4395dd22d796ad54667050a325fb89873423fd28a7152d5c241a"
+    },
+    {
+      "file": "machining center.aasx",
+      "bytes": 4313049,
+      "sha256": "e1a2e879e28a8fccd1354d07f88604984edbdde84d4a52c246f863bdbea8d5f5"
+    },
+    {
+      "file": "metal 3d printer.aasx",
+      "bytes": 407764,
+      "sha256": "96a523937bdad08a613dfa1af692c9aee61c3752ccbb0a4e6b3cbc2a1fed8581"
+    },
+    {
+      "file": "process.aasx",
+      "bytes": 7197,
+      "sha256": "44ffeed59fd29caab75fbb5d57519eb263e0c7cc4cd6ec85d6adde496a25465f"
+    },
+    {
+      "file": "product battery.aasx",
+      "bytes": 38522,
+      "sha256": "4e986cbb964e0fd0ac2117999bc37a92c7db419d76adba54cadc157883d58e07"
+    },
+    {
+      "file": "production order.aasx",
+      "bytes": 4140,
+      "sha256": "5b096193ef09a06951684fe9db865dcd1dd584aea30333c1035ac376a9125fdb"
+    },
+    {
+      "file": "robot disassembly.aasx",
+      "bytes": 5960219,
+      "sha256": "e675e0333a165b1bd15d156916900757248dd56cde8a192b014b405d285689db"
+    },
+    {
+      "file": "simulation.aasx",
+      "bytes": 23022,
+      "sha256": "f00cff1d3e4f9badb224972acb45dca6556fb8ade1866e11dfa485542f0313d7"
+    },
+    {
+      "file": "testing repair station.aasx",
+      "bytes": 195162,
+      "sha256": "102db21f4ed8cd06b7050275500b3226b7e7507ace7ca7a95b3bc7449f97b061"
+    }
+  ]
+}

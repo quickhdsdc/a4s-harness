@@ -43,19 +43,16 @@ for the source rejection counts, generated-copy adjustments and SDK test limits.
 
 ## Start
 
-The public checkout includes the IDTA Collection and a configurable example
-device JSON. Additional local device AASX files and the original backup ZIP
-are not published. On a **fresh checkout**, prepare the seed list before the
-first start:
+The checkout includes the complete maintained seed set: the IDTA Collection,
+12 device blueprint AASX packages and the configurable example device JSON.
+Both `aas-env.properties` and `aas-env.example.properties` load these same
+14 files, with the Collection first. No seed-file copying is needed on a fresh
+checkout. The original `aas_backup.zip` stays local and is not published.
 
-```powershell
-Copy-Item aas-env.example.properties aas-env.properties
-```
-
-This replaces the workstation-specific seed list with the two distributed
-packages. Keep an existing customized configuration when updating a configured
-installation. To add your own blueprints, list each file once in
-`basyx.environment`; see the catalog notes below.
+The file sizes and SHA-256 hashes for this synchronized snapshot are recorded
+in [the seed manifest](catalog/seed-manifest.json). Existing customized
+installations should retain their configuration. To add your own blueprints,
+list each file once in `basyx.environment`; see the catalog notes below.
 
 From this directory, with Docker Desktop running:
 
