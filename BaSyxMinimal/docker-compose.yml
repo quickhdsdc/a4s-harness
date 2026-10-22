@@ -1,25 +1,23 @@
+name: basyxminimal
+
 services:
   mongo:
-    image: mongo:5.0.10
-    # Provide mongo config
+    image: mongo:7.0.16@sha256:c630c59342c1493d50345136df2af14a76b9e827dd5316bfabee07a0880a5f3a
     restart: always
     environment:
       MONGO_INITDB_ROOT_USERNAME: mongoAdmin
       MONGO_INITDB_ROOT_PASSWORD: mongoPassword
-    # Set health checks to wait until mongo has started
-    #volumes:
-    # -  ./data-vol:/data/db 
+    volumes:
+      - repository-m15:/data/db
+      - mongo-config-m15:/data/configdb
     healthcheck:
-      test: mongo
-      interval: 10s
-      start_period: 5s
-      retries: 5
-    # Maps tcp port to host
-    #ports:
-    #  - 27017:27017
+      test: ["CMD-SHELL", "mongosh --quiet --username $$MONGO_INITDB_ROOT_USERNAME --password $$MONGO_INITDB_ROOT_PASSWORD --authenticationDatabase admin --eval 'db.adminCommand({ping: 1}).ok'"]
+      interval: 5s
+      timeout: 5s
+      retries: 20
 
   mqtt:
-    image: eclipse-mosquitto:2.0.15
+    image: eclipse-mosquitto:2.0.15@sha256:bbac73a740f479b16a5f1a311ebf0c530664ce9290f2cfacb3f4711e7a104007
     ports:
       - 1884:1884
     volumes:
@@ -32,10 +30,16 @@ services:
       timeout: 10s
 
   aas-env:
-    image: eclipsebasyx/aas-environment:2.0.0-SNAPSHOT
+    image: eclipsebasyx/aas-environment:2.0.0-milestone-15@sha256:313da867059233e3c07e17a8ac21153a1f8fa0d02eada4e6b1b9f9e86afbd321
+    restart: unless-stopped
+    healthcheck:
+      interval: 10s
+      timeout: 5s
+      start_period: 90s
+      retries: 18
     volumes:
-      - ./aas-env.properties:/application/application.properties
-      - ./aas:/application/aas
+      - ./aas-env.properties:/application/application.properties:ro
+      - ./aas:/application/aas:ro
     ports:
       - 8081:8081
     depends_on:
@@ -49,7 +53,7 @@ services:
         condition: service_healthy
 
   aas-registry:
-    image: eclipsebasyx/aas-registry-log-mongodb:2.0.0-SNAPSHOT
+    image: eclipsebasyx/aas-registry-log-mongodb:2.0.0-SNAPSHOT@sha256:7b60e4e23048bdefdf316394e6ffc33e8f84bd4e7c7333556a139ad76e73d44b
     ports:
       - 8082:8080
     volumes:
@@ -59,7 +63,7 @@ services:
         condition: service_healthy
 
   sm-registry:
-    image: eclipsebasyx/submodel-registry-log-mongodb:2.0.0-SNAPSHOT
+    image: eclipsebasyx/submodel-registry-log-mongodb:2.0.0-SNAPSHOT@sha256:db6010732a3d0cc97159371f46194fd9038edf9dc5ba14d0bce543f3e819bc5e
     ports:
       - 8083:8080
     volumes:
@@ -69,7 +73,7 @@ services:
         condition: service_healthy
 
   aas-discovery:
-    image: eclipsebasyx/aas-discovery:2.0.0-SNAPSHOT
+    image: eclipsebasyx/aas-discovery:2.0.0-SNAPSHOT@sha256:8d6f77a3ff5543cdcb0237d0003dd4ed45198633139bd8b0cce31a212402d8ed
     ports:
       - 8084:8081
     volumes:
@@ -79,7 +83,7 @@ services:
         condition: service_healthy
 
   aas-web-ui_v2:
-    image: eclipsebasyx/aas-gui:SNAPSHOT
+    image: eclipsebasyx/aas-gui:SNAPSHOT@sha256:a49b0c75b41269fd9e8bce5dd32bbbc69b65aee018c0f37b0a33c328ed860ebe
     container_name: aas-web-ui_v2
     ports:
       - "3000:3000"
@@ -94,3 +98,7 @@ services:
     depends_on:
       aas-env:
         condition: service_healthy
+
+volumes:
+  repository-m15:
+  mongo-config-m15:

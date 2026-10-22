@@ -1,0 +1,45 @@
+<?xml version='1.0' encoding='utf-8'?>
+<aas:conceptDescription xmlns:aas="https://admin-shell.io/aas/3/1">
+      <aas:idShort>TechnicalDataAGV</aas:idShort>
+      <aas:description>
+        <aas:langStringTextType>
+          <aas:language>en</aas:language>
+          <aas:text>Submodel containing technical data for AGV in intralogistcis</aas:text>
+        </aas:langStringTextType>
+        <aas:langStringTextType>
+          <aas:language>de</aas:language>
+          <aas:text>Teilmodell, das die technischen Daten von AGV (Fahrerlose Transportfahrzeuge) enthält</aas:text>
+        </aas:langStringTextType>
+      </aas:description>
+      <aas:id>https://admin-shell.io/idta/SubmodelTemplate/technicaldataagv/1/0</aas:id>
+      <aas:embeddedDataSpecifications>
+        <aas:embeddedDataSpecification>
+          <aas:dataSpecification>
+            <aas:type>ExternalReference</aas:type>
+            <aas:keys>
+              <aas:key>
+                <aas:type>GlobalReference</aas:type>
+                <aas:value>https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIec61360/3/0</aas:value>
+              </aas:key>
+            </aas:keys>
+          </aas:dataSpecification>
+          <aas:dataSpecificationContent>
+            <aas:dataSpecificationIec61360>
+              <aas:preferredName>
+                <aas:langStringPreferredNameTypeIec61360>
+                  <aas:language>en</aas:language>
+                  <aas:text>TechnicalDataAGV</aas:text>
+                </aas:langStringPreferredNameTypeIec61360>
+              </aas:preferredName>
+              <aas:definition>
+                <aas:langStringDefinitionTypeIec61360>
+                  <aas:language>en</aas:language>
+                  <aas:text>Submodel containing technical data for AGV in intralogistcis</aas:text>
+                </aas:langStringDefinitionTypeIec61360>
+              </aas:definition>
+            </aas:dataSpecificationIec61360>
+          </aas:dataSpecificationContent>
+        </aas:embeddedDataSpecification>
+      </aas:embeddedDataSpecifications>
+    </aas:conceptDescription>
+    

@@ -42,7 +42,7 @@
         </div>
 
         <div class="wizard-content">
-          <InputStage v-if="currentStep === 0" :data="wizardData" @update="store.updateData" />
+          <InputStage ref="inputStageRef" v-if="currentStep === 0" :data="wizardData" :busy="isProcessing" :preparation-phase="preparationPhase" @update="store.updateData" />
           <ExtractionStage v-if="currentStep === 1" :data="wizardData" @update="store.updateData" />
           <MatchingStage v-if="currentStep === 2" :data="wizardData" @update="store.updateData" />
           <GenerationStage v-if="currentStep === 3" :data="wizardData" @reset="store.resetPopulation" />
@@ -64,7 +64,7 @@
             @click="nextStep"
             :disabled="!canProceed || wizardLocked"
           >
-            {{ isProcessing ? 'Processing...' : (currentStep === 2 && highestVisitedStep < 3 ? 'Populate AAS' : 'Next →') }}
+          {{ isProcessing ? 'Processing...' : 'Next →' }}
           </button>
         </div>
       </div>
@@ -99,6 +99,7 @@ import ChatWindow from './components/ChatWindow.vue'
 import { useEnvStore } from './stores/environmentStore'
 import { useWizardStore } from './stores/wizardStore'
 import { aasService } from './services/aasService'
+import {instanceUpdates} from './services/instanceUpdates'
 import { api, ApiError } from './services/api'
 import type { WizardData } from './types'
 import {demoSession, refreshDemoSession} from './services/demoSession'
@@ -109,6 +110,8 @@ interface ChatWindowInstance {
 }
 
 const environmentStore = useEnvStore()
+const inputStageRef = ref<{ refreshTemplates: () => Promise<boolean> } | null>(null)
+const preparationPhase = ref('')
 onMounted(async () => {
   try {
     const {data} = await api.get<{mes_url:string|null}>('/api/service-links')
@@ -249,6 +252,14 @@ const nextStep = async (): Promise<void> => {
            return
         }
 
+        // Refresh the picker before using persisted selections. A catalog can
+        // change in BaSyx while this page stays open; removed IDs are cleared
+        // at the picker instead of producing a membership error at preparation.
+        if (wizardData.value.submodelTemplate?.length) {
+          if (!await inputStageRef.value?.refreshTemplates()) return
+          if (wizardData.value.mode === 'create' && !wizardData.value.submodelTemplate?.length) return
+        }
+
         // Get extraction filename/identifier
         let extractionFilename = getExtractionFilename()
 
@@ -279,11 +290,26 @@ const nextStep = async (): Promise<void> => {
 
         // Mode Check
         const mode = wizardData.value.mode // 'create' or 'edit'
+        if (mode === 'create' && aasResult.exists) {
+            throw new Error('An AAS with this identity already exists. Choose Edit Existing AAS to update it.')
+        }
         
         // Prepare the graph at Next, before extraction/matching can start.
         if (mode === 'edit' && aasResult.exists) {
+            preparationPhase.value = 'Reading the selected AAS...'
             const parsed = await aasService.parseAAS(targetAAS, endpoint)
             if (!parsed.success) throw new Error('The target AAS graph could not be prepared')
+            const chosenTemplates = wizardData.value.submodelTemplate || []
+            preparationPhase.value = chosenTemplates.length
+              ? 'Comparing existing submodels with the selected templates...'
+              : 'Preparing existing submodels for matching...'
+            const draft = await instanceUpdates.prepareAutomatic(targetAAS, endpoint,
+                Array.isArray(chosenTemplates) ? chosenTemplates : [chosenTemplates])
+            if (draft.conflicts?.length) throw new Error(draft.conflicts.map(row => `${row.path}: ${row.reason}`).join('; '))
+            store.updateData('updateId', draft.id)
+            store.updateData('updateReview', null)
+        } else if (mode === 'edit') {
+            throw new Error('Select an existing target AAS before continuing')
         }
 
         // Logic branching:
@@ -401,6 +427,7 @@ Do NOT perform matching or populate steps. Stop after completing these two tasks
         store.updateData('isExtracting', false)
         alert('Could not prepare extraction: ' + (error instanceof Error ? error.message : 'Unknown error'))
       } finally {
+        preparationPhase.value = ''
         store.setProcessing(false)
       }
 
@@ -436,11 +463,16 @@ Do NOT perform matching or populate steps. Stop after completing these two tasks
             console.log('Saved edited entities to:', result.filename)
 
             // Check if matching results already exist
-            const matchingResult = await aasService.checkMatching(extractionFilename, targetAAS)
+            if (!wizardData.value.updateId) {
+              const draft = await instanceUpdates.prepare(targetAAS, endpoint)
+              store.updateData('updateId', draft.id)
+            }
+            const matchKey = `update_${wizardData.value.updateId}`
+            const matchingResult = await aasService.checkMatching(extractionFilename, matchKey)
 
             if (matchingResult.exists && matchingResult.filename) {
               // Load existing matching results
-              const resultsData = await aasService.getMatchingResults(matchingResult.filename, targetAAS)
+              const resultsData = await aasService.getMatchingResults(matchingResult.filename, matchKey)
 
               if (resultsData.success && resultsData.results.length > 0) {
                 store.updateData('matchedProperties', resultsData.results)
@@ -469,7 +501,7 @@ Do NOT perform matching or populate steps. Stop after completing these two tasks
             try {
               const matched = await aasService.runMatch(
                 extractionFilename, targetAAS, endpoint,
-                progress => store.updateData('matchingProgress', progress)
+                progress => store.updateData('matchingProgress', progress), wizardData.value.updateId
               )
               store.updateData('matchedProperties', matched.results || [])
             } catch (error) {
@@ -486,7 +518,7 @@ Do NOT perform matching or populate steps. Stop after completing these two tasks
                     'the server — waiting for the plan.'
                   )
                 }
-                const recovered = await aasService.waitForMatch(extractionFilename, targetAAS, {
+                const recovered = await aasService.waitForMatch(extractionFilename, matchKey, {
                   onProgress: progress => store.updateData('matchingProgress', progress)
                 })
                 if (recovered) {
@@ -559,6 +591,25 @@ Do NOT perform matching or populate steps. Stop after completing these two tasks
               return
           }
 
+          if (wizardData.value.updateId) {
+            // Matching is the user's review. Next validates the current
+            // selections and commits that exact revision in one interaction.
+            const preview = await instanceUpdates.review(wizardData.value.updateId, validResults, extractionFilename, targetAAS, endpoint)
+            if (preview.conflicts?.length) throw new Error('Resolve the conflicting matches before population.')
+            store.updateData('updateReview', preview)
+            store.updateData('isGenerating', true)
+            store.updateData('generationComplete', false)
+            store.updateData('populationResult', null)
+            store.updateData('populationError', null)
+            store.nextStep()
+            const result = await instanceUpdates.commit(preview, targetAAS, endpoint)
+            store.updateData('populationResult', result)
+            store.updateData('isGenerating', false)
+            store.updateData('generationComplete', true)
+            chatWindowRef.value?.showInfo(populationTranscript(result, targetAAS))
+            return
+          }
+
           // Save matching results first
           const saveResult = await aasService.saveMatchingResults({
             filename: finalFilename,
@@ -599,6 +650,8 @@ Do NOT perform matching or populate steps. Stop after completing these two tasks
           console.error('Population request failed:', error)
           const errorMessage = error instanceof Error ? error.message : 'Unknown error'
           chatWindowRef.value?.showError('Population request failed: ' + errorMessage)
+        } finally {
+          store.setProcessing(false)
         }
       } else {
         alert('No matching results to populate. Please ensure entities are matched.')
@@ -673,7 +726,7 @@ const loadMatchingResults = async (forceStop: boolean): Promise<void> => {
     return
   }
 
-  const targetAAS = wizardData.value.targetAAS || ''
+  const targetAAS = wizardData.value.updateId ? `update_${wizardData.value.updateId}` : wizardData.value.targetAAS || ''
 
   let loaded = false
   try {

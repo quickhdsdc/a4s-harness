@@ -20,14 +20,16 @@ export interface MatchingProgress {
 // Wizard data structure
 export interface PopulationResult {
   success: boolean
-  counts: {applied: number; failed: number; notAttempted: number; total: number}
+  counts: {applied: number; failed: number; notAttempted: number; total: number; unverified?: number}
   applied: Array<{submodel: string; path: string; action: string}>
   failed: Array<{entity?: string; submodel?: string; path?: string; error: string}>
   unresolved?: Array<{entity?: string; reason: string}>
-  cleanup?: {status: string; removed: Array<{submodel: string; path: string}>; failed: Array<{submodel: string; path: string; error: string}>}
+  cleanup?: {status: string; removed: Array<{submodel: string; path: string}>; omitted?: Array<{submodel: string; path: string}>; failed: Array<{submodel: string; path: string; error: string}>}
 }
 
 export interface WizardData {
+  updateId?: string | null
+  updateReview?: import('../services/instanceUpdates').UpdatePreview | null
   // Input stage
   viewMode: 'shop-floor' | 'wizard'
   mode: 'create' | 'edit'
@@ -115,6 +117,10 @@ export interface Entity {
 // Matched property
 // Matched property
 export interface MatchedProperty {
+  inputOrigin?: string
+  inputLocation?: string
+  valueConflict?: boolean
+  conflictGroup?: string
   action?: 'create' | 'write' | 'skip'
   apiPath?: string
   semanticPath?: string
@@ -188,6 +194,8 @@ export interface SubmodelTemplate {
   name: string
   version: string
   description: string
+    revision?: string
+    idShort?: string
 }
 
 // API responses

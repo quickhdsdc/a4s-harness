@@ -1,0 +1,37 @@
+cff-version: 1.2.0
+message: "If you use A4S Harness in your research, please cite the paper below."
+type: software
+title: A4S Harness
+authors:
+  - family-names: Shi
+    given-names: Dachuan
+    orcid: "https://orcid.org/0000-0002-9296-7213"
+repository-code: "https://github.com/quickhdsdc/a4s-harness"
+url: "https://github.com/quickhdsdc/a4s-harness"
+preferred-citation:
+  type: article
+  title: "Agentic active Asset Administration Shell for circular manufacturing"
+  authors:
+    - family-names: Li
+      given-names: Jianzhang
+    - family-names: Ruan
+      given-names: Qian
+    - family-names: Shi
+      given-names: Dachuan
+    - family-names: Schneider
+      given-names: Matthias
+    - family-names: Meyer
+      given-names: Olga
+    - family-names: Oberle
+      given-names: Michael
+    - family-names: Yi
+      given-names: Li
+    - family-names: Tao
+      given-names: Fei
+  journal: Journal of Manufacturing Systems
+  volume: "88"
+  start: "858"
+  end: "886"
+  year: 2026
+  doi: "10.1016/j.jmsy.2026.07.011"
+  url: "https://www.sciencedirect.com/science/article/pii/S0278612526001950"

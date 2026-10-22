@@ -69,13 +69,46 @@ def test_cleanup_nested_properties_preserves_zero_false_languages_and_other_smes
     ]), sm("urn:smt", [prop("TemplateSlot")], kind="Template")])
     result = remove_empty_properties(repository, ["urn:sm:chosen", "urn:smt"])
     assert result["status"] == "completed" and not result["failed"]
-    assert set(path for _, path in repository.deleted) == {"Blank", "EmptyTranslation", "Entity.Missing", "List[2]", "List[0]", "Collection.Missing"}
+    assert set(path for _, path in repository.deleted) == {"Blank", "EmptyTranslation", "Entity.Missing", "List[2]", "List[0]", "Collection.Missing", "Collection"}
     assert repository.deleted.index(("urn:sm:chosen", "List[2]")) < repository.deleted.index(("urn:sm:chosen", "List[0]"))
     remaining = {n["idShort"]: n for n in repository.submodels["urn:sm:chosen"]["submodelElements"]}
     assert remaining["Zero"]["value"] == 0 and remaining["False"]["value"] is False
     assert remaining["List"]["value"][0]["value"] == "kept"
     assert remaining["EmptyFile"] and remaining["Translated"]
     assert repository.submodels["urn:smt"]["submodelElements"] == [prop("TemplateSlot")]
+
+
+@pytest.mark.parametrize("failed_path", [None, "List[2].Inner.Blank", "List[2].Inner"])
+def test_cleanup_prunes_nested_empty_collections_only_after_successful_child_deletion(failed_path):
+    def collection(name, children):
+        return {"modelType": "SubmodelElementCollection", "idShort": name, "value": children}
+    repository = Repository([sm(elements=[
+        collection("AlreadyEmpty", []),
+        collection("Keep", [prop("Zero", 0), collection("Empty", [])]),
+        {"modelType": "SubmodelElementList", "idShort": "List", "value": [
+            collection(None, []), collection(None, [prop("Data", "kept")]),
+            collection(None, [collection("Inner", [prop("Blank")])]),
+        ]},
+    ])])
+    delete = repository.delete_element
+    def delete_with_failure(identifier, path):
+        if str(path) == failed_path:
+            raise RuntimeError("deletion failed")
+        delete(identifier, path)
+    repository.delete_element = delete_with_failure
+    result = remove_empty_properties(repository, ["urn:sm:chosen"])
+    assert result["status"] == ("incomplete" if failed_path else "completed")
+    nodes = repository.submodels["urn:sm:chosen"]["submodelElements"]
+    assert [node["idShort"] for node in nodes] == ["Keep", "List"]
+    assert nodes[0]["value"] == [prop("Zero", 0)]
+    assert nodes[1]["value"][0]["value"] == [prop("Data", "kept")]
+    assert len(nodes[1]["value"]) == (2 if failed_path else 1)
+    if failed_path:
+        assert ("urn:sm:chosen", "List[2]") not in repository.deleted
+        assert result["failed"][0]["path"] == failed_path
+    else:
+        paths = [path for _, path in repository.deleted]
+        assert paths.index("List[2].Inner.Blank") < paths.index("List[2].Inner") < paths.index("List[2]") < paths.index("List[0]")
 
 
 @pytest.fixture
@@ -121,6 +154,20 @@ def test_manual_submodel_selection_creates_at_root_then_cleans_only_chosen_aas(a
     properties = repository.submodels["urn:sm:chosen"]["submodelElements"]
     assert {p["idShort"]: p["value"] for p in properties} == {"Existing": "kept", "Communication_interfaces": "CAN / ModBus"}
     assert repository.submodels["urn:sm:unrelated"]["submodelElements"] == [prop("Unrelated")]
+
+
+def test_population_api_removes_empty_collection_but_preserves_submodel(api):
+    client, repository = api
+    repository.submodels["urn:sm:other"]["submodelElements"] = [{
+        "modelType": "SubmodelElementCollection", "idShort": "EmptyGroup", "value": [prop("Blank")],
+    }]
+    saved = root_plan(client)
+    result = client.post("/api/populate", json={"filename": Path(saved["path"]).name,
+                                               "aas_id_short": "urn:aas:chosen"}).json()
+    assert result["success"], result
+    assert repository.submodels["urn:sm:other"]["submodelElements"] == []
+    assert {"submodel": "urn:sm:other", "path": "EmptyGroup",
+            "modelType": "SubmodelElementCollection"} in result["cleanup"]["removed"]
 
 
 @pytest.mark.parametrize("mode", ["dry-run", "failed-write"])

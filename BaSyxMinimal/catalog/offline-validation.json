@@ -1,0 +1,41 @@
+{
+  "containerStartup": "not performed; user will start manually",
+  "checks": {
+    "templates": 63,
+    "listsWithExplicitOrder": 277,
+    "strictSdkObjects": 3064,
+    "agvShellServicesAndOriginalResources": "Shell ID, operations, attachments and all dictionary objects preserved; device-submodel identity and shell reference updated",
+    "aasxPackages": 13,
+    "originalBackupZip": "byte-identical",
+    "environmentLocalIdentifiers": {
+      "packages": 14,
+      "ok": true,
+      "scope": "Complete configured startup batch, including cross-file Shell/Submodel IDs and overlapping resource paths",
+      "validator": "scripts/validate-basyx-seeds.py"
+    },
+    "nativeJavaSeedBatch": {
+      "version": "2.0.0-milestone-15",
+      "packages": 14,
+      "shells": 14,
+      "submodels": 105,
+      "passed": true,
+      "scope": "CompleteEnvironment deserialization and native IdentifiableAssertion only; no server start"
+    },
+    "regressionTests": {
+      "passed": 5
+    },
+    "explorerLoader": {
+      "agv": {
+        "shells": 1,
+        "submodels": 2,
+        "conceptDescriptions": 103
+      },
+      "catalog": {
+        "shells": 1,
+        "submodels": 63,
+        "conceptDescriptions": 3000
+      },
+      "result": "passed with installed AasxCsharpLibrary.dll; no interactive GUI automation"
+    }
+  }
+}

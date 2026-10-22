@@ -1,4 +1,4 @@
-"""Remove empty value properties from explicitly scoped populated instances."""
+"""Remove empty properties and collections from scoped populated instances."""
 from __future__ import annotations
 
 from typing import Any, Iterable
@@ -20,7 +20,8 @@ def _empty_property(node: dict[str, Any]) -> bool:
     return False
 
 
-def _empty_paths(node: dict[str, Any], path: ElementPath):
+def _prune(client: Any, identifier: str, node: dict[str, Any], path: ElementPath,
+           result: dict[str, Any]) -> bool:
     # Reverse positional order prevents list deletions shifting later targets.
     for key in ("submodelElements", "value", "statements", "annotations"):
         children = node.get(key)
@@ -34,9 +35,25 @@ def _empty_paths(node: dict[str, Any], path: ElementPath):
             if step is None:
                 continue
             child_path = ElementPath(path.steps + (step,))
-            yield from _empty_paths(child, child_path)
-            if _empty_property(child):
-                yield child_path
+            if _prune(client, identifier, child, child_path, result):
+                # Reflect only confirmed deletions in this local snapshot. A
+                # failed child deletion must prevent removal of its parent.
+                children.pop(index)
+
+    empty_collection = (node.get("modelType") == "SubmodelElementCollection"
+                        and node.get("value", []) == [])
+    if not path.steps or not (_empty_property(node) or empty_collection):
+        return False
+    record = {"submodel": identifier, "path": str(path)}
+    try:
+        client.delete_element(identifier, path)
+    except Exception as exc:
+        result["failed"].append({**record, "error": str(exc)})
+        return False
+    if empty_collection:
+        record["modelType"] = "SubmodelElementCollection"
+    result["removed"].append(record)
+    return True
 
 
 def remove_empty_properties(client: Any, submodel_ids: Iterable[str]) -> dict[str, Any]:
@@ -47,16 +64,10 @@ def remove_empty_properties(client: Any, submodel_ids: Iterable[str]) -> dict[st
             submodel = client.get_submodel(identifier)
             if submodel.get("kind") == "Template":
                 continue
-            paths = list(_empty_paths(submodel, ElementPath(())))
+            _prune(client, identifier, submodel, ElementPath(()), result)
         except Exception as exc:
             result["failed"].append({"submodel": identifier, "path": "", "error": str(exc)})
             continue
-        for path in paths:
-            try:
-                client.delete_element(identifier, path)
-                result["removed"].append({"submodel": identifier, "path": str(path)})
-            except Exception as exc:
-                result["failed"].append({"submodel": identifier, "path": str(path), "error": str(exc)})
     if result["failed"]:
         result["status"] = "incomplete"
     return result

@@ -1,0 +1,16 @@
+{
+  "file": "BaSyxMinimal\\aas\\agv.aasx",
+  "part": "aasx/SubmodelTemplate/SubmodelTemplate.aas.xml",
+  "duplicateId": "https://admin-shell.io/idta/SubmodelTemplate/technicaldataagv/1/0",
+  "removedType": "ConceptDescription",
+  "removedIdShort": "TechnicalDataAGV",
+  "preserved": "Submodel ID and content, shell, delegated services, all other dictionary objects, ZIP parts and attachments",
+  "originalBackup": "~\\.a4s\\backups\\agv-duplicate-id-20261021T211048Z\\agv.aasx",
+  "removedObject": "BaSyxMinimal\\catalog\\quarantined-agv-concept-description.xml",
+  "beforeSha256": "fb4687fa4b0e3a48512166223b9b7396bc05952471fe5e119ab79c936012ea77",
+  "afterSha256": "ed7087db71fc94110dbee15af97f57c01fb7badb91d67b6c71d576f0a1ef71f4",
+  "protectedAasBackupZipSha256": "de492aec0b25a4c6bb296a9c0e1cc9f77747ef2b819ddff061094d2e77cd86b8",
+  "containerRestarted": false,
+  "supersededBy": "startup-batch-fix.json",
+  "removedConceptDescriptionRestored": true
+}

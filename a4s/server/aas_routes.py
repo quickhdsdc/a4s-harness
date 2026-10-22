@@ -33,7 +33,7 @@ from fastapi import APIRouter, HTTPException, Query
 from ..aasctl.client import AasHttpError, BasyxClient, Endpoint
 from ..aasctl.index import walk
 from ..aasctl.paths import ElementPath
-from ..aasctl.catalog import is_blueprint, shells_in_view
+from ..aasctl.catalog import blueprint_endpoint, is_blueprint, shells_in_view
 
 router = APIRouter()
 
@@ -101,6 +101,26 @@ def aas_list(
         }
         for shell in shells
     ]
+
+
+@router.get("/api/blueprints")
+def blueprints(endpoint: Optional[str] = None) -> List[Dict[str, Any]]:
+    """Current library identities, excluding the administrative SMT collection."""
+    import os
+
+    source = blueprint_endpoint(endpoint)
+    collection = os.getenv("A4S_SMT_COLLECTION", "CollectionofSMTs")
+    try:
+        with _client(source) as client:
+            shells = shells_in_view(client.list_shells(limit=1000), "Type")
+    except Exception as exc:
+        raise _fail(exc, "cannot list blueprints", source) from exc
+    resolved = Endpoint.from_env(source).base_url
+    return [{"id": shell["id"], "idShort": shell.get("idShort") or "Unnamed blueprint",
+             "endpoint": resolved, "submodelCount": len(shell.get("submodels") or [])}
+            for shell in shells
+            if shell.get("id") != collection and shell.get("idShort") != collection
+            and str(shell.get("idShort", "")).lower() != "collectionofsmts"]
 
 
 @router.get("/api/aas/shells/{shell_id:path}/full")
@@ -221,7 +241,7 @@ def collect_properties(
     }
 
 
-@router.get("/api/aas-properties/{aas_id_short}")
+@router.get("/api/aas-properties/{aas_id_short:path}")
 def aas_properties(
     aas_id_short: str,
     endpoint: Optional[str] = None,
@@ -237,18 +257,23 @@ def _resolve_shell(client: BasyxClient, name: str) -> Dict[str, Any]:
     """A shell by id if that works, else by idShort. 404 names what it tried."""
     try:
         return client.get_shell(name)
-    except AasHttpError:
-        pass
-    for shell in client.list_shells(limit=500):
-        if shell.get("idShort") == name:
-            return shell
+    except AasHttpError as exc:
+        if exc.status != 404:
+            raise
+    choices = [shell for shell in client.list_shells(limit=500) if shell.get("idShort") == name]
+    if len(choices) > 1:
+        raise HTTPException(409, f"Several shells have idShort {name!r}; select a canonical AAS ID")
+    if choices:
+        return choices[0]
     raise HTTPException(
         status_code=404,
         detail=f"no shell with id or idShort {name!r} in this repository",
     )
 
 
-@router.post("/api/parse-aas/{aas_id_short}")
+# URL-encoded canonical IDs are decoded before Starlette matches routes.
+# The path converter keeps HTTPS IDs (including their slashes) intact.
+@router.post("/api/parse-aas/{aas_id_short:path}")
 def parse_aas(aas_id_short: str, endpoint: Optional[str] = None) -> Dict[str, Any]:
     """Refresh the selected AAS graph without starting an Agent/model task."""
     from . import aas_graph
@@ -282,9 +307,10 @@ def templates(endpoint: Optional[str] = None, limit: int = 400) -> List[Dict[str
         with _client(endpoint) as client:
             submodels = []
             seen = set()
-            references = client.list_submodel_refs(
-                "https://example.com/ids/aas/CollectionofSMTs"
-            )
+            collection = os.getenv("A4S_SMT_COLLECTION", "CollectionofSMTs")
+            if not (":" in collection or "/" in collection):
+                collection = _resolve_shell(client, collection)["id"]
+            references = client.list_submodel_refs(collection)
             for reference in references:
                 for key in reference.get("keys") or []:
                     identifier = key.get("value")
@@ -353,7 +379,7 @@ def element_value(
 # existence and export
 # ---------------------------------------------------------------------------
 
-@router.get("/api/check-aas/{aas_id_short}")
+@router.get("/api/check-aas/{aas_id_short:path}")
 def check_aas(aas_id_short: str, endpoint: Optional[str] = None) -> Dict[str, Any]:
     """Whether a shell exists, as data rather than as a status code.
 
@@ -388,7 +414,7 @@ def check_aas(aas_id_short: str, endpoint: Optional[str] = None) -> Dict[str, An
     }
 
 
-@router.get("/api/download/json/{aas_id_short}")
+@router.get("/api/download/json/{aas_id_short:path}")
 def download_json(aas_id_short: str, endpoint: Optional[str] = None) -> Any:
     """One shell and its submodels as a Part 5 Environment, as a file.
 
@@ -464,7 +490,7 @@ def _referenced_concepts(
         return []
 
 
-@router.get("/api/download/aasx/{aas_id_short}")
+@router.get("/api/download/aasx/{aas_id_short:path}")
 def download_aasx(aas_id_short: str, endpoint: Optional[str] = None) -> Any:
     """Export this target shell and its attached submodels as an AASX package."""
     import json

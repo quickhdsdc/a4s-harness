@@ -2,3 +2,6 @@
 # Preserve byte offsets in PDF documents and packaged AAS resources.
 *.pdf binary
 *.aasx binary
+
+# Preserve archived third-party XML verbatim, including XML whitespace.
+BaSyxMinimal/catalog/*.xml -text -whitespace

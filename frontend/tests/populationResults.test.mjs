@@ -15,6 +15,7 @@ async function render(result, populationError = null) {
   const {descriptor}=parse(readFileSync(new URL('../src/components/GenerationStage.vue',import.meta.url),'utf8'))
   let code=compileScript(descriptor,{id:'population-test',inlineTemplate:true,genDefaultAs:'__component'}).content
   code=code.replace(/import \{ useEnvStore \} from [^\n]+/, 'const useEnvStore=()=>({})')
+    .replace(/import UpdateChangeReview from [^\n]+/, 'const UpdateChangeReview={render(){return null}}')
     .replace(/import \{ aasService \} from [^\n]+/, 'const aasService={}')
     .replace(/import \{ ApiError \} from [^\n]+/, 'class ApiError extends Error {}')
     .replace("@/services/populationPresentation.mjs",new URL('../src/services/populationPresentation.mjs',import.meta.url).href)
@@ -55,4 +56,20 @@ test('all skipped decisions display no populated values',async()=>{
   const html=await render({counts:{applied:0,failed:0,notAttempted:61,total:61},failed:[]})
   assert.match(html,/No values were populated/)
   assert.match(html,/Not attempted: 61/)
+})
+
+test('cleanup totals describe both properties and empty collections',async()=>{
+  const result={counts:{applied:1,failed:0,notAttempted:0,total:1},failed:[],
+    cleanup:{status:'completed',removed:[{path:'Group.Blank'},{path:'Group',modelType:'SubmodelElementCollection'}],failed:[]}}
+  assert.match(await render(result),/Empty elements removed \(properties and collections\): 2/)
+  assert.match(populationTranscript(result,'Battery'),/Empty elements removed \(properties and collections\): 2/)
+})
+
+test('verified values in an interrupted update do not claim overall success',async()=>{
+  const result={success:false,status:'partial',revisionId:'revision-1',
+    counts:{applied:1,failed:0,notAttempted:0,total:1},failed:[{error:'Reference switch interrupted'}]}
+  const html=await render(result)
+  assert.match(html,/partially completed/)
+  assert.doesNotMatch(html,/AAS populated successfully/)
+  assert.match(populationTranscript(result,'Battery'),/revision-1; status: partial/)
 })

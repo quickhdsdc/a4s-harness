@@ -91,6 +91,19 @@ def index(smid, nodes):
                  vectors=np.array([[0., 1.] for _ in nodes], dtype="float32"))
 
 
+def test_automatic_edit_can_propose_conflicting_values_for_one_reviewed_target():
+    indexes = [index("nameplate", [Node("SerialNumber", "SerialNumber", "Property", None)])]
+    provider = Reply({"placements": [
+        {"index": i, "action": "write", "target": "s0n0", "model_type": "Property"}
+        for i in range(2)
+    ]})
+    plans = match_all(indexes, [Entity("Serial number", "NEW"), Entity("SerialNumber", "OLD", source="existing-aas:old")],
+        {"fake": np.array([[1., 0.]] * 2)}, provider, CONFIG, allow_alternatives=True)
+    assert [row.action for row in plans[0].decisions] == ["write", "write"]
+    assert [row.path for row in plans[0].decisions] == ["SerialNumber", "SerialNumber"]
+    assert len(provider.calls) == 1
+
+
 def test_global_batch_returns_one_row_per_fact_with_typed_write_and_creation():
     indexes = [index("nameplate", [Node("ManufacturerName", "ManufacturerName", "MultiLanguageProperty", None)]),
                index("technical", [Node("TechnicalPropertyAreas", "TechnicalPropertyAreas", "SubmodelElementCollection", None)])]

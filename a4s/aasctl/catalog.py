@@ -13,6 +13,12 @@ import os
 LEGACY_BLUEPRINTS = {"https://example.com/ids/aas/FestoWorkCenterStamping"}
 
 
+def blueprint_endpoint(override=None):
+    """Blueprints live in the library; device destinations are selected separately."""
+    return (override or os.getenv("A4S_BLUEPRINT_ENDPOINT") or
+            os.getenv("A4S_SMT_ENDPOINT") or os.getenv("A4S_AAS_ENDPOINT"))
+
+
 def is_blueprint(shell):
     configured = {
         value.strip() for value in os.getenv("A4S_BLUEPRINT_IDS", "").split(",") if value.strip()

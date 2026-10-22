@@ -1,0 +1,1425 @@
+[
+  {
+    "submodel": "https://admin-shell.io/idta/SubmodelTemplate/AssetInterfacesDescription",
+    "path": "InterfaceTemplateForHTTP.EndpointMetadata.securityDefinitions.oauth2_sc.scopes.orderRelevant",
+    "before": null,
+    "after": true,
+    "reason": "Make the AAS orderRelevant=true default explicit across readers"
+  },
+  {
+    "submodel": "https://admin-shell.io/idta/SubmodelTemplate/AssetInterfacesDescription",
+    "path": "InterfaceTemplateForMODBUS.EndpointMetadata.securityDefinitions.oauth2_sc.scopes.orderRelevant",
+    "before": null,
+    "after": true,
+    "reason": "Make the AAS orderRelevant=true default explicit across readers"
+  },
+  {
+    "submodel": "https://admin-shell.io/idta/SubmodelTemplate/AssetInterfacesDescription",
+    "path": "InterfaceTemplateForMQTT.EndpointMetadata.securityDefinitions.oauth2_sc.scopes.orderRelevant",
+    "before": null,
+    "after": true,
+    "reason": "Make the AAS orderRelevant=true default explicit across readers"
+  },
+  {
+    "submodel": "https://admin-shell.io/idta/SubmodelTemplate/AssetInterfacesDescription",
+    "path": "InterfaceTemplateForOPCUA.EndpointMetadata.securityDefinitions.oauth2_sc.scopes.orderRelevant",
+    "before": null,
+    "after": true,
+    "reason": "Make the AAS orderRelevant=true default explicit across readers"
+  },
+  {
+    "submodel": "https://admin-shell.io/idta/SubmodelTemplate/AssetInterfacesDescription",
+    "path": "InterfaceTemplateForBacnet.EndpointMetadata.securityDefinitions.oauth2_sc.scopes.orderRelevant",
+    "before": null,
+    "after": true,
+    "reason": "Make the AAS orderRelevant=true default explicit across readers"
+  },
+  {
+    "submodel": "https://admin-shell.io/idta/SubmodelTemplate/AssetInterfacesDescription",
+    "path": "InterfaceTemplateForIOLINK_OVER_PROFINET_REST.EndpointMetadata.securityDefinitions.oauth2_sc.scopes.orderRelevant",
+    "before": null,
+    "after": true,
+    "reason": "Make the AAS orderRelevant=true default explicit across readers"
+  },
+  {
+    "submodel": "https://admin-shell.io/idta/SubmodelTemplate/AssetInterfacesDescription",
+    "path": "InterfaceTemplateForIOLINK_OVER_PROFINET_REST.InteractionMetadata.properties.property_name.forms.iolv_enumeratedValues.orderRelevant",
+    "before": null,
+    "after": true,
+    "reason": "Make the AAS orderRelevant=true default explicit across readers"
+  },
+  {
+    "submodel": "https://admin-shell.io/idta/SubmodelTemplate/AssetInterfacesDescription",
+    "path": "InterfaceTemplateForIOLINK_OVER_PROFINET_REST.InteractionMetadata.properties.property_name.forms.iolv_payloadMapping.orderRelevant",
+    "before": null,
+    "after": true,
+    "reason": "Make the AAS orderRelevant=true default explicit across readers"
+  },
+  {
+    "submodel": "https://admin-shell.io/idta/SubmodelTemplate/AssetInterfacesDescription",
+    "path": "InterfaceTemplateForIOLINK_OVER_PROFINET_REST.InteractionMetadata.properties.property_name.forms.iolv_payloadMapping[0].iolv_enumeratedValues.orderRelevant",
+    "before": null,
+    "after": true,
+    "reason": "Make the AAS orderRelevant=true default explicit across readers"
+  },
+  {
+    "submodel": "https://admin-shell.io/idta/SubmodelTemplate/AssetInterfacesDescription",
+    "path": "InterfaceTemplateForSNMP.EndpointMetadata.securityDefinitions.oauth2_sc.scopes.orderRelevant",
+    "before": null,
+    "after": true,
+    "reason": "Make the AAS orderRelevant=true default explicit across readers"
+  },
+  {
+    "submodel": "https://admin-shell.io/idta/SubmodelTemplate/AssetInterfacesDescription",
+    "path": "InterfaceTemplateForCAN.EndpointMetadata.securityDefinitions.oauth2_sc.scopes.orderRelevant",
+    "before": null,
+    "after": true,
+    "reason": "Make the AAS orderRelevant=true default explicit across readers"
+  },
+  {
+    "submodel": "https://admin-shell.io/idta/SubmodelTemplate/AssetInterfacesDescription",
+    "path": "InterfaceTemplateForCAN.InteractionMetadata.properties.property_name.forms.canv_enumeratedValues.orderRelevant",
+    "before": null,
+    "after": true,
+    "reason": "Make the AAS orderRelevant=true default explicit across readers"
+  },
+  {
+    "submodel": "https://admin-shell.io/idta/SubmodelTemplate/AssetInterfacesDescription",
+    "path": "InterfaceTemplateForCAN.InteractionMetadata.properties.property_name.forms.canv_payloadMapping.orderRelevant",
+    "before": null,
+    "after": true,
+    "reason": "Make the AAS orderRelevant=true default explicit across readers"
+  },
+  {
+    "submodel": "https://admin-shell.io/idta/SubmodelTemplate/AssetInterfacesDescription",
+    "path": "InterfaceTemplateForCAN.InteractionMetadata.properties.property_name.forms.canv_payloadMapping[0].canv_enumeratedValues.orderRelevant",
+    "before": null,
+    "after": true,
+    "reason": "Make the AAS orderRelevant=true default explicit across readers"
+  },
+  {
+    "submodel": "https://admin-shell.io/idta/SubmodelTemplate/AssetInterfacesMappingConfiguration/2/0",
+    "path": "MappingConfigurations[0].Sinks.orderRelevant",
+    "before": null,
+    "after": true,
+    "reason": "Make the AAS orderRelevant=true default explicit across readers"
+  },
+  {
+    "submodel": "https://admin-shell.io/idta/SubmodelTemplate/CarbonFootprint/1/0",
+    "path": "ProductCarbonFootprints.orderRelevant",
+    "before": null,
+    "after": true,
+    "reason": "Make the AAS orderRelevant=true default explicit across readers"
+  },
+  {
+    "submodel": "https://admin-shell.io/idta/SubmodelTemplate/CarbonFootprint/1/0",
+    "path": "ProductCarbonFootprints[0].PcfCalculationMethods.orderRelevant",
+    "before": null,
+    "after": true,
+    "reason": "Make the AAS orderRelevant=true default explicit across readers"
+  },
+  {
+    "submodel": "https://admin-shell.io/idta/SubmodelTemplate/CarbonFootprint/1/0",
+    "path": "ProductCarbonFootprints[0].LifeCyclePhases.orderRelevant",
+    "before": null,
+    "after": true,
+    "reason": "Make the AAS orderRelevant=true default explicit across readers"
+  },
+  {
+    "submodel": "https://admin-shell.io/idta/SubmodelTemplate/CarbonFootprint/1/0",
+    "path": "ProductOrSectorSpecificCarbonFootprints.orderRelevant",
+    "before": null,
+    "after": true,
+    "reason": "Make the AAS orderRelevant=true default explicit across readers"
+  },
+  {
+    "submodel": "https://admin-shell.io/idta/SubmodelTemplate/CarbonFootprint/1/0",
+    "path": "ProductOrSectorSpecificCarbonFootprints[0].PcfCalculationMethods.orderRelevant",
+    "before": null,
+    "after": true,
+    "reason": "Make the AAS orderRelevant=true default explicit across readers"
+  },
+  {
+    "submodel": "https://admin-shell.io/idta/SubmodelTemplate/DEXPI/1/0",
+    "path": "Model01.ModelFile",
+    "before": "/aasx/C01V04-VER.EX01.xml",
+    "after": null,
+    "reason": "Example File URI absent from the official AASX package",
+    "source": "https://raw.githubusercontent.com/admin-shell-io/submodel-templates/f3790038b6c9c2d7e5ebbb4609997468fadf3e85/published/DEXPI/1/0/1/IDTA%2002012-1-0-1_Template_DEXPI.aasx"
+  },
+  {
+    "submodel": "https://admin-shell.io/idta/SubmodelTemplate/DEXPI/1/0",
+    "path": "Model01.ModelRepresentation",
+    "before": "/aasx/C01V04-VER.EX01.svg",
+    "after": null,
+    "reason": "Example File URI absent from the official AASX package",
+    "source": "https://raw.githubusercontent.com/admin-shell-io/submodel-templates/f3790038b6c9c2d7e5ebbb4609997468fadf3e85/published/DEXPI/1/0/1/IDTA%2002012-1-0-1_Template_DEXPI.aasx"
+  },
+  {
+    "submodel": "https://admin-shell.io/idta/SubmodelTemplate/DigitalBatteryPassport/DigitalNameplate/1/0",
+    "path": "Markings.orderRelevant",
+    "before": null,
+    "after": true,
+    "reason": "Make the AAS orderRelevant=true default explicit across readers"
+  },
+  {
+    "submodel": "https://admin-shell.io/idta/SubmodelTemplate/DigitalBatteryPassport/DigitalNameplate/1/0",
+    "path": "EUDeclarationOfConformity.orderRelevant",
+    "before": null,
+    "after": true,
+    "reason": "Make the AAS orderRelevant=true default explicit across readers"
+  },
+  {
+    "submodel": "https://admin-shell.io/idta/SubmodelTemplate/DigitalBatteryPassport/DigitalNameplate/1/0",
+    "path": "ResultsOfTestReportsProvingCompliance.orderRelevant",
+    "before": null,
+    "after": true,
+    "reason": "Make the AAS orderRelevant=true default explicit across readers"
+  },
+  {
+    "submodel": "https://admin-shell.io/idta/SubmodelTemplate/DigitalBatteryPassport/HandoverDocumentation/1/0",
+    "path": "Documents.orderRelevant",
+    "before": null,
+    "after": true,
+    "reason": "Make the AAS orderRelevant=true default explicit across readers"
+  },
+  {
+    "submodel": "https://admin-shell.io/idta/SubmodelTemplate/DigitalBatteryPassport/HandoverDocumentation/1/0",
+    "path": "Documents[0].DocumentClassifications.orderRelevant",
+    "before": null,
+    "after": true,
+    "reason": "Make the AAS orderRelevant=true default explicit across readers"
+  },
+  {
+    "submodel": "https://admin-shell.io/idta/SubmodelTemplate/DigitalBatteryPassport/HandoverDocumentation/1/0",
+    "path": "Documents[0].DocumentIds.orderRelevant",
+    "before": null,
+    "after": true,
+    "reason": "Make the AAS orderRelevant=true default explicit across readers"
+  },
+  {
+    "submodel": "https://admin-shell.io/idta/SubmodelTemplate/DigitalBatteryPassport/HandoverDocumentation/1/0",
+    "path": "Documents[0].DocumentVersions.orderRelevant",
+    "before": null,
+    "after": true,
+    "reason": "Make the AAS orderRelevant=true default explicit across readers"
+  },
+  {
+    "submodel": "https://admin-shell.io/idta/SubmodelTemplate/DigitalBatteryPassport/HandoverDocumentation/1/0",
+    "path": "Documents[0].DocumentVersions[0].Language.orderRelevant",
+    "before": null,
+    "after": true,
+    "reason": "Make the AAS orderRelevant=true default explicit across readers"
+  },
+  {
+    "submodel": "https://admin-shell.io/idta/SubmodelTemplate/DigitalBatteryPassport/HandoverDocumentation/1/0",
+    "path": "Documents[0].DocumentVersions[0].DigitalFiles.orderRelevant",
+    "before": null,
+    "after": true,
+    "reason": "Make the AAS orderRelevant=true default explicit across readers"
+  },
+  {
+    "submodel": "https://admin-shell.io/idta/SubmodelTemplate/DigitalBatteryPassport/CarbonFootprint/1/0",
+    "path": "ProductCarbonFootprints.orderRelevant",
+    "before": null,
+    "after": true,
+    "reason": "Make the AAS orderRelevant=true default explicit across readers"
+  },
+  {
+    "submodel": "https://admin-shell.io/idta/SubmodelTemplate/DigitalBatteryPassport/CarbonFootprint/1/0",
+    "path": "ProductCarbonFootprints[0].PcfCalculationMethods.orderRelevant",
+    "before": null,
+    "after": true,
+    "reason": "Make the AAS orderRelevant=true default explicit across readers"
+  },
+  {
+    "submodel": "https://admin-shell.io/idta/SubmodelTemplate/DigitalBatteryPassport/CarbonFootprint/1/0",
+    "path": "ProductCarbonFootprints[0].LifeCyclePhases.orderRelevant",
+    "before": null,
+    "after": true,
+    "reason": "Make the AAS orderRelevant=true default explicit across readers"
+  },
+  {
+    "submodel": "https://admin-shell.io/idta/SubmodelTemplate/DigitalBatteryPassport/CarbonFootprint/1/0",
+    "path": "ProductCarbonFootprints[0].WebLinkToPublicCarbonFootprintStudy.orderRelevant",
+    "before": null,
+    "after": true,
+    "reason": "Make the AAS orderRelevant=true default explicit across readers"
+  },
+  {
+    "submodel": "https://admin-shell.io/idta/SubmodelTemplate/DigitalBatteryPassport/TechnicalData/1/0",
+    "path": "GeneralInformation.ProductImages.orderRelevant",
+    "before": null,
+    "after": true,
+    "reason": "Make the AAS orderRelevant=true default explicit across readers"
+  },
+  {
+    "submodel": "https://admin-shell.io/idta/SubmodelTemplate/DigitalBatteryPassport/TechnicalData/1/0",
+    "path": "TechnicalPropertyAreas.PowerCapability.OriginalPowerCapability.orderRelevant",
+    "before": null,
+    "after": true,
+    "reason": "Make the AAS orderRelevant=true default explicit across readers"
+  },
+  {
+    "submodel": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.2#ProductCondition/submodel",
+    "path": "NegativeEvents[0].idShort",
+    "before": "NegativeEvent",
+    "after": null,
+    "reason": "AASd-120: list children are addressed by position, without idShort"
+  },
+  {
+    "submodel": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.2#ProductCondition/submodel",
+    "path": "InformationOnAccidents[0].idShort",
+    "before": "DocumentIdentifier",
+    "after": null,
+    "reason": "AASd-120: list children are addressed by position, without idShort"
+  },
+  {
+    "submodel": "urn:samm:io.admin-shell.idta.batterypass.material_composition:1.0.0#MaterialComposition/submodel",
+    "path": "BatteryMaterials[0].idShort",
+    "before": "BatteryMaterial",
+    "after": null,
+    "reason": "AASd-120: list children are addressed by position, without idShort"
+  },
+  {
+    "submodel": "urn:samm:io.admin-shell.idta.batterypass.material_composition:1.0.0#MaterialComposition/submodel",
+    "path": "HazardousSubstances[0].idShort",
+    "before": "HazardousSubstance",
+    "after": null,
+    "reason": "AASd-120: list children are addressed by position, without idShort"
+  },
+  {
+    "submodel": "urn:samm:io.admin-shell.idta.batterypass.material_composition:1.0.0#MaterialComposition/submodel",
+    "path": "HazardousSubstances[0].HazardousSubstanceImpact[0].idShort",
+    "before": "Impact",
+    "after": null,
+    "reason": "AASd-120: list children are addressed by position, without idShort"
+  },
+  {
+    "submodel": "https://admin-shell.io/idta/SubmodelTemplate/DigitalQualityDocument/1/0",
+    "path": "DocumentIds.orderRelevant",
+    "before": null,
+    "after": true,
+    "reason": "Make the AAS orderRelevant=true default explicit across readers"
+  },
+  {
+    "submodel": "https://admin-shell.io/idta/SubmodelTemplate/DigitalQualityDocument/1/0",
+    "path": "DocumentClassifications.orderRelevant",
+    "before": null,
+    "after": true,
+    "reason": "Make the AAS orderRelevant=true default explicit across readers"
+  },
+  {
+    "submodel": "https://admin-shell.io/idta/SubmodelTemplate/DigitalQualityDocument/1/0",
+    "path": "DocumentInstances.orderRelevant",
+    "before": null,
+    "after": true,
+    "reason": "Make the AAS orderRelevant=true default explicit across readers"
+  },
+  {
+    "submodel": "https://admin-shell.io/idta/SubmodelTemplate/DigitalQualityDocument/1/0",
+    "path": "DocumentInstances[0].Language.orderRelevant",
+    "before": null,
+    "after": true,
+    "reason": "Make the AAS orderRelevant=true default explicit across readers"
+  },
+  {
+    "submodel": "https://admin-shell.io/idta/SubmodelTemplate/DigitalQualityDocument/1/0",
+    "path": "DocumentInstances[0].RefersToEntities.orderRelevant",
+    "before": null,
+    "after": true,
+    "reason": "Make the AAS orderRelevant=true default explicit across readers"
+  },
+  {
+    "submodel": "https://admin-shell.io/idta/SubmodelTemplate/DigitalQualityDocument/1/0",
+    "path": "DocumentInstances[0].BasedOnReferences.orderRelevant",
+    "before": null,
+    "after": true,
+    "reason": "Make the AAS orderRelevant=true default explicit across readers"
+  },
+  {
+    "submodel": "https://admin-shell.io/idta/SubmodelTemplate/DigitalQualityDocument/1/0",
+    "path": "DocumentInstances[0].DigitalFiles.orderRelevant",
+    "before": null,
+    "after": true,
+    "reason": "Make the AAS orderRelevant=true default explicit across readers"
+  },
+  {
+    "submodel": "https://admin-shell.io/idta/SubmodelTemplate/DigitalQualityDocument/1/0",
+    "path": "DocumentInstances[0].AdministrativeData.CoreData.Identifications.orderRelevant",
+    "before": null,
+    "after": true,
+    "reason": "Make the AAS orderRelevant=true default explicit across readers"
+  },
+  {
+    "submodel": "https://admin-shell.io/idta/SubmodelTemplate/DigitalQualityDocument/1/0",
+    "path": "DocumentInstances[0].AdministrativeData.Items.Identifications.orderRelevant",
+    "before": null,
+    "after": true,
+    "reason": "Make the AAS orderRelevant=true default explicit across readers"
+  },
+  {
+    "submodel": "https://admin-shell.io/idta/SubmodelTemplate/DigitalQualityDocument/1/0",
+    "path": "DocumentInstances[0].AdministrativeData.Items.Item.orderRelevant",
+    "before": null,
+    "after": true,
+    "reason": "Make the AAS orderRelevant=true default explicit across readers"
+  },
+  {
+    "submodel": "https://admin-shell.io/idta/SubmodelTemplate/DigitalQualityDocument/1/0",
+    "path": "DocumentInstances[0].AdministrativeData.Items.Item[0].Identifications.orderRelevant",
+    "before": null,
+    "after": true,
+    "reason": "Make the AAS orderRelevant=true default explicit across readers"
+  },
+  {
+    "submodel": "https://admin-shell.io/idta/SubmodelTemplate/DigitalQualityDocument/1/0",
+    "path": "DocumentInstances[0].AdministrativeData.Statements.orderRelevant",
+    "before": null,
+    "after": true,
+    "reason": "Make the AAS orderRelevant=true default explicit across readers"
+  },
+  {
+    "submodel": "https://admin-shell.io/idta/SubmodelTemplate/DigitalNameplate/3/0",
+    "path": "Markings.orderRelevant",
+    "before": null,
+    "after": true,
+    "reason": "Make the AAS orderRelevant=true default explicit across readers"
+  },
+  {
+    "submodel": "https://admin-shell.io/idta/SubmodelTemplate/DigitalNameplate/3/0",
+    "path": "AssetSpecificProperties.GuidelineSpecificProperties.orderRelevant",
+    "before": null,
+    "after": true,
+    "reason": "Make the AAS orderRelevant=true default explicit across readers"
+  },
+  {
+    "submodel": "https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/EnergyFlexibilityDataModel",
+    "path": "flexibleLoadMeasuresPackage.flexibleLoadMeasures.orderRelevant",
+    "before": null,
+    "after": true,
+    "reason": "Make the AAS orderRelevant=true default explicit across readers"
+  },
+  {
+    "submodel": "https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/EnergyFlexibilityDataModel",
+    "path": "flexibleLoadMeasuresPackage.flexibleLoadMeasures[0].loadChangeProfiles.orderRelevant",
+    "before": null,
+    "after": true,
+    "reason": "Make the AAS orderRelevant=true default explicit across readers"
+  },
+  {
+    "submodel": "https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/EnergyFlexibilityDataModel",
+    "path": "flexibilitySpace_operationalPotential.flexibleLoads.orderRelevant",
+    "before": null,
+    "after": true,
+    "reason": "Make the AAS orderRelevant=true default explicit across readers"
+  },
+  {
+    "submodel": "https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/EnergyFlexibilityDataModel",
+    "path": "flexibilitySpace_operationalPotential.flexibleLoads[0].powerStates.orderRelevant",
+    "before": null,
+    "after": true,
+    "reason": "Make the AAS orderRelevant=true default explicit across readers"
+  },
+  {
+    "submodel": "https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/EnergyFlexibilityDataModel",
+    "path": "flexibilitySpace_operationalPotential.storages.orderRelevant",
+    "before": null,
+    "after": true,
+    "reason": "Make the AAS orderRelevant=true default explicit across readers"
+  },
+  {
+    "submodel": "https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/EnergyFlexibilityDataModel",
+    "path": "flexibilitySpace_operationalPotential.storages[0].suppliers.orderRelevant",
+    "before": null,
+    "after": true,
+    "reason": "Make the AAS orderRelevant=true default explicit across readers"
+  },
+  {
+    "submodel": "https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/EnergyFlexibilityDataModel",
+    "path": "flexibilitySpace_operationalPotential.storages[0].drains.orderRelevant",
+    "before": null,
+    "after": true,
+    "reason": "Make the AAS orderRelevant=true default explicit across readers"
+  },
+  {
+    "submodel": "https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/EnergyFlexibilityDataModel",
+    "path": "flexibilitySpace_operationalPotential.dependencies.orderRelevant",
+    "before": null,
+    "after": true,
+    "reason": "Make the AAS orderRelevant=true default explicit across readers"
+  },
+  {
+    "submodel": "https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/EnergyFlexibilityDataModel",
+    "path": "flexibilitySpace_operationalPotential.dependencies[0].applicabilityConditions.orderRelevant",
+    "before": null,
+    "after": true,
+    "reason": "Make the AAS orderRelevant=true default explicit across readers"
+  },
+  {
+    "submodel": "https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/EnergyFlexibilityDataModel",
+    "path": "flexibilitySpace_applicationTailoredPotential.flexibleLoads.orderRelevant",
+    "before": null,
+    "after": true,
+    "reason": "Make the AAS orderRelevant=true default explicit across readers"
+  },
+  {
+    "submodel": "https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/EnergyFlexibilityDataModel",
+    "path": "flexibilitySpace_applicationTailoredPotential.flexibleLoads[0].powerStates.orderRelevant",
+    "before": null,
+    "after": true,
+    "reason": "Make the AAS orderRelevant=true default explicit across readers"
+  },
+  {
+    "submodel": "https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/EnergyFlexibilityDataModel",
+    "path": "flexibilitySpace_applicationTailoredPotential.storages.orderRelevant",
+    "before": null,
+    "after": true,
+    "reason": "Make the AAS orderRelevant=true default explicit across readers"
+  },
+  {
+    "submodel": "https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/EnergyFlexibilityDataModel",
+    "path": "flexibilitySpace_applicationTailoredPotential.storages[0].suppliers.orderRelevant",
+    "before": null,
+    "after": true,
+    "reason": "Make the AAS orderRelevant=true default explicit across readers"
+  },
+  {
+    "submodel": "https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/EnergyFlexibilityDataModel",
+    "path": "flexibilitySpace_applicationTailoredPotential.storages[0].drains.orderRelevant",
+    "before": null,
+    "after": true,
+    "reason": "Make the AAS orderRelevant=true default explicit across readers"
+  },
+  {
+    "submodel": "https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/EnergyFlexibilityDataModel",
+    "path": "flexibilitySpace_applicationTailoredPotential.dependencies.orderRelevant",
+    "before": null,
+    "after": true,
+    "reason": "Make the AAS orderRelevant=true default explicit across readers"
+  },
+  {
+    "submodel": "https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/EnergyFlexibilityDataModel",
+    "path": "flexibilitySpace_applicationTailoredPotential.dependencies[0].applicabilityConditions.orderRelevant",
+    "before": null,
+    "after": true,
+    "reason": "Make the AAS orderRelevant=true default explicit across readers"
+  },
+  {
+    "submodel": "https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/EnergyFlexibilityDataModel",
+    "path": "flexibilitySpace_generalTechnicalPotential.flexibleLoads.orderRelevant",
+    "before": null,
+    "after": true,
+    "reason": "Make the AAS orderRelevant=true default explicit across readers"
+  },
+  {
+    "submodel": "https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/EnergyFlexibilityDataModel",
+    "path": "flexibilitySpace_generalTechnicalPotential.flexibleLoads[0].powerStates.orderRelevant",
+    "before": null,
+    "after": true,
+    "reason": "Make the AAS orderRelevant=true default explicit across readers"
+  },
+  {
+    "submodel": "https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/EnergyFlexibilityDataModel",
+    "path": "flexibilitySpace_generalTechnicalPotential.storages.orderRelevant",
+    "before": null,
+    "after": true,
+    "reason": "Make the AAS orderRelevant=true default explicit across readers"
+  },
+  {
+    "submodel": "https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/EnergyFlexibilityDataModel",
+    "path": "flexibilitySpace_generalTechnicalPotential.storages[0].suppliers.orderRelevant",
+    "before": null,
+    "after": true,
+    "reason": "Make the AAS orderRelevant=true default explicit across readers"
+  },
+  {
+    "submodel": "https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/EnergyFlexibilityDataModel",
+    "path": "flexibleLoadMeasureExecutionLog.executionLogEntries.orderRelevant",
+    "before": null,
+    "after": true,
+    "reason": "Make the AAS orderRelevant=true default explicit across readers"
+  },
+  {
+    "submodel": "https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/EnergyFlexibilityDataModel",
+    "path": "flexibleLoadMeasureExecutionLog.executionLogEntries[0].loadChangeProfiles.orderRelevant",
+    "before": null,
+    "after": true,
+    "reason": "Make the AAS orderRelevant=true default explicit across readers"
+  },
+  {
+    "submodel": "https://admin-shell.io/idta/SubmodelTemplate/FactoryAutomationDataForPlantPlanning/1/0",
+    "path": "AutomationMLAttributeAndInterfaceList.orderRelevant",
+    "before": null,
+    "after": true,
+    "reason": "Make the AAS orderRelevant=true default explicit across readers"
+  },
+  {
+    "submodel": "https://admin-shell.io/idta/SubmodelTemplate/FactoryAutomationDataForPlantPlanning/1/0",
+    "path": "AutomationMLData",
+    "before": "/IDTA_MediaTransferPoint.aml",
+    "after": null,
+    "reason": "Example File URI absent from the official AASX package",
+    "source": "https://raw.githubusercontent.com/admin-shell-io/submodel-templates/f3790038b6c9c2d7e5ebbb4609997468fadf3e85/published/Factory%20Automation%20Data%20for%20Plant%20Planning/1/1/IDTA%2002075_Template_FactoryAutomationDataForPlantPlanning.aasx"
+  },
+  {
+    "submodel": "https://admin-shell.io/idta/SubmodelTemplate/RailwayFireProtection/1/0",
+    "path": "FireProtectionCertificates.RequirementsSets.orderRelevant",
+    "before": null,
+    "after": true,
+    "reason": "Make the AAS orderRelevant=true default explicit across readers"
+  },
+  {
+    "submodel": "https://admin-shell.io/idta/SubmodelTemplate/RailwayFireProtection/1/0",
+    "path": "FireProtectionCertificates.RequirementsSets[0].idShort",
+    "before": "RequirementsSet",
+    "after": null,
+    "reason": "AASd-120: list children are addressed by position, without idShort"
+  },
+  {
+    "submodel": "https://admin-shell.io/idta/SubmodelTemplate/RailwayFireProtection/1/0",
+    "path": "FireProtectionCertificates.RequirementsSets[0].ReportReferences.orderRelevant",
+    "before": null,
+    "after": true,
+    "reason": "Make the AAS orderRelevant=true default explicit across readers"
+  },
+  {
+    "submodel": "https://admin-shell.io/idta/SubmodelTemplate/RailwayFireProtection/1/0",
+    "path": "FireProtectionCertificates.RequirementsSets[0].ReportReferences[0].idShort",
+    "before": "ReportReference",
+    "after": null,
+    "reason": "AASd-120: list children are addressed by position, without idShort"
+  },
+  {
+    "submodel": "https://admin-shell.io/idta/SubmodelTemplate/RailwayFireProtection/1/0",
+    "path": "FireProtectionCertificates.Reports.orderRelevant",
+    "before": null,
+    "after": true,
+    "reason": "Make the AAS orderRelevant=true default explicit across readers"
+  },
+  {
+    "submodel": "https://admin-shell.io/idta/SubmodelTemplate/RailwayFireProtection/1/0",
+    "path": "FireProtectionCertificates.Reports[0].idShort",
+    "before": "Report",
+    "after": null,
+    "reason": "AASd-120: list children are addressed by position, without idShort"
+  },
+  {
+    "submodel": "https://admin-shell.io/idta/SubmodelTemplate/RailwayFireProtection/1/0",
+    "path": "FireProtectionCertificates.Reports[0].Tests.orderRelevant",
+    "before": null,
+    "after": true,
+    "reason": "Make the AAS orderRelevant=true default explicit across readers"
+  },
+  {
+    "submodel": "https://admin-shell.io/idta/SubmodelTemplate/RailwayFireProtection/1/0",
+    "path": "FireProtectionCertificates.Reports[0].Tests[0].idShort",
+    "before": "Test",
+    "after": null,
+    "reason": "AASd-120: list children are addressed by position, without idShort"
+  },
+  {
+    "submodel": "https://admin-shell.io/idta/SubmodelTemplate/HandoverDocumentation/2/0",
+    "path": "Documents.orderRelevant",
+    "before": null,
+    "after": true,
+    "reason": "Make the AAS orderRelevant=true default explicit across readers"
+  },
+  {
+    "submodel": "https://admin-shell.io/idta/SubmodelTemplate/HandoverDocumentation/2/0",
+    "path": "Documents[0].DocumentIds.orderRelevant",
+    "before": null,
+    "after": true,
+    "reason": "Make the AAS orderRelevant=true default explicit across readers"
+  },
+  {
+    "submodel": "https://admin-shell.io/idta/SubmodelTemplate/HandoverDocumentation/2/0",
+    "path": "Documents[0].DocumentClassifications.orderRelevant",
+    "before": null,
+    "after": true,
+    "reason": "Make the AAS orderRelevant=true default explicit across readers"
+  },
+  {
+    "submodel": "https://admin-shell.io/idta/SubmodelTemplate/HandoverDocumentation/2/0",
+    "path": "Documents[0].DocumentVersions.orderRelevant",
+    "before": null,
+    "after": true,
+    "reason": "Make the AAS orderRelevant=true default explicit across readers"
+  },
+  {
+    "submodel": "https://admin-shell.io/idta/SubmodelTemplate/HandoverDocumentation/2/0",
+    "path": "Documents[0].DocumentVersions[0].Language.orderRelevant",
+    "before": null,
+    "after": true,
+    "reason": "Make the AAS orderRelevant=true default explicit across readers"
+  },
+  {
+    "submodel": "https://admin-shell.io/idta/SubmodelTemplate/HandoverDocumentation/2/0",
+    "path": "Documents[0].DocumentVersions[0].RefersToEntities.orderRelevant",
+    "before": null,
+    "after": true,
+    "reason": "Make the AAS orderRelevant=true default explicit across readers"
+  },
+  {
+    "submodel": "https://admin-shell.io/idta/SubmodelTemplate/HandoverDocumentation/2/0",
+    "path": "Documents[0].DocumentVersions[0].BasedOnReferences.orderRelevant",
+    "before": null,
+    "after": true,
+    "reason": "Make the AAS orderRelevant=true default explicit across readers"
+  },
+  {
+    "submodel": "https://admin-shell.io/idta/SubmodelTemplate/HandoverDocumentation/2/0",
+    "path": "Documents[0].DocumentVersions[0].TranslationOfEntities.orderRelevant",
+    "before": null,
+    "after": true,
+    "reason": "Make the AAS orderRelevant=true default explicit across readers"
+  },
+  {
+    "submodel": "https://admin-shell.io/idta/SubmodelTemplate/HandoverDocumentation/2/0",
+    "path": "Documents[0].DocumentVersions[0].DigitalFiles.orderRelevant",
+    "before": null,
+    "after": true,
+    "reason": "Make the AAS orderRelevant=true default explicit across readers"
+  },
+  {
+    "submodel": "https://admin-shell.io/idta/SubmodelTemplate/HandoverDocumentation/2/0",
+    "path": "Documents[0].DocumentedEntities.orderRelevant",
+    "before": null,
+    "after": true,
+    "reason": "Make the AAS orderRelevant=true default explicit across readers"
+  },
+  {
+    "submodel": "https://admin-shell.io/idta/SubmodelTemplate/HandoverDocumentation/2/0",
+    "path": "Entities.orderRelevant",
+    "before": null,
+    "after": true,
+    "reason": "Make the AAS orderRelevant=true default explicit across readers"
+  },
+  {
+    "submodel": "https://admin-shell.io/idta/SubmodelTemplate/InspectionDocumentsOfSteelProducts/1/0",
+    "path": "MechanicalTests.TensileTest__00__.TensileStrengthIndividualValues.orderRelevant",
+    "before": null,
+    "after": true,
+    "reason": "Make the AAS orderRelevant=true default explicit across readers"
+  },
+  {
+    "submodel": "https://admin-shell.io/idta/SubmodelTemplate/InspectionDocumentsOfSteelProducts/1/0",
+    "path": "MechanicalTests.TensileTest__00__.ElongationAfterFractureIndividualValues.orderRelevant",
+    "before": null,
+    "after": true,
+    "reason": "Make the AAS orderRelevant=true default explicit across readers"
+  },
+  {
+    "submodel": "https://admin-shell.io/idta/SubmodelTemplate/InspectionDocumentsOfSteelProducts/1/0",
+    "path": "MechanicalTests.HardnessTest__00__.HardnessIndividualValues.orderRelevant",
+    "before": null,
+    "after": true,
+    "reason": "Make the AAS orderRelevant=true default explicit across readers"
+  },
+  {
+    "submodel": "https://admin-shell.io/idta/SubmodelTemplate/InspectionDocumentsOfSteelProducts/1/0",
+    "path": "MechanicalTests.NotchImpactTest__00__.NotchImpactStrengthIndividualValues.orderRelevant",
+    "before": null,
+    "after": true,
+    "reason": "Make the AAS orderRelevant=true default explicit across readers"
+  },
+  {
+    "submodel": "https://admin-shell.io/idta/SubmodelTemplate/InspectionDocumentsOfSteelProducts/1/0",
+    "path": "MechanicalTests.NotchImpactTest__00__.NotchImpactWorkIndividualValues.orderRelevant",
+    "before": null,
+    "after": true,
+    "reason": "Make the AAS orderRelevant=true default explicit across readers"
+  },
+  {
+    "submodel": "https://admin-shell.io/idta/SubmodelTemplate/ModuleTypePackage/1/0",
+    "path": "MTPFile",
+    "before": "/aasx/Example.aml",
+    "after": null,
+    "reason": "Example File URI absent from the official AASX package",
+    "source": "https://raw.githubusercontent.com/admin-shell-io/submodel-templates/f3790038b6c9c2d7e5ebbb4609997468fadf3e85/published/MTP/1/0/2/IDTA_02001-1-0-2_Submodel_MTPv1.0-rc2-with-documentation1_en.aasx"
+  },
+  {
+    "submodel": "https://admin-shell.io/idta/SubmodelTemplate/ModuleTypePackageInstance/1/0",
+    "path": "MTPFile",
+    "before": "/aasx/Example.aml",
+    "after": null,
+    "reason": "Example File URI absent from the official AASX package",
+    "source": "https://raw.githubusercontent.com/admin-shell-io/submodel-templates/f3790038b6c9c2d7e5ebbb4609997468fadf3e85/published/MTP/1/0/2/IDTA_02001-1-0-2_Submodel_MTPv1.0-rc2-with-documentation1_en.aasx"
+  },
+  {
+    "submodel": "https://admin-shell.io/idta/SubmodelTemplate/MaintenanceInstructions/1/0",
+    "path": "MaintenanceConsumablesList.orderRelevant",
+    "before": null,
+    "after": true,
+    "reason": "Make the AAS orderRelevant=true default explicit across readers"
+  },
+  {
+    "submodel": "https://admin-shell.io/idta/SubmodelTemplate/MaintenanceInstructions/1/0",
+    "path": "MaintenanceSparePartList.orderRelevant",
+    "before": null,
+    "after": true,
+    "reason": "Make the AAS orderRelevant=true default explicit across readers"
+  },
+  {
+    "submodel": "https://admin-shell.io/idta/SubmodelTemplate/en18065materialdata/1/0",
+    "path": "ApplicationSpecificStandards.orderRelevant",
+    "before": null,
+    "after": true,
+    "reason": "Make the AAS orderRelevant=true default explicit across readers"
+  },
+  {
+    "submodel": "https://admin-shell.io/idta/SubmodelTemplate/en18065materialdata/1/0",
+    "path": "InformationCharacteristics.PresenceOfModifyingAdditives.orderRelevant",
+    "before": null,
+    "after": true,
+    "reason": "Make the AAS orderRelevant=true default explicit across readers"
+  },
+  {
+    "submodel": "https://admin-shell.io/idta/SubmodelTemplate/en18065materialdata/1/0",
+    "path": "PropertyCharacteristics.TensileProperties.MeasuredValues.orderRelevant",
+    "before": null,
+    "after": true,
+    "reason": "Make the AAS orderRelevant=true default explicit across readers"
+  },
+  {
+    "submodel": "https://admin-shell.io/idta/SubmodelTemplate/opcuaserverdatasheet/1/0",
+    "path": "Configuration.NodeSets.orderRelevant",
+    "before": null,
+    "after": true,
+    "reason": "Make the AAS orderRelevant=true default explicit across readers"
+  },
+  {
+    "submodel": "https://admin-shell.io/idta/SubmodelTemplate/opcuaserverdatasheet/1/0",
+    "path": "Configuration.SupportSecurityPolicyUris.orderRelevant",
+    "before": null,
+    "after": true,
+    "reason": "Make the AAS orderRelevant=true default explicit across readers"
+  },
+  {
+    "submodel": "https://admin-shell.io/idta/SubmodelTemplate/opcuaserverdatasheet/1/0",
+    "path": "EndpointDescriptions.orderRelevant",
+    "before": null,
+    "after": true,
+    "reason": "Make the AAS orderRelevant=true default explicit across readers"
+  },
+  {
+    "submodel": "https://admin-shell.io/idta/SubmodelTemplate/opcuaserverdatasheet/1/0",
+    "path": "EndpointDescriptions[0].Server.DiscoveryUrls.orderRelevant",
+    "before": null,
+    "after": true,
+    "reason": "Make the AAS orderRelevant=true default explicit across readers"
+  },
+  {
+    "submodel": "https://admin-shell.io/idta/SubmodelTemplate/opcuaserverdatasheet/1/0",
+    "path": "EndpointDescriptions[0].UserIdentityTokens.orderRelevant",
+    "before": null,
+    "after": true,
+    "reason": "Make the AAS orderRelevant=true default explicit across readers"
+  },
+  {
+    "submodel": "https://admin-shell.io/idta/SubmodelTemplate/opcuaserverdatasheet/1/0",
+    "path": "DiscoveryUrls.orderRelevant",
+    "before": null,
+    "after": true,
+    "reason": "Make the AAS orderRelevant=true default explicit across readers"
+  },
+  {
+    "submodel": "https://admin-shell.io/idta/SubmodelTemplate/opcuaserverdatasheet/1/0",
+    "path": "Configuration.NodeSets[0]",
+    "before": "/aasx/files/Opc.Ua.Di.NodeSet2.xml",
+    "after": null,
+    "reason": "Example File URI absent from the official AASX package",
+    "source": "https://raw.githubusercontent.com/admin-shell-io/submodel-templates/f3790038b6c9c2d7e5ebbb4609997468fadf3e85/published/OPC%20UA%20Server%20Datasheet/1/1/IDTA%2002009-1-0-Template-OPCUA-Server%20Datasheet.aasx"
+  },
+  {
+    "submodel": "https://admin-shell.io/idta/SubmodelTemplate/PredictiveMaintenance/1/0",
+    "path": "RemainingUsefulLifePrediction.ListRULBoundaryConditions.orderRelevant",
+    "before": null,
+    "after": true,
+    "reason": "Make the AAS orderRelevant=true default explicit across readers"
+  },
+  {
+    "submodel": "https://admin-shell.io/idta/SubmodelTemplate/PredictiveMaintenance/1/0",
+    "path": "RemainingUsefulLifePrediction.ListPreAlerts.orderRelevant",
+    "before": null,
+    "after": true,
+    "reason": "Make the AAS orderRelevant=true default explicit across readers"
+  },
+  {
+    "submodel": "https://admin-shell.io/idta/SubmodelTemplate/productchangenotifications/1/0",
+    "path": "Records[0].LifeCycleData.orderRelevant",
+    "before": null,
+    "after": true,
+    "reason": "Make the AAS orderRelevant=true default explicit across readers"
+  },
+  {
+    "submodel": "https://admin-shell.io/idta/SubmodelTemplate/productchangenotifications/1/0",
+    "path": "Records[0].ReasonsOfChange.orderRelevant",
+    "before": null,
+    "after": true,
+    "reason": "Make the AAS orderRelevant=true default explicit across readers"
+  },
+  {
+    "submodel": "https://admin-shell.io/idta/SubmodelTemplate/productchangenotifications/1/0",
+    "path": "Records[0].ItemCategories.orderRelevant",
+    "before": null,
+    "after": true,
+    "reason": "Make the AAS orderRelevant=true default explicit across readers"
+  },
+  {
+    "submodel": "https://admin-shell.io/idta/SubmodelTemplate/productchangenotifications/1/0",
+    "path": "Records[0].AffectedPartNumbers.orderRelevant",
+    "before": null,
+    "after": true,
+    "reason": "Make the AAS orderRelevant=true default explicit across readers"
+  },
+  {
+    "submodel": "https://admin-shell.io/idta/SubmodelTemplate/productchangenotifications/1/0",
+    "path": "Records[0].AdditionalInformation.orderRelevant",
+    "before": null,
+    "after": true,
+    "reason": "Make the AAS orderRelevant=true default explicit across readers"
+  },
+  {
+    "submodel": "https://admin-shell.io/idta/SubmodelTemplate/productchangenotifications/1/0",
+    "path": "Records[0].ItemOfChange.ProductClassifications.orderRelevant",
+    "before": null,
+    "after": true,
+    "reason": "Make the AAS orderRelevant=true default explicit across readers"
+  },
+  {
+    "submodel": "https://admin-shell.io/idta/SubmodelTemplate/productchangenotifications/1/0",
+    "path": "Records[0].ItemOfChange.TechnicalData_Changes.orderRelevant",
+    "before": null,
+    "after": true,
+    "reason": "Make the AAS orderRelevant=true default explicit across readers"
+  },
+  {
+    "submodel": "https://admin-shell.io/idta/SubmodelTemplate/productchangenotifications/1/0",
+    "path": "Records[0].RecommendedItems.orderRelevant",
+    "before": null,
+    "after": true,
+    "reason": "Make the AAS orderRelevant=true default explicit across readers"
+  },
+  {
+    "submodel": "https://admin-shell.io/idta/SubmodelTemplate/productchangenotifications/1/0",
+    "path": "Records[0].RecommendedItems[0].ProductClassifications.orderRelevant",
+    "before": null,
+    "after": true,
+    "reason": "Make the AAS orderRelevant=true default explicit across readers"
+  },
+  {
+    "submodel": "https://admin-shell.io/idta/SubmodelTemplate/ProductionCalendar/1/0",
+    "path": "specificationExtensionVariables.orderRelevant",
+    "before": null,
+    "after": true,
+    "reason": "Make the AAS orderRelevant=true default explicit across readers"
+  },
+  {
+    "submodel": "https://admin-shell.io/idta/SubmodelTemplate/ProductionCalendar/1/0",
+    "path": "specificationExtensionVariables[0].variableSpecification",
+    "before": "/aasx/files/RFC5545-X-BREAK.txt",
+    "after": null,
+    "reason": "Example File URI absent from the official AASX package",
+    "source": "https://raw.githubusercontent.com/admin-shell-io/submodel-templates/f3790038b6c9c2d7e5ebbb4609997468fadf3e85/published/Production%20Calendar/1/1/IDTA%2002067_Template_ProductionCalendar.aasx"
+  },
+  {
+    "submodel": "https://admin-shell.io/idta/SubmodelTemplate/ProductionCalendar/1/0",
+    "path": "specificationExtensionVariables[1].variableSpecification",
+    "before": "/aasx/files/RFC5545-X-PRODUCTION-DAY.txt",
+    "after": null,
+    "reason": "Example File URI absent from the official AASX package",
+    "source": "https://raw.githubusercontent.com/admin-shell-io/submodel-templates/f3790038b6c9c2d7e5ebbb4609997468fadf3e85/published/Production%20Calendar/1/1/IDTA%2002067_Template_ProductionCalendar.aasx"
+  },
+  {
+    "submodel": "https://admin-shell.io/idta/SubmodelTemplate/ProductionCalendar/1/0",
+    "path": "specificationExtensionVariables[2].variableSpecification",
+    "before": "/aasx/files/RFC5545-X-MAINTENANCE.txt",
+    "after": null,
+    "reason": "Example File URI absent from the official AASX package",
+    "source": "https://raw.githubusercontent.com/admin-shell-io/submodel-templates/f3790038b6c9c2d7e5ebbb4609997468fadf3e85/published/Production%20Calendar/1/1/IDTA%2002067_Template_ProductionCalendar.aasx"
+  },
+  {
+    "submodel": "https://admin-shell.io/idta/SubmodelTemplate/CompanyData/1/0",
+    "path": "BankAccounts.orderRelevant",
+    "before": null,
+    "after": true,
+    "reason": "Make the AAS orderRelevant=true default explicit across readers"
+  },
+  {
+    "submodel": "https://admin-shell.io/idta/SubmodelTemplate/CompanyData/1/0",
+    "path": "DigitalInterfaces.CompanySystems.CADTools.orderRelevant",
+    "before": null,
+    "after": true,
+    "reason": "Make the AAS orderRelevant=true default explicit across readers"
+  },
+  {
+    "submodel": "https://admin-shell.io/idta/SubmodelTemplate/CompanyData/1/0",
+    "path": "CompanyGovernance.IndustryStandards.Memberships.orderRelevant",
+    "before": null,
+    "after": true,
+    "reason": "Make the AAS orderRelevant=true default explicit across readers"
+  },
+  {
+    "submodel": "https://admin-shell.io/idta/SubmodelTemplate/CompanyData/1/0",
+    "path": "CompanyGovernance.IndustryStandards.Certifications.orderRelevant",
+    "before": null,
+    "after": true,
+    "reason": "Make the AAS orderRelevant=true default explicit across readers"
+  },
+  {
+    "submodel": "https://admin-shell.io/idta/SubmodelTemplate/CompanyData/1/0",
+    "path": "CompanyGovernance.RiskManagement.EmployeeTrainings.orderRelevant",
+    "before": null,
+    "after": true,
+    "reason": "Make the AAS orderRelevant=true default explicit across readers"
+  },
+  {
+    "submodel": "https://admin-shell.io/idta/SubmodelTemplate/CompanyData/1/0",
+    "path": "CompanyGovernance.RiskManagement.Insurances.orderRelevant",
+    "before": null,
+    "after": true,
+    "reason": "Make the AAS orderRelevant=true default explicit across readers"
+  },
+  {
+    "submodel": "https://admin-shell.io/idta/SubmodelTemplate/CompanyData/1/0",
+    "path": "CompanyGovernance.LegalCompliance.orderRelevant",
+    "before": null,
+    "after": true,
+    "reason": "Make the AAS orderRelevant=true default explicit across readers"
+  },
+  {
+    "submodel": "https://admin-shell.io/idta/SubmodelTemplate/SimulationModels/1/1",
+    "path": "SimulationModel.RefSimDocumentation",
+    "before": "docs/simulation-documentation.pdf",
+    "after": null,
+    "reason": "Example File URI absent from the official AASX package",
+    "source": "https://raw.githubusercontent.com/admin-shell-io/submodel-templates/f3790038b6c9c2d7e5ebbb4609997468fadf3e85/published/Provision%20of%20Simulation%20Models/1/2/IDTA%2002005_Template_ProvisionOfSimulationModel.aasx"
+  },
+  {
+    "submodel": "https://admin-shell.io/idta/SubmodelTemplate/SimulationModels/1/1",
+    "path": "SimulationModel.ModelFile.ModelFileVersion.ModelPreviewImage",
+    "before": "images/model-preview.png",
+    "after": null,
+    "reason": "Example File URI absent from the official AASX package",
+    "source": "https://raw.githubusercontent.com/admin-shell-io/submodel-templates/f3790038b6c9c2d7e5ebbb4609997468fadf3e85/published/Provision%20of%20Simulation%20Models/1/2/IDTA%2002005_Template_ProvisionOfSimulationModel.aasx"
+  },
+  {
+    "submodel": "https://admin-shell.io/idta/SubmodelTemplate/SimulationModels/1/1",
+    "path": "SimulationModel.ModelFile.ModelFileVersion.DigitalFile",
+    "before": "models/simulation-model.bin",
+    "after": null,
+    "reason": "Example File URI absent from the official AASX package",
+    "source": "https://raw.githubusercontent.com/admin-shell-io/submodel-templates/f3790038b6c9c2d7e5ebbb4609997468fadf3e85/published/Provision%20of%20Simulation%20Models/1/2/IDTA%2002005_Template_ProvisionOfSimulationModel.aasx"
+  },
+  {
+    "submodel": "https://admin-shell.io/idta/SubmodelTemplate/SimulationModels/1/1",
+    "path": "SimulationModel.ModelFile.ModelFileVersion.ModelFileReleaseNotesFile",
+    "before": "notes/model-release-notes.txt",
+    "after": null,
+    "reason": "Example File URI absent from the official AASX package",
+    "source": "https://raw.githubusercontent.com/admin-shell-io/submodel-templates/f3790038b6c9c2d7e5ebbb4609997468fadf3e85/published/Provision%20of%20Simulation%20Models/1/2/IDTA%2002005_Template_ProvisionOfSimulationModel.aasx"
+  },
+  {
+    "submodel": "https://admin-shell.io/idta/SubmodelTemplate/SimulationModels/1/1",
+    "path": "SimulationModel.ParamFile",
+    "before": "params/simulation-params.txt",
+    "after": null,
+    "reason": "Example File URI absent from the official AASX package",
+    "source": "https://raw.githubusercontent.com/admin-shell-io/submodel-templates/f3790038b6c9c2d7e5ebbb4609997468fadf3e85/published/Provision%20of%20Simulation%20Models/1/2/IDTA%2002005_Template_ProvisionOfSimulationModel.aasx"
+  },
+  {
+    "submodel": "https://admin-shell.io/idta/SubmodelTemplate/SimulationModels/1/1",
+    "path": "SimulationModel.InitStateFile",
+    "before": "state/initial-state.txt",
+    "after": null,
+    "reason": "Example File URI absent from the official AASX package",
+    "source": "https://raw.githubusercontent.com/admin-shell-io/submodel-templates/f3790038b6c9c2d7e5ebbb4609997468fadf3e85/published/Provision%20of%20Simulation%20Models/1/2/IDTA%2002005_Template_ProvisionOfSimulationModel.aasx"
+  },
+  {
+    "submodel": "https://admin-shell.io/idta/SubmodelTemplate/SimulationModels/1/1",
+    "path": "SimulationModel.Quality.QualityMetricFile",
+    "before": "quality/quality-metrics.csv",
+    "after": null,
+    "reason": "Example File URI absent from the official AASX package",
+    "source": "https://raw.githubusercontent.com/admin-shell-io/submodel-templates/f3790038b6c9c2d7e5ebbb4609997468fadf3e85/published/Provision%20of%20Simulation%20Models/1/2/IDTA%2002005_Template_ProvisionOfSimulationModel.aasx"
+  },
+  {
+    "submodel": "https://admin-shell.io/idta/SubmodelTemplate/PurchaseOrder/1/0",
+    "path": "PurchaseOrderInformation.BuyerTrackingCodeList.orderRelevant",
+    "before": null,
+    "after": true,
+    "reason": "Make the AAS orderRelevant=true default explicit across readers"
+  },
+  {
+    "submodel": "https://admin-shell.io/idta/SubmodelTemplate/PurchaseOrder/1/0",
+    "path": "PurchaseOrderInformation.TaxDetailsTotalList.orderRelevant",
+    "before": null,
+    "after": true,
+    "reason": "Make the AAS orderRelevant=true default explicit across readers"
+  },
+  {
+    "submodel": "https://admin-shell.io/idta/SubmodelTemplate/PurchaseOrder/1/0",
+    "path": "PurchaseOrderInformation.DeliveryDateList.orderRelevant",
+    "before": null,
+    "after": true,
+    "reason": "Make the AAS orderRelevant=true default explicit across readers"
+  },
+  {
+    "submodel": "https://admin-shell.io/idta/SubmodelTemplate/PurchaseOrder/1/0",
+    "path": "CatalogueReferenceList.orderRelevant",
+    "before": null,
+    "after": true,
+    "reason": "Make the AAS orderRelevant=true default explicit across readers"
+  },
+  {
+    "submodel": "https://admin-shell.io/idta/SubmodelTemplate/PurchaseOrder/1/0",
+    "path": "ModeOfPaymentList.orderRelevant",
+    "before": null,
+    "after": true,
+    "reason": "Make the AAS orderRelevant=true default explicit across readers"
+  },
+  {
+    "submodel": "https://admin-shell.io/idta/SubmodelTemplate/PurchaseOrder/1/0",
+    "path": "IncotermsList.orderRelevant",
+    "before": null,
+    "after": true,
+    "reason": "Make the AAS orderRelevant=true default explicit across readers"
+  },
+  {
+    "submodel": "https://admin-shell.io/idta/SubmodelTemplate/PurchaseOrder/1/0",
+    "path": "InternationalRestrictionList.orderRelevant",
+    "before": null,
+    "after": true,
+    "reason": "Make the AAS orderRelevant=true default explicit across readers"
+  },
+  {
+    "submodel": "https://admin-shell.io/idta/SubmodelTemplate/PurchaseOrder/1/0",
+    "path": "RequestedCertificationsList.orderRelevant",
+    "before": null,
+    "after": true,
+    "reason": "Make the AAS orderRelevant=true default explicit across readers"
+  },
+  {
+    "submodel": "https://admin-shell.io/idta/SubmodelTemplate/PurchaseOrder/1/0",
+    "path": "SpecialTreatmentClassList.orderRelevant",
+    "before": null,
+    "after": true,
+    "reason": "Make the AAS orderRelevant=true default explicit across readers"
+  },
+  {
+    "submodel": "https://admin-shell.io/idta/SubmodelTemplate/PurchaseOrder/1/0",
+    "path": "CostCentersList.orderRelevant",
+    "before": null,
+    "after": true,
+    "reason": "Make the AAS orderRelevant=true default explicit across readers"
+  },
+  {
+    "submodel": "https://admin-shell.io/idta/SubmodelTemplate/PurchaseOrder/1/0",
+    "path": "AttachedMediaList.orderRelevant",
+    "before": null,
+    "after": true,
+    "reason": "Make the AAS orderRelevant=true default explicit across readers"
+  },
+  {
+    "submodel": "https://admin-shell.io/idta/SubmodelTemplate/PurchaseOrder/1/0",
+    "path": "ItemList.orderRelevant",
+    "before": null,
+    "after": true,
+    "reason": "Make the AAS orderRelevant=true default explicit across readers"
+  },
+  {
+    "submodel": "https://admin-shell.io/idta/SubmodelTemplate/PurchaseOrder/1/0",
+    "path": "ItemList[0].PartialDeliveryList.orderRelevant",
+    "before": null,
+    "after": true,
+    "reason": "Make the AAS orderRelevant=true default explicit across readers"
+  },
+  {
+    "submodel": "https://admin-shell.io/idta/SubmodelTemplate/PurchaseOrder/1/0",
+    "path": "ItemList[0].DeliveryDateList.orderRelevant",
+    "before": null,
+    "after": true,
+    "reason": "Make the AAS orderRelevant=true default explicit across readers"
+  },
+  {
+    "submodel": "https://admin-shell.io/idta/SubmodelTemplate/PurchaseOrder/1/0",
+    "path": "ItemList[0].ScanCodesList.orderRelevant",
+    "before": null,
+    "after": true,
+    "reason": "Make the AAS orderRelevant=true default explicit across readers"
+  },
+  {
+    "submodel": "https://admin-shell.io/idta/SubmodelTemplate/PurchaseOrder/1/0",
+    "path": "ItemList[0].QualityRequirements.orderRelevant",
+    "before": null,
+    "after": true,
+    "reason": "Make the AAS orderRelevant=true default explicit across readers"
+  },
+  {
+    "submodel": "https://admin-shell.io/idta/SubmodelTemplate/PurchaseOrder/1/0",
+    "path": "ItemList[0].ListProductIDsBusinessPartners.orderRelevant",
+    "before": null,
+    "after": true,
+    "reason": "Make the AAS orderRelevant=true default explicit across readers"
+  },
+  {
+    "submodel": "https://admin-shell.io/idta/SubmodelTemplate/PurchaseOrder/1/0",
+    "path": "ItemList[0].ExcludedIngredientsList.orderRelevant",
+    "before": null,
+    "after": true,
+    "reason": "Make the AAS orderRelevant=true default explicit across readers"
+  },
+  {
+    "submodel": "https://admin-shell.io/idta/QualityControlForMachining/1/0",
+    "path": "QualityFeatures.LinearFeaturesList.orderRelevant",
+    "before": null,
+    "after": true,
+    "reason": "Make the AAS orderRelevant=true default explicit across readers"
+  },
+  {
+    "submodel": "https://admin-shell.io/idta/QualityControlForMachining/1/0",
+    "path": "QualityFeatures.LinearFeaturesList[0].GeometryReferenceList.orderRelevant",
+    "before": null,
+    "after": true,
+    "reason": "Make the AAS orderRelevant=true default explicit across readers"
+  },
+  {
+    "submodel": "https://admin-shell.io/idta/QualityControlForMachining/1/0",
+    "path": "QualityFeatures.LinearFeaturesList[0].IDList3DModel.orderRelevant",
+    "before": null,
+    "after": true,
+    "reason": "Make the AAS orderRelevant=true default explicit across readers"
+  },
+  {
+    "submodel": "https://admin-shell.io/idta/QualityControlForMachining/1/0",
+    "path": "QualityFeatures.LinearFeaturesList[0].Reference2DList.orderRelevant",
+    "before": null,
+    "after": true,
+    "reason": "Make the AAS orderRelevant=true default explicit across readers"
+  },
+  {
+    "submodel": "https://admin-shell.io/idta/QualityControlForMachining/1/0",
+    "path": "QualityFeatures.AttributiveFeaturesList.orderRelevant",
+    "before": null,
+    "after": true,
+    "reason": "Make the AAS orderRelevant=true default explicit across readers"
+  },
+  {
+    "submodel": "https://admin-shell.io/idta/QualityControlForMachining/1/0",
+    "path": "QualityFeatures.AttributiveFeaturesList[0].GeometryReferenceList.orderRelevant",
+    "before": null,
+    "after": true,
+    "reason": "Make the AAS orderRelevant=true default explicit across readers"
+  },
+  {
+    "submodel": "https://admin-shell.io/idta/QualityControlForMachining/1/0",
+    "path": "QualityFeatures.AttributiveFeaturesList[0].IDList3DModel.orderRelevant",
+    "before": null,
+    "after": true,
+    "reason": "Make the AAS orderRelevant=true default explicit across readers"
+  },
+  {
+    "submodel": "https://admin-shell.io/idta/QualityControlForMachining/1/0",
+    "path": "QualityFeatures.AttributiveFeaturesList[0].Reference2DList.orderRelevant",
+    "before": null,
+    "after": true,
+    "reason": "Make the AAS orderRelevant=true default explicit across readers"
+  },
+  {
+    "submodel": "https://admin-shell.io/idta/QualityControlForMachining/1/0",
+    "path": "QualityFeatures.AttributiveFeaturesList[0].OKAttributesList.orderRelevant",
+    "before": null,
+    "after": true,
+    "reason": "Make the AAS orderRelevant=true default explicit across readers"
+  },
+  {
+    "submodel": "https://admin-shell.io/idta/QualityControlForMachining/1/0",
+    "path": "QualityFeatures.AttributiveFeaturesList[0].NOKAttributesList.orderRelevant",
+    "before": null,
+    "after": true,
+    "reason": "Make the AAS orderRelevant=true default explicit across readers"
+  },
+  {
+    "submodel": "https://admin-shell.io/idta/QualityControlForMachining/1/0",
+    "path": "QualityFeatures.GeometricFeaturesList.orderRelevant",
+    "before": null,
+    "after": true,
+    "reason": "Make the AAS orderRelevant=true default explicit across readers"
+  },
+  {
+    "submodel": "https://admin-shell.io/idta/QualityControlForMachining/1/0",
+    "path": "QualityFeatures.GeometricFeaturesList[0].GeometryReferenceList.orderRelevant",
+    "before": null,
+    "after": true,
+    "reason": "Make the AAS orderRelevant=true default explicit across readers"
+  },
+  {
+    "submodel": "https://admin-shell.io/idta/QualityControlForMachining/1/0",
+    "path": "QualityFeatures.GeometricFeaturesList[0].IDList3DModel.orderRelevant",
+    "before": null,
+    "after": true,
+    "reason": "Make the AAS orderRelevant=true default explicit across readers"
+  },
+  {
+    "submodel": "https://admin-shell.io/idta/QualityControlForMachining/1/0",
+    "path": "QualityFeatures.GeometricFeaturesList[0].Reference2DList.orderRelevant",
+    "before": null,
+    "after": true,
+    "reason": "Make the AAS orderRelevant=true default explicit across readers"
+  },
+  {
+    "submodel": "https://admin-shell.io/idta/QualityControlForMachining/1/0",
+    "path": "QualityFeatures.GeometricFeaturesList[0].AdditionalInformationList.orderRelevant",
+    "before": null,
+    "after": true,
+    "reason": "Make the AAS orderRelevant=true default explicit across readers"
+  },
+  {
+    "submodel": "https://admin-shell.io/idta/QualityControlForMachining/1/0",
+    "path": "QualityFeatures.ArealSurfaceFeaturesList.orderRelevant",
+    "before": null,
+    "after": true,
+    "reason": "Make the AAS orderRelevant=true default explicit across readers"
+  },
+  {
+    "submodel": "https://admin-shell.io/idta/QualityControlForMachining/1/0",
+    "path": "QualityFeatures.ArealSurfaceFeaturesList[0].GeometryReferenceList.orderRelevant",
+    "before": null,
+    "after": true,
+    "reason": "Make the AAS orderRelevant=true default explicit across readers"
+  },
+  {
+    "submodel": "https://admin-shell.io/idta/QualityControlForMachining/1/0",
+    "path": "QualityFeatures.ArealSurfaceFeaturesList[0].IDList3DModel.orderRelevant",
+    "before": null,
+    "after": true,
+    "reason": "Make the AAS orderRelevant=true default explicit across readers"
+  },
+  {
+    "submodel": "https://admin-shell.io/idta/QualityControlForMachining/1/0",
+    "path": "QualityFeatures.ArealSurfaceFeaturesList[0].Reference2DList.orderRelevant",
+    "before": null,
+    "after": true,
+    "reason": "Make the AAS orderRelevant=true default explicit across readers"
+  },
+  {
+    "submodel": "https://admin-shell.io/idta/QualityControlForMachining/1/0",
+    "path": "QualityResponsibilityList.orderRelevant",
+    "before": null,
+    "after": true,
+    "reason": "Make the AAS orderRelevant=true default explicit across readers"
+  },
+  {
+    "submodel": "https://admin-shell.io/idta/QualityControlForMachining/1/0",
+    "path": "TestingDevicesList.orderRelevant",
+    "before": null,
+    "after": true,
+    "reason": "Make the AAS orderRelevant=true default explicit across readers"
+  },
+  {
+    "submodel": "https://admin-shell.io/idta/QualityControlForMachining/1/0",
+    "path": "MetrologyJobResults.MetrologyResultsList.orderRelevant",
+    "before": null,
+    "after": true,
+    "reason": "Make the AAS orderRelevant=true default explicit across readers"
+  },
+  {
+    "submodel": "https://admin-shell.io/idta/QualityControlForMachining/1/0",
+    "path": "MetrologyJobResults.MetrologyResultsList[0].MeasuredValuesList.orderRelevant",
+    "before": null,
+    "after": true,
+    "reason": "Make the AAS orderRelevant=true default explicit across readers"
+  },
+  {
+    "submodel": "https://admin-shell.io/idta/SubmodelTemplate/technicaldataagv/1/0",
+    "path": "GeneralInformation.ProductImages.orderRelevant",
+    "before": null,
+    "after": true,
+    "reason": "Make the AAS orderRelevant=true default explicit across readers"
+  },
+  {
+    "submodel": "https://admin-shell.io/idta/SubmodelTemplate/technicaldataagv/1/0",
+    "path": "SpecificDescriptions.orderRelevant",
+    "before": null,
+    "after": true,
+    "reason": "Make the AAS orderRelevant=true default explicit across readers"
+  },
+  {
+    "submodel": "https://admin-shell.io/idta/SubmodelTemplate/technicaldataagv/1/0",
+    "path": "SpecificDescriptions[0].TemporaryTechnicalData.CurrentAttachments.orderRelevant",
+    "before": null,
+    "after": true,
+    "reason": "Make the AAS orderRelevant=true default explicit across readers"
+  },
+  {
+    "submodel": "https://admin-shell.io/idta/SubmodelTemplate/technicaldataagv/1/0",
+    "path": "SpecificDescriptions[0].TemporaryTechnicalData.ProprietaryConfigurationOptions.orderRelevant",
+    "before": null,
+    "after": true,
+    "reason": "Make the AAS orderRelevant=true default explicit across readers"
+  },
+  {
+    "submodel": "https://admin-shell.io/idta/SubmodelTemplate/TechnicalData/2/0",
+    "path": "GeneralInformation.ProductImages.orderRelevant",
+    "before": null,
+    "after": true,
+    "reason": "Make the AAS orderRelevant=true default explicit across readers"
+  },
+  {
+    "submodel": "https://admin-shell.io/idta/SubmodelTemplate/TechnicalData/2/0",
+    "path": "TechnicalPropertyAreas.orderRelevant",
+    "before": null,
+    "after": true,
+    "reason": "Make the AAS orderRelevant=true default explicit across readers"
+  },
+  {
+    "submodel": "https://admin-shell.io/idta/SubmodelTemplate/TechnicalData/2/0",
+    "path": "TechnicalPropertyAreas[0].Section.ArbitrarySML.orderRelevant",
+    "before": null,
+    "after": true,
+    "reason": "Make the AAS orderRelevant=true default explicit across readers"
+  },
+  {
+    "submodel": "https://admin-shell.io/idta/SubmodelTemplate/TechnicalData/2/0",
+    "path": "TechnicalPropertyAreas[0].ArbitrarySMC.ArbitrarySML.orderRelevant",
+    "before": null,
+    "after": true,
+    "reason": "Make the AAS orderRelevant=true default explicit across readers"
+  },
+  {
+    "submodel": "https://admin-shell.io/idta/SubmodelTemplate/TechnicalData/2/0",
+    "path": "TechnicalPropertyAreas[0].ArbitrarySML.orderRelevant",
+    "before": null,
+    "after": true,
+    "reason": "Make the AAS orderRelevant=true default explicit across readers"
+  },
+  {
+    "submodel": "https://admin-shell.io/idta/SubmodelTemplate/TechnicalData/2/0",
+    "path": "SpecificDescriptions.orderRelevant",
+    "before": null,
+    "after": true,
+    "reason": "Make the AAS orderRelevant=true default explicit across readers"
+  },
+  {
+    "submodel": "https://admin-shell.io/idta/SubmodelTemplate/TechnicalData/2/0",
+    "path": "SpecificDescriptions[0].Section.ArbitrarySML.orderRelevant",
+    "before": null,
+    "after": true,
+    "reason": "Make the AAS orderRelevant=true default explicit across readers"
+  },
+  {
+    "submodel": "https://admin-shell.io/idta/SubmodelTemplate/TechnicalData/2/0",
+    "path": "SpecificDescriptions[0].ArbitrarySMC.ArbitrarySML.orderRelevant",
+    "before": null,
+    "after": true,
+    "reason": "Make the AAS orderRelevant=true default explicit across readers"
+  },
+  {
+    "submodel": "https://admin-shell.io/idta/SubmodelTemplate/TechnicalData/2/0",
+    "path": "SpecificDescriptions[0].ArbitrarySML.orderRelevant",
+    "before": null,
+    "after": true,
+    "reason": "Make the AAS orderRelevant=true default explicit across readers"
+  }
+]

@@ -2083,7 +2083,7 @@ def cmd_populate(args: argparse.Namespace, out: Out) -> None:
     lines += [f"  {a['action']:<6} {a['path']}" for a in applied[:MAX_LISTED]]
     lines += [f"  FAILED {f.get('path') or f['entity']}: {f['error'][:120]}" for f in failures]
     if cleanup["status"] in ("completed", "incomplete"):
-        lines.append(f"removed {len(cleanup['removed'])} empty properties")
+        lines.append(f"removed {len(cleanup['removed'])} empty elements (properties and collections)")
         lines += [f"  CLEANUP FAILED {f['path']}: {f['error'][:120]}" for f in cleanup["failed"]]
     out.lines(payload, lines)
 

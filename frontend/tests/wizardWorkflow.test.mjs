@@ -173,6 +173,7 @@ test('Wizard header Reset and stepper navigate retained results and return to In
       .replace(/import \{ useEnvStore \} from .*environmentStore.*\r?\n/, 'const {useEnvStore} = globalThis.__wizardMocks\n')
       .replace(/import \{ useWizardStore \} from .*wizardStore.*\r?\n/, 'const useWizardStore = () => globalThis.__wizardMocks.store\n')
       .replace(/import \{ aasService \} from .*aasService.*\r?\n/, 'const aasService = globalThis.__wizardMocks.aasService\n')
+      .replace(/import \{instanceUpdates\} from .*instanceUpdates.*\r?\n/, 'const instanceUpdates = {}\n')
       .replace(/import \{ api, ApiError \} from .*services\/api.*\r?\n/, 'const {api, ApiError} = globalThis.__wizardMocks\n')
       .replace(/import \{demoSession, refreshDemoSession\} from .*demoSession.*\r?\n/, 'const {demoSession, refreshDemoSession} = globalThis.__wizardMocks\n')
       .replace('@/services/populationPresentation.mjs', new URL('../src/services/populationPresentation.mjs', import.meta.url).href)

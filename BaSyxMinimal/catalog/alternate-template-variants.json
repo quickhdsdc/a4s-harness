@@ -1,0 +1,41 @@
+{
+  "153c932bf5777abb160aa99230f0da3ff5192760b55df926de54efd20aa8dd9a": {
+    "idShort": "Tag",
+    "description": [
+      {
+        "language": "en",
+        "text": "Identifier linking the measurement to its source or device."
+      }
+    ],
+    "id": "0112/2///61987#ABB271",
+    "embeddedDataSpecifications": [
+      {
+        "dataSpecification": {
+          "type": "ExternalReference",
+          "keys": [
+            {
+              "type": "GlobalReference",
+              "value": "https://admin-shell.io/DataSpecificationTemplates/DataSpecificationIec61360/3/0"
+            }
+          ]
+        },
+        "dataSpecificationContent": {
+          "preferredName": [
+            {
+              "language": "en",
+              "text": "Tag"
+            }
+          ],
+          "definition": [
+            {
+              "language": "en",
+              "text": "Identifier linking the measurement to its source or device."
+            }
+          ],
+          "modelType": "DataSpecificationIec61360"
+        }
+      }
+    ],
+    "modelType": "ConceptDescription"
+  }
+}

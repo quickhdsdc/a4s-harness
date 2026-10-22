@@ -26,7 +26,9 @@
         <div v-if="data.populationResult">
           <strong>Values applied: {{ data.populationResult.counts.applied }} / {{ data.populationResult.counts.total }}</strong>
           <p>Failed: {{ data.populationResult.counts.failed }}; Not attempted: {{ data.populationResult.counts.notAttempted }}</p>
-          <p v-if="data.populationResult.cleanup?.status === 'completed' || data.populationResult.cleanup?.status === 'incomplete'">Empty properties removed: {{ data.populationResult.cleanup.removed.length }}</p>
+          <p v-if="data.populationResult.counts.unverified">Unverified after interruption: {{ data.populationResult.counts.unverified }}. See chat and update history.</p>
+          <p v-if="data.populationResult.cleanup?.status === 'completed' || data.populationResult.cleanup?.status === 'incomplete'">Empty elements removed (properties and collections): {{ data.populationResult.cleanup.removed.length }}</p>
+          <p v-if="data.populationResult.cleanup?.omitted?.length">Unused empty template slots omitted: {{ data.populationResult.cleanup.omitted.length }}</p>
           <p v-if="data.populationResult.counts.failed || data.populationResult.counts.notAttempted || data.populationResult.cleanup?.failed.length" class="population-failure">See chat for failure details.</p>
         </div>
         <p v-else>Verified write counts are unavailable for this earlier run.</p>
@@ -44,6 +46,11 @@
         </button>
       </div>
 
+      <details v-if="data.updateReview" class="population-change-details">
+        <summary>View update details</summary>
+        <UpdateChangeReview :preview="data.updateReview" result-view />
+      </details>
+
       <div style="margin-top: 40px">
         <button class="btn btn-success" @click="emit('reset')">
           ✨ Populate Another AAS
@@ -56,6 +63,7 @@
 
 <script setup lang="ts">
 import {computed} from 'vue'
+import UpdateChangeReview from './UpdateChangeReview.vue'
 import {populationTitle} from '@/services/populationPresentation.mjs'
 import { useEnvStore } from '@/stores/environmentStore'
 import { aasService } from '@/services/aasService'
@@ -68,7 +76,7 @@ interface Props {
 }
 
 const props = defineProps<Props>()
-const fullyApplied = computed(() => !!props.data.populationResult && props.data.populationResult.counts.total > 0 && props.data.populationResult.counts.applied === props.data.populationResult.counts.total && !props.data.populationResult.counts.failed && !props.data.populationResult.counts.notAttempted && !props.data.populationResult.cleanup?.failed.length)
+const fullyApplied = computed(() => !!props.data.populationResult && props.data.populationResult.success !== false && props.data.populationResult.counts.total > 0 && props.data.populationResult.counts.applied === props.data.populationResult.counts.total && !props.data.populationResult.counts.failed && !props.data.populationResult.counts.notAttempted && !props.data.populationResult.cleanup?.failed.length)
 
 // Emits
 const emit = defineEmits<{
@@ -141,4 +149,7 @@ const viewOnServer = async (): Promise<void> => {
 
 <style scoped>
 .population-failure {color:#9b3c28;overflow-wrap:anywhere;margin-top:10px;line-height:1.5;}
+.population-change-details {max-width:700px;margin:24px auto 0;text-align:left;border:1px solid #d7e3df;border-radius:8px;background:#fff;}
+.population-change-details > summary {cursor:pointer;font-weight:600;color:#34594c;padding:14px 16px;}
+.population-change-details > summary:focus-visible {outline:2px solid #10836e;outline-offset:2px;}
 </style>

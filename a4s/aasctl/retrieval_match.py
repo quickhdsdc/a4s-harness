@@ -68,6 +68,8 @@ class Retriever:
         return context
 
     def _compatible(self, entity: match.Entity, node: Node, shape: Any) -> bool:
+        if node.model_type == "Blob":
+            return entity.model_type == "Blob"
         if node.model_type not in ("Property", "MultiLanguageProperty", "Range", "File", "ReferenceElement"):
             return False
         if entity.unit and node.unit and match.unit_warning(entity.unit, node.unit):

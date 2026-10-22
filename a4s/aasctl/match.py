@@ -160,6 +160,8 @@ class Entity:
     description: str = ""
     unit: str = ""
     source: str = ""               # document location; provenance, not decoration
+    model_type: str = ""           # declared type when the input is an existing SME
+    value_type: str = ""
 
     @classmethod
     def parse(cls, raw: Dict[str, Any]) -> "Entity":
@@ -174,6 +176,8 @@ class Entity:
             description=str(raw.get("description") or ""),
             unit=str(raw.get("unit") or ""),
             source=str(raw.get("source") or raw.get("location") or ""),
+            model_type=str(raw.get("model_type") or ""),
+            value_type=str(raw.get("value_type") or ""),
         )
 
     def query(self) -> str:
@@ -507,6 +511,9 @@ def infer_element_type(entity: Entity) -> ElementSpec:
     """
     text = (entity.value or "").strip()
     context = f"{entity.entity} {entity.description}"
+    if entity.model_type in (*CREATABLE_TYPES, "Blob") and entity.model_type not in ("Range", "File"):
+        return ElementSpec(model_type=entity.model_type, value_type=entity.value_type or None,
+                           reason="Declared type of existing AAS data")
     if not text:
         return ElementSpec(model_type="Property", value_type="xs:string",
                            reason="no value to read a shape from")
@@ -519,7 +526,7 @@ def infer_element_type(entity: Entity) -> ElementSpec:
     if found:
         low, high, tail = found.group(1), found.group(2), found.group(3)
         tail_is_unit = bool(tail) and bool(_UNIT_SHAPED.match(tail))
-        corroborated = bool(entity.unit.strip()) or bool(_RANGE_WORDS.search(context))
+        corroborated = entity.model_type == "Range" or bool(entity.unit.strip()) or bool(_RANGE_WORDS.search(context))
         if (not tail or tail_is_unit) and (corroborated or tail_is_unit):
             # The bounds are typed together: a range whose min reads as an
             # integer and whose max reads as a double has one valueType, and it
@@ -581,7 +588,8 @@ def resolve_spec(
                     "which no extracted value can be created as"
                 )
 
-    if spec.model_type not in CREATABLE_TYPES:
+    allowed_types = (*CREATABLE_TYPES, "Blob") if entity.model_type == "Blob" else CREATABLE_TYPES
+    if spec.model_type not in allowed_types:
         warnings.append(
             f"{spec.model_type!r} is not a modelType an extracted value can be "
             "created as; creating a Property instead"

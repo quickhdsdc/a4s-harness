@@ -1,42 +1,9 @@
 <template>
   <div class="input-stage">
-    <!-- Block 1: Endpoint Configuration -->
-    <h2 class="section-title">Endpoint Configuration</h2>
-    
-    <div class="form-group">
-      <label for="aasServerEndpoint">AAS Server Endpoint *</label>
-      <div class="input-with-button">
-        <input
-          id="aasServerEndpoint"
-          type="text"
-          :value="data.aasServerEndpoint"
-          @input="emit('update', 'aasServerEndpoint', $event.target.value)"
-          :placeholder="environmentStore.aasServerUrl"
-        />
-        <button 
-          class="btn btn-secondary" 
-          @click="refreshData"
-          :disabled="templatesLoading || aasListLoading"
-          title="Refresh Templates and AAS List"
-        >
-          Refresh
-        </button>
-      </div>
-      <HelpTip text="Enter the AAS server API endpoint. Click Refresh to reload templates and existing AASs." />
+    <div v-if="preparationPhase" class="preparation-status" role="status" aria-live="polite">
+      <span class="preparation-spinner" aria-hidden="true"></span>{{ preparationPhase }}
     </div>
-
-    <div class="form-group">
-      <label for="aasUIEndpoint">BaSyx UI Endpoint</label>
-      <input
-        id="aasUIEndpoint"
-        type="text"
-        :value="data.aasUIEndpoint"
-        @input="emit('update', 'aasUIEndpoint', $event.target.value)"
-        :placeholder="environmentStore.aasUiUrl"
-      />
-      <HelpTip text="Enter the BaSyx web UI endpoint for viewing the AAS" />
-    </div>
-
+    <fieldset class="input-fields" :disabled="busy" aria-label="AAS and input configuration">
     <!-- Block 2: AAS Configuration -->
     <h2 class="section-title" style="margin-top: 40px">AAS Configuration</h2>
 
@@ -74,32 +41,6 @@
         <HelpTip text="Enter the ID Short for the new AAS (e.g. NewProductAAS)" />
       </div>
 
-      <!-- Submodel Templates -->
-      <div class="form-group">
-        <label>Submodel Templates * (select one or more)</label>
-        <div v-if="templatesLoading" class="loading-state">Loading templates...</div>
-        <div v-else-if="templatesError" class="error-state">{{ templatesError }}</div>
-        <div v-else class="template-list">
-          <label
-            v-for="template in availableTemplates"
-            :key="template.id"
-            class="template-item"
-            :class="{ selected: isTemplateSelected(template.id) }"
-          >
-            <input
-              type="checkbox"
-              :value="template.id"
-              :checked="isTemplateSelected(template.id)"
-              @change="toggleTemplate(template.id)"
-            />
-            <div class="template-info">
-              <strong>{{ template.name }}</strong>
-              <span v-if="template.version" class="template-version">Version {{ template.version }}<template v-if="template.revision"> / revision {{ template.revision }}</template></span>
-              <span class="template-description">{{ templatePurpose(template) }}</span>
-            </div>
-          </label>
-        </div>
-      </div>
     </div>
 
     <!-- Edit Mode Content -->
@@ -114,28 +55,118 @@
         <div v-else-if="aasListError" class="error-state">
           {{ aasListError }}
         </div>
-        <div v-else class="template-list">
-          <label
+        <div v-else class="template-list aas-instance-list">
+          <div
             v-for="aas in aasList"
             :key="aas.id"
-            class="template-item"
-            :class="{ selected: data.targetAAS === aas.idShort }"
+            class="aas-instance-card"
+            :class="{ selected: data.targetAAS === aas.id || data.targetAAS === aas.idShort }"
           >
+            <label class="aas-instance-choice">
             <input
               type="radio"
               name="targetAAS"
-              :value="aas.idShort"
-              :checked="data.targetAAS === aas.idShort"
+              :value="aas.id"
+              :checked="data.targetAAS === aas.id || data.targetAAS === aas.idShort"
               @change="onAASSelect"
             />
-            <div class="template-info">
+            <div class="aas-instance-identity">
               <strong>{{ aas.idShort }}</strong>
-              <span class="template-description">{{ aas.id }}</span>
+              <span class="aas-instance-id">{{ aas.id }}</span>
             </div>
-          </label>
+            </label>
+            <InstanceUpdateSetup v-if="data.targetAAS === aas.id || data.targetAAS === aas.idShort"
+              :aas="aas.id" :endpoint="data.aasServerEndpoint || environmentStore.aasServerUrl" />
+          </div>
         </div>
       </div>
     </div>
+
+    <div v-if="data.mode === 'create' || data.targetAAS" class="form-group standardized-templates">
+      <div class="templates-heading">
+        <h3>Submodel templates <span v-if="data.mode === 'create'">*</span></h3>
+        <HelpTip :text="data.mode === 'edit'
+          ? 'Choose standardized templates to add or update device information. Existing values and your new input are matched together for review before saving. Leave templates unselected to update the current structure.'
+          : 'Choose standardized templates for the information you want to include in your new AAS.'" />
+        <button type="button" class="template-refresh" @click="fetchTemplates" :disabled="templatesLoading">
+          {{ templatesLoading ? 'Refreshing...' : 'Refresh' }}
+        </button>
+      </div>
+      <p v-if="templateNotice" class="template-notice" role="status">{{ templateNotice }}</p>
+      <div v-if="templatesLoading" class="loading-state">Loading templates...</div>
+      <div v-else-if="templatesError" class="error-state">{{ templatesError }}</div>
+      <div v-else>
+        <div class="template-filters">
+          <label for="template-search" class="visually-hidden">Search templates</label>
+          <div class="template-search-row">
+            <input id="template-search" v-model="templateSearch" type="search"
+              placeholder="Find a template by name, keyword or version" aria-controls="smt-template-list"
+              aria-describedby="template-filter-summary" />
+            <button v-if="templateSearch" type="button" class="btn btn-secondary" @click="templateSearch = ''">Clear</button>
+          </div>
+          <div class="template-filter-meta">
+            <p id="template-filter-summary" role="status" aria-live="polite" aria-atomic="true">{{ filteredTemplates.length }} of {{ availableTemplates.length }} templates · {{ selectedTemplateCount }} selected</p>
+            <label class="template-selected-toggle"><input v-model="selectedTemplatesOnly" type="checkbox" />Selected only</label>
+          </div>
+        </div>
+        <div id="smt-template-list" class="template-list" v-if="filteredTemplates.length">
+        <label v-for="template in filteredTemplates" :key="template.id" class="template-item"
+               :class="{ selected: isTemplateSelected(template.id) }">
+          <input type="checkbox" :value="template.id" :checked="isTemplateSelected(template.id)" @change="toggleTemplate(template.id)" />
+          <div class="template-info">
+            <strong>{{ template.name }}</strong>
+            <span v-if="template.version" class="template-version">Version {{ template.version }}<template v-if="template.revision"> / revision {{ template.revision }}</template></span>
+            <span class="template-description">{{ templatePurpose(template) }}</span>
+          </div>
+        </label>
+        </div>
+        <div v-else class="template-empty" role="status">
+          <p v-if="!availableTemplates.length">No templates are available. Check the library connection and refresh.</p>
+          <template v-else><p>No templates match these filters. Try a shorter keyword or clear the filters.</p>
+            <button type="button" class="btn btn-secondary" @click="templateSearch = ''; selectedTemplatesOnly = false">Clear filters</button></template>
+        </div>
+      </div>
+    </div>
+
+    <details class="connection-settings"><summary>Connection settings</summary>
+    <!-- Block 1: Endpoint Configuration -->
+    <h2 class="section-title">Endpoint Configuration</h2>
+
+    <div class="form-group">
+      <label for="aasServerEndpoint">AAS Server Endpoint *</label>
+      <div class="input-with-button">
+        <input
+          id="aasServerEndpoint"
+          type="text"
+          :value="data.aasServerEndpoint"
+          @input="emit('update', 'aasServerEndpoint', $event.target.value)"
+          :placeholder="environmentStore.aasServerUrl"
+        />
+        <button
+          class="btn btn-secondary"
+          @click="refreshData"
+          :disabled="templatesLoading || aasListLoading"
+          title="Refresh Templates and AAS List"
+        >
+          Refresh
+        </button>
+      </div>
+      <HelpTip text="Enter the AAS server API endpoint. Click Refresh to reload templates and existing AASs." />
+    </div>
+
+    <div class="form-group">
+      <label for="aasUIEndpoint">BaSyx UI Endpoint</label>
+      <input
+        id="aasUIEndpoint"
+        type="text"
+        :value="data.aasUIEndpoint"
+        @input="emit('update', 'aasUIEndpoint', $event.target.value)"
+        :placeholder="environmentStore.aasUiUrl"
+      />
+      <HelpTip text="Enter the BaSyx web UI endpoint for viewing the AAS" />
+    </div>
+
+    </details>
 
     <!-- Block 3: Data Source (Header already exists in next lines) -->
 
@@ -246,14 +277,17 @@
         @change="handleFileUpload"
       />
     </div>
+    </fieldset>
   </div>
 </template>
 
 <script setup lang="ts">
-import { ref, type Ref, watch } from 'vue'
+import InstanceUpdateSetup from './InstanceUpdateSetup.vue'
+import { computed, ref, type Ref, watch } from 'vue'
 import { useEnvStore } from '@/stores/environmentStore'
 import { fileService } from '@/services/fileService'
 import { templatePurpose } from '@/services/templatePurpose.mjs'
+import { filterTemplates, reconcileTemplateSelection } from '@/services/templateFilter.mjs'
 import { aasService } from '@/services/aasService'
 import { ApiError } from '@/services/api'
 import type { WizardData, SubmodelTemplate } from '@/types'
@@ -261,6 +295,8 @@ import type { WizardData, SubmodelTemplate } from '@/types'
 // Props
 interface Props {
   data: WizardData
+  preparationPhase?: string
+  busy?: boolean
 }
 
 const props = defineProps<Props>()
@@ -315,6 +351,8 @@ const refreshData = async () => {
 }
 
 const setMode = (mode: 'create' | 'edit') => {
+    if (mode === props.data.mode) return
+    emit('update', 'targetAAS', '')
     emit('update', 'mode', mode)
     if (mode === 'edit') {
         fetchAASList()
@@ -327,7 +365,7 @@ const onAASSelect = (event: Event) => {
     emit('update', 'targetAAS', idShort)
     
     // Find selected AAS to stick endpoint if needed
-    const selectedAAS = aasList.value.find(a => a.idShort === idShort)
+    const selectedAAS = aasList.value.find(a => a.id === idShort || a.idShort === idShort)
     if (selectedAAS && selectedAAS.endpoint) {
          emit('update', 'aasServerEndpoint', selectedAAS.endpoint)
     }
@@ -368,28 +406,53 @@ const setDataSourceType = (type: 'url' | 'pdf' | 'text' | 'structured') => {
 const availableTemplates: Ref<SubmodelTemplate[]> = ref([])
 const templatesLoading = ref(true)
 const templatesError: Ref<string | null> = ref(null)
+const templateNotice = ref('')
+let templateLoadSequence = 0
+const templateSearch = ref('')
+const selectedTemplatesOnly = ref(false)
+const selectedTemplateIds = computed(() => Array.isArray(props.data.submodelTemplate)
+  ? props.data.submodelTemplate : props.data.submodelTemplate ? [props.data.submodelTemplate] : [])
+const selectedTemplateCount = computed(() => selectedTemplateIds.value.length)
+const filteredTemplates = computed(() => filterTemplates(availableTemplates.value, templateSearch.value)
+  .filter(template => !selectedTemplatesOnly.value || selectedTemplateIds.value.includes(template.id)))
 
 // Fetch templates from backend on mount
-const fetchTemplates = async (): Promise<void> => {
+const fetchTemplates = async (): Promise<boolean> => {
+  const sequence = ++templateLoadSequence
   try {
     templatesLoading.value = true
     templatesError.value = null
 
     // The backend owns the SMT source, independently of the target AAS repository.
     const templates = await fileService.getTemplates()
+    if (sequence !== templateLoadSequence) return false
     availableTemplates.value = templates
+    const selected = selectedTemplateIds.value
+    const retained = reconcileTemplateSelection(templates, selected)
+    if (retained.length !== selected.length) {
+      emit('update', 'submodelTemplate', retained)
+      templateNotice.value = 'Template list updated. Unavailable selections were cleared; your other selections are kept.'
+    } else {
+      templateNotice.value = ''
+    }
+    return true
   } catch (error) {
+    if (sequence !== templateLoadSequence) return false
     console.error('Error fetching templates:', error)
     templatesError.value = error instanceof ApiError ? error.message : 'Failed to load templates'
 
     availableTemplates.value = []
+    return false
   } finally {
-    templatesLoading.value = false
+    if (sequence === templateLoadSequence) templatesLoading.value = false
   }
 }
 
+defineExpose({ refreshTemplates: fetchTemplates })
+
 // Fetch templates on component mount
 fetchTemplates()
+if (props.data.mode === 'edit') fetchAASList()
 
 // Check if a template is selected
 const isTemplateSelected = (templateId: string): boolean => {
@@ -608,5 +671,40 @@ const formatFileSize = fileService.formatFileSize
 </style>
 
 <style scoped>
+.aas-instance-list {padding:12px;gap:10px;}
+.aas-instance-card {display:grid;grid-template-columns:minmax(0,1fr);border:1px solid #d6e1df;border-radius:10px;background:#fff;transition:border-color .15s,background-color .15s;}
+.aas-instance-card.selected {grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);border-color:#10836e;background:#f3faf7;}
+.aas-instance-card:focus-within {outline:2px solid #10836e;outline-offset:2px;}
+.aas-instance-choice {display:flex;align-items:flex-start;gap:12px;padding:18px 16px;margin:0;cursor:pointer;min-width:0;}
+.aas-instance-choice input[type="radio"] {width:18px;height:18px;margin:2px 0 0;flex-shrink:0;accent-color:#10836e;}
+.aas-instance-identity {display:flex;flex-direction:column;gap:6px;min-width:0;}
+.aas-instance-identity strong {font-size:14px;line-height:1.4;overflow-wrap:anywhere;}
+.aas-instance-id {font-size:12px;font-weight:400;color:#52645e;line-height:1.5;overflow-wrap:anywhere;}
+.templates-heading {display:flex;gap:4px;align-items:center;}
+.templates-heading h3 {font-size:16px;line-height:1.5;margin:0;}
+.template-refresh {margin-left:auto;border:1px solid #c9ded4;background:white;color:#245440;border-radius:5px;padding:6px 10px;font-size:12px;cursor:pointer;}
+.template-refresh:disabled {opacity:.6;cursor:wait;}
+.template-refresh:focus-visible {outline:2px solid #10836e;outline-offset:2px;}
+.template-notice {font-size:13px;line-height:1.5;color:#52645e;margin-top:8px;}
+.preparation-status {position:sticky;top:0;z-index:10;display:flex;align-items:center;gap:10px;padding:14px 16px;border:1px solid #b7d6cc;border-radius:8px;background:#f2f8f6;color:#245440;line-height:1.5;}
+.preparation-spinner {width:16px;height:16px;flex-shrink:0;border:2px solid #b7d6cc;border-top-color:#10836e;border-radius:50%;animation:preparation-spin .8s linear infinite;}
+@keyframes preparation-spin {to {transform:rotate(360deg);}}
+@media (prefers-reduced-motion:reduce){.preparation-spinner{animation:none;}}
+.visually-hidden {position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap;border:0;}
+@container wizard-input (max-width:640px) {
+  .aas-instance-card.selected {grid-template-columns:minmax(0,1fr);}
+}
+.input-stage {container-type:inline-size;container-name:wizard-input;}
+.input-fields {border:0;padding:0;margin:0;min-width:0;width:100%;}
+.connection-settings {margin-top:24px;} .connection-settings summary {cursor:pointer;font-weight:600;padding:8px 0;}
 .template-version { display:block; font-size:12px; color:#596675; margin:4px 0; }
+.template-filters {padding:12px 0;}
+.template-search-row {display:flex;gap:8px;align-items:center;}
+.template-search-row input {flex:1;min-width:0;}
+.template-filter-meta {display:flex;flex-wrap:wrap;gap:8px 20px;align-items:center;justify-content:space-between;margin-top:10px;}
+.template-filter-meta p {margin:0;color:#52616c;font-size:13px;}
+.template-filter-meta .template-selected-toggle {display:inline-flex;gap:8px;align-items:center;font-weight:400;margin:0;}
+.template-selected-toggle input {width:18px;height:18px;flex-shrink:0;}
+.template-empty {padding:20px;background:#f5f8f7;border:1px solid #d7e3df;border-radius:6px;line-height:1.5;}
+.template-empty p {margin:0 0 10px;}
 </style>

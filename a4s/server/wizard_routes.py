@@ -368,10 +368,14 @@ def _walk_count(client: Any, submodel_id: str) -> List[Any]:
 
 @router.post("/api/match")
 def run_match(body: Dict[str, Any] = Body(...)) -> Dict[str, Any]:
-    if not WIZARD_LOCK.acquire(blocking=False):
-        raise HTTPException(status_code=409, detail="Matching or wizard reset is still running")
     filename = str(body.get("filename") or "").strip()
     aas = str(body.get("aas_id_short") or body.get("targetAAS") or "").strip()
+    if body.get("update_id"):
+        from .update_routes import _draft
+        _draft(body["update_id"], body.get("endpoint"), aas)
+        aas = "update_" + body["update_id"]
+    if not WIZARD_LOCK.acquire(blocking=False):
+        raise HTTPException(status_code=409, detail="Matching or wizard reset is still running")
     matching_progress.start(filename, aas)
     try:
         result = _run_match(body)
@@ -420,6 +424,7 @@ def _run_match(body: Dict[str, Any]) -> Dict[str, Any]:
     """
     filename = str(body.get("filename") or "").strip()
     aas = str(body.get("aas_id_short") or body.get("targetAAS") or "").strip()
+    work_key = "update_" + body["update_id"] if body.get("update_id") else aas
     if not filename or not aas:
         raise HTTPException(
             status_code=422,
@@ -430,7 +435,7 @@ def _run_match(body: Dict[str, Any]) -> Dict[str, Any]:
         entities_path = workspace.extraction_file(filename, edited=True)
         if not entities_path.exists():
             entities_path = workspace.extraction_file(filename)
-        plan_path = workspace.match_file(filename, aas)
+        plan_path = workspace.match_file(filename, work_key)
     except workspace.WorkspaceError as exc:
         raise _bad_name(exc) from exc
 
@@ -452,7 +457,18 @@ def _run_match(body: Dict[str, Any]) -> Dict[str, Any]:
     if isinstance(wanted, str):
         wanted = [wanted]
     skipped: List[Dict[str, str]] = []
-    with _client(endpoint) as client:
+    draft = None
+    if body.get("update_id"):
+        from .update_routes import _draft
+        from ..aasctl.updates import candidate_client
+        draft = _draft(body["update_id"], endpoint, aas)
+        if draft.get("automatic"):
+            from ..aasctl.automatic_updates import matching_inputs
+            entities = matching_inputs(draft, entities)
+        context = candidate_client(draft)
+    else:
+        context = _client(endpoint)
+    with context as client:
         shell = _resolve_shell(client, aas)
         from . import aas_graph
         graph, graph_path = aas_graph.parse(client, shell, endpoint)
@@ -479,47 +495,49 @@ def _run_match(body: Dict[str, Any]) -> Dict[str, Any]:
     indexed = []
     comparisons = len(entities)
     total = 3 + 2 * len(submodel_ids) + comparisons
-    matching_progress.update(filename, aas, stage="Indexing", advance=1, total=total,
+    matching_progress.update(filename, work_key, stage="Indexing", advance=1, total=total,
         properties_total=comparisons, submodels_total=len(submodel_ids))
     for number, submodel_id in enumerate(submodel_ids):
-        matching_progress.update(filename, aas, stage="Indexing",
+        matching_progress.update(filename, work_key, stage="Indexing",
             detail=f"Preparing submodel {number + 1} of {len(submodel_ids)}", submodel=submodel_id)
         try:
             index = _index_for(submodel_id, body)
             indexed.append((number, submodel_id, index))
-            matching_progress.update(filename, aas, stage="Indexing", advance=1)
+            matching_progress.update(filename, work_key, stage="Indexing", advance=1)
         except Exception as exc:
             failures.append({"submodel": submodel_id, "error": f"{type(exc).__name__}: {exc}"})
-            matching_progress.update(filename, aas, stage="Indexing", advance=2)
+            matching_progress.update(filename, work_key, stage="Indexing", advance=2)
     if not indexed:
         raise HTTPException(status_code=502, detail="no submodel could be indexed: "
                             + "; ".join(f["error"] for f in failures[:3]))
     vectors_by_model = {}
     models = sorted({index.model for _, _, index in indexed})
-    matching_progress.update(filename, aas, stage="Embedding", total=total + len(models) - 1,
+    matching_progress.update(filename, work_key, stage="Embedding", total=total + len(models) - 1,
         detail="Embedding all extracted properties in batches; no per-property LLM calls",
         properties_total=len(entities))
     for model in models:
         vectors_by_model[model] = index_mod.embed([e.query() for e in entities], model=model)
-        matching_progress.update(filename, aas, stage="Embedding", advance=1)
+        matching_progress.update(filename, work_key, stage="Embedding", advance=1)
     from ..aasctl.batch_match import match_all, ALGORITHM
     from ..kernel.providers import ModelConfig, build
     config = ModelConfig.from_env(body.get("provider"))
     if body.get("model"):
         config.model = body["model"]
-    matching_progress.update(filename, aas, stage="Matching",
+    matching_progress.update(filename, work_key, stage="Matching",
         detail="Choosing one AAS placement per fact; unresolved facts are reviewed together")
+    options = {"allow_alternatives": True} if draft and draft.get("automatic") else {}
     plans = match_all([index for _, _, index in indexed], entities,
                       vectors_by_model, build(config), config,
-                      on_stage=lambda stage, detail: matching_progress.update(filename, aas, stage=stage, detail=detail))
-    matching_progress.update(filename, aas, stage="Saving", advance=len(entities), properties_completed=len(entities))
+                      **options,
+                      on_stage=lambda stage, detail: matching_progress.update(filename, work_key, stage=stage, detail=detail))
+    matching_progress.update(filename, work_key, stage="Saving", advance=len(entities), properties_completed=len(entities))
     for (number, submodel_id, index), plan in zip(indexed, plans):
         child = plan_path.with_name(f"{plan_path.stem}.{number}{plan_path.suffix}")
         payload = plan.to_json()
         payload["algorithm"] = ALGORITHM
         _write_json(child, payload)
         written.append({"submodel": submodel_id, "path": str(child)})
-        matching_progress.update(filename, aas, stage="Saving", advance=1,
+        matching_progress.update(filename, work_key, stage="Saving", advance=1,
             detail=f"Saved submodel {number + 1}/{len(submodel_ids)}")
 
     if not written:
@@ -534,7 +552,9 @@ def _run_match(body: Dict[str, Any]) -> Dict[str, Any]:
     # route to produce it; what was missing was anything that reliably wrote it.
     plan_path.parent.mkdir(parents=True, exist_ok=True)
     plan_path.write_text(
-        json.dumps({"kind": "match-plan-manifest", "plans": written},
+        json.dumps({"kind": "match-plan-manifest", "plans": written,
+                    "labels": {sm["id"]: sm.get("idShort", sm["id"]) for sm in graph["submodels"]},
+                    "updateId": body.get("update_id")},
                    ensure_ascii=False, indent=2),
         encoding="utf-8",
     )
@@ -544,9 +564,9 @@ def _run_match(body: Dict[str, Any]) -> Dict[str, Any]:
     # the plan name appends the suffix twice -- which is how 621 s of completed
     # matching came back as a 404 naming a file with `_matching_result` in it
     # twice. Every plan had been written by then; only the read failed.
-    matching_progress.update(filename, aas, stage="Loading results", detail="Preparing the review table")
-    results = matching_results(filename, aas)
-    matching_progress.update(filename, aas, stage="Loading results", advance=1)
+    matching_progress.update(filename, work_key, stage="Loading results", detail="Preparing the review table")
+    results = matching_results(filename, work_key, endpoint)
+    matching_progress.update(filename, work_key, stage="Loading results", advance=1)
     return {
         "success": True,
         "path": str(plan_path),
@@ -714,7 +734,8 @@ def run_populate(body: Dict[str, Any] = Body(...)) -> Dict[str, Any]:
             plans[0].submodel_id if plans else "",
             {"plan": path.name, "document": filename, "aas": aas,
              "applied": len(applied), "failed": len(failures),
-             "emptyPropertiesRemoved": len(cleanup["removed"]),
+             "emptyPropertiesRemoved": sum(r.get("modelType") != "SubmodelElementCollection" for r in cleanup["removed"]),
+             "emptyCollectionsRemoved": sum(r.get("modelType") == "SubmodelElementCollection" for r in cleanup["removed"]),
              "paths": [a["path"] for a in applied[:50]]},
         )
 
@@ -833,14 +854,21 @@ def matching_results(
     path = _resolve_match_file(filename, aas_id_short)
     plans = _load_plans(path)
 
-    id_shorts = _submodel_id_shorts(
-        endpoint, [plan.submodel_id for plan in plans]
-    )
+    manifest = _read_json(path)
+    id_shorts = manifest.get("labels", {}) if isinstance(manifest, dict) else {}
+    if not id_shorts:
+        id_shorts = _submodel_id_shorts(endpoint, [plan.submodel_id for plan in plans])
     results: List[Dict[str, Any]] = []
     for plan in plans:
         label = id_shorts.get(plan.submodel_id) or plan.submodel_id
         results.extend(_row_of(decision, plan.submodel_id, label)
                        for decision in plan.decisions)
+    if isinstance(manifest, dict) and manifest.get("updateId"):
+        from .update_routes import _draft
+        from ..aasctl.automatic_updates import review_rows
+        draft = _draft(manifest["updateId"])
+        if draft.get("automatic"):
+            results = review_rows(draft, results)
 
     return {"success": True, "results": results, "count": len(results),
             "source": path.name}

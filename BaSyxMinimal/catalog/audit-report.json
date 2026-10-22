@@ -1,0 +1,1228 @@
+{
+  "sourceFiles": 66,
+  "templateArtifacts": 67,
+  "acceptedTemplates": 63,
+  "quarantinedTemplates": 3,
+  "sdkReadableTemplateArtifacts": 64,
+  "omittedAlternateVariants": 1,
+  "smlTemplates": 33,
+  "smlCount": 277,
+  "addressableElements": 5788,
+  "conceptDescriptions": 3000,
+  "omittedConflictingConceptIds": 116,
+  "collectionId": "urn:a4s:catalog:idta:20261021",
+  "sdkJsonObjects": 3064,
+  "sdkAasxObjects": 3064,
+  "supplementaryFiles": 2,
+  "adjustments": 201,
+  "packageWarnings": [],
+  "templates": [
+    {
+      "family": "Artificial Intelligence Dataset",
+      "releaseVersion": "1.0.2",
+      "path": "published/Artificial Intelligence Dataset/1/0/2/IDTA 02058-1-0-2_Template_AIDataset.json",
+      "url": "https://raw.githubusercontent.com/admin-shell-io/submodel-templates/f3790038b6c9c2d7e5ebbb4609997468fadf3e85/published/Artificial%20Intelligence%20Dataset/1/0/2/IDTA%2002058-1-0-2_Template_AIDataset.json",
+      "file": "work\\records\\idta-smt-catalog-20261021\\raw\\bf4b709f70f5.json",
+      "sha256": "82ca2f676effa6f1561888441271e10cf9e838f8f7a38177106074dbb468b4ae",
+      "id": "https://admin-shell.io/idta/SubmodelTemplate/AIDataset/1/0",
+      "name": "AIDataset",
+      "smlCount": 0,
+      "rawSdk": {
+        "ok": true
+      },
+      "instanceSdk": {
+        "ok": true
+      },
+      "catalogIncluded": true
+    },
+    {
+      "family": "Artificial Intelligence Deployment",
+      "releaseVersion": "1.0.2",
+      "path": "published/Artificial Intelligence Deployment/1/0/2/IDTA 02059-1-0-2_Template_AIDeployment.json",
+      "url": "https://raw.githubusercontent.com/admin-shell-io/submodel-templates/f3790038b6c9c2d7e5ebbb4609997468fadf3e85/published/Artificial%20Intelligence%20Deployment/1/0/2/IDTA%2002059-1-0-2_Template_AIDeployment.json",
+      "file": "work\\records\\idta-smt-catalog-20261021\\raw\\45ce9ce587ee.json",
+      "sha256": "e9bc3bb9a890dd8ee15c7b2127bf18c7b658d4d6366f24b3b6940a9fb8db0960",
+      "id": "https://admin-shell.io/idta/SubmodelTemplate/AIDeployment/1/0",
+      "name": "AIDeployment",
+      "smlCount": 0,
+      "rawSdk": {
+        "ok": true
+      },
+      "instanceSdk": {
+        "ok": true
+      },
+      "catalogIncluded": true
+    },
+    {
+      "family": "Artificial Intelligence Model Nameplate",
+      "releaseVersion": "1.0.1",
+      "path": "published/Artificial Intelligence Model Nameplate/1/0/1/IDTA 02060-1-0-1_Template_AIModelNameplate.json",
+      "url": "https://raw.githubusercontent.com/admin-shell-io/submodel-templates/f3790038b6c9c2d7e5ebbb4609997468fadf3e85/published/Artificial%20Intelligence%20Model%20Nameplate/1/0/1/IDTA%2002060-1-0-1_Template_AIModelNameplate.json",
+      "file": "work\\records\\idta-smt-catalog-20261021\\raw\\45ededdb4bcf.json",
+      "sha256": "bf0aab3e1b55362a271f404774b15af8d6cfea6f4605b702c685edb426f02c1e",
+      "id": "https://admin-shell.io/idta/SubmodelTemplate/AIModelNameplate/1/0",
+      "name": "AIModelNameplate",
+      "smlCount": 0,
+      "rawSdk": {
+        "ok": true
+      },
+      "instanceSdk": {
+        "ok": true
+      },
+      "catalogIncluded": true
+    },
+    {
+      "family": "Asset Interfaces Description",
+      "releaseVersion": "1.2",
+      "path": "published/Asset Interfaces Description/1/2/IDTA 02017_Template_Asset Interfaces Description.json",
+      "url": "https://raw.githubusercontent.com/admin-shell-io/submodel-templates/f3790038b6c9c2d7e5ebbb4609997468fadf3e85/published/Asset%20Interfaces%20Description/1/2/IDTA%2002017_Template_Asset%20Interfaces%20Description.json",
+      "file": "work\\records\\idta-smt-catalog-20261021\\raw\\17f2ad863927.json",
+      "sha256": "8538bb01c75ea92f473480caf57d8df714a582c89723628dfcc654961bec1f55",
+      "id": "https://admin-shell.io/idta/SubmodelTemplate/AssetInterfacesDescription",
+      "name": "AssetInterfacesDescription",
+      "smlCount": 51,
+      "rawSdk": {
+        "ok": true
+      },
+      "instanceSdk": {
+        "ok": true
+      },
+      "catalogIncluded": true
+    },
+    {
+      "family": "Asset Interfaces Mapping Configuration",
+      "releaseVersion": "2.1",
+      "path": "published/Asset Interfaces Mapping Configuration/2/1/IDTA 02027_Template_AIMC.json",
+      "url": "https://raw.githubusercontent.com/admin-shell-io/submodel-templates/f3790038b6c9c2d7e5ebbb4609997468fadf3e85/published/Asset%20Interfaces%20Mapping%20Configuration/2/1/IDTA%2002027_Template_AIMC.json",
+      "file": "work\\records\\idta-smt-catalog-20261021\\raw\\b78d07a1fcda.json",
+      "sha256": "2d6699e52f002ed98eee26a9313e43d57bddff62d30263e944d636912a711c8b",
+      "id": "https://admin-shell.io/idta/SubmodelTemplate/AssetInterfacesMappingConfiguration/2/0",
+      "name": "AssetInterfacesMappingConfiguration",
+      "smlCount": 3,
+      "rawSdk": {
+        "ok": true
+      },
+      "instanceSdk": {
+        "ok": true
+      },
+      "catalogIncluded": true
+    },
+    {
+      "family": "Capability Description",
+      "releaseVersion": "1.0.1",
+      "path": "published/Capability Description/1/0/1/IDTA 02020_Template_Capability_Description.json",
+      "url": "https://raw.githubusercontent.com/admin-shell-io/submodel-templates/f3790038b6c9c2d7e5ebbb4609997468fadf3e85/published/Capability%20Description/1/0/1/IDTA%2002020_Template_Capability_Description.json",
+      "file": "work\\records\\idta-smt-catalog-20261021\\raw\\2282208d637d.json",
+      "sha256": "b8a4a56bb04efefcd5c933d9c76923da5045bacf86ee840a6746a0628f6d6415",
+      "id": "https://admin-shell.io/idta/SubmodelTemplate/CapabilityDescription/1/0",
+      "name": "CapabilityDescription",
+      "smlCount": 2,
+      "rawSdk": {
+        "ok": false,
+        "error": "TypeError: Error while trying to convert JSON object into SubmodelElementList: Object with attribute (name='type', value='SMT/Cardinality') is already present in this set of objects (Constraint AASd-021) >>> {'description': [{...}], 'displayName': [{...}], 'modelType': 'SubmodelElementList', 'qualifiers': [{...}, {...}, {...}], 'semanticId': {'keys': [...], 'type': 'ExternalReference'}, 'typeValueListElement': 'SubmodelElement'}"
+      },
+      "instanceSdk": {
+        "ok": true
+      }
+    },
+    {
+      "family": "Carbon Footprint",
+      "releaseVersion": "1.0.2",
+      "path": "published/Carbon Footprint/1/0/2/IDTA 02023-1-0-2 _Template_CarbonFootprint.json",
+      "url": "https://raw.githubusercontent.com/admin-shell-io/submodel-templates/f3790038b6c9c2d7e5ebbb4609997468fadf3e85/published/Carbon%20Footprint/1/0/2/IDTA%2002023-1-0-2%20_Template_CarbonFootprint.json",
+      "file": "work\\records\\idta-smt-catalog-20261021\\raw\\d13b941ea0b9.json",
+      "sha256": "f368e2e3590e4cc79f346e7339117513e555d44619d1a0bb6a29b9eb30c26ca1",
+      "id": "https://admin-shell.io/idta/SubmodelTemplate/CarbonFootprint/1/0",
+      "name": "CarbonFootprint",
+      "smlCount": 5,
+      "rawSdk": {
+        "ok": true
+      },
+      "instanceSdk": {
+        "ok": true
+      },
+      "catalogIncluded": true
+    },
+    {
+      "family": "Contact Information",
+      "releaseVersion": "1.0.2",
+      "path": "published/Contact Information/1/0/2/IDTA 02002-1-0-2_Template_ContactInformation.json",
+      "url": "https://raw.githubusercontent.com/admin-shell-io/submodel-templates/f3790038b6c9c2d7e5ebbb4609997468fadf3e85/published/Contact%20Information/1/0/2/IDTA%2002002-1-0-2_Template_ContactInformation.json",
+      "file": "work\\records\\idta-smt-catalog-20261021\\raw\\c4192b0cb0cd.json",
+      "sha256": "24b25daf7199b2d01be7e3fca339219096dc44490cb1e16ab09c9b35839cd605",
+      "id": "https://admin-shell.io/idta/SubmodelTemplate/ContactInformation/1/0",
+      "name": "ContactInformations",
+      "smlCount": 0,
+      "rawSdk": {
+        "ok": true
+      },
+      "instanceSdk": {
+        "ok": true
+      },
+      "catalogIncluded": true
+    },
+    {
+      "family": "Control Component Instance",
+      "releaseVersion": "2.0.1",
+      "path": "published/Control Component Instance/2/0/1/IDTA 02016-2-0-1 _Template_ControlComponentInstance.json",
+      "url": "https://raw.githubusercontent.com/admin-shell-io/submodel-templates/f3790038b6c9c2d7e5ebbb4609997468fadf3e85/published/Control%20Component%20Instance/2/0/1/IDTA%2002016-2-0-1%20_Template_ControlComponentInstance.json",
+      "file": "work\\records\\idta-smt-catalog-20261021\\raw\\9750a4e5a672.json",
+      "sha256": "1c54a6ee282c9401a96a08bd19ecc37fcc62cb768bd16ed5c3fa6b0e164acf07",
+      "id": "https://admin-shell.io/idta/SubmodelTemplate/ControlComponent/Instance/2/0",
+      "name": "ControlComponentInstance",
+      "smlCount": 0,
+      "rawSdk": {
+        "ok": true
+      },
+      "instanceSdk": {
+        "ok": true
+      },
+      "catalogIncluded": true
+    },
+    {
+      "family": "Control Component Type",
+      "releaseVersion": "2.0.2",
+      "path": "published/Control Component Type/2/0/2/IDTA 02015-2-0-2 _Template_ControlComponentType.json",
+      "url": "https://raw.githubusercontent.com/admin-shell-io/submodel-templates/f3790038b6c9c2d7e5ebbb4609997468fadf3e85/published/Control%20Component%20Type/2/0/2/IDTA%2002015-2-0-2%20_Template_ControlComponentType.json",
+      "file": "work\\records\\idta-smt-catalog-20261021\\raw\\59a72257a816.json",
+      "sha256": "6739d32be0307259da3b463382b21aaad32c02d6df8018fd5e8ccdd15e6e823b",
+      "id": "https://admin-shell.io/idta/SubmodelTemplate/ControlComponentType/2/0",
+      "name": "ControlComponentType",
+      "smlCount": 0,
+      "rawSdk": {
+        "ok": true
+      },
+      "instanceSdk": {
+        "ok": true
+      },
+      "catalogIncluded": true
+    },
+    {
+      "family": "Control Configuration and Parametrization for NC and CNC Machines",
+      "releaseVersion": "1.0.2",
+      "path": "published/Control Configuration and Parametrization for NC and CNC Machines/1/0/2/IDTA 02053-1-0-2_Template_ControlConfig.json",
+      "url": "https://raw.githubusercontent.com/admin-shell-io/submodel-templates/f3790038b6c9c2d7e5ebbb4609997468fadf3e85/published/Control%20Configuration%20and%20Parametrization%20for%20NC%20and%20CNC%20Machines/1/0/2/IDTA%2002053-1-0-2_Template_ControlConfig.json",
+      "file": "work\\records\\idta-smt-catalog-20261021\\raw\\6732514f938f.json",
+      "sha256": "2ab1960f52b371fc04542fd97c9d67e6c58b5cf7cf8b1d685689aaa1ca1f8ef7",
+      "id": "https://admin-shell.io/idta/SubmodelTemplate/ControlConfigurationofCNCMachines/1/0",
+      "name": "ControlConfig__00__",
+      "smlCount": 0,
+      "rawSdk": {
+        "ok": true
+      },
+      "instanceSdk": {
+        "ok": true
+      },
+      "catalogIncluded": true
+    },
+    {
+      "family": "Creation and Classification of Materials",
+      "releaseVersion": "1.0.1",
+      "path": "published/Creation and Classification of Materials/1/0/1/IDTA 02034-1-0-1 Template_BackendSpecificMaterialInformation.json",
+      "url": "https://raw.githubusercontent.com/admin-shell-io/submodel-templates/f3790038b6c9c2d7e5ebbb4609997468fadf3e85/published/Creation%20and%20Classification%20of%20Materials/1/0/1/IDTA%2002034-1-0-1%20Template_BackendSpecificMaterialInformation.json",
+      "file": "work\\records\\idta-smt-catalog-20261021\\raw\\363407727d00.json",
+      "sha256": "e1c0b33b33a487d590920afc22ea9b6cfba56a63cd61703745f3f7d2cb548db6",
+      "id": "https://admin-shell.io/idta/BackendSpecificMaterialInformation/1/0",
+      "name": "BackendSpecificMaterialInformation",
+      "smlCount": 0,
+      "rawSdk": {
+        "ok": true
+      },
+      "instanceSdk": {
+        "ok": true
+      },
+      "catalogIncluded": true
+    },
+    {
+      "family": "DEXPI",
+      "releaseVersion": "1.0.1",
+      "path": "published/DEXPI/1/0/1/IDTA 02012-1-0-1_Template_DEXPI.json",
+      "url": "https://raw.githubusercontent.com/admin-shell-io/submodel-templates/f3790038b6c9c2d7e5ebbb4609997468fadf3e85/published/DEXPI/1/0/1/IDTA%2002012-1-0-1_Template_DEXPI.json",
+      "file": "work\\records\\idta-smt-catalog-20261021\\raw\\dd7f74712545.json",
+      "sha256": "e81fbca600a25e85d76f895e3a6d7ec97bce42f83e696a4008f2124c5905fc8b",
+      "id": "https://admin-shell.io/idta/SubmodelTemplate/DEXPI/1/0",
+      "name": "DEXPI",
+      "smlCount": 0,
+      "rawSdk": {
+        "ok": true
+      },
+      "instanceSdk": {
+        "ok": true
+      },
+      "catalogIncluded": true
+    },
+    {
+      "family": "Data Model for Asset Location",
+      "releaseVersion": "1.0.1",
+      "path": "published/Data Model for Asset Location/1/0/1/IDTA 02045-1-0-1_Template_DataModelForAssetLocation.json",
+      "url": "https://raw.githubusercontent.com/admin-shell-io/submodel-templates/f3790038b6c9c2d7e5ebbb4609997468fadf3e85/published/Data%20Model%20for%20Asset%20Location/1/0/1/IDTA%2002045-1-0-1_Template_DataModelForAssetLocation.json",
+      "file": "work\\records\\idta-smt-catalog-20261021\\raw\\ce59779ec376.json",
+      "sha256": "824a0f5193d03717f2998b04003fcb3a15251dcc9e38eef3da4c6bcf3bde321f",
+      "id": "https://admin-shell.io/idta/SubmodelTemplate/DataModelforAssetLocation/1/0",
+      "name": "AssetLocation",
+      "smlCount": 8,
+      "rawSdk": {
+        "ok": true
+      },
+      "instanceSdk": {
+        "ok": true
+      },
+      "catalogIncluded": true
+    },
+    {
+      "family": "Data Retention Policies",
+      "releaseVersion": "1.0.2",
+      "path": "published/Data Retention Policies/1/0/2/IDTA 02056-1-0-2_Template_Data Retention Policies.json",
+      "url": "https://raw.githubusercontent.com/admin-shell-io/submodel-templates/f3790038b6c9c2d7e5ebbb4609997468fadf3e85/published/Data%20Retention%20Policies/1/0/2/IDTA%2002056-1-0-2_Template_Data%20Retention%20Policies.json",
+      "file": "work\\records\\idta-smt-catalog-20261021\\raw\\3a613e161259.json",
+      "sha256": "54a414a1c6488e9905b318ea172816b801b53eeb249a402bd737362f47fcc778",
+      "id": "https://admin-shell.io/idta/DataRetentionPolicies/1/0",
+      "name": "DataRetentionPolicies",
+      "smlCount": 2,
+      "rawSdk": {
+        "ok": true
+      },
+      "instanceSdk": {
+        "ok": true
+      },
+      "catalogIncluded": true
+    },
+    {
+      "family": "Digital Battery Passport/1_Digital Nameplate",
+      "releaseVersion": "1.1",
+      "path": "published/Digital Battery Passport/1_Digital Nameplate/1/1/IDTA 02035-1_DBP-Part-1_Digital Nameplate.json",
+      "url": "https://raw.githubusercontent.com/admin-shell-io/submodel-templates/f3790038b6c9c2d7e5ebbb4609997468fadf3e85/published/Digital%20Battery%20Passport/1_Digital%20Nameplate/1/1/IDTA%2002035-1_DBP-Part-1_Digital%20Nameplate.json",
+      "file": "work\\records\\idta-smt-catalog-20261021\\raw\\4b5bbc751807.json",
+      "sha256": "35db3506124c5db7c98c16158d4979125e7d17ac05f5a456aa7dbedf1e0f920a",
+      "id": "https://admin-shell.io/idta/SubmodelTemplate/DigitalBatteryPassport/DigitalNameplate/1/0",
+      "name": "BatteryNameplate",
+      "smlCount": 3,
+      "rawSdk": {
+        "ok": true
+      },
+      "instanceSdk": {
+        "ok": true
+      },
+      "catalogIncluded": true
+    },
+    {
+      "family": "Digital Battery Passport/2_Handover Documentation",
+      "releaseVersion": "1.1",
+      "path": "published/Digital Battery Passport/2_Handover Documentation/1/1/IDTA 02035-2_DBP-Part-2_HandoverDocumentation.json",
+      "url": "https://raw.githubusercontent.com/admin-shell-io/submodel-templates/f3790038b6c9c2d7e5ebbb4609997468fadf3e85/published/Digital%20Battery%20Passport/2_Handover%20Documentation/1/1/IDTA%2002035-2_DBP-Part-2_HandoverDocumentation.json",
+      "file": "work\\records\\idta-smt-catalog-20261021\\raw\\077b2f341c68.json",
+      "sha256": "66ef2bcbed8baa8774c99717dcfacea00123172b941231b142444975d6c1da3b",
+      "id": "https://admin-shell.io/idta/SubmodelTemplate/DigitalBatteryPassport/HandoverDocumentation/1/0",
+      "name": "HandoverDocumentation",
+      "smlCount": 6,
+      "rawSdk": {
+        "ok": true
+      },
+      "instanceSdk": {
+        "ok": true
+      },
+      "catalogIncluded": true
+    },
+    {
+      "family": "Digital Battery Passport/3_Product Carbon Footprint",
+      "releaseVersion": "1.1",
+      "path": "published/Digital Battery Passport/3_Product Carbon Footprint/1/1/IDTA 02035-3_DBP-Part-3_ProductCarbonFootprint.json",
+      "url": "https://raw.githubusercontent.com/admin-shell-io/submodel-templates/f3790038b6c9c2d7e5ebbb4609997468fadf3e85/published/Digital%20Battery%20Passport/3_Product%20Carbon%20Footprint/1/1/IDTA%2002035-3_DBP-Part-3_ProductCarbonFootprint.json",
+      "file": "work\\records\\idta-smt-catalog-20261021\\raw\\8c895f3e08e1.json",
+      "sha256": "645c0ebff290d0fa5490c3a40ca0ce829ae8ba7f19f9fe6cf756682923b3866a",
+      "id": "https://admin-shell.io/idta/SubmodelTemplate/DigitalBatteryPassport/CarbonFootprint/1/0",
+      "name": "CarbonFootprint",
+      "smlCount": 4,
+      "rawSdk": {
+        "ok": true
+      },
+      "instanceSdk": {
+        "ok": true
+      },
+      "catalogIncluded": true
+    },
+    {
+      "family": "Digital Battery Passport/4_Technical Data",
+      "releaseVersion": "1.0.2",
+      "path": "published/Digital Battery Passport/4_Technical Data/1/0/2/IDTA 02035-4_DBP-Part-4_TechnicalData.json",
+      "url": "https://raw.githubusercontent.com/admin-shell-io/submodel-templates/f3790038b6c9c2d7e5ebbb4609997468fadf3e85/published/Digital%20Battery%20Passport/4_Technical%20Data/1/0/2/IDTA%2002035-4_DBP-Part-4_TechnicalData.json",
+      "file": "work\\records\\idta-smt-catalog-20261021\\raw\\be90b5af7bb9.json",
+      "sha256": "9a83026d28931d6a045f57e039c3dd3a46fdd2c63db5ead77b8986df6ef246d3",
+      "id": "https://admin-shell.io/idta/SubmodelTemplate/DigitalBatteryPassport/TechnicalData/1/0",
+      "name": "TechnicalData",
+      "smlCount": 2,
+      "rawSdk": {
+        "ok": true
+      },
+      "instanceSdk": {
+        "ok": true
+      },
+      "catalogIncluded": true
+    },
+    {
+      "family": "Digital Battery Passport/5_Product Condition",
+      "releaseVersion": "1.0.2",
+      "path": "published/Digital Battery Passport/5_Product Condition/1/0/2/IDTA 02035-5_DBP-Part-5_ProductCondition_V1.0.2.json",
+      "url": "https://raw.githubusercontent.com/admin-shell-io/submodel-templates/f3790038b6c9c2d7e5ebbb4609997468fadf3e85/published/Digital%20Battery%20Passport/5_Product%20Condition/1/0/2/IDTA%2002035-5_DBP-Part-5_ProductCondition_V1.0.2.json",
+      "file": "work\\records\\idta-smt-catalog-20261021\\raw\\211cf13c0162.json",
+      "sha256": "fc3c81609ca4f923b77ca14d21c8dcf5202e385c94b5090b65148fcec870ab75",
+      "id": "urn:samm:io.admin-shell.idta.batterypass.product_condition:1.0.2#ProductCondition/submodel",
+      "name": "ProductCondition",
+      "smlCount": 2,
+      "rawSdk": {
+        "ok": true
+      },
+      "instanceSdk": {
+        "ok": true
+      },
+      "catalogIncluded": true
+    },
+    {
+      "family": "Digital Battery Passport/6_Material Composition",
+      "releaseVersion": "1.0.1",
+      "path": "published/Digital Battery Passport/6_Material Composition/1/0/1/IDTA 02035-6_DBP-Part-6_MaterialComposition.json",
+      "url": "https://raw.githubusercontent.com/admin-shell-io/submodel-templates/f3790038b6c9c2d7e5ebbb4609997468fadf3e85/published/Digital%20Battery%20Passport/6_Material%20Composition/1/0/1/IDTA%2002035-6_DBP-Part-6_MaterialComposition.json",
+      "file": "work\\records\\idta-smt-catalog-20261021\\raw\\cab1c7c9feb3.json",
+      "sha256": "e9197b3a2a3e7231d8943609a46359119a0dbd92bd7dd5e5b32c34c02f8aac10",
+      "id": "urn:samm:io.admin-shell.idta.batterypass.material_composition:1.0.0#MaterialComposition/submodel",
+      "name": "MaterialComposition",
+      "smlCount": 3,
+      "rawSdk": {
+        "ok": true
+      },
+      "instanceSdk": {
+        "ok": true
+      },
+      "catalogIncluded": true
+    },
+    {
+      "family": "Digital Battery Passport/7_Circularity",
+      "releaseVersion": "1.0.2",
+      "path": "published/Digital Battery Passport/7_Circularity/1/0/2/IDTA 02035-7_DBP-Part-7_Circularity.json",
+      "url": "https://raw.githubusercontent.com/admin-shell-io/submodel-templates/f3790038b6c9c2d7e5ebbb4609997468fadf3e85/published/Digital%20Battery%20Passport/7_Circularity/1/0/2/IDTA%2002035-7_DBP-Part-7_Circularity.json",
+      "file": "work\\records\\idta-smt-catalog-20261021\\raw\\6ad967e0081f.json",
+      "sha256": "fa1ad2a5fb12dd435b9ec72a17702f29f77f8c03ab9f8cef33db6fbb06d2c155",
+      "id": "urn:samm:io.admin-shell.idta.batterypass.circularity:1.0.0#Circularity/submodel",
+      "name": "Circularity",
+      "smlCount": 9,
+      "rawSdk": {
+        "ok": true
+      },
+      "instanceSdk": {
+        "ok": true
+      },
+      "catalogIncluded": true
+    },
+    {
+      "family": "Digital Product Passport/Digital Product Passport Part-1",
+      "releaseVersion": "1.0.2",
+      "path": "published/Digital Product Passport/Digital Product Passport Part-1/1/0/2/IDTA 02099-1_Template Digital Product Passport - Part 1.json",
+      "url": "https://raw.githubusercontent.com/admin-shell-io/submodel-templates/f3790038b6c9c2d7e5ebbb4609997468fadf3e85/published/Digital%20Product%20Passport/Digital%20Product%20Passport%20Part-1/1/0/2/IDTA%2002099-1_Template%20Digital%20Product%20Passport%20-%20Part%201.json",
+      "file": "work\\records\\idta-smt-catalog-20261021\\raw\\4ab087ffa3ad.json",
+      "sha256": "45d3f5ee78f628941816f4f6e30221f535a91c318114f41143328881c887eb85",
+      "id": "https://admin-shell.io/idta/SubmodelTemplate/dppMetadata/1/0",
+      "name": "DppMetadata",
+      "smlCount": 1,
+      "rawSdk": {
+        "ok": true
+      },
+      "instanceSdk": {
+        "ok": true
+      },
+      "catalogIncluded": true
+    },
+    {
+      "family": "Digital Quality Documents/Part 1 Core Elements",
+      "releaseVersion": "1.1",
+      "path": "published/Digital Quality Documents/Part 1 Core Elements/1/1/IDTA 02065-1_Template_DigitalQualityDocuments-part-1.json",
+      "url": "https://raw.githubusercontent.com/admin-shell-io/submodel-templates/f3790038b6c9c2d7e5ebbb4609997468fadf3e85/published/Digital%20Quality%20Documents/Part%201%20Core%20Elements/1/1/IDTA%2002065-1_Template_DigitalQualityDocuments-part-1.json",
+      "file": "work\\records\\idta-smt-catalog-20261021\\raw\\2aca2d4ac775.json",
+      "sha256": "2ed404e5d8ccbb2f9005b8ede8b818e4e26473a6aad67bb9c46e75d5d590a968",
+      "id": "https://admin-shell.io/idta/SubmodelTemplate/DigitalQualityDocument/1/0",
+      "name": "DigitalQualityDocuments",
+      "smlCount": 12,
+      "rawSdk": {
+        "ok": true
+      },
+      "instanceSdk": {
+        "ok": true
+      },
+      "catalogIncluded": true
+    },
+    {
+      "family": "Digital nameplate",
+      "releaseVersion": "3.0.2",
+      "path": "published/Digital nameplate/3/0/2/IDTA 02006-3-0-2_Template_Digital Nameplate.json",
+      "url": "https://raw.githubusercontent.com/admin-shell-io/submodel-templates/f3790038b6c9c2d7e5ebbb4609997468fadf3e85/published/Digital%20nameplate/3/0/2/IDTA%2002006-3-0-2_Template_Digital%20Nameplate.json",
+      "file": "work\\records\\idta-smt-catalog-20261021\\raw\\4986f6ee9342.json",
+      "sha256": "89b127f715e0de36a2df399ca27e0b3fb926f3cb8a271b24e54ca4c87e535ab5",
+      "id": "https://admin-shell.io/idta/SubmodelTemplate/DigitalNameplate/3/0",
+      "name": "Nameplate",
+      "smlCount": 2,
+      "rawSdk": {
+        "ok": true
+      },
+      "instanceSdk": {
+        "ok": true
+      },
+      "catalogIncluded": true
+    },
+    {
+      "family": "Energy Flexibility Data Model",
+      "releaseVersion": "1.1",
+      "path": "published/Energy Flexibility Data Model/1/1/IDTA 02076_Template_EnergyFlexibilityDataModel.json",
+      "url": "https://raw.githubusercontent.com/admin-shell-io/submodel-templates/f3790038b6c9c2d7e5ebbb4609997468fadf3e85/published/Energy%20Flexibility%20Data%20Model/1/1/IDTA%2002076_Template_EnergyFlexibilityDataModel.json",
+      "file": "work\\records\\idta-smt-catalog-20261021\\raw\\d7451fde147a.json",
+      "sha256": "5bcfc8af735046eaf1a241de10e7d9d1641738cecdeea8039c6f45121f818340",
+      "id": "https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/EnergyFlexibilityDataModel",
+      "name": "EnergyFlexibilityDataModel",
+      "smlCount": 22,
+      "rawSdk": {
+        "ok": true
+      },
+      "instanceSdk": {
+        "ok": true
+      },
+      "catalogIncluded": true
+    },
+    {
+      "family": "Factory Automation Data for Plant Planning",
+      "releaseVersion": "1.1",
+      "path": "published/Factory Automation Data for Plant Planning/1/1/IDTA 02075_Template_FactoryAutomationDataForPlantPlanning.json",
+      "url": "https://raw.githubusercontent.com/admin-shell-io/submodel-templates/f3790038b6c9c2d7e5ebbb4609997468fadf3e85/published/Factory%20Automation%20Data%20for%20Plant%20Planning/1/1/IDTA%2002075_Template_FactoryAutomationDataForPlantPlanning.json",
+      "file": "work\\records\\idta-smt-catalog-20261021\\raw\\d7edb8623298.json",
+      "sha256": "0d7b796b2786f6e8c5182fa513b7da392a8b4174271c74b49674bb4403fb01de",
+      "id": "https://admin-shell.io/idta/SubmodelTemplate/FactoryAutomationDataForPlantPlanning/1/0",
+      "name": "FactoryAutomationDataForPlant",
+      "smlCount": 1,
+      "rawSdk": {
+        "ok": true
+      },
+      "instanceSdk": {
+        "ok": true
+      },
+      "catalogIncluded": true
+    },
+    {
+      "family": "Fire Protection on Railway Vehicles",
+      "releaseVersion": "1.0",
+      "path": "published/Fire Protection on Railway Vehicles/1/0/IDTA 02102_Template Fire Protection on Railway Vehicles.json",
+      "url": "https://raw.githubusercontent.com/admin-shell-io/submodel-templates/f3790038b6c9c2d7e5ebbb4609997468fadf3e85/published/Fire%20Protection%20on%20Railway%20Vehicles/1/0/IDTA%2002102_Template%20Fire%20Protection%20on%20Railway%20Vehicles.json",
+      "file": "work\\records\\idta-smt-catalog-20261021\\raw\\053d01d9c728.json",
+      "sha256": "34e0d040e3acd29cc10a3469b47d55d019723f6d210068ca7e3cd86391554fe1",
+      "id": "https://admin-shell.io/idta/SubmodelTemplate/RailwayFireProtection/1/0",
+      "name": "RailwayFireProtection",
+      "smlCount": 4,
+      "rawSdk": {
+        "ok": true
+      },
+      "instanceSdk": {
+        "ok": true
+      },
+      "catalogIncluded": true
+    },
+    {
+      "family": "Functional Safety",
+      "releaseVersion": "1.0.2",
+      "path": "published/Functional Safety/1/0/2/IDTA 02014-1-0-2_Template_FunctionalSafety.json",
+      "url": "https://raw.githubusercontent.com/admin-shell-io/submodel-templates/f3790038b6c9c2d7e5ebbb4609997468fadf3e85/published/Functional%20Safety/1/0/2/IDTA%2002014-1-0-2_Template_FunctionalSafety.json",
+      "file": "work\\records\\idta-smt-catalog-20261021\\raw\\b01746e8fb3d.json",
+      "sha256": "c87d3dc3786172989439a2f6207572fe1442da75d46e45e70e819d74066af10e",
+      "id": "https://admin-shell.io/idta/SubmodelTemplate/FunctionalSafety/1/0",
+      "name": "FunctionalSafety",
+      "smlCount": 0,
+      "rawSdk": {
+        "ok": true
+      },
+      "instanceSdk": {
+        "ok": true
+      },
+      "catalogIncluded": true
+    },
+    {
+      "family": "Handover Documentation",
+      "releaseVersion": "2.0.2",
+      "path": "published/Handover Documentation/2/0/2/IDTA 02004-2-0-2_Template_HandoverDocumentation.json",
+      "url": "https://raw.githubusercontent.com/admin-shell-io/submodel-templates/f3790038b6c9c2d7e5ebbb4609997468fadf3e85/published/Handover%20Documentation/2/0/2/IDTA%2002004-2-0-2_Template_HandoverDocumentation.json",
+      "file": "work\\records\\idta-smt-catalog-20261021\\raw\\f9f15e1baeec.json",
+      "sha256": "e49961488c83d6aa3fcc31953aa39e8c77c101011edd7f4775dc0c58c804ccd3",
+      "id": "https://admin-shell.io/idta/SubmodelTemplate/HandoverDocumentation/2/0",
+      "name": "HandoverDocumentation",
+      "smlCount": 11,
+      "rawSdk": {
+        "ok": true
+      },
+      "instanceSdk": {
+        "ok": true
+      },
+      "catalogIncluded": true
+    },
+    {
+      "family": "Hierarchical Structures enabling Bills of Material",
+      "releaseVersion": "1.1.2",
+      "path": "published/Hierarchical Structures enabling Bills of Material/1/1/2/IDTA 02011-1-1-2_Template_HSEBoM.json",
+      "url": "https://raw.githubusercontent.com/admin-shell-io/submodel-templates/f3790038b6c9c2d7e5ebbb4609997468fadf3e85/published/Hierarchical%20Structures%20enabling%20Bills%20of%20Material/1/1/2/IDTA%2002011-1-1-2_Template_HSEBoM.json",
+      "file": "work\\records\\idta-smt-catalog-20261021\\raw\\15f34d2ee292.json",
+      "sha256": "7f30bf971341849eb54c7b98d96b0ea7da39258f8c7f61288a10410192fcd3b1",
+      "id": "https://admin-shell.io/idta/SubmodelTemplate/HierarchicalStructuresBoM/1/1",
+      "name": "HierarchicalStructures",
+      "smlCount": 0,
+      "rawSdk": {
+        "ok": true
+      },
+      "instanceSdk": {
+        "ok": true
+      },
+      "catalogIncluded": true
+    },
+    {
+      "family": "Hierarchical Structures enabling Bills of Material/Extension based on IEC 81346",
+      "releaseVersion": "1.0.2",
+      "path": "published/Hierarchical Structures enabling Bills of Material/Extension based on IEC 81346/1/0/2/IDTA 02011-1-1-2 _Template_BoM_ExtensionbasedonIEC81346.json",
+      "url": "https://raw.githubusercontent.com/admin-shell-io/submodel-templates/f3790038b6c9c2d7e5ebbb4609997468fadf3e85/published/Hierarchical%20Structures%20enabling%20Bills%20of%20Material/Extension%20based%20on%20IEC%2081346/1/0/2/IDTA%2002011-1-1-2%20_Template_BoM_ExtensionbasedonIEC81346.json",
+      "file": "work\\records\\idta-smt-catalog-20261021\\raw\\caa10e5b5269.json",
+      "sha256": "de46e0c26ac44520ef6e87a18570d27c2ef95128b4cbdbbfb621ec45871ccc72",
+      "id": "https://admin-shell.io/idta/SubmodelTemplate/HierarchicalStructures/ExtensionIEC81346/1/0",
+      "name": "IEC81346Structure",
+      "smlCount": 0,
+      "rawSdk": {
+        "ok": false,
+        "error": "TypeError: Error while trying to convert JSON object into Entity: A self-managed entity has to have a globalAssetId or a specificAssetId (Constraint AASd-014) >>> {'description': [{...}], 'entityType': 'SelfManagedEntity', 'idShort': 'AspectNode', 'modelType': 'Entity', 'qualifiers': [{...}, {...}], 'semanticId': {'keys': [...], 'type': 'ExternalReference'}, 'statements': [Property[LetterCodeLevel_1], Property[LetterCodeLevel_2], Property[LetterCodeLevel_3], Property[AspectNumber], MultiLanguageProperty[AspectDescription]]}"
+      },
+      "instanceSdk": {
+        "ok": false,
+        "error": "TypeError: Error while trying to convert JSON object into Entity: A self-managed entity has to have a globalAssetId or a specificAssetId (Constraint AASd-014) >>> {'description': [{...}], 'entityType': 'SelfManagedEntity', 'idShort': 'AspectNode', 'modelType': 'Entity', 'semanticId': {'keys': [...], 'type': 'ExternalReference'}, 'statements': [Property[LetterCodeLevel_1], Property[LetterCodeLevel_2], Property[LetterCodeLevel_3], Property[AspectNumber], MultiLanguageProperty[AspectDescription]]}"
+      }
+    },
+    {
+      "family": "Inspection Documents of Steel Products",
+      "releaseVersion": "1.0.1",
+      "path": "published/Inspection Documents of Steel Products/1/0/1/IDTA 02032-1-0-1_Template Inspection Documents of Steel Products.json",
+      "url": "https://raw.githubusercontent.com/admin-shell-io/submodel-templates/f3790038b6c9c2d7e5ebbb4609997468fadf3e85/published/Inspection%20Documents%20of%20Steel%20Products/1/0/1/IDTA%2002032-1-0-1_Template%20Inspection%20Documents%20of%20Steel%20Products.json",
+      "file": "work\\records\\idta-smt-catalog-20261021\\raw\\9dcffe0b0f10.json",
+      "sha256": "6a915cb8682a82fe6dd71466e4fce2c1ae33ae98611c6443c901917ee451dde4",
+      "id": "https://admin-shell.io/idta/SubmodelTemplate/InspectionDocumentsOfSteelProducts/1/0",
+      "name": "InspectionDocumentsOfSteelProducts",
+      "smlCount": 6,
+      "rawSdk": {
+        "ok": true
+      },
+      "instanceSdk": {
+        "ok": true
+      },
+      "catalogIncluded": true
+    },
+    {
+      "family": "Intelligent Information  for Use",
+      "releaseVersion": "1.0.2",
+      "path": "published/Intelligent Information  for Use/1/0/2/IDTA 02063-1-0-2_Template__IntelligentInformationForUse.json",
+      "url": "https://raw.githubusercontent.com/admin-shell-io/submodel-templates/f3790038b6c9c2d7e5ebbb4609997468fadf3e85/published/Intelligent%20Information%20%20for%20Use/1/0/2/IDTA%2002063-1-0-2_Template__IntelligentInformationForUse.json",
+      "file": "work\\records\\idta-smt-catalog-20261021\\raw\\b65528a6626c.json",
+      "sha256": "cb46e9aaacb1192043c70095eb65578878d046b52e771b3bf6704703b04716cb",
+      "id": "https://admin-shell.io/idta/SubmodelTemplate/IntelligentInformationForUse/1/0",
+      "name": "IntelligentInformationforUse",
+      "smlCount": 0,
+      "rawSdk": {
+        "ok": true
+      },
+      "instanceSdk": {
+        "ok": true
+      },
+      "catalogIncluded": true
+    },
+    {
+      "family": "MTP",
+      "releaseVersion": "1.0.2",
+      "path": "published/MTP/1/0/2/IDTA_02001-1-0-2_Submodel_MTPv1.0-rc2-with-documentation1_en.json",
+      "url": "https://raw.githubusercontent.com/admin-shell-io/submodel-templates/f3790038b6c9c2d7e5ebbb4609997468fadf3e85/published/MTP/1/0/2/IDTA_02001-1-0-2_Submodel_MTPv1.0-rc2-with-documentation1_en.json",
+      "file": "work\\records\\idta-smt-catalog-20261021\\raw\\467771c8c180.json",
+      "sha256": "77fa810fe113998dbfd370c121dc66bddec4f38f231474142b2d19b7889ed29b",
+      "id": "https://admin-shell.io/idta/SubmodelTemplate/ModuleTypePackage/1/0",
+      "name": "ModuleTypePackage",
+      "smlCount": 0,
+      "rawSdk": {
+        "ok": true
+      },
+      "instanceSdk": {
+        "ok": true
+      },
+      "catalogIncluded": true
+    },
+    {
+      "family": "MTP",
+      "releaseVersion": "1.0.2",
+      "path": "published/MTP/1/0/2/IDTA_02001-1-0-2_Submodel_MTPv1.0-rc2-with-documentation1_en.json",
+      "url": "https://raw.githubusercontent.com/admin-shell-io/submodel-templates/f3790038b6c9c2d7e5ebbb4609997468fadf3e85/published/MTP/1/0/2/IDTA_02001-1-0-2_Submodel_MTPv1.0-rc2-with-documentation1_en.json",
+      "file": "work\\records\\idta-smt-catalog-20261021\\raw\\467771c8c180.json",
+      "sha256": "77fa810fe113998dbfd370c121dc66bddec4f38f231474142b2d19b7889ed29b",
+      "id": "https://admin-shell.io/idta/SubmodelTemplate/ModuleTypePackageInstance/1/0",
+      "name": "ProcessEquipmentAssembly",
+      "smlCount": 0,
+      "rawSdk": {
+        "ok": true
+      },
+      "instanceSdk": {
+        "ok": true
+      },
+      "catalogIncluded": true
+    },
+    {
+      "family": "Maintenance Instructions",
+      "releaseVersion": "1.0.1",
+      "path": "published/Maintenance Instructions/1/0/1/IDTA_02018-1-0-1_Template_MaintenanceInstructions.json",
+      "url": "https://raw.githubusercontent.com/admin-shell-io/submodel-templates/f3790038b6c9c2d7e5ebbb4609997468fadf3e85/published/Maintenance%20Instructions/1/0/1/IDTA_02018-1-0-1_Template_MaintenanceInstructions.json",
+      "file": "work\\records\\idta-smt-catalog-20261021\\raw\\8d605ec93c05.json",
+      "sha256": "a99f09afa85342ae5704e661681802bc006e6599cca1bd3daf7d77206f286519",
+      "id": "https://admin-shell.io/idta/SubmodelTemplate/MaintenanceInstructions/1/0",
+      "name": "MaintenanceInstructions",
+      "smlCount": 3,
+      "rawSdk": {
+        "ok": true
+      },
+      "instanceSdk": {
+        "ok": true
+      },
+      "catalogIncluded": true
+    },
+    {
+      "family": "Material Data for Plastic Waste",
+      "releaseVersion": "1.1",
+      "path": "published/Material Data for Plastic Waste/1/1/IDTA_02080_Template_Material Data for Plastic Waste.json",
+      "url": "https://raw.githubusercontent.com/admin-shell-io/submodel-templates/f3790038b6c9c2d7e5ebbb4609997468fadf3e85/published/Material%20Data%20for%20Plastic%20Waste/1/1/IDTA_02080_Template_Material%20Data%20for%20Plastic%20Waste.json",
+      "file": "work\\records\\idta-smt-catalog-20261021\\raw\\c2beaea184b8.json",
+      "sha256": "6d814fdd7c35a365e38a345c8bb82b8b48c29650b13fd47e8ae1320eabe1f40b",
+      "id": "https://admin-shell.io/idta/SubmodelTemplate/en18065materialdata/1/0",
+      "name": "MaterialDataForEN18065ClassificationOfPlastics",
+      "smlCount": 4,
+      "rawSdk": {
+        "ok": true
+      },
+      "instanceSdk": {
+        "ok": true
+      },
+      "catalogIncluded": true
+    },
+    {
+      "family": "OPC UA Server Datasheet",
+      "releaseVersion": "1.1",
+      "path": "published/OPC UA Server Datasheet/1/1/IDTA 02009-1-0-Template-OPCUA-Server Datasheet.json",
+      "url": "https://raw.githubusercontent.com/admin-shell-io/submodel-templates/f3790038b6c9c2d7e5ebbb4609997468fadf3e85/published/OPC%20UA%20Server%20Datasheet/1/1/IDTA%2002009-1-0-Template-OPCUA-Server%20Datasheet.json",
+      "file": "work\\records\\idta-smt-catalog-20261021\\raw\\bf928c8dff59.json",
+      "sha256": "43149bb4e0a01eae2a511ea1ceb60c4c5481ea999e5989c624687ac96b4224b2",
+      "id": "https://admin-shell.io/idta/SubmodelTemplate/opcuaserverdatasheet/1/0",
+      "name": "UAServerDataSheet",
+      "smlCount": 6,
+      "rawSdk": {
+        "ok": true
+      },
+      "instanceSdk": {
+        "ok": true
+      },
+      "catalogIncluded": true
+    },
+    {
+      "family": "Plant Asset Management Specification Sheet",
+      "releaseVersion": "1.0.2",
+      "path": "published/Plant Asset Management Specification Sheet/1/0/2/IDTA 02019-1-0-2_Template_PlantAssetManagement.json",
+      "url": "https://raw.githubusercontent.com/admin-shell-io/submodel-templates/f3790038b6c9c2d7e5ebbb4609997468fadf3e85/published/Plant%20Asset%20Management%20Specification%20Sheet/1/0/2/IDTA%2002019-1-0-2_Template_PlantAssetManagement.json",
+      "file": "work\\records\\idta-smt-catalog-20261021\\raw\\9a32d6659fce.json",
+      "sha256": "7bb6422f8c3d04619a836e518599ce8e88b1c06751f84b28db4f673001071a66",
+      "id": "https://admin-shell.io/idta/SubmodelTemplate/PAMSpecificationSheet/1/0",
+      "name": "PAMSpecificationSheet",
+      "smlCount": 0,
+      "rawSdk": {
+        "ok": false,
+        "error": "TypeError: Error while trying to convert JSON object into SubmodelElementCollection: Object with attribute (name='type', value='FormInfo') is already present in this set of objects (Constraint AASd-021) >>> {'category': 'PARAMETER', 'description': [{...}], 'displayName': [{...}, {...}], 'idShort': 'MethodHeader', 'modelType': 'SubmodelElementCollection', 'qualifiers': [{...}, {...}, {...}], 'semanticId': {'keys': [...], 'type': 'ExternalReference'}, 'value': [Property[MethodName], Property[MethodAbbreviation], Property[MethodDescription], Property[Required], Property[ContinuousOrScheduledMonitoring], Property[Interval], Property[MethodSheetIdentification], Property[MethodSheetReference]]}"
+      },
+      "instanceSdk": {
+        "ok": true
+      }
+    },
+    {
+      "family": "Plastic and Rubber Moulds/Part 1 Identification",
+      "releaseVersion": "1.1",
+      "path": "published/Plastic and Rubber Moulds/Part 1 Identification/1/1/IDTA 02038-1_Template_Plastic and Rubber Moulds-Identification.json",
+      "url": "https://raw.githubusercontent.com/admin-shell-io/submodel-templates/f3790038b6c9c2d7e5ebbb4609997468fadf3e85/published/Plastic%20and%20Rubber%20Moulds/Part%201%20Identification/1/1/IDTA%2002038-1_Template_Plastic%20and%20Rubber%20Moulds-Identification.json",
+      "file": "work\\records\\idta-smt-catalog-20261021\\raw\\92fec6fa1f50.json",
+      "sha256": "c5aadf35564dcf4083e658ec4834597ae64fc6ebcc31d2222164946d782b87ca",
+      "id": "https://admin-shell.io/idta/euromap/Moulds/Identification/1/0",
+      "name": "PlasticsAndRubberMouldsIdentification",
+      "smlCount": 0,
+      "rawSdk": {
+        "ok": true
+      },
+      "instanceSdk": {
+        "ok": true
+      },
+      "catalogIncluded": true
+    },
+    {
+      "family": "Predictive Maintenance",
+      "releaseVersion": "1.0",
+      "path": "published/Predictive Maintenance/1/0/IDTA 02048_Template_PredictiveMaintenance.json",
+      "url": "https://raw.githubusercontent.com/admin-shell-io/submodel-templates/f3790038b6c9c2d7e5ebbb4609997468fadf3e85/published/Predictive%20Maintenance/1/0/IDTA%2002048_Template_PredictiveMaintenance.json",
+      "file": "work\\records\\idta-smt-catalog-20261021\\raw\\8e96d3fd3c8c.json",
+      "sha256": "4b41c5a11a4e8a69e6381588418aa1555c263f1b2e4d255db26a9a6d6966f287",
+      "id": "https://admin-shell.io/idta/SubmodelTemplate/PredictiveMaintenance/1/0",
+      "name": "PredictiveMaintenance",
+      "smlCount": 2,
+      "rawSdk": {
+        "ok": true
+      },
+      "instanceSdk": {
+        "ok": true
+      },
+      "catalogIncluded": true
+    },
+    {
+      "family": "Process Parameters Instance",
+      "releaseVersion": "1.0",
+      "path": "published/Process Parameters Instance/1/0/IDTA 02031-2_Template_ProcessParameters_Instance.json",
+      "url": "https://raw.githubusercontent.com/admin-shell-io/submodel-templates/f3790038b6c9c2d7e5ebbb4609997468fadf3e85/published/Process%20Parameters%20Instance/1/0/IDTA%2002031-2_Template_ProcessParameters_Instance.json",
+      "file": "work\\records\\idta-smt-catalog-20261021\\raw\\9df847f4f021.json",
+      "sha256": "c7675b5fe762a2b6d66e700e324b320f5e73cd31d7fa037d23b9e7a90eb8cfaf",
+      "id": "https://admin-shell.io/idta/ExecutedProcesses/1/0",
+      "name": "ExecutedProcesses",
+      "smlCount": 0,
+      "rawSdk": {
+        "ok": true
+      },
+      "instanceSdk": {
+        "ok": true
+      },
+      "catalogIncluded": true
+    },
+    {
+      "family": "Process Parameters Type",
+      "releaseVersion": "1.0",
+      "path": "published/Process Parameters Type/1/0/IDTA 02031-1_Template_ProcessParameters_Type.json",
+      "url": "https://raw.githubusercontent.com/admin-shell-io/submodel-templates/f3790038b6c9c2d7e5ebbb4609997468fadf3e85/published/Process%20Parameters%20Type/1/0/IDTA%2002031-1_Template_ProcessParameters_Type.json",
+      "file": "work\\records\\idta-smt-catalog-20261021\\raw\\b4c750e65864.json",
+      "sha256": "3bd9656c37ead0778cdb11a42ab7100fb4c387c0fe7e46d13c9dfea4bd782256",
+      "id": "https://admin-shell-io/idta/SubmodelTemplate/ProcessParameters/1/0",
+      "name": "ProcessParameters",
+      "smlCount": 0,
+      "rawSdk": {
+        "ok": true
+      },
+      "instanceSdk": {
+        "ok": true
+      },
+      "catalogIncluded": true
+    },
+    {
+      "family": "Process Variables for Manufacturing Key Performance Indicators",
+      "releaseVersion": "1.0",
+      "path": "published/Process Variables for Manufacturing Key Performance Indicators/1/0/IDTA 02066_Template_PVM.json",
+      "url": "https://raw.githubusercontent.com/admin-shell-io/submodel-templates/f3790038b6c9c2d7e5ebbb4609997468fadf3e85/published/Process%20Variables%20for%20Manufacturing%20Key%20Performance%20Indicators/1/0/IDTA%2002066_Template_PVM.json",
+      "file": "work\\records\\idta-smt-catalog-20261021\\raw\\1a5efb66aba3.json",
+      "sha256": "dac17470ce913640aecd57ec25c87e040308b278b4863975718c5ee976b9e69c",
+      "id": "https://admin-shell.io/idta/SubmodelTemplate/ProcessVariablesForManufacturingKPICalculation/1/0",
+      "name": "ProcessVariablesForManufacturingKPICalculation",
+      "smlCount": 0,
+      "rawSdk": {
+        "ok": true
+      },
+      "instanceSdk": {
+        "ok": true
+      },
+      "catalogIncluded": true
+    },
+    {
+      "family": "Product Change Notifications",
+      "releaseVersion": "1.1",
+      "path": "published/Product Change Notifications/1/1/IDTA_02036_Template_ProductChangeNotifications.json",
+      "url": "https://raw.githubusercontent.com/admin-shell-io/submodel-templates/f3790038b6c9c2d7e5ebbb4609997468fadf3e85/published/Product%20Change%20Notifications/1/1/IDTA_02036_Template_ProductChangeNotifications.json",
+      "file": "work\\records\\idta-smt-catalog-20261021\\raw\\d0bc01c8e7f8.json",
+      "sha256": "6f17e2c652a9d2a3056a0e5391530db38881c3e5420903efa73b234a784fc543",
+      "id": "https://admin-shell.io/idta/SubmodelTemplate/productchangenotifications/1/0",
+      "name": "ProductChangeNotifications",
+      "smlCount": 10,
+      "rawSdk": {
+        "ok": true
+      },
+      "instanceSdk": {
+        "ok": true
+      },
+      "catalogIncluded": true
+    },
+    {
+      "family": "Production Calendar",
+      "releaseVersion": "1.1",
+      "path": "published/Production Calendar/1/1/IDTA 02067_Template_ProductionCalendar.json",
+      "url": "https://raw.githubusercontent.com/admin-shell-io/submodel-templates/f3790038b6c9c2d7e5ebbb4609997468fadf3e85/published/Production%20Calendar/1/1/IDTA%2002067_Template_ProductionCalendar.json",
+      "file": "work\\records\\idta-smt-catalog-20261021\\raw\\ecadd6dc5562.json",
+      "sha256": "2c28b57a849f47e9ccbced4c3b76e8c8829c9c6498c96e1b5deec15b5482d826",
+      "id": "https://admin-shell.io/idta/SubmodelTemplate/ProductionCalendar/1/0",
+      "name": "ProductionCalendar",
+      "smlCount": 1,
+      "rawSdk": {
+        "ok": true
+      },
+      "instanceSdk": {
+        "ok": true
+      },
+      "catalogIncluded": true
+    },
+    {
+      "family": "Provision of 3D Models",
+      "releaseVersion": "1.0.2",
+      "path": "published/Provision of 3D Models/1/0/2/IDTA 02026-1-0-2_Template_ProvisionOf3DModels.json",
+      "url": "https://raw.githubusercontent.com/admin-shell-io/submodel-templates/f3790038b6c9c2d7e5ebbb4609997468fadf3e85/published/Provision%20of%203D%20Models/1/0/2/IDTA%2002026-1-0-2_Template_ProvisionOf3DModels.json",
+      "file": "work\\records\\idta-smt-catalog-20261021\\raw\\7613f9b92c0e.json",
+      "sha256": "7af668bc49098dcbc49617536baa32062df58625c064c92d71d5e2a663348d3e",
+      "id": "https://admin-shell.io/idta/SubmodelTemplate/ProvisionOf3DModels/1/0",
+      "name": "Models3D",
+      "smlCount": 20,
+      "rawSdk": {
+        "ok": true
+      },
+      "instanceSdk": {
+        "ok": true
+      },
+      "catalogIncluded": true
+    },
+    {
+      "family": "Provision of Company Data",
+      "releaseVersion": "1.0.1",
+      "path": "published/Provision of Company Data/1/0/1/IDTA 02068_Template_Provision Of Company Data.json",
+      "url": "https://raw.githubusercontent.com/admin-shell-io/submodel-templates/f3790038b6c9c2d7e5ebbb4609997468fadf3e85/published/Provision%20of%20Company%20Data/1/0/1/IDTA%2002068_Template_Provision%20Of%20Company%20Data.json",
+      "file": "work\\records\\idta-smt-catalog-20261021\\raw\\6daebf24b84a.json",
+      "sha256": "42e9ff2d87e65af7ba21dffe772997b60c0f1aa9968c5e36b262e6726339e0a9",
+      "id": "https://admin-shell.io/idta/SubmodelTemplate/CompanyData/1/0",
+      "name": "CompanyData",
+      "smlCount": 10,
+      "rawSdk": {
+        "ok": true
+      },
+      "instanceSdk": {
+        "ok": true
+      },
+      "catalogIncluded": true
+    },
+    {
+      "family": "Provision of Simulation Models",
+      "releaseVersion": "1.2",
+      "path": "published/Provision of Simulation Models/1/2/IDTA 02005_Template_ProvisionOfSimulationModel.json",
+      "url": "https://raw.githubusercontent.com/admin-shell-io/submodel-templates/f3790038b6c9c2d7e5ebbb4609997468fadf3e85/published/Provision%20of%20Simulation%20Models/1/2/IDTA%2002005_Template_ProvisionOfSimulationModel.json",
+      "file": "work\\records\\idta-smt-catalog-20261021\\raw\\0538b492f8de.json",
+      "sha256": "b2ed4cb82d17e69a6a3be14fa05df41fce7eb54846e9e7300d4d9f03835cb49f",
+      "id": "https://admin-shell.io/idta/SubmodelTemplate/SimulationModels/1/1",
+      "name": "SimulationModels",
+      "smlCount": 0,
+      "rawSdk": {
+        "ok": true
+      },
+      "instanceSdk": {
+        "ok": true
+      },
+      "catalogIncluded": true
+    },
+    {
+      "family": "Purchase Order",
+      "releaseVersion": "1.0.1",
+      "path": "published/Purchase Order/1/0/1/IDTA-02050-1-0-1_Template_PurchaseOrder.json",
+      "url": "https://raw.githubusercontent.com/admin-shell-io/submodel-templates/f3790038b6c9c2d7e5ebbb4609997468fadf3e85/published/Purchase%20Order/1/0/1/IDTA-02050-1-0-1_Template_PurchaseOrder.json",
+      "file": "work\\records\\idta-smt-catalog-20261021\\raw\\018447f2a72b.json",
+      "sha256": "7c9dba2fb6b0b46d69f6b192e58daaf3736b9901234bfa77965f1baeade9c7f8",
+      "id": "https://admin-shell.io/idta/SubmodelTemplate/PurchaseOrder/1/0",
+      "name": "PurchaseOrder",
+      "smlCount": 18,
+      "rawSdk": {
+        "ok": true
+      },
+      "instanceSdk": {
+        "ok": true
+      },
+      "catalogIncluded": true
+    },
+    {
+      "family": "Quality Control for Machining",
+      "releaseVersion": "1.1",
+      "path": "published/Quality Control for Machining/1/1/IDTA_02049_Template_QualityControlForMachining.json",
+      "url": "https://raw.githubusercontent.com/admin-shell-io/submodel-templates/f3790038b6c9c2d7e5ebbb4609997468fadf3e85/published/Quality%20Control%20for%20Machining/1/1/IDTA_02049_Template_QualityControlForMachining.json",
+      "file": "work\\records\\idta-smt-catalog-20261021\\raw\\0b4705c36272.json",
+      "sha256": "a40d89e73c6962a11da75e3047d23b99b7ac6c025c98fd25b0b8531673f745cc",
+      "id": "https://admin-shell.io/idta/QualityControlForMachining/1/0",
+      "name": "QualityControlForMachining",
+      "smlCount": 23,
+      "rawSdk": {
+        "ok": true
+      },
+      "instanceSdk": {
+        "ok": true
+      },
+      "catalogIncluded": true
+    },
+    {
+      "family": "Reliability",
+      "releaseVersion": "1.0.2",
+      "path": "published/Reliability/1/0/2/IDTA 02013-1-0-2_Template_Reliability.json",
+      "url": "https://raw.githubusercontent.com/admin-shell-io/submodel-templates/f3790038b6c9c2d7e5ebbb4609997468fadf3e85/published/Reliability/1/0/2/IDTA%2002013-1-0-2_Template_Reliability.json",
+      "file": "work\\records\\idta-smt-catalog-20261021\\raw\\e8e812422db9.json",
+      "sha256": "3a642458e5fa860239fa4722788f3319564f2c34f7119f46f3784e342edaf21c",
+      "id": "https://admin-shell.io/idta/SubmodelTemplate/Reliability/1/0",
+      "name": "Reliability",
+      "smlCount": 0,
+      "rawSdk": {
+        "ok": true
+      },
+      "instanceSdk": {
+        "ok": true
+      },
+      "catalogIncluded": true
+    },
+    {
+      "family": "Safety Instrumented Functions/Part 1 Safety Instrumented Function",
+      "releaseVersion": "1.0",
+      "path": "published/Safety Instrumented Functions/Part 1 Safety Instrumented Function/1/0/IDTA 02064_Template_SafetyInstrumentedFunction.json",
+      "url": "https://raw.githubusercontent.com/admin-shell-io/submodel-templates/f3790038b6c9c2d7e5ebbb4609997468fadf3e85/published/Safety%20Instrumented%20Functions/Part%201%20Safety%20Instrumented%20Function/1/0/IDTA%2002064_Template_SafetyInstrumentedFunction.json",
+      "file": "work\\records\\idta-smt-catalog-20261021\\raw\\bc9fac331296.json",
+      "sha256": "102e02c10190519d46c53cd34d47774ff89a34d6e7218b6601fdccb8a78e96b9",
+      "id": "https://admin-shell.io/idta/SubmodelTemplate/SafetyInstrumentedFunction/1/0",
+      "name": "SafetyInstrumentedFunction",
+      "smlCount": 0,
+      "rawSdk": {
+        "ok": true
+      },
+      "instanceSdk": {
+        "ok": true
+      },
+      "catalogIncluded": true
+    },
+    {
+      "family": "Safety Instrumented Functions/Part 2 Safety Instrumented System",
+      "releaseVersion": "1.0",
+      "path": "published/Safety Instrumented Functions/Part 2 Safety Instrumented System/1/0/IDTA 02097_Template_SafetyInstrumentedSystem.json",
+      "url": "https://raw.githubusercontent.com/admin-shell-io/submodel-templates/f3790038b6c9c2d7e5ebbb4609997468fadf3e85/published/Safety%20Instrumented%20Functions/Part%202%20Safety%20Instrumented%20System/1/0/IDTA%2002097_Template_SafetyInstrumentedSystem.json",
+      "file": "work\\records\\idta-smt-catalog-20261021\\raw\\d2df81edd919.json",
+      "sha256": "2772a8055d2f8efa056ea22d63d9095e076e0bb80d1786090d1a9b580fac622f",
+      "id": "https://admin-shell.io/idta/SubmodelTemplate/SafetyInstrumentedSystem/1/0",
+      "name": "SafetyInstrumentedSystem",
+      "smlCount": 0,
+      "rawSdk": {
+        "ok": true
+      },
+      "instanceSdk": {
+        "ok": true
+      },
+      "catalogIncluded": true
+    },
+    {
+      "family": "Safety Instrumented Functions/Part 3 Safety Instrumented System Device",
+      "releaseVersion": "1.0",
+      "path": "published/Safety Instrumented Functions/Part 3 Safety Instrumented System Device/1/0/IDTA 02079_Template_SafetyInstrumentedSystemDevice.json",
+      "url": "https://raw.githubusercontent.com/admin-shell-io/submodel-templates/f3790038b6c9c2d7e5ebbb4609997468fadf3e85/published/Safety%20Instrumented%20Functions/Part%203%20Safety%20Instrumented%20System%20Device/1/0/IDTA%2002079_Template_SafetyInstrumentedSystemDevice.json",
+      "file": "work\\records\\idta-smt-catalog-20261021\\raw\\85ca3d4426ab.json",
+      "sha256": "ca4d8b42fff0313a25853b0284345faa2f46ad3578f8b95e8cbdab3c7afca9cd",
+      "id": "https://admin-shell.io/idta/SubmodelTemplate/SISDevice/1/0",
+      "name": "SISDevice",
+      "smlCount": 0,
+      "rawSdk": {
+        "ok": true
+      },
+      "instanceSdk": {
+        "ok": true
+      },
+      "catalogIncluded": true
+    },
+    {
+      "family": "Safety Instrumented Functions/Part 4 Equipment Under Control",
+      "releaseVersion": "1.0",
+      "path": "published/Safety Instrumented Functions/Part 4 Equipment Under Control/1/0/IDTA 02096_Template_EquipmentUnderControl.json",
+      "url": "https://raw.githubusercontent.com/admin-shell-io/submodel-templates/f3790038b6c9c2d7e5ebbb4609997468fadf3e85/published/Safety%20Instrumented%20Functions/Part%204%20Equipment%20Under%20Control/1/0/IDTA%2002096_Template_EquipmentUnderControl.json",
+      "file": "work\\records\\idta-smt-catalog-20261021\\raw\\6dddc96ac95b.json",
+      "sha256": "9381a3213192fc089e5f5d5b8630d172cd14f7bf4e5352a268a09245bbe2a53c",
+      "id": "https://admin-shell.io/idta/SubmodelTemplate/EquipmentUnderControl/1/0",
+      "name": "EquipmentUnderControl",
+      "smlCount": 0,
+      "rawSdk": {
+        "ok": true
+      },
+      "instanceSdk": {
+        "ok": true
+      },
+      "catalogIncluded": true
+    },
+    {
+      "family": "Service Request Notification",
+      "releaseVersion": "1.0.2",
+      "path": "published/Service Request Notification/1/0/2/IDTA 02010-1-0-2_Template_ServiceRequestNotification.json",
+      "url": "https://raw.githubusercontent.com/admin-shell-io/submodel-templates/f3790038b6c9c2d7e5ebbb4609997468fadf3e85/published/Service%20Request%20Notification/1/0/2/IDTA%2002010-1-0-2_Template_ServiceRequestNotification.json",
+      "file": "work\\records\\idta-smt-catalog-20261021\\raw\\d950fe00e101.json",
+      "sha256": "a0a7647ae8a46198ca478e9f8d6002b211d86555a1effafbaa33bfef0717fd61",
+      "id": "https://admin-shell.io/idta/SubmodelTemplate/ServiceRequestNotification/1/0",
+      "name": "ServiceRequestNotification",
+      "smlCount": 0,
+      "rawSdk": {
+        "ok": true
+      },
+      "instanceSdk": {
+        "ok": true
+      },
+      "catalogIncluded": true
+    },
+    {
+      "family": "Sizing of Power Drive Trains",
+      "releaseVersion": "1.0.2",
+      "path": "published/Sizing of Power Drive Trains/1/0/2/IDTA 02021-1-0-2_Template_Sizing of Power Drive Trains.json",
+      "url": "https://raw.githubusercontent.com/admin-shell-io/submodel-templates/f3790038b6c9c2d7e5ebbb4609997468fadf3e85/published/Sizing%20of%20Power%20Drive%20Trains/1/0/2/IDTA%2002021-1-0-2_Template_Sizing%20of%20Power%20Drive%20Trains.json",
+      "file": "work\\records\\idta-smt-catalog-20261021\\raw\\a9946db2ceee.json",
+      "sha256": "6f1257d2181f69f5df27bb10555f10a4e21cfa7e3e9963ba3b22e4811da6f9ac",
+      "id": "https://admin-shell.io/idta/SubmodelTemplate/SizingofPowerDriveTrains/1/0",
+      "name": "PowerDriveTrainSizing",
+      "smlCount": 0,
+      "rawSdk": {
+        "ok": true
+      },
+      "instanceSdk": {
+        "ok": true
+      },
+      "catalogIncluded": true
+    },
+    {
+      "family": "Software Nameplate",
+      "releaseVersion": "1.0.2",
+      "path": "published/Software Nameplate/1/0/2/IDTA 02007-1-0-2_Template_Software Nameplate.json",
+      "url": "https://raw.githubusercontent.com/admin-shell-io/submodel-templates/f3790038b6c9c2d7e5ebbb4609997468fadf3e85/published/Software%20Nameplate/1/0/2/IDTA%2002007-1-0-2_Template_Software%20Nameplate.json",
+      "file": "work\\records\\idta-smt-catalog-20261021\\raw\\439af7cc1816.json",
+      "sha256": "c8e26dcafe637c0740fda9d2e7ee0b5d31ddfe0d077fb159fa36934c39d97b06",
+      "id": "https://admin-shell.io/idta/SubmodelTemplate/SoftwareNameplate/1/0",
+      "name": "SoftwareNameplate",
+      "smlCount": 0,
+      "rawSdk": {
+        "ok": true
+      },
+      "instanceSdk": {
+        "ok": true
+      },
+      "catalogIncluded": true
+    },
+    {
+      "family": "Technical Data for Automated Guided Vehicles",
+      "releaseVersion": "1.0.2",
+      "path": "published/Technical Data for Automated Guided Vehicles/1/0/2/IDTA 02047-1-0-2 Template_TechnicalDataForAGV.json",
+      "url": "https://raw.githubusercontent.com/admin-shell-io/submodel-templates/f3790038b6c9c2d7e5ebbb4609997468fadf3e85/published/Technical%20Data%20for%20Automated%20Guided%20Vehicles/1/0/2/IDTA%2002047-1-0-2%20Template_TechnicalDataForAGV.json",
+      "file": "work\\records\\idta-smt-catalog-20261021\\raw\\224d5d88bb2e.json",
+      "sha256": "2691f0216b73bd7085d42dd8fc87b305390aeda4b201422d29cdd7faef2c9529",
+      "id": "https://admin-shell.io/idta/SubmodelTemplate/technicaldataagv/1/0",
+      "name": "TechnicalDataAGV",
+      "smlCount": 4,
+      "rawSdk": {
+        "ok": true
+      },
+      "instanceSdk": {
+        "ok": true
+      },
+      "catalogIncluded": true
+    },
+    {
+      "family": "Technical_Data",
+      "releaseVersion": "2.0.2",
+      "path": "published/Technical_Data/2/0/2/IDTA 02003_2-0-2_Template_TechnicalData.json",
+      "url": "https://raw.githubusercontent.com/admin-shell-io/submodel-templates/f3790038b6c9c2d7e5ebbb4609997468fadf3e85/published/Technical_Data/2/0/2/IDTA%2002003_2-0-2_Template_TechnicalData.json",
+      "file": "work\\records\\idta-smt-catalog-20261021\\raw\\60006d04527d.json",
+      "sha256": "3d8ddfc719c774216adc61f0c6f608ab2ede81b4d6b9a042491b1e8deabb8659",
+      "id": "https://admin-shell.io/idta/SubmodelTemplate/TechnicalData/2/0",
+      "name": "TechnicalData",
+      "smlCount": 10,
+      "rawSdk": {
+        "ok": true
+      },
+      "instanceSdk": {
+        "ok": true
+      },
+      "catalogIncluded": true
+    },
+    {
+      "family": "Time Series Data",
+      "releaseVersion": "1.1.2",
+      "path": "published/Time Series Data/1/1/2/IDTA 02008-1-1-2_Template_TimeSeriesData.json",
+      "url": "https://raw.githubusercontent.com/admin-shell-io/submodel-templates/f3790038b6c9c2d7e5ebbb4609997468fadf3e85/published/Time%20Series%20Data/1/1/2/IDTA%2002008-1-1-2_Template_TimeSeriesData.json",
+      "file": "work\\records\\idta-smt-catalog-20261021\\raw\\df2e0399b923.json",
+      "sha256": "3c31ce3ed3f465ed89a76708b8d92f1213463863a735a7cb45255c6c337d757c",
+      "id": "https://admin-shell.io/idta/SubmodelTemplate/TimeSeries/1/1",
+      "name": "TimeSeries",
+      "smlCount": 0,
+      "rawSdk": {
+        "ok": true
+      },
+      "instanceSdk": {
+        "ok": true
+      },
+      "catalogIncluded": true
+    },
+    {
+      "family": "Time Series Data",
+      "releaseVersion": "1.1.2",
+      "path": "published/Time Series Data/1/1/2/IDTA 02008-1-1-2_Template_withOperations_TimeSeriesData.json",
+      "url": "https://raw.githubusercontent.com/admin-shell-io/submodel-templates/f3790038b6c9c2d7e5ebbb4609997468fadf3e85/published/Time%20Series%20Data/1/1/2/IDTA%2002008-1-1-2_Template_withOperations_TimeSeriesData.json",
+      "file": "work\\records\\idta-smt-catalog-20261021\\raw\\b7c510ab45cc.json",
+      "sha256": "7d37648b7a6e5f1d702aa7574d19a3b121ae5ee38ae261e800ead367f2014db2",
+      "id": "https://admin-shell.io/idta/SubmodelTemplate/TimeSeries/1/1",
+      "name": "TimeSeries",
+      "smlCount": 0,
+      "rawSdk": {
+        "ok": true
+      },
+      "instanceSdk": {
+        "ok": true
+      },
+      "catalogIncluded": false
+    },
+    {
+      "family": "Wireless Communication",
+      "releaseVersion": "1.0.2",
+      "path": "published/Wireless Communication/1/0/2/IDTA 02022-1-0-2_Template_Wireless Communication.json",
+      "url": "https://raw.githubusercontent.com/admin-shell-io/submodel-templates/f3790038b6c9c2d7e5ebbb4609997468fadf3e85/published/Wireless%20Communication/1/0/2/IDTA%2002022-1-0-2_Template_Wireless%20Communication.json",
+      "file": "work\\records\\idta-smt-catalog-20261021\\raw\\050309cc19e8.json",
+      "sha256": "c6a08afe75d29196323aabece2343c60a6c66ebec8c680cdb163f3c24fcccacf",
+      "id": "https://admin-shell.io/idta/SubmodelTemplate/WirelessCommunication/1/0",
+      "name": "WirelessCommunication",
+      "smlCount": 0,
+      "rawSdk": {
+        "ok": true
+      },
+      "instanceSdk": {
+        "ok": true
+      },
+      "catalogIncluded": true
+    },
+    {
+      "family": "Worskstation Worker Matching Data",
+      "releaseVersion": "1.0.1",
+      "path": "published/Worskstation Worker Matching Data/1/0/1/IDTA 02046-1-0-1_Template_WWMD.json",
+      "url": "https://raw.githubusercontent.com/admin-shell-io/submodel-templates/f3790038b6c9c2d7e5ebbb4609997468fadf3e85/published/Worskstation%20Worker%20Matching%20Data/1/0/1/IDTA%2002046-1-0-1_Template_WWMD.json",
+      "file": "work\\records\\idta-smt-catalog-20261021\\raw\\ed8885dc7c38.json",
+      "sha256": "21e218cc6bc5ea1babc0e697286b662f33353adf8a807e8a6d2e14cfa6d018b9",
+      "id": "https://admin-shell.io/idta/SubmodelTemplate/workstationMatching/1/0",
+      "name": "WorkstationWorkerMatchingData",
+      "smlCount": 9,
+      "rawSdk": {
+        "ok": true
+      },
+      "instanceSdk": {
+        "ok": true
+      },
+      "catalogIncluded": true
+    },
+    {
+      "family": "sensor4.0/Part 1 Measurement Value",
+      "releaseVersion": "1.0.1",
+      "path": "published/sensor4.0/Part 1 Measurement Value/1/0/1/IDTA 02029-1-0-1_Template_Sensor4.0_MeasurementValue.json",
+      "url": "https://raw.githubusercontent.com/admin-shell-io/submodel-templates/f3790038b6c9c2d7e5ebbb4609997468fadf3e85/published/sensor4.0/Part%201%20Measurement%20Value/1/0/1/IDTA%2002029-1-0-1_Template_Sensor4.0_MeasurementValue.json",
+      "file": "work\\records\\idta-smt-catalog-20261021\\raw\\2db578ec57dd.json",
+      "sha256": "7bba93a87aefe63ee871db2c78f2e043b23f519f96b2fbf0c694d57d4753ec6d",
+      "id": "https://admin-shell.io/idta/SubmodelTemplate/measurementValue/1/0",
+      "name": "MeasurementValue",
+      "smlCount": 0,
+      "rawSdk": {
+        "ok": true
+      },
+      "instanceSdk": {
+        "ok": true
+      },
+      "catalogIncluded": true
+    }
+  ]
+}

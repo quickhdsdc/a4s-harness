@@ -1,0 +1,17 @@
+{
+  "previousDiagnosisCorrection": "IdentifiableAssertion checks repeated Shell/Submodel IDs across the complete load batch; it does not check ConceptDescriptions. The previously removed dictionary object was an independent compatibility cleanup, not the fatal startup cause.",
+  "templateId": "https://admin-shell.io/idta/SubmodelTemplate/technicaldataagv/1/0",
+  "agvSubmodelInstanceId": "https://admin-shell.io/idta/aas/AGV/sm/TechnicalDataAGV",
+  "idShort": "TechnicalDataAGV",
+  "kind": "Instance",
+  "semanticId": "https://admin-shell.io/idta/SubmodelTemplate/technicaldataagv/1/0",
+  "startupPackages": 14,
+  "backup": "~\\.a4s\\backups\\seed-batch-fix-20261021T212030Z",
+  "containerRestarted": false,
+  "protectedAasBackupZipSha256": "de492aec0b25a4c6bb296a9c0e1cc9f77747ef2b819ddff061094d2e77cd86b8",
+  "legacyConceptDescription": "Restored to the active AGV package; its removal was not necessary after separating the device-instance and template IDs.",
+  "nativeVerification": "BaSyx milestone-15 CompleteEnvironment deserializer and IdentifiableAssertion, all 14 configured packages, 14 shells, 105 submodels; offline only.",
+  "agvPackageSha256": "0356c93ab52d5a038ae7d8546be71946f2d03cfff2a5ab51e08c747301d8298c",
+  "laterXmlSerializationCorrection": "explorer-compatibility-fix.json; model trees equivalent and all attachment bytes preserved",
+  "currentAgvPackageSha256": "76edd5204f571476a972931637ba8d687b120c6bcd356d3927a4c6ebc6234145"
+}

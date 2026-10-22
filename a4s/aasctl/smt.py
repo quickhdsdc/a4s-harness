@@ -269,7 +269,9 @@ def _example_value(node: Dict[str, Any]) -> Optional[str]:
 def _clear_value(node: Dict[str, Any]) -> None:
     model_type = node.get("modelType")
     if model_type == "MultiLanguageProperty":
-        node["value"] = []
+        # An absent value is an unfilled slot. An empty language set is an
+        # invalid MultiLanguageTextType in strict AAS readers (SDK 2.2).
+        node.pop("value", None)
     elif model_type == "Blob":
         node.pop("value", None)
     else:

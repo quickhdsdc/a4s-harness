@@ -1,0 +1,1234 @@
+{
+  "checkedOn": "2026-10-21",
+  "repository": "https://github.com/admin-shell-io/submodel-templates",
+  "githubCommit": "f3790038b6c9c2d7e5ebbb4609997468fadf3e85",
+  "treeURL": "https://api.github.com/repos/admin-shell-io/submodel-templates/git/trees/f3790038b6c9c2d7e5ebbb4609997468fadf3e85?recursive=1",
+  "truncated": false,
+  "selection": "Only published families with direct machine-readable JSON; highest numeric release directory within each family; examples/samples excluded; explicit AAS 3.1 alternates separated. Folder version is release provenance and may differ from administration.version/revision. Root README table and hosted website download mapping are stale relative to this pinned tree.",
+  "familyCount": 65,
+  "mainJSONCount": 66,
+  "entries": [
+    {
+      "family": "Artificial Intelligence Dataset",
+      "version": "1.0.2",
+      "releasePath": "published/Artificial Intelligence Dataset/1/0/2",
+      "status": "published",
+      "statusEvidence": "IDTA repository README defines published/ as officially released and registered",
+      "githubCommit": "f3790038b6c9c2d7e5ebbb4609997468fadf3e85",
+      "jsonPaths": [
+        "published/Artificial Intelligence Dataset/1/0/2/IDTA 02058-1-0-2_Template_AIDataset.json"
+      ],
+      "aasxPaths": [
+        "published/Artificial Intelligence Dataset/1/0/2/IDTA 02058-1-0-2_Template_AIDataset.aasx"
+      ],
+      "alternateAas31Paths": [
+        "published/Artificial Intelligence Dataset/1/0/2/IDTA 02058-1-0-2_Template_AIDataset_forAASMetamodelV3.1.aasx",
+        "published/Artificial Intelligence Dataset/1/0/2/IDTA 02058-1-0-2_Template_AIDataset_forAASMetamodelV3.1.json"
+      ],
+      "specificationREADMEpath": "published/Artificial Intelligence Dataset/1/0/2/README.md",
+      "notes": []
+    },
+    {
+      "family": "Artificial Intelligence Deployment",
+      "version": "1.0.2",
+      "releasePath": "published/Artificial Intelligence Deployment/1/0/2",
+      "status": "published",
+      "statusEvidence": "IDTA repository README defines published/ as officially released and registered",
+      "githubCommit": "f3790038b6c9c2d7e5ebbb4609997468fadf3e85",
+      "jsonPaths": [
+        "published/Artificial Intelligence Deployment/1/0/2/IDTA 02059-1-0-2_Template_AIDeployment.json"
+      ],
+      "aasxPaths": [
+        "published/Artificial Intelligence Deployment/1/0/2/IDTA 02059-1-0-2_Template_AIDeployment.aasx"
+      ],
+      "alternateAas31Paths": [
+        "published/Artificial Intelligence Deployment/1/0/2/IDTA 02059-1-0-2_Template_AIDeployment_forAASMetamodelV3.1.aasx",
+        "published/Artificial Intelligence Deployment/1/0/2/IDTA 02059-1-0-2_Template_AIDeployment_forAASMetamodelV3.1.json"
+      ],
+      "specificationREADMEpath": "published/Artificial Intelligence Deployment/1/0/2/README.md",
+      "notes": []
+    },
+    {
+      "family": "Artificial Intelligence Model Nameplate",
+      "version": "1.0.1",
+      "releasePath": "published/Artificial Intelligence Model Nameplate/1/0/1",
+      "status": "published",
+      "statusEvidence": "IDTA repository README defines published/ as officially released and registered",
+      "githubCommit": "f3790038b6c9c2d7e5ebbb4609997468fadf3e85",
+      "jsonPaths": [
+        "published/Artificial Intelligence Model Nameplate/1/0/1/IDTA 02060-1-0-1_Template_AIModelNameplate.json"
+      ],
+      "aasxPaths": [
+        "published/Artificial Intelligence Model Nameplate/1/0/1/IDTA 02060-1-0-1_Template_AIModelNameplate.aasx"
+      ],
+      "alternateAas31Paths": [
+        "published/Artificial Intelligence Model Nameplate/1/0/1/IDTA 02060-1-0-1_Template_AIModelNameplate_forAASMetamodelV3.1.aasx",
+        "published/Artificial Intelligence Model Nameplate/1/0/1/IDTA 02060-1-0-1_Template_AIModelNameplate_forAASMetamodelV3.1.json"
+      ],
+      "specificationREADMEpath": "published/Artificial Intelligence Model Nameplate/1/0/1/README.md",
+      "notes": []
+    },
+    {
+      "family": "Asset Interfaces Description",
+      "version": "1.2",
+      "releasePath": "published/Asset Interfaces Description/1/2",
+      "status": "published",
+      "statusEvidence": "IDTA repository README defines published/ as officially released and registered",
+      "githubCommit": "f3790038b6c9c2d7e5ebbb4609997468fadf3e85",
+      "jsonPaths": [
+        "published/Asset Interfaces Description/1/2/IDTA 02017_Template_Asset Interfaces Description.json"
+      ],
+      "aasxPaths": [
+        "published/Asset Interfaces Description/1/2/IDTA 02017_Template_Asset Interfaces Description.aasx"
+      ],
+      "alternateAas31Paths": [],
+      "specificationREADMEpath": "published/Asset Interfaces Description/1/2/README.md",
+      "notes": []
+    },
+    {
+      "family": "Asset Interfaces Mapping Configuration",
+      "version": "2.1",
+      "releasePath": "published/Asset Interfaces Mapping Configuration/2/1",
+      "status": "published",
+      "statusEvidence": "IDTA repository README defines published/ as officially released and registered",
+      "githubCommit": "f3790038b6c9c2d7e5ebbb4609997468fadf3e85",
+      "jsonPaths": [
+        "published/Asset Interfaces Mapping Configuration/2/1/IDTA 02027_Template_AIMC.json"
+      ],
+      "aasxPaths": [
+        "published/Asset Interfaces Mapping Configuration/2/1/IDTA 02027_Template_AIMC.aasx"
+      ],
+      "alternateAas31Paths": [],
+      "specificationREADMEpath": "published/Asset Interfaces Mapping Configuration/2/1/README.md",
+      "notes": []
+    },
+    {
+      "family": "Capability Description",
+      "version": "1.0.1",
+      "releasePath": "published/Capability Description/1/0/1",
+      "status": "published",
+      "statusEvidence": "IDTA repository README defines published/ as officially released and registered",
+      "githubCommit": "f3790038b6c9c2d7e5ebbb4609997468fadf3e85",
+      "jsonPaths": [
+        "published/Capability Description/1/0/1/IDTA 02020_Template_Capability_Description.json"
+      ],
+      "aasxPaths": [
+        "published/Capability Description/1/0/1/IDTA 02020_Template_Capability_Description.aasx"
+      ],
+      "alternateAas31Paths": [],
+      "specificationREADMEpath": null,
+      "notes": [
+        "No README in this release directory; published path is release-status evidence."
+      ]
+    },
+    {
+      "family": "Carbon Footprint",
+      "version": "1.0.2",
+      "releasePath": "published/Carbon Footprint/1/0/2",
+      "status": "published",
+      "statusEvidence": "IDTA repository README defines published/ as officially released and registered",
+      "githubCommit": "f3790038b6c9c2d7e5ebbb4609997468fadf3e85",
+      "jsonPaths": [
+        "published/Carbon Footprint/1/0/2/IDTA 02023-1-0-2 _Template_CarbonFootprint.json"
+      ],
+      "aasxPaths": [
+        "published/Carbon Footprint/1/0/2/IDTA 02023-1-0-2 _Template_CarbonFootprint.aasx"
+      ],
+      "alternateAas31Paths": [
+        "published/Carbon Footprint/1/0/2/IDTA 02023-1-0-2 _Template_CarbonFootprint_forAASMetamodelV3.1.aasx",
+        "published/Carbon Footprint/1/0/2/IDTA 02023-1-0-2 _Template_CarbonFootprint_forAASMetamodelV3.1.json"
+      ],
+      "specificationREADMEpath": "published/Carbon Footprint/1/0/2/README.md",
+      "notes": []
+    },
+    {
+      "family": "Contact Information",
+      "version": "1.0.2",
+      "releasePath": "published/Contact Information/1/0/2",
+      "status": "published",
+      "statusEvidence": "IDTA repository README defines published/ as officially released and registered",
+      "githubCommit": "f3790038b6c9c2d7e5ebbb4609997468fadf3e85",
+      "jsonPaths": [
+        "published/Contact Information/1/0/2/IDTA 02002-1-0-2_Template_ContactInformation.json"
+      ],
+      "aasxPaths": [
+        "published/Contact Information/1/0/2/IDTA 02002-1-0-2_Template_ContactInformation.aasx"
+      ],
+      "alternateAas31Paths": [
+        "published/Contact Information/1/0/2/IDTA 02002-1-0-2_Template_ContactInformation_forAASMetamodelV3.1.aasx",
+        "published/Contact Information/1/0/2/IDTA 02002-1-0-2_Template_ContactInformation_forAASMetamodelV3.1.json"
+      ],
+      "specificationREADMEpath": "published/Contact Information/1/0/2/README.md",
+      "notes": []
+    },
+    {
+      "family": "Control Component Instance",
+      "version": "2.0.1",
+      "releasePath": "published/Control Component Instance/2/0/1",
+      "status": "published",
+      "statusEvidence": "IDTA repository README defines published/ as officially released and registered",
+      "githubCommit": "f3790038b6c9c2d7e5ebbb4609997468fadf3e85",
+      "jsonPaths": [
+        "published/Control Component Instance/2/0/1/IDTA 02016-2-0-1 _Template_ControlComponentInstance.json"
+      ],
+      "aasxPaths": [
+        "published/Control Component Instance/2/0/1/IDTA 02016-2-0-1 _Template_ControlComponentInstance.aasx"
+      ],
+      "alternateAas31Paths": [
+        "published/Control Component Instance/2/0/1/IDTA 02016-2-0-1 _Template_ControlComponentInstance_forAASMetamodelV3.1.aasx",
+        "published/Control Component Instance/2/0/1/IDTA 02016-2-0-1 _Template_ControlComponentInstance_forAASMetamodelV3.1.json"
+      ],
+      "specificationREADMEpath": "published/Control Component Instance/2/0/1/README.md",
+      "notes": []
+    },
+    {
+      "family": "Control Component Type",
+      "version": "2.0.2",
+      "releasePath": "published/Control Component Type/2/0/2",
+      "status": "published",
+      "statusEvidence": "IDTA repository README defines published/ as officially released and registered",
+      "githubCommit": "f3790038b6c9c2d7e5ebbb4609997468fadf3e85",
+      "jsonPaths": [
+        "published/Control Component Type/2/0/2/IDTA 02015-2-0-2 _Template_ControlComponentType.json"
+      ],
+      "aasxPaths": [
+        "published/Control Component Type/2/0/2/IDTA 02015-2-0-2 _Template_ControlComponentType.aasx"
+      ],
+      "alternateAas31Paths": [
+        "published/Control Component Type/2/0/2/IDTA 02015-2-0-2 _Template_ControlComponentType_forAASMetamodelV3.1.aasx",
+        "published/Control Component Type/2/0/2/IDTA 02015-2-0-2 _Template_ControlComponentType_forAASMetamodelV3.1.json"
+      ],
+      "specificationREADMEpath": "published/Control Component Type/2/0/2/README.md",
+      "notes": []
+    },
+    {
+      "family": "Control Configuration and Parametrization for NC and CNC Machines",
+      "version": "1.0.2",
+      "releasePath": "published/Control Configuration and Parametrization for NC and CNC Machines/1/0/2",
+      "status": "published",
+      "statusEvidence": "IDTA repository README defines published/ as officially released and registered",
+      "githubCommit": "f3790038b6c9c2d7e5ebbb4609997468fadf3e85",
+      "jsonPaths": [
+        "published/Control Configuration and Parametrization for NC and CNC Machines/1/0/2/IDTA 02053-1-0-2_Template_ControlConfig.json"
+      ],
+      "aasxPaths": [
+        "published/Control Configuration and Parametrization for NC and CNC Machines/1/0/2/IDTA 02053-1-0-2_Template_ControlConfig.aasx"
+      ],
+      "alternateAas31Paths": [
+        "published/Control Configuration and Parametrization for NC and CNC Machines/1/0/2/IDTA 02053-1-0-2_Template_ControlConfig_forAASMetamodelV3.1.aasx",
+        "published/Control Configuration and Parametrization for NC and CNC Machines/1/0/2/IDTA 02053-1-0-2_Template_ControlConfig_forAASMetamodelV3.1.json"
+      ],
+      "specificationREADMEpath": "published/Control Configuration and Parametrization for NC and CNC Machines/1/0/2/README.md",
+      "notes": []
+    },
+    {
+      "family": "Creation and Classification of Materials",
+      "version": "1.0.1",
+      "releasePath": "published/Creation and Classification of Materials/1/0/1",
+      "status": "published",
+      "statusEvidence": "IDTA repository README defines published/ as officially released and registered",
+      "githubCommit": "f3790038b6c9c2d7e5ebbb4609997468fadf3e85",
+      "jsonPaths": [
+        "published/Creation and Classification of Materials/1/0/1/IDTA 02034-1-0-1 Template_BackendSpecificMaterialInformation.json"
+      ],
+      "aasxPaths": [
+        "published/Creation and Classification of Materials/1/0/1/IDTA 02034-1-0-1 Template_BackendSpecificMaterialInformation.aasx"
+      ],
+      "alternateAas31Paths": [
+        "published/Creation and Classification of Materials/1/0/1/IDTA 02034-1-0-1 Template_BackendSpecificMaterialInformation_forAASMetamodelV3.1.aasx",
+        "published/Creation and Classification of Materials/1/0/1/IDTA 02034-1-0-1 Template_BackendSpecificMaterialInformation_forAASMetamodelV3.1.json"
+      ],
+      "specificationREADMEpath": "published/Creation and Classification of Materials/1/0/1/README.md",
+      "notes": []
+    },
+    {
+      "family": "DEXPI",
+      "version": "1.0.1",
+      "releasePath": "published/DEXPI/1/0/1",
+      "status": "published",
+      "statusEvidence": "IDTA repository README defines published/ as officially released and registered",
+      "githubCommit": "f3790038b6c9c2d7e5ebbb4609997468fadf3e85",
+      "jsonPaths": [
+        "published/DEXPI/1/0/1/IDTA 02012-1-0-1_Template_DEXPI.json"
+      ],
+      "aasxPaths": [
+        "published/DEXPI/1/0/1/IDTA 02012-1-0-1_Template_DEXPI.aasx"
+      ],
+      "alternateAas31Paths": [],
+      "specificationREADMEpath": "published/DEXPI/1/0/1/README.md",
+      "notes": []
+    },
+    {
+      "family": "Data Model for Asset Location",
+      "version": "1.0.1",
+      "releasePath": "published/Data Model for Asset Location/1/0/1",
+      "status": "published",
+      "statusEvidence": "IDTA repository README defines published/ as officially released and registered",
+      "githubCommit": "f3790038b6c9c2d7e5ebbb4609997468fadf3e85",
+      "jsonPaths": [
+        "published/Data Model for Asset Location/1/0/1/IDTA 02045-1-0-1_Template_DataModelForAssetLocation.json"
+      ],
+      "aasxPaths": [
+        "published/Data Model for Asset Location/1/0/1/IDTA 02045-1-0-1_Template_DataModelForAssetLocation.aasx"
+      ],
+      "alternateAas31Paths": [
+        "published/Data Model for Asset Location/1/0/1/IDTA 02045-1-0-1_Template_DataModelForAssetLocation_forAASMetamodelV3.1.aasx",
+        "published/Data Model for Asset Location/1/0/1/IDTA 02045-1-0-1_Template_DataModelForAssetLocation_forAASMetamodelV3.1.json"
+      ],
+      "specificationREADMEpath": "published/Data Model for Asset Location/1/0/1/README.md",
+      "notes": []
+    },
+    {
+      "family": "Data Retention Policies",
+      "version": "1.0.2",
+      "releasePath": "published/Data Retention Policies/1/0/2",
+      "status": "published",
+      "statusEvidence": "IDTA repository README defines published/ as officially released and registered",
+      "githubCommit": "f3790038b6c9c2d7e5ebbb4609997468fadf3e85",
+      "jsonPaths": [
+        "published/Data Retention Policies/1/0/2/IDTA 02056-1-0-2_Template_Data Retention Policies.json"
+      ],
+      "aasxPaths": [
+        "published/Data Retention Policies/1/0/2/IDTA 02056-1-0-2_Template_Data Retention Policies.aasx"
+      ],
+      "alternateAas31Paths": [
+        "published/Data Retention Policies/1/0/2/IDTA 02056-1-0-2_Template_Data Retention Policies_forAASMetamodelV3.1.aasx",
+        "published/Data Retention Policies/1/0/2/IDTA 02056-1-0-2_Template_Data Retention Policies_forAASMetamodelV3.1.json"
+      ],
+      "specificationREADMEpath": "published/Data Retention Policies/1/0/2/README.md",
+      "notes": []
+    },
+    {
+      "family": "Digital Battery Passport/1_Digital Nameplate",
+      "version": "1.1",
+      "releasePath": "published/Digital Battery Passport/1_Digital Nameplate/1/1",
+      "status": "published",
+      "statusEvidence": "IDTA repository README defines published/ as officially released and registered",
+      "githubCommit": "f3790038b6c9c2d7e5ebbb4609997468fadf3e85",
+      "jsonPaths": [
+        "published/Digital Battery Passport/1_Digital Nameplate/1/1/IDTA 02035-1_DBP-Part-1_Digital Nameplate.json"
+      ],
+      "aasxPaths": [
+        "published/Digital Battery Passport/1_Digital Nameplate/1/1/IDTA 02035-1_DBP-Part-1_Digital Nameplate.aasx"
+      ],
+      "alternateAas31Paths": [],
+      "specificationREADMEpath": "published/Digital Battery Passport/1_Digital Nameplate/1/1/README.md",
+      "notes": []
+    },
+    {
+      "family": "Digital Battery Passport/2_Handover Documentation",
+      "version": "1.1",
+      "releasePath": "published/Digital Battery Passport/2_Handover Documentation/1/1",
+      "status": "published",
+      "statusEvidence": "IDTA repository README defines published/ as officially released and registered",
+      "githubCommit": "f3790038b6c9c2d7e5ebbb4609997468fadf3e85",
+      "jsonPaths": [
+        "published/Digital Battery Passport/2_Handover Documentation/1/1/IDTA 02035-2_DBP-Part-2_HandoverDocumentation.json"
+      ],
+      "aasxPaths": [
+        "published/Digital Battery Passport/2_Handover Documentation/1/1/IDTA 02035-2_DBP-Part-2_HandoverDocumentation.aasx"
+      ],
+      "alternateAas31Paths": [],
+      "specificationREADMEpath": "published/Digital Battery Passport/2_Handover Documentation/1/1/README.md",
+      "notes": []
+    },
+    {
+      "family": "Digital Battery Passport/3_Product Carbon Footprint",
+      "version": "1.1",
+      "releasePath": "published/Digital Battery Passport/3_Product Carbon Footprint/1/1",
+      "status": "published",
+      "statusEvidence": "IDTA repository README defines published/ as officially released and registered",
+      "githubCommit": "f3790038b6c9c2d7e5ebbb4609997468fadf3e85",
+      "jsonPaths": [
+        "published/Digital Battery Passport/3_Product Carbon Footprint/1/1/IDTA 02035-3_DBP-Part-3_ProductCarbonFootprint.json"
+      ],
+      "aasxPaths": [
+        "published/Digital Battery Passport/3_Product Carbon Footprint/1/1/IDTA 02035-3_DBP-Part-3_ProductCarbonFootprint.aasx"
+      ],
+      "alternateAas31Paths": [],
+      "specificationREADMEpath": "published/Digital Battery Passport/3_Product Carbon Footprint/1/1/README.md",
+      "notes": []
+    },
+    {
+      "family": "Digital Battery Passport/4_Technical Data",
+      "version": "1.0.2",
+      "releasePath": "published/Digital Battery Passport/4_Technical Data/1/0/2",
+      "status": "published",
+      "statusEvidence": "IDTA repository README defines published/ as officially released and registered",
+      "githubCommit": "f3790038b6c9c2d7e5ebbb4609997468fadf3e85",
+      "jsonPaths": [
+        "published/Digital Battery Passport/4_Technical Data/1/0/2/IDTA 02035-4_DBP-Part-4_TechnicalData.json"
+      ],
+      "aasxPaths": [
+        "published/Digital Battery Passport/4_Technical Data/1/0/2/IDTA 02035-4_DBP-Part-4_TechnicalData.aasx"
+      ],
+      "alternateAas31Paths": [],
+      "specificationREADMEpath": "published/Digital Battery Passport/4_Technical Data/1/0/2/README.md",
+      "notes": []
+    },
+    {
+      "family": "Digital Battery Passport/5_Product Condition",
+      "version": "1.0.2",
+      "releasePath": "published/Digital Battery Passport/5_Product Condition/1/0/2",
+      "status": "published",
+      "statusEvidence": "IDTA repository README defines published/ as officially released and registered",
+      "githubCommit": "f3790038b6c9c2d7e5ebbb4609997468fadf3e85",
+      "jsonPaths": [
+        "published/Digital Battery Passport/5_Product Condition/1/0/2/IDTA 02035-5_DBP-Part-5_ProductCondition_V1.0.2.json"
+      ],
+      "aasxPaths": [
+        "published/Digital Battery Passport/5_Product Condition/1/0/2/IDTA 02035-5_DBP-Part-5_ProductCondition.aasx"
+      ],
+      "alternateAas31Paths": [],
+      "specificationREADMEpath": null,
+      "notes": [
+        "No README in this release directory; published path is release-status evidence."
+      ]
+    },
+    {
+      "family": "Digital Battery Passport/6_Material Composition",
+      "version": "1.0.1",
+      "releasePath": "published/Digital Battery Passport/6_Material Composition/1/0/1",
+      "status": "published",
+      "statusEvidence": "IDTA repository README defines published/ as officially released and registered",
+      "githubCommit": "f3790038b6c9c2d7e5ebbb4609997468fadf3e85",
+      "jsonPaths": [
+        "published/Digital Battery Passport/6_Material Composition/1/0/1/IDTA 02035-6_DBP-Part-6_MaterialComposition.json"
+      ],
+      "aasxPaths": [
+        "published/Digital Battery Passport/6_Material Composition/1/0/1/IDTA 02035-6_DBP-Part-6_MaterialComposition.aasx"
+      ],
+      "alternateAas31Paths": [],
+      "specificationREADMEpath": "published/Digital Battery Passport/6_Material Composition/1/0/1/README.md",
+      "notes": []
+    },
+    {
+      "family": "Digital Battery Passport/7_Circularity",
+      "version": "1.0.2",
+      "releasePath": "published/Digital Battery Passport/7_Circularity/1/0/2",
+      "status": "published",
+      "statusEvidence": "IDTA repository README defines published/ as officially released and registered",
+      "githubCommit": "f3790038b6c9c2d7e5ebbb4609997468fadf3e85",
+      "jsonPaths": [
+        "published/Digital Battery Passport/7_Circularity/1/0/2/IDTA 02035-7_DBP-Part-7_Circularity.json"
+      ],
+      "aasxPaths": [
+        "published/Digital Battery Passport/7_Circularity/1/0/2/IDTA 02035-7_DBP-Part-7_Circularity.aasx"
+      ],
+      "alternateAas31Paths": [],
+      "specificationREADMEpath": "published/Digital Battery Passport/7_Circularity/1/0/2/README.md",
+      "notes": []
+    },
+    {
+      "family": "Digital Product Passport/Digital Product Passport Part-1",
+      "version": "1.0.2",
+      "releasePath": "published/Digital Product Passport/Digital Product Passport Part-1/1/0/2",
+      "status": "published",
+      "statusEvidence": "IDTA repository README defines published/ as officially released and registered",
+      "githubCommit": "f3790038b6c9c2d7e5ebbb4609997468fadf3e85",
+      "jsonPaths": [
+        "published/Digital Product Passport/Digital Product Passport Part-1/1/0/2/IDTA 02099-1_Template Digital Product Passport - Part 1.json"
+      ],
+      "aasxPaths": [
+        "published/Digital Product Passport/Digital Product Passport Part-1/1/0/2/IDTA 02099-1_Template Digital Product Passport - Part 1.aasx"
+      ],
+      "alternateAas31Paths": [],
+      "specificationREADMEpath": "published/Digital Product Passport/Digital Product Passport Part-1/1/0/2/README.md",
+      "notes": []
+    },
+    {
+      "family": "Digital Quality Documents/Part 1 Core Elements",
+      "version": "1.1",
+      "releasePath": "published/Digital Quality Documents/Part 1 Core Elements/1/1",
+      "status": "published",
+      "statusEvidence": "IDTA repository README defines published/ as officially released and registered",
+      "githubCommit": "f3790038b6c9c2d7e5ebbb4609997468fadf3e85",
+      "jsonPaths": [
+        "published/Digital Quality Documents/Part 1 Core Elements/1/1/IDTA 02065-1_Template_DigitalQualityDocuments-part-1.json"
+      ],
+      "aasxPaths": [
+        "published/Digital Quality Documents/Part 1 Core Elements/1/1/IDTA 02065-1_Template_DigitalQualityDocuments-part-1.aasx"
+      ],
+      "alternateAas31Paths": [],
+      "specificationREADMEpath": "published/Digital Quality Documents/Part 1 Core Elements/1/1/README.md",
+      "notes": []
+    },
+    {
+      "family": "Digital nameplate",
+      "version": "3.0.2",
+      "releasePath": "published/Digital nameplate/3/0/2",
+      "status": "published",
+      "statusEvidence": "IDTA repository README defines published/ as officially released and registered",
+      "githubCommit": "f3790038b6c9c2d7e5ebbb4609997468fadf3e85",
+      "jsonPaths": [
+        "published/Digital nameplate/3/0/2/IDTA 02006-3-0-2_Template_Digital Nameplate.json"
+      ],
+      "aasxPaths": [
+        "published/Digital nameplate/3/0/2/IDTA 02006-3-0-2_Template_Digital Nameplate.aasx"
+      ],
+      "alternateAas31Paths": [],
+      "specificationREADMEpath": "published/Digital nameplate/3/0/2/README.md",
+      "notes": []
+    },
+    {
+      "family": "Energy Flexibility Data Model",
+      "version": "1.1",
+      "releasePath": "published/Energy Flexibility Data Model/1/1",
+      "status": "published",
+      "statusEvidence": "IDTA repository README defines published/ as officially released and registered",
+      "githubCommit": "f3790038b6c9c2d7e5ebbb4609997468fadf3e85",
+      "jsonPaths": [
+        "published/Energy Flexibility Data Model/1/1/IDTA 02076_Template_EnergyFlexibilityDataModel.json"
+      ],
+      "aasxPaths": [
+        "published/Energy Flexibility Data Model/1/1/IDTA 02076_Template_EnergyFlexibilityDataModel.aasx"
+      ],
+      "alternateAas31Paths": [],
+      "specificationREADMEpath": "published/Energy Flexibility Data Model/1/1/README.md",
+      "notes": []
+    },
+    {
+      "family": "Factory Automation Data for Plant Planning",
+      "version": "1.1",
+      "releasePath": "published/Factory Automation Data for Plant Planning/1/1",
+      "status": "published",
+      "statusEvidence": "IDTA repository README defines published/ as officially released and registered",
+      "githubCommit": "f3790038b6c9c2d7e5ebbb4609997468fadf3e85",
+      "jsonPaths": [
+        "published/Factory Automation Data for Plant Planning/1/1/IDTA 02075_Template_FactoryAutomationDataForPlantPlanning.json"
+      ],
+      "aasxPaths": [
+        "published/Factory Automation Data for Plant Planning/1/1/IDTA 02075_Template_FactoryAutomationDataForPlantPlanning.aasx"
+      ],
+      "alternateAas31Paths": [],
+      "specificationREADMEpath": "published/Factory Automation Data for Plant Planning/1/1/README.md",
+      "notes": []
+    },
+    {
+      "family": "Fire Protection on Railway Vehicles",
+      "version": "1.0",
+      "releasePath": "published/Fire Protection on Railway Vehicles/1/0",
+      "status": "published",
+      "statusEvidence": "IDTA repository README defines published/ as officially released and registered",
+      "githubCommit": "f3790038b6c9c2d7e5ebbb4609997468fadf3e85",
+      "jsonPaths": [
+        "published/Fire Protection on Railway Vehicles/1/0/IDTA 02102_Template Fire Protection on Railway Vehicles.json"
+      ],
+      "aasxPaths": [
+        "published/Fire Protection on Railway Vehicles/1/0/IDTA 02102_Template Fire Protection on Railway Vehicles.aasx"
+      ],
+      "alternateAas31Paths": [],
+      "specificationREADMEpath": "published/Fire Protection on Railway Vehicles/1/0/README.md",
+      "notes": []
+    },
+    {
+      "family": "Functional Safety",
+      "version": "1.0.2",
+      "releasePath": "published/Functional Safety/1/0/2",
+      "status": "published",
+      "statusEvidence": "IDTA repository README defines published/ as officially released and registered",
+      "githubCommit": "f3790038b6c9c2d7e5ebbb4609997468fadf3e85",
+      "jsonPaths": [
+        "published/Functional Safety/1/0/2/IDTA 02014-1-0-2_Template_FunctionalSafety.json"
+      ],
+      "aasxPaths": [
+        "published/Functional Safety/1/0/2/IDTA 02014-1-0-2_Template_FunctionalSafety.aasx"
+      ],
+      "alternateAas31Paths": [
+        "published/Functional Safety/1/0/2/IDTA 02014-1-0-2_Template_FunctionalSafety_forAASMetamodelV3.1.aasx",
+        "published/Functional Safety/1/0/2/IDTA 02014-1-0-2_Template_FunctionalSafety_forAASMetamodelV3.1.json"
+      ],
+      "specificationREADMEpath": "published/Functional Safety/1/0/2/README.md",
+      "notes": []
+    },
+    {
+      "family": "Handover Documentation",
+      "version": "2.0.2",
+      "releasePath": "published/Handover Documentation/2/0/2",
+      "status": "published",
+      "statusEvidence": "IDTA repository README defines published/ as officially released and registered",
+      "githubCommit": "f3790038b6c9c2d7e5ebbb4609997468fadf3e85",
+      "jsonPaths": [
+        "published/Handover Documentation/2/0/2/IDTA 02004-2-0-2_Template_HandoverDocumentation.json"
+      ],
+      "aasxPaths": [
+        "published/Handover Documentation/2/0/2/IDTA 02004-2-0-2_Template_HandoverDocumentation.aasx"
+      ],
+      "alternateAas31Paths": [
+        "published/Handover Documentation/2/0/2/IDTA 02004-2-0-2_Template_HandoverDocumentation__forAASMetamodelV3.1.aasx",
+        "published/Handover Documentation/2/0/2/IDTA 02004-2-0-2_Template_HandoverDocumentation__forAASMetamodelV3.1.json"
+      ],
+      "specificationREADMEpath": "published/Handover Documentation/2/0/2/README.md",
+      "notes": []
+    },
+    {
+      "family": "Hierarchical Structures enabling Bills of Material",
+      "version": "1.1.2",
+      "releasePath": "published/Hierarchical Structures enabling Bills of Material/1/1/2",
+      "status": "published",
+      "statusEvidence": "IDTA repository README defines published/ as officially released and registered",
+      "githubCommit": "f3790038b6c9c2d7e5ebbb4609997468fadf3e85",
+      "jsonPaths": [
+        "published/Hierarchical Structures enabling Bills of Material/1/1/2/IDTA 02011-1-1-2_Template_HSEBoM.json"
+      ],
+      "aasxPaths": [
+        "published/Hierarchical Structures enabling Bills of Material/1/1/2/IDTA 02011-1-1-2_Template_HSEBoM.aasx"
+      ],
+      "alternateAas31Paths": [
+        "published/Hierarchical Structures enabling Bills of Material/1/1/2/IDTA 02011-1-1-2_Template_HSEBoM_forAASMetamodelV3.1.aasx",
+        "published/Hierarchical Structures enabling Bills of Material/1/1/2/IDTA 02011-1-1-2_Template_HSEBoM_forAASMetamodelV3.1.json"
+      ],
+      "specificationREADMEpath": "published/Hierarchical Structures enabling Bills of Material/1/1/2/README.md",
+      "notes": []
+    },
+    {
+      "family": "Hierarchical Structures enabling Bills of Material/Extension based on IEC 81346",
+      "version": "1.0.2",
+      "releasePath": "published/Hierarchical Structures enabling Bills of Material/Extension based on IEC 81346/1/0/2",
+      "status": "published",
+      "statusEvidence": "IDTA repository README defines published/ as officially released and registered",
+      "githubCommit": "f3790038b6c9c2d7e5ebbb4609997468fadf3e85",
+      "jsonPaths": [
+        "published/Hierarchical Structures enabling Bills of Material/Extension based on IEC 81346/1/0/2/IDTA 02011-1-1-2 _Template_BoM_ExtensionbasedonIEC81346.json"
+      ],
+      "aasxPaths": [
+        "published/Hierarchical Structures enabling Bills of Material/Extension based on IEC 81346/1/0/2/IDTA 02011-1-1-2 _Template_BoM_ExtensionbasedonIEC81346.aasx"
+      ],
+      "alternateAas31Paths": [
+        "published/Hierarchical Structures enabling Bills of Material/Extension based on IEC 81346/1/0/2/IDTA 02011-1-1-2 _Template_BoM_ExtensionbasedonIEC81346_forAASMetamodelV3.1.aasx",
+        "published/Hierarchical Structures enabling Bills of Material/Extension based on IEC 81346/1/0/2/IDTA 02011-1-1-2 _Template_BoM_ExtensionbasedonIEC81346_forAASMetamodelV3.1.json"
+      ],
+      "specificationREADMEpath": "published/Hierarchical Structures enabling Bills of Material/Extension based on IEC 81346/1/0/2/README.md",
+      "notes": []
+    },
+    {
+      "family": "Inspection Documents of Steel Products",
+      "version": "1.0.1",
+      "releasePath": "published/Inspection Documents of Steel Products/1/0/1",
+      "status": "published",
+      "statusEvidence": "IDTA repository README defines published/ as officially released and registered",
+      "githubCommit": "f3790038b6c9c2d7e5ebbb4609997468fadf3e85",
+      "jsonPaths": [
+        "published/Inspection Documents of Steel Products/1/0/1/IDTA 02032-1-0-1_Template Inspection Documents of Steel Products.json"
+      ],
+      "aasxPaths": [
+        "published/Inspection Documents of Steel Products/1/0/1/IDTA 02032-1-0-1_Template Inspection Documents of Steel Products.aasx"
+      ],
+      "alternateAas31Paths": [
+        "published/Inspection Documents of Steel Products/1/0/1/IDTA 02032-1-0-1_Template Inspection Documents of Steel Products_forAASMetamodelV3.1.aasx",
+        "published/Inspection Documents of Steel Products/1/0/1/IDTA 02032-1-0-1_Template Inspection Documents of Steel Products_forAASMetamodelV3.1.json"
+      ],
+      "specificationREADMEpath": "published/Inspection Documents of Steel Products/1/0/1/README.md",
+      "notes": []
+    },
+    {
+      "family": "Intelligent Information  for Use",
+      "version": "1.0.2",
+      "releasePath": "published/Intelligent Information  for Use/1/0/2",
+      "status": "published",
+      "statusEvidence": "IDTA repository README defines published/ as officially released and registered",
+      "githubCommit": "f3790038b6c9c2d7e5ebbb4609997468fadf3e85",
+      "jsonPaths": [
+        "published/Intelligent Information  for Use/1/0/2/IDTA 02063-1-0-2_Template__IntelligentInformationForUse.json"
+      ],
+      "aasxPaths": [
+        "published/Intelligent Information  for Use/1/0/2/IDTA 02063-1-0-2_Template__IntelligentInformationForUse.aasx"
+      ],
+      "alternateAas31Paths": [
+        "published/Intelligent Information  for Use/1/0/2/IDTA 02063-1-0-2_Template__IntelligentInformationForUse_forAASMetamodelV3.1.aasx",
+        "published/Intelligent Information  for Use/1/0/2/IDTA 02063-1-0-2_Template__IntelligentInformationForUse_forAASMetamodelV3.1.json"
+      ],
+      "specificationREADMEpath": "published/Intelligent Information  for Use/1/0/2/README.md",
+      "notes": []
+    },
+    {
+      "family": "MTP",
+      "version": "1.0.2",
+      "releasePath": "published/MTP/1/0/2",
+      "status": "published",
+      "statusEvidence": "IDTA repository README defines published/ as officially released and registered",
+      "githubCommit": "f3790038b6c9c2d7e5ebbb4609997468fadf3e85",
+      "jsonPaths": [
+        "published/MTP/1/0/2/IDTA_02001-1-0-2_Submodel_MTPv1.0-rc2-with-documentation1_en.json"
+      ],
+      "aasxPaths": [
+        "published/MTP/1/0/2/IDTA_02001-1-0-2_Submodel_MTPv1.0-rc2-with-documentation1_en.aasx"
+      ],
+      "alternateAas31Paths": [
+        "published/MTP/1/0/2/IDTA_02001-1-0-2_Submodel_MTPv1.0-rc2-with-documentation1_en_forAASMetamodelV3.1.aasx",
+        "published/MTP/1/0/2/IDTA_02001-1-0-2_Submodel_MTPv1.0-rc2-with-documentation1_en_forAASMetamodelV3.1.json"
+      ],
+      "specificationREADMEpath": "published/MTP/1/0/2/README.md",
+      "notes": []
+    },
+    {
+      "family": "Maintenance Instructions",
+      "version": "1.0.1",
+      "releasePath": "published/Maintenance Instructions/1/0/1",
+      "status": "published",
+      "statusEvidence": "IDTA repository README defines published/ as officially released and registered",
+      "githubCommit": "f3790038b6c9c2d7e5ebbb4609997468fadf3e85",
+      "jsonPaths": [
+        "published/Maintenance Instructions/1/0/1/IDTA_02018-1-0-1_Template_MaintenanceInstructions.json"
+      ],
+      "aasxPaths": [
+        "published/Maintenance Instructions/1/0/1/IDTA_02018-1-0-1_Template_MaintenanceInstructions.aasx"
+      ],
+      "alternateAas31Paths": [],
+      "specificationREADMEpath": "published/Maintenance Instructions/1/0/1/README.md",
+      "notes": []
+    },
+    {
+      "family": "Material Data for Plastic Waste",
+      "version": "1.1",
+      "releasePath": "published/Material Data for Plastic Waste/1/1",
+      "status": "published",
+      "statusEvidence": "IDTA repository README defines published/ as officially released and registered",
+      "githubCommit": "f3790038b6c9c2d7e5ebbb4609997468fadf3e85",
+      "jsonPaths": [
+        "published/Material Data for Plastic Waste/1/1/IDTA_02080_Template_Material Data for Plastic Waste.json"
+      ],
+      "aasxPaths": [
+        "published/Material Data for Plastic Waste/1/1/IDTA_02080_Template_Material Data for Plastic Waste.aasx"
+      ],
+      "alternateAas31Paths": [],
+      "specificationREADMEpath": "published/Material Data for Plastic Waste/1/1/README.md",
+      "notes": []
+    },
+    {
+      "family": "OPC UA Server Datasheet",
+      "version": "1.1",
+      "releasePath": "published/OPC UA Server Datasheet/1/1",
+      "status": "published",
+      "statusEvidence": "IDTA repository README defines published/ as officially released and registered",
+      "githubCommit": "f3790038b6c9c2d7e5ebbb4609997468fadf3e85",
+      "jsonPaths": [
+        "published/OPC UA Server Datasheet/1/1/IDTA 02009-1-0-Template-OPCUA-Server Datasheet.json"
+      ],
+      "aasxPaths": [
+        "published/OPC UA Server Datasheet/1/1/IDTA 02009-1-0-Template-OPCUA-Server Datasheet.aasx"
+      ],
+      "alternateAas31Paths": [],
+      "specificationREADMEpath": "published/OPC UA Server Datasheet/1/1/README.md",
+      "notes": []
+    },
+    {
+      "family": "Plant Asset Management Specification Sheet",
+      "version": "1.0.2",
+      "releasePath": "published/Plant Asset Management Specification Sheet/1/0/2",
+      "status": "published",
+      "statusEvidence": "IDTA repository README defines published/ as officially released and registered",
+      "githubCommit": "f3790038b6c9c2d7e5ebbb4609997468fadf3e85",
+      "jsonPaths": [
+        "published/Plant Asset Management Specification Sheet/1/0/2/IDTA 02019-1-0-2_Template_PlantAssetManagement.json"
+      ],
+      "aasxPaths": [
+        "published/Plant Asset Management Specification Sheet/1/0/2/IDTA 02019-1-0-2_Template_PlantAssetManagement.aasx"
+      ],
+      "alternateAas31Paths": [],
+      "specificationREADMEpath": "published/Plant Asset Management Specification Sheet/1/0/2/README.md",
+      "notes": []
+    },
+    {
+      "family": "Plastic and Rubber Moulds/Part 1 Identification",
+      "version": "1.1",
+      "releasePath": "published/Plastic and Rubber Moulds/Part 1 Identification/1/1",
+      "status": "published",
+      "statusEvidence": "IDTA repository README defines published/ as officially released and registered",
+      "githubCommit": "f3790038b6c9c2d7e5ebbb4609997468fadf3e85",
+      "jsonPaths": [
+        "published/Plastic and Rubber Moulds/Part 1 Identification/1/1/IDTA 02038-1_Template_Plastic and Rubber Moulds-Identification.json"
+      ],
+      "aasxPaths": [
+        "published/Plastic and Rubber Moulds/Part 1 Identification/1/1/IDTA 02038-1_Template_Plastic and Rubber Moulds-Identification.aasx"
+      ],
+      "alternateAas31Paths": [
+        "published/Plastic and Rubber Moulds/Part 1 Identification/1/1/IDTA 02038-1_Template_Plastic and Rubber Moulds-Identification_forAASMetamodelV3.1.aasx",
+        "published/Plastic and Rubber Moulds/Part 1 Identification/1/1/IDTA 02038-1_Template_Plastic and Rubber Moulds-Identification_forAASMetamodelV3.1.json"
+      ],
+      "specificationREADMEpath": "published/Plastic and Rubber Moulds/Part 1 Identification/1/1/README.md",
+      "notes": []
+    },
+    {
+      "family": "Predictive Maintenance",
+      "version": "1.0",
+      "releasePath": "published/Predictive Maintenance/1/0",
+      "status": "published",
+      "statusEvidence": "IDTA repository README defines published/ as officially released and registered",
+      "githubCommit": "f3790038b6c9c2d7e5ebbb4609997468fadf3e85",
+      "jsonPaths": [
+        "published/Predictive Maintenance/1/0/IDTA 02048_Template_PredictiveMaintenance.json"
+      ],
+      "aasxPaths": [
+        "published/Predictive Maintenance/1/0/IDTA 02048_Template_PredictiveMaintenance.aasx"
+      ],
+      "alternateAas31Paths": [
+        "published/Predictive Maintenance/1/0/IDTA 02048_Template_PredictiveMaintenance_forAASMetamodelV3.1.aasx",
+        "published/Predictive Maintenance/1/0/IDTA 02048_Template_PredictiveMaintenance_forAASMetamodelV3.1.json"
+      ],
+      "specificationREADMEpath": "published/Predictive Maintenance/1/0/README.md",
+      "notes": []
+    },
+    {
+      "family": "Process Parameters Instance",
+      "version": "1.0",
+      "releasePath": "published/Process Parameters Instance/1/0",
+      "status": "published",
+      "statusEvidence": "IDTA repository README defines published/ as officially released and registered",
+      "githubCommit": "f3790038b6c9c2d7e5ebbb4609997468fadf3e85",
+      "jsonPaths": [
+        "published/Process Parameters Instance/1/0/IDTA 02031-2_Template_ProcessParameters_Instance.json"
+      ],
+      "aasxPaths": [
+        "published/Process Parameters Instance/1/0/IDTA 02031-2_Template_ProcessParameters_Instance.aasx"
+      ],
+      "alternateAas31Paths": [
+        "published/Process Parameters Instance/1/0/IDTA 02031-2_Template_ProcessParameters_Instance_forAASMetamodelV3.1.aasx",
+        "published/Process Parameters Instance/1/0/IDTA 02031-2_Template_ProcessParameters_Instance_forAASMetamodelV3.1.json"
+      ],
+      "specificationREADMEpath": "published/Process Parameters Instance/1/0/README.md",
+      "notes": []
+    },
+    {
+      "family": "Process Parameters Type",
+      "version": "1.0",
+      "releasePath": "published/Process Parameters Type/1/0",
+      "status": "published",
+      "statusEvidence": "IDTA repository README defines published/ as officially released and registered",
+      "githubCommit": "f3790038b6c9c2d7e5ebbb4609997468fadf3e85",
+      "jsonPaths": [
+        "published/Process Parameters Type/1/0/IDTA 02031-1_Template_ProcessParameters_Type.json"
+      ],
+      "aasxPaths": [
+        "published/Process Parameters Type/1/0/IDTA 02031-1_Template_ProcessParameters_Type.aasx"
+      ],
+      "alternateAas31Paths": [
+        "published/Process Parameters Type/1/0/IDTA 02031-1_Template_ProcessParameters_Type_forAASMetamodelV3.1.aasx",
+        "published/Process Parameters Type/1/0/IDTA 02031-1_Template_ProcessParameters_Type_forAASMetamodelV3.1.json"
+      ],
+      "specificationREADMEpath": "published/Process Parameters Type/1/0/README.md",
+      "notes": []
+    },
+    {
+      "family": "Process Variables for Manufacturing Key Performance Indicators",
+      "version": "1.0",
+      "releasePath": "published/Process Variables for Manufacturing Key Performance Indicators/1/0",
+      "status": "published",
+      "statusEvidence": "IDTA repository README defines published/ as officially released and registered",
+      "githubCommit": "f3790038b6c9c2d7e5ebbb4609997468fadf3e85",
+      "jsonPaths": [
+        "published/Process Variables for Manufacturing Key Performance Indicators/1/0/IDTA 02066_Template_PVM.json"
+      ],
+      "aasxPaths": [
+        "published/Process Variables for Manufacturing Key Performance Indicators/1/0/IDTA 02066_Template_PVM.aasx"
+      ],
+      "alternateAas31Paths": [],
+      "specificationREADMEpath": "published/Process Variables for Manufacturing Key Performance Indicators/1/0/README.md",
+      "notes": []
+    },
+    {
+      "family": "Product Change Notifications",
+      "version": "1.1",
+      "releasePath": "published/Product Change Notifications/1/1",
+      "status": "published",
+      "statusEvidence": "IDTA repository README defines published/ as officially released and registered",
+      "githubCommit": "f3790038b6c9c2d7e5ebbb4609997468fadf3e85",
+      "jsonPaths": [
+        "published/Product Change Notifications/1/1/IDTA_02036_Template_ProductChangeNotifications.json"
+      ],
+      "aasxPaths": [
+        "published/Product Change Notifications/1/1/IDTA_02036_Template_ProductChangeNotifications.aasx"
+      ],
+      "alternateAas31Paths": [],
+      "specificationREADMEpath": "published/Product Change Notifications/1/1/README.md",
+      "notes": []
+    },
+    {
+      "family": "Production Calendar",
+      "version": "1.1",
+      "releasePath": "published/Production Calendar/1/1",
+      "status": "published",
+      "statusEvidence": "IDTA repository README defines published/ as officially released and registered",
+      "githubCommit": "f3790038b6c9c2d7e5ebbb4609997468fadf3e85",
+      "jsonPaths": [
+        "published/Production Calendar/1/1/IDTA 02067_Template_ProductionCalendar.json"
+      ],
+      "aasxPaths": [
+        "published/Production Calendar/1/1/IDTA 02067_Template_ProductionCalendar.aasx"
+      ],
+      "alternateAas31Paths": [
+        "published/Production Calendar/1/1/IDTA 02067_Template_ProductionCalendar_forAASMetamodelV3.1.aasx",
+        "published/Production Calendar/1/1/IDTA 02067_Template_ProductionCalendar_forAASMetamodelV3.1.json"
+      ],
+      "specificationREADMEpath": "published/Production Calendar/1/1/README.md",
+      "notes": []
+    },
+    {
+      "family": "Provision of 3D Models",
+      "version": "1.0.2",
+      "releasePath": "published/Provision of 3D Models/1/0/2",
+      "status": "published",
+      "statusEvidence": "IDTA repository README defines published/ as officially released and registered",
+      "githubCommit": "f3790038b6c9c2d7e5ebbb4609997468fadf3e85",
+      "jsonPaths": [
+        "published/Provision of 3D Models/1/0/2/IDTA 02026-1-0-2_Template_ProvisionOf3DModels.json"
+      ],
+      "aasxPaths": [
+        "published/Provision of 3D Models/1/0/2/IDTA 02026-1-0-2_Template_ProvisionOf3DModels.aasx"
+      ],
+      "alternateAas31Paths": [
+        "published/Provision of 3D Models/1/0/2/IDTA 02026-1-0-2_Template_ProvisionOf3DModels_forAASMetamodelV3.1.aasx",
+        "published/Provision of 3D Models/1/0/2/IDTA 02026-1-0-2_Template_ProvisionOf3DModels_forAASMetamodelV3.1.json"
+      ],
+      "specificationREADMEpath": "published/Provision of 3D Models/1/0/2/README.md",
+      "notes": []
+    },
+    {
+      "family": "Provision of Company Data",
+      "version": "1.0.1",
+      "releasePath": "published/Provision of Company Data/1/0/1",
+      "status": "published",
+      "statusEvidence": "IDTA repository README defines published/ as officially released and registered",
+      "githubCommit": "f3790038b6c9c2d7e5ebbb4609997468fadf3e85",
+      "jsonPaths": [
+        "published/Provision of Company Data/1/0/1/IDTA 02068_Template_Provision Of Company Data.json"
+      ],
+      "aasxPaths": [
+        "published/Provision of Company Data/1/0/1/IDTA 02068_Template_Provision Of Company Data.aasx"
+      ],
+      "alternateAas31Paths": [
+        "published/Provision of Company Data/1/0/1/IDTA 02068_Template_Provision Of Company Data_forAASMetamodelV3.1.aasx",
+        "published/Provision of Company Data/1/0/1/IDTA 02068_Template_Provision Of Company Data_forAASMetamodelV3.1.json"
+      ],
+      "specificationREADMEpath": "published/Provision of Company Data/1/0/1/README.md",
+      "notes": []
+    },
+    {
+      "family": "Provision of Simulation Models",
+      "version": "1.2",
+      "releasePath": "published/Provision of Simulation Models/1/2",
+      "status": "published",
+      "statusEvidence": "IDTA repository README defines published/ as officially released and registered",
+      "githubCommit": "f3790038b6c9c2d7e5ebbb4609997468fadf3e85",
+      "jsonPaths": [
+        "published/Provision of Simulation Models/1/2/IDTA 02005_Template_ProvisionOfSimulationModel.json"
+      ],
+      "aasxPaths": [
+        "published/Provision of Simulation Models/1/2/IDTA 02005_Template_ProvisionOfSimulationModel.aasx"
+      ],
+      "alternateAas31Paths": [],
+      "specificationREADMEpath": "published/Provision of Simulation Models/1/2/README.md",
+      "notes": []
+    },
+    {
+      "family": "Purchase Order",
+      "version": "1.0.1",
+      "releasePath": "published/Purchase Order/1/0/1",
+      "status": "published",
+      "statusEvidence": "IDTA repository README defines published/ as officially released and registered",
+      "githubCommit": "f3790038b6c9c2d7e5ebbb4609997468fadf3e85",
+      "jsonPaths": [
+        "published/Purchase Order/1/0/1/IDTA-02050-1-0-1_Template_PurchaseOrder.json"
+      ],
+      "aasxPaths": [
+        "published/Purchase Order/1/0/1/IDTA-02050-1-0-1_Template_PurchaseOrder.aasx"
+      ],
+      "alternateAas31Paths": [
+        "published/Purchase Order/1/0/1/IDTA-02050-1-0-1_Template_PurchaseOrder_forAASMetamodelV3.1.aasx",
+        "published/Purchase Order/1/0/1/IDTA-02050-1-0-1_Template_PurchaseOrder_forAASMetamodelV3.1.json"
+      ],
+      "specificationREADMEpath": "published/Purchase Order/1/0/1/README.md",
+      "notes": []
+    },
+    {
+      "family": "Quality Control for Machining",
+      "version": "1.1",
+      "releasePath": "published/Quality Control for Machining/1/1",
+      "status": "published",
+      "statusEvidence": "IDTA repository README defines published/ as officially released and registered",
+      "githubCommit": "f3790038b6c9c2d7e5ebbb4609997468fadf3e85",
+      "jsonPaths": [
+        "published/Quality Control for Machining/1/1/IDTA_02049_Template_QualityControlForMachining.json"
+      ],
+      "aasxPaths": [
+        "published/Quality Control for Machining/1/1/IDTA_02049_Template_QualityControlForMachining.aasx"
+      ],
+      "alternateAas31Paths": [],
+      "specificationREADMEpath": "published/Quality Control for Machining/1/1/README.md",
+      "notes": []
+    },
+    {
+      "family": "Reliability",
+      "version": "1.0.2",
+      "releasePath": "published/Reliability/1/0/2",
+      "status": "published",
+      "statusEvidence": "IDTA repository README defines published/ as officially released and registered",
+      "githubCommit": "f3790038b6c9c2d7e5ebbb4609997468fadf3e85",
+      "jsonPaths": [
+        "published/Reliability/1/0/2/IDTA 02013-1-0-2_Template_Reliability.json"
+      ],
+      "aasxPaths": [
+        "published/Reliability/1/0/2/IDTA 02013-1-0-2_Template_Reliability.aasx"
+      ],
+      "alternateAas31Paths": [
+        "published/Reliability/1/0/2/IDTA 02013-1-0-2_Template_Reliability_forAASMetamodelV3.1.aasx",
+        "published/Reliability/1/0/2/IDTA 02013-1-0-2_Template_Reliability_forAASMetamodelV3.1.json"
+      ],
+      "specificationREADMEpath": "published/Reliability/1/0/2/README.md",
+      "notes": []
+    },
+    {
+      "family": "Safety Instrumented Functions/Part 1 Safety Instrumented Function",
+      "version": "1.0",
+      "releasePath": "published/Safety Instrumented Functions/Part 1 Safety Instrumented Function/1/0",
+      "status": "published",
+      "statusEvidence": "IDTA repository README defines published/ as officially released and registered",
+      "githubCommit": "f3790038b6c9c2d7e5ebbb4609997468fadf3e85",
+      "jsonPaths": [
+        "published/Safety Instrumented Functions/Part 1 Safety Instrumented Function/1/0/IDTA 02064_Template_SafetyInstrumentedFunction.json"
+      ],
+      "aasxPaths": [
+        "published/Safety Instrumented Functions/Part 1 Safety Instrumented Function/1/0/IDTA 02064_Template_SafetyInstrumentedFunction.aasx"
+      ],
+      "alternateAas31Paths": [],
+      "specificationREADMEpath": "published/Safety Instrumented Functions/Part 1 Safety Instrumented Function/1/0/README.md",
+      "notes": []
+    },
+    {
+      "family": "Safety Instrumented Functions/Part 2 Safety Instrumented System",
+      "version": "1.0",
+      "releasePath": "published/Safety Instrumented Functions/Part 2 Safety Instrumented System/1/0",
+      "status": "published",
+      "statusEvidence": "IDTA repository README defines published/ as officially released and registered",
+      "githubCommit": "f3790038b6c9c2d7e5ebbb4609997468fadf3e85",
+      "jsonPaths": [
+        "published/Safety Instrumented Functions/Part 2 Safety Instrumented System/1/0/IDTA 02097_Template_SafetyInstrumentedSystem.json"
+      ],
+      "aasxPaths": [
+        "published/Safety Instrumented Functions/Part 2 Safety Instrumented System/1/0/IDTA 02097_Template_SafetyInstrumentedSystem.aasx"
+      ],
+      "alternateAas31Paths": [],
+      "specificationREADMEpath": "published/Safety Instrumented Functions/Part 2 Safety Instrumented System/1/0/README.md",
+      "notes": []
+    },
+    {
+      "family": "Safety Instrumented Functions/Part 3 Safety Instrumented System Device",
+      "version": "1.0",
+      "releasePath": "published/Safety Instrumented Functions/Part 3 Safety Instrumented System Device/1/0",
+      "status": "published",
+      "statusEvidence": "IDTA repository README defines published/ as officially released and registered",
+      "githubCommit": "f3790038b6c9c2d7e5ebbb4609997468fadf3e85",
+      "jsonPaths": [
+        "published/Safety Instrumented Functions/Part 3 Safety Instrumented System Device/1/0/IDTA 02079_Template_SafetyInstrumentedSystemDevice.json"
+      ],
+      "aasxPaths": [
+        "published/Safety Instrumented Functions/Part 3 Safety Instrumented System Device/1/0/IDTA 02079_Template_SafetyInstrumentedSystemDevice.aasx"
+      ],
+      "alternateAas31Paths": [],
+      "specificationREADMEpath": "published/Safety Instrumented Functions/Part 3 Safety Instrumented System Device/1/0/README.md",
+      "notes": []
+    },
+    {
+      "family": "Safety Instrumented Functions/Part 4 Equipment Under Control",
+      "version": "1.0",
+      "releasePath": "published/Safety Instrumented Functions/Part 4 Equipment Under Control/1/0",
+      "status": "published",
+      "statusEvidence": "IDTA repository README defines published/ as officially released and registered",
+      "githubCommit": "f3790038b6c9c2d7e5ebbb4609997468fadf3e85",
+      "jsonPaths": [
+        "published/Safety Instrumented Functions/Part 4 Equipment Under Control/1/0/IDTA 02096_Template_EquipmentUnderControl.json"
+      ],
+      "aasxPaths": [
+        "published/Safety Instrumented Functions/Part 4 Equipment Under Control/1/0/IDTA 02096_Template_EquipmentUnderControl.aasx"
+      ],
+      "alternateAas31Paths": [],
+      "specificationREADMEpath": "published/Safety Instrumented Functions/Part 4 Equipment Under Control/1/0/README.md",
+      "notes": []
+    },
+    {
+      "family": "Service Request Notification",
+      "version": "1.0.2",
+      "releasePath": "published/Service Request Notification/1/0/2",
+      "status": "published",
+      "statusEvidence": "IDTA repository README defines published/ as officially released and registered",
+      "githubCommit": "f3790038b6c9c2d7e5ebbb4609997468fadf3e85",
+      "jsonPaths": [
+        "published/Service Request Notification/1/0/2/IDTA 02010-1-0-2_Template_ServiceRequestNotification.json"
+      ],
+      "aasxPaths": [
+        "published/Service Request Notification/1/0/2/IDTA 02010-1-0-2_Template_ServiceRequestNotification.aasx"
+      ],
+      "alternateAas31Paths": [
+        "published/Service Request Notification/1/0/2/IDTA 02010-1-0-2_Template_ServiceRequestNotification_forAASMetamodelV3.1.aasx",
+        "published/Service Request Notification/1/0/2/IDTA 02010-1-0-2_Template_ServiceRequestNotification_forAASMetamodelV3.1.json"
+      ],
+      "specificationREADMEpath": "published/Service Request Notification/1/0/2/README.md",
+      "notes": []
+    },
+    {
+      "family": "Sizing of Power Drive Trains",
+      "version": "1.0.2",
+      "releasePath": "published/Sizing of Power Drive Trains/1/0/2",
+      "status": "published",
+      "statusEvidence": "IDTA repository README defines published/ as officially released and registered",
+      "githubCommit": "f3790038b6c9c2d7e5ebbb4609997468fadf3e85",
+      "jsonPaths": [
+        "published/Sizing of Power Drive Trains/1/0/2/IDTA 02021-1-0-2_Template_Sizing of Power Drive Trains.json"
+      ],
+      "aasxPaths": [
+        "published/Sizing of Power Drive Trains/1/0/2/IDTA 02021-1-0-2_Template_Sizing of Power Drive Trains.aasx"
+      ],
+      "alternateAas31Paths": [
+        "published/Sizing of Power Drive Trains/1/0/2/IDTA 02021-1-0-2_Template_Sizing of Power Drive Trains_forAASMetamodelV3.1.aasx",
+        "published/Sizing of Power Drive Trains/1/0/2/IDTA 02021-1-0-2_Template_Sizing of Power Drive Trains_forAASMetamodelV3.1.json"
+      ],
+      "specificationREADMEpath": "published/Sizing of Power Drive Trains/1/0/2/README.md",
+      "notes": []
+    },
+    {
+      "family": "Software Nameplate",
+      "version": "1.0.2",
+      "releasePath": "published/Software Nameplate/1/0/2",
+      "status": "published",
+      "statusEvidence": "IDTA repository README defines published/ as officially released and registered",
+      "githubCommit": "f3790038b6c9c2d7e5ebbb4609997468fadf3e85",
+      "jsonPaths": [
+        "published/Software Nameplate/1/0/2/IDTA 02007-1-0-2_Template_Software Nameplate.json"
+      ],
+      "aasxPaths": [
+        "published/Software Nameplate/1/0/2/IDTA 02007-1-0-2_Template_Software Nameplate.aasx"
+      ],
+      "alternateAas31Paths": [
+        "published/Software Nameplate/1/0/2/IDTA 02007-1-0-2_Template_Software Nameplate_forAASMetamodelV3.1.aasx",
+        "published/Software Nameplate/1/0/2/IDTA 02007-1-0-2_Template_Software Nameplate_forAASMetamodelV3.1.json"
+      ],
+      "specificationREADMEpath": "published/Software Nameplate/1/0/2/README.md",
+      "notes": []
+    },
+    {
+      "family": "Technical Data for Automated Guided Vehicles",
+      "version": "1.0.2",
+      "releasePath": "published/Technical Data for Automated Guided Vehicles/1/0/2",
+      "status": "published",
+      "statusEvidence": "IDTA repository README defines published/ as officially released and registered",
+      "githubCommit": "f3790038b6c9c2d7e5ebbb4609997468fadf3e85",
+      "jsonPaths": [
+        "published/Technical Data for Automated Guided Vehicles/1/0/2/IDTA 02047-1-0-2 Template_TechnicalDataForAGV.json"
+      ],
+      "aasxPaths": [
+        "published/Technical Data for Automated Guided Vehicles/1/0/2/IDTA 02047-1-0-2 Template_TechnicalDataForAGV.aasx"
+      ],
+      "alternateAas31Paths": [
+        "published/Technical Data for Automated Guided Vehicles/1/0/2/IDTA 02047-1-0-2 Template_TechnicalDataForAGV_forAASMetamodelV3.1.aasx",
+        "published/Technical Data for Automated Guided Vehicles/1/0/2/IDTA 02047-1-0-2 Template_TechnicalDataForAGV_forAASMetamodelV3.1.json"
+      ],
+      "specificationREADMEpath": "published/Technical Data for Automated Guided Vehicles/1/0/2/README.md",
+      "notes": []
+    },
+    {
+      "family": "Technical_Data",
+      "version": "2.0.2",
+      "releasePath": "published/Technical_Data/2/0/2",
+      "status": "published",
+      "statusEvidence": "IDTA repository README defines published/ as officially released and registered",
+      "githubCommit": "f3790038b6c9c2d7e5ebbb4609997468fadf3e85",
+      "jsonPaths": [
+        "published/Technical_Data/2/0/2/IDTA 02003_2-0-2_Template_TechnicalData.json"
+      ],
+      "aasxPaths": [
+        "published/Technical_Data/2/0/2/IDTA 02003_2-0-2_Template_TechnicalData.aasx"
+      ],
+      "alternateAas31Paths": [
+        "published/Technical_Data/2/0/2/IDTA 02003_2-0-2_Template_TechnicalData_forAASMetamodelV3.1.aasx",
+        "published/Technical_Data/2/0/2/IDTA 02003_2-0-2_Template_TechnicalData_forAASMetamodelV3.1.json"
+      ],
+      "specificationREADMEpath": "published/Technical_Data/2/0/2/README.md",
+      "notes": []
+    },
+    {
+      "family": "Time Series Data",
+      "version": "1.1.2",
+      "releasePath": "published/Time Series Data/1/1/2",
+      "status": "published",
+      "statusEvidence": "IDTA repository README defines published/ as officially released and registered",
+      "githubCommit": "f3790038b6c9c2d7e5ebbb4609997468fadf3e85",
+      "jsonPaths": [
+        "published/Time Series Data/1/1/2/IDTA 02008-1-1-2_Template_TimeSeriesData.json",
+        "published/Time Series Data/1/1/2/IDTA 02008-1-1-2_Template_withOperations_TimeSeriesData.json"
+      ],
+      "aasxPaths": [
+        "published/Time Series Data/1/1/2/IDTA 02008-1-1-2_Template_TimeSeriesData.aasx",
+        "published/Time Series Data/1/1/2/IDTA 02008-1-1-2_Template_withOperations_TimeSeriesData.aasx"
+      ],
+      "alternateAas31Paths": [
+        "published/Time Series Data/1/1/2/IDTA 02008-1-1-2_Template_TimeSeriesData_forAASMetamodelV3.1.aasx",
+        "published/Time Series Data/1/1/2/IDTA 02008-1-1-2_Template_TimeSeriesData_forAASMetamodelV3.1.json",
+        "published/Time Series Data/1/1/2/IDTA 02008-1-1-2_Template_withOperations_TimeSeriesData_forAASMetamodelV3.1.aasx",
+        "published/Time Series Data/1/1/2/IDTA 02008-1-1-2_Template_withOperations_TimeSeriesData_forAASMetamodelV3.1.json"
+      ],
+      "specificationREADMEpath": "published/Time Series Data/1/1/2/README.md",
+      "notes": [
+        "Multiple main JSON variants in the same release; inspect and retain meaningful variants separately, not as duplicate releases."
+      ]
+    },
+    {
+      "family": "Wireless Communication",
+      "version": "1.0.2",
+      "releasePath": "published/Wireless Communication/1/0/2",
+      "status": "published",
+      "statusEvidence": "IDTA repository README defines published/ as officially released and registered",
+      "githubCommit": "f3790038b6c9c2d7e5ebbb4609997468fadf3e85",
+      "jsonPaths": [
+        "published/Wireless Communication/1/0/2/IDTA 02022-1-0-2_Template_Wireless Communication.json"
+      ],
+      "aasxPaths": [
+        "published/Wireless Communication/1/0/2/IDTA 02022-1-0-2_Template_Wireless Communication.aasx"
+      ],
+      "alternateAas31Paths": [
+        "published/Wireless Communication/1/0/2/IDTA 02022-1-0-2_Template_Wireless Communication_forAASMetamodelV3.1.aasx",
+        "published/Wireless Communication/1/0/2/IDTA 02022-1-0-2_Template_Wireless Communication_forAASMetamodelV3.1.json"
+      ],
+      "specificationREADMEpath": null,
+      "notes": [
+        "No README in this release directory; published path is release-status evidence."
+      ]
+    },
+    {
+      "family": "Worskstation Worker Matching Data",
+      "version": "1.0.1",
+      "releasePath": "published/Worskstation Worker Matching Data/1/0/1",
+      "status": "published",
+      "statusEvidence": "IDTA repository README defines published/ as officially released and registered",
+      "githubCommit": "f3790038b6c9c2d7e5ebbb4609997468fadf3e85",
+      "jsonPaths": [
+        "published/Worskstation Worker Matching Data/1/0/1/IDTA 02046-1-0-1_Template_WWMD.json"
+      ],
+      "aasxPaths": [
+        "published/Worskstation Worker Matching Data/1/0/1/IDTA 02046-1-0-1_Template_WWMD.aasx"
+      ],
+      "alternateAas31Paths": [
+        "published/Worskstation Worker Matching Data/1/0/1/IDTA 02046-1-0-1_Template_WWMD_forAASMetamodelV3.1.aasx",
+        "published/Worskstation Worker Matching Data/1/0/1/IDTA 02046-1-0-1_Template_WWMD_forAASMetamodelV3.1.json"
+      ],
+      "specificationREADMEpath": "published/Worskstation Worker Matching Data/1/0/1/README.md",
+      "notes": []
+    },
+    {
+      "family": "sensor4.0/Part 1 Measurement Value",
+      "version": "1.0.1",
+      "releasePath": "published/sensor4.0/Part 1 Measurement Value/1/0/1",
+      "status": "published",
+      "statusEvidence": "IDTA repository README defines published/ as officially released and registered",
+      "githubCommit": "f3790038b6c9c2d7e5ebbb4609997468fadf3e85",
+      "jsonPaths": [
+        "published/sensor4.0/Part 1 Measurement Value/1/0/1/IDTA 02029-1-0-1_Template_Sensor4.0_MeasurementValue.json"
+      ],
+      "aasxPaths": [
+        "published/sensor4.0/Part 1 Measurement Value/1/0/1/IDTA 02029-1-0-1_Template_Sensor4.0_MeasurementValue.aasx"
+      ],
+      "alternateAas31Paths": [],
+      "specificationREADMEpath": "published/sensor4.0/Part 1 Measurement Value/1/0/1/README.md",
+      "notes": []
+    }
+  ]
+}

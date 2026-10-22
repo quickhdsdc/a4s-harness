@@ -6,10 +6,15 @@
 
     <div v-else-if="data.matchedProperties.length > 0">
       <div class="alert alert-success">
-        Successfully processed <strong>{{ entityCount }}</strong> properties.
-        <strong>{{ placedEntityCount }}</strong> placed in the AAS,
-        <strong>{{ entityCount - placedEntityCount }}</strong> with no home found.
-        <HelpTip text="Each extracted fact appears once. Review its existing SME or the proposed collection and new SME type before population." />
+        <strong>{{ entityCount }}</strong> entities ·
+        <strong>{{ placedEntityCount }}</strong> matched ·
+        <strong>{{ entityCount - placedEntityCount }}</strong> unmatched
+        <HelpTip text="Matched rows have a proposed AAS destination. Only checked rows will be written. Gray rows are not selected; No Match means a destination still needs to be chosen." />
+      </div>
+
+      <div v-if="unresolvedConflictGroups.size" class="value-conflict-note" role="status">
+        Choose a value for {{ unresolvedConflictGroups.size }} {{ unresolvedConflictGroups.size === 1 ? 'field' : 'fields' }}.
+        <HelpTip text="Different values point to the same AAS field. Check the value you want to keep; choosing one deselects the alternatives. Select Matched leaves these choices to you." />
       </div>
 
       <div style="margin-bottom: 20px; padding: 16px; background: #f0fdf7; border-radius: 6px; border-left: 4px solid #179C7D">
@@ -78,11 +83,14 @@
                 type="checkbox"
                 :checked="match.selected !== false"
                 :disabled="getMatchType(match) === 'none'"
+                :aria-label="'Use value for ' + match.extractedEntity"
+                @click.stop
                 @change="toggleMatch(index)"
               />
             </td>
             <td @click="toggleMatch(index)" style="cursor: pointer;">
               <strong>{{ match.extractedEntity }}</strong>
+              <small v-if="match.valueConflict && unresolvedConflictGroups.has(conflictKey(match))" class="conflict-label">Choose a value</small>
             </td>
             <td @click="toggleMatch(index)" style="cursor: pointer;" :title="match.extractedValue">
               {{ truncateValue(match.extractedValue) }}
@@ -115,7 +123,8 @@
 
             <td>
               <span :class="getMatchTypeBadgeClass(getMatchType(match))">
-                {{ match.action === 'create' ? 'New ' : '' }}{{ match.aasType || formatMatchType(getMatchType(match)) }}
+                <template v-if="getMatchType(match) === 'none'">No Match</template>
+                <template v-else>{{ match.action === 'create' ? 'New ' : '' }}{{ match.aasType || formatMatchType(getMatchType(match)) }}</template>
               </span>
               <span v-if="getSelectedProperties(match).length > 1" class="multi-badge">
                 +{{ getSelectedProperties(match).length - 1 }}
@@ -139,7 +148,7 @@
         </p>
       </div>
 
-      <HelpTip text="Review and adjust property matches as needed. You can select multiple AAS properties for each extracted entity. Click &quot;Done&quot; to confirm your selections. Only selected matches will be populated in the final AAS." />
+      <HelpTip text="Review the matches and check the values you want to save. Next populates the AAS using those selections. The change record and previous values remain available in update details and history." />
     </div>
 
     <div v-else class="progress-indicator">
@@ -182,6 +191,7 @@
 </template>
 
 <script setup lang="ts">
+import {instanceUpdates} from '@/services/instanceUpdates'
 import { ref, computed, watch, onMounted, onUnmounted, nextTick, type Ref, type ComputedRef } from 'vue'
 import { useEnvStore } from '@/stores/environmentStore'
 import { aasService } from '@/services/aasService'
@@ -258,7 +268,8 @@ const loadAasProperties = async (): Promise<void> => {
   }
 
   try {
-    const result = await aasService.getAASProperties(aasIdShort, props.data.aasServerEndpoint)
+    const result = props.data.updateId ? await instanceUpdates.properties(props.data.updateId)
+      : await aasService.getAASProperties(aasIdShort, props.data.aasServerEndpoint)
     availableProperties.value = result.properties || []
     groupedProperties.value = result.grouped || {}
     console.log(`Loaded ${result.count} AAS properties for ${aasIdShort}`)
@@ -364,8 +375,24 @@ const selectedCount: ComputedRef<number> = computed(() => {
   ).length
 })
 
+const conflictKey = (match: MatchedProperty): string => match.conflictGroup ||
+  `${match.submodelId || ''}::${match.apiPath || match.aasProperty || match.extractedEntity}`
+
+const unresolvedConflictGroups = computed(() => {
+  const unresolved = new Set<string>()
+  const chosen = new Set<string>()
+  for (const match of props.data.matchedProperties) {
+    if (!match.valueConflict) continue
+    const key = conflictKey(match)
+    unresolved.add(key)
+    if (match.selected !== false && getMatchType(match) !== 'none') chosen.add(key)
+  }
+  for (const key of chosen) unresolved.delete(key)
+  return unresolved
+})
+
 const allMatchedSelected: ComputedRef<boolean> = computed(() => {
-  const matchedItems = props.data.matchedProperties.filter(m => getMatchType(m as ExtendedMatchedProperty) !== 'none')
+  const matchedItems = props.data.matchedProperties.filter(m => !m.valueConflict && getMatchType(m as ExtendedMatchedProperty) !== 'none')
   return matchedItems.length > 0 && matchedItems.every(m => (m as ExtendedMatchedProperty).selected !== false)
 })
 
@@ -506,6 +533,8 @@ const togglePropertySelection = (
       (currentSelections.length > 1 ? `Manually selected ${currentSelections.length} properties` : 'Manually selected')
       : 'No match selected'
   }
+  delete matches[index].conflictGroup
+  matches[index].valueConflict = false
 
   emit('update', 'matchedProperties', matches)
 }
@@ -538,6 +567,11 @@ const toggleMatch = (index: number): void => {
     ...matches[index],
     selected: matches[index].selected === false ? true : false
   }
+  if (matches[index].selected && matches[index].conflictGroup) {
+    matches.forEach((row, other) => {
+      if (other !== index && row.conflictGroup === matches[index].conflictGroup) matches[other] = {...row, selected:false}
+    })
+  }
   emit('update', 'matchedProperties', matches)
 }
 
@@ -545,7 +579,7 @@ const toggleAllMatched = (): void => {
   const newValue = !allMatchedSelected.value
   const matches = props.data.matchedProperties.map(m => ({
     ...m,
-    selected: getMatchType(m as ExtendedMatchedProperty) !== 'none' ? newValue : false
+    selected: m.valueConflict ? m.selected !== false : getMatchType(m as ExtendedMatchedProperty) !== 'none' ? newValue : false
   }))
   emit('update', 'matchedProperties', matches)
 }
@@ -553,7 +587,7 @@ const toggleAllMatched = (): void => {
 const selectAllMatched = (): void => {
   const matches = props.data.matchedProperties.map(m => ({
     ...m,
-    selected: getMatchType(m as ExtendedMatchedProperty) !== 'none'
+    selected: m.valueConflict ? m.selected !== false : getMatchType(m as ExtendedMatchedProperty) !== 'none'
   }))
   emit('update', 'matchedProperties', matches)
 }
@@ -615,6 +649,9 @@ const getPropTypeIcon = (type: string): string => {
 </script>
 
 <style scoped>
+.conflict-label{display:block;color:#755c13;margin-top:4px;font-size:12px;}
+.value-conflict-note{background:#fff5d4;border-left:3px solid #c29b32;padding:10px 12px;line-height:1.5;margin-bottom:16px;font-size:14px;}
+
 /* Modal Styles */
 .modal-overlay {
   position: fixed;
@@ -727,9 +764,11 @@ const getPropTypeIcon = (type: string): string => {
 }
 
 .row-deselected td {
-  text-decoration: line-through;
-  color: #aaa;
+  color: #66736e;
 }
+
+.row-deselected .selected-prop-tag {color:#65756e;background:#edf1ef;}
+.row-deselected .location-path {color:#65756e;}
 
 .row-deselected .property-selector {
   opacity: 1;

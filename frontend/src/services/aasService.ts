@@ -212,14 +212,15 @@ export const aasService = {
     filename: string,
     aasIdShort: string,
     endpoint?: string,
-    onProgress?: (progress: MatchingProgress) => void
+    onProgress?: (progress: MatchingProgress) => void,
+    updateId?: string | null
   ): Promise<MatchingResultsResponse & { path: string; submodels: string[] }> {
     let active = true, polling = false
     const poll = async () => {
       if (!onProgress || !active || polling) return
       polling = true
       try {
-        const progress = await aasService.matchProgress(filename, aasIdShort)
+        const progress = await aasService.matchProgress(filename, updateId ? `update_${updateId}` : aasIdShort)
         if (active) onProgress(progress)
       } catch { /* A failed progress read does not cancel matching. */ }
       finally { polling = false }
@@ -227,7 +228,7 @@ export const aasService = {
     const timer = setInterval(poll, 1000)
     try {
       const { data } = await api.post<any>('/api/match', {
-        filename, aas_id_short: aasIdShort, endpoint,
+        filename, aas_id_short: aasIdShort, endpoint, update_id: updateId || undefined,
       }, { timeout: MODEL_BOUND_TIMEOUT })
       if (data.progress && onProgress) onProgress(data.progress)
       return data
@@ -413,11 +414,17 @@ export const aasService = {
   /**
    * Instantiate AAS from Blueprint
    */
-  async instantiateAAS(blueprintId: string, newAasId: string, newAasIdShort: string, endpoint?: string): Promise<any> {
+  async getBlueprints(): Promise<Array<{id: string; idShort: string; endpoint: string}>> {
+    const {data} = await api.get('/api/blueprints')
+    return data
+  },
+
+  async instantiateAAS(blueprintId: string, newAasId: string, newAasIdShort: string, endpoint?: string, blueprintEndpoint?: string): Promise<any> {
     const { data } = await api.post<any>(
       '/api/instantiate-aas',
       {
         blueprint_id: blueprintId,
+        blueprint_endpoint: blueprintEndpoint,
         new_aas_id: newAasId,
         new_aas_id_short: newAasIdShort,
         endpoint: endpoint || useEnvStore().aasServerUrl
@@ -499,6 +506,7 @@ export const {
   getAASList,
   previewStructuredFile,
   instantiateAAS,
+  getBlueprints,
   deleteAAS,
   createConnection,
   deleteConnection,

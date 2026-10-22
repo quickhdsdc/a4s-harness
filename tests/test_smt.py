@@ -162,7 +162,26 @@ def test_data_slots_are_emptied() -> None:
     )
     serial, name = result.submodel["submodelElements"]
     assert serial["value"] is None
-    assert name["value"] == []
+    assert "value" not in name
+
+
+def test_unfilled_localized_slot_remains_readable_by_the_strict_sdk() -> None:
+    import json
+
+    decoder = pytest.importorskip("basyx.aas.adapter.json").StrictAASFromJsonDecoder
+    result = instantiate(
+        template(
+            prop(
+                "Name",
+                card="One",
+                model_type="MultiLanguageProperty",
+                value=[{"language": "en", "text": "example"}],
+            )
+        ),
+        submodel_id="urn:i",
+    )
+    parsed = json.loads(json.dumps(result.submodel["submodelElements"][0]), cls=decoder)
+    assert parsed.value is None
 
 
 def test_keep_values_opts_out() -> None:
@@ -536,7 +555,8 @@ def test_attached_cli_instance_keeps_template_short_name_and_namespaces_id(monke
         args=Namespace(template_id='urn:template', as_id=None, id_short='TechnicalData_longSuffix',
             attach_to=shell, include_optional=True,keep_values=False,seed_examples=False,
             keep_template_qualifiers=False,force=False,dry_run=True)
-        out=Output();cli.cmd_smt_instantiate(args,out)
+        out=Output()
+        cli.cmd_smt_instantiate(args,out)
         assert out.value['idShort']=='TechnicalData'
         ids.append(out.value['id'])
     assert ids==['urn:aas:one/sm/TechnicalData','urn:aas:two/sm/TechnicalData']

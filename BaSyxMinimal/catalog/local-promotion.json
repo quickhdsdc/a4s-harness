@@ -1,0 +1,9 @@
+{
+  "catalogTemplates": 63,
+  "agvTemplateId": "https://admin-shell.io/idta/SubmodelTemplate/technicaldataagv/1/0",
+  "agvPatch": "Replaced only the colliding TechnicalDataAGV model with the selected current IDTA model; preserved original shell, delegated services, dictionary and resources; added the two referenced attachments.",
+  "backupZipSha256": "de492aec0b25a4c6bb296a9c0e1cc9f77747ef2b819ddff061094d2e77cd86b8",
+  "previousRepositoryBackup": "~\\.a4s\\backups\\basyx-20261021T204406Z",
+  "runtimeValidation": "Pending user startup; no containers started after user's stop instruction.",
+  "postPromotionCorrection": "startup-batch-fix.json supersedes the dictionary-removal diagnosis; device-instance identity separated, original dictionary restored, each startup file loaded once"
+}

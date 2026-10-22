@@ -1,0 +1,12 @@
+[
+  {
+    "uri": "/aasx/files/agv1.jpg",
+    "sha256": "fa1839211c7314c60d75ce305b372273b523e06a46b4cbc600282e597871c1bb",
+    "source": "https://raw.githubusercontent.com/admin-shell-io/submodel-templates/f3790038b6c9c2d7e5ebbb4609997468fadf3e85/published/Technical%20Data%20for%20Automated%20Guided%20Vehicles/1/0/2/IDTA%2002047-1-0-2%20Template_TechnicalDataForAGV.aasx"
+  },
+  {
+    "uri": "/aasx/files/ABB_Datasheet_AMR_T701_GR_digital.pdf",
+    "sha256": "42e7b0dc582f57ed82046eba2bf7da28c8ff8e61f9f07fb5a82db41c222a45a9",
+    "source": "https://raw.githubusercontent.com/admin-shell-io/submodel-templates/f3790038b6c9c2d7e5ebbb4609997468fadf3e85/published/Technical%20Data%20for%20Automated%20Guided%20Vehicles/1/0/2/IDTA%2002047-1-0-2%20Template_TechnicalDataForAGV.aasx"
+  }
+]

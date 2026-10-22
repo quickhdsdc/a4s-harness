@@ -1,0 +1,31 @@
+{
+  "package": "BaSyxMinimal\\aas\\agv.aasx",
+  "beforeBackup": "~\\.a4s\\backups\\agv-explorer-compat-20261021T213315Z\\agv.before.aasx",
+  "beforeSha256": "0356c93ab52d5a038ae7d8546be71946f2d03cfff2a5ab51e08c747301d8298c",
+  "afterSha256": "76edd5204f571476a972931637ba8d687b120c6bcd356d3927a4c6ebc6234145",
+  "cause": [
+    "Installed Explorer .NET packaging reader rejected the prefixed ns0:Types manifest root: Required Types tag not found",
+    "After manifest repair, the Explorer AAS XML reader rejected self-closing empty Blob values; seven empty Blob value fields retained with explicit end tags"
+  ],
+  "changes": "XML serialization only; parsed XML trees equivalent, all non-XML attachment/relationship parts byte-identical",
+  "explorerLoader": "~/AasxPackageExplorer/AasxCsharpLibrary.dll; AdminShellNS.AdminShellPackageFileBasedEnv(string, bool)",
+  "verification": {
+    "originalBackupOpened": true,
+    "brokenPackageReproduced": true,
+    "agvOpened": true,
+    "agvObjects": {
+      "shells": 1,
+      "submodels": 2,
+      "conceptDescriptions": 103
+    },
+    "catalogOpened": true,
+    "catalogObjects": {
+      "shells": 1,
+      "submodels": 63,
+      "conceptDescriptions": 3000
+    }
+  },
+  "guiTest": "Loader API verification only; no interactive GUI opened",
+  "containerRestarted": false,
+  "protectedAasBackupZip": "SHA256 unchanged"
+}

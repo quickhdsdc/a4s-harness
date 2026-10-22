@@ -2,6 +2,10 @@ import json
 from contextlib import nullcontext
 from dataclasses import asdict
 import pytest
+from urllib.parse import quote
+
+from fastapi import FastAPI
+from fastapi.testclient import TestClient
 
 from a4s.aasctl.index import Node
 from a4s.aasctl.client import AasHttpError
@@ -18,6 +22,41 @@ class Repository:
     def list_submodel_refs(self, identifier): return [{'keys': [{'value': self.submodel['id']}]}]
     def get_submodel(self, identifier): return self.submodel
     def list_concept_descriptions(self): return []
+
+
+@pytest.mark.parametrize('identity', ['https://example/aas/one', 'urn:device:one', 'One'])
+@pytest.mark.parametrize('method,route', [
+    ('post', '/api/parse-aas/'),
+    ('get', '/api/check-aas/'),
+    ('get', '/api/aas-properties/'),
+    ('get', '/api/download/json/'),
+    ('get', '/api/download/aasx/'),
+])
+def test_shell_routes_accept_canonical_ids_over_http(monkeypatch, tmp_path, identity, method, route):
+    """Exercise URL decoding and route matching, not just the Python handler."""
+    monkeypatch.setenv('A4S_WEB_WORKSPACE', str(tmp_path))
+    repository = Repository()
+    calls = []
+    def client(endpoint):
+        calls.append(endpoint)
+        return nullcontext(repository)
+    identifiers = []
+    def shell(identifier):
+        identifiers.append(identifier)
+        return repository.shell
+    repository.get_shell = shell
+    monkeypatch.setattr(aas_routes, '_client', client)
+    app = FastAPI()
+    app.include_router(aas_routes.router)
+    response = TestClient(app).request(method, route + quote(identity, safe=''),
+                                      params={'endpoint': 'http://production:8081'})
+    assert response.status_code == 200, response.text
+    assert identifiers == [identity]
+    assert calls and set(calls) == {'http://production:8081'}
+    if route == '/api/parse-aas/':
+        graph = json.loads(open(response.json()['graphPath'], encoding='utf-8').read())
+        assert graph['aasId'] == repository.shell['id']
+        assert graph['endpoint'] == 'http://production:8081'
 
 
 def test_parse_refreshes_scoped_graph_and_keeps_parent_and_sme_type(monkeypatch, tmp_path):

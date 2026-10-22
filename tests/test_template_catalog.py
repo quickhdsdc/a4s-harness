@@ -8,6 +8,7 @@ from a4s.server import aas_routes
 
 
 def test_templates_are_only_unique_template_refs_from_collection(monkeypatch):
+    monkeypatch.setenv('A4S_SMT_COLLECTION', 'https://example.com/ids/aas/CollectionofSMTs')
     endpoints, reads = [], []
     class Repository:
         def list_submodel_refs(self, shell):
@@ -41,6 +42,7 @@ def test_templates_are_only_unique_template_refs_from_collection(monkeypatch):
 
 
 def test_missing_catalog_fails_without_repository_wide_fallback(monkeypatch):
+    monkeypatch.setenv('A4S_SMT_COLLECTION', 'https://example.com/ids/aas/CollectionofSMTs')
     class Repository:
         def list_submodel_refs(self, shell):
             raise AasHttpError(404, 'http://templates/shells/catalog', 'Catalog missing')

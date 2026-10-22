@@ -4,12 +4,15 @@
     <div class="asset-library">
       <h3>Asset Library</h3>
       <HelpTip text="Drag a blueprint onto the floor to create an asset." />
+      <button class="btn btn-secondary" @click="fetchBlueprints" :disabled="libraryLoading">{{ libraryLoading ? 'Loading library...' : 'Refresh library' }}</button>
+      <p v-if="libraryError" role="alert" class="library-message">{{ libraryError }}</p>
+      <p v-else-if="!libraryLoading && !assetTemplates.length" class="library-message">No blueprints are available in the library. Import a device blueprint, then refresh.</p>
       
       <div 
         v-for="template in assetTemplates" 
-        :key="template.type"
+        :key="template.blueprintId"
         class="asset-template"
-        draggable="true"
+        :draggable="!libraryLoading"
         @dragstart="onDragStart($event, template)"
       >
         <img :src="template.icon" class="template-icon-img" alt="icon" />
@@ -25,9 +28,10 @@
         <button class="btn btn-info" @click="triggerManifestRefresh" style="margin-right: 10px;">
           Refresh Manifests
         </button>
-        <button class="btn btn-danger" @click="resetShopFloor">
+        <button class="btn btn-danger" @click="resetShopFloor" :disabled="creatingAssets.size > 0">
           Reset Shop Floor
         </button>
+        <p v-if="creationError" role="alert" class="creation-message">{{ creationError }}</p>
       </div>
 
       <!-- Shop Floor Visualization -->
@@ -77,6 +81,7 @@
           v-for="asset in assets" 
           :key="asset.id"
           :class="['asset', asset.type]"
+          :aria-busy="creatingAssets.has(asset.id)"
           :style="{ top: asset.y + '%', left: asset.x + '%' }"
           @click.stop="openAssetMenu(asset)"
           draggable="true"
@@ -84,6 +89,7 @@
         >
           <img :src="getIcon(asset.type)" class="asset-icon-img" alt="asset" />
           <div class="asset-label">{{ asset.label }}</div>
+          <div v-if="creatingAssets.has(asset.id)" class="asset-progress" role="status">Creating AAS...</div>
           <div :class="['status-indicator', asset.hasAas ? 'has-aas' : 'no-aas']"></div>
           
           <!-- Ports -->
@@ -148,6 +154,7 @@ import { useWizardStore } from '../stores/wizardStore'
 import { useEnvStore } from '../stores/environmentStore'
 import type { AssetInstance } from '../types' // Import from shared types
 import MachineConsole from './MachineConsole.vue'
+import {blueprintCards} from '../services/blueprintLibrary.mjs'
 
 const store = useWizardStore()
 const envStore = useEnvStore()
@@ -159,6 +166,9 @@ interface AssetTemplate {
   type: string
   label: string
   icon: string
+  idShort: string
+  blueprintId: string
+  blueprintEndpoint: string
 }
 
 // AssetInstance is now imported from types
@@ -166,21 +176,25 @@ interface AssetTemplate {
 // --- State ---
 
 // Icons as PNG paths
-const assetTemplates: AssetTemplate[] = [
-  { type: 'machine', label: 'CNC Machine', icon: '/assets/machine.png' },
-  { type: 'metal_printer', label: 'Metal 3D Printer', icon: '/assets/printer.png' },
-  { type: 'injection_molding', label: 'Injection Molding Machine', icon: '/assets/injection molding.png' },
-  { type: 'disassembly_robot', label: 'Robotic Disassembly Station', icon: '/assets/robot.png' },
-  { type: 'agv', label: 'AGV', icon: '/assets/agv.png' },
-  { type: 'order', label: 'Production Order', icon: '/assets/order.png' },
-  { type: 'product', label: 'Digital Battery Passport', icon: '/assets/product.png' },
-  { type: 'process', label: 'Process', icon: '/assets/process.png' },
-  { type: 'simulation', label: 'Simulation', icon: '/assets/simulation.png' },
-  { type: 'aps', label: 'APS', icon: '/assets/aps.png' },
-  { type: 'assemblyshop', label: 'Assembly Shop', icon: '/assets/assembly.png' },
-  { type: 'testing_repair', label: 'Testing & Repair Station', icon: '/assets/repair.png' },
-  { type: 'festo_cp_lab', label: 'FestoWorkCenterStamping', icon: '/assets/festo cp lab.png' }
-]
+const assetTemplates = ref<AssetTemplate[]>([])
+const libraryLoading = ref(false)
+const libraryError = ref('')
+const creationError = ref('')
+const creatingAssets = ref(new Set<string>())
+
+async function fetchBlueprints() {
+  if (libraryLoading.value) return
+  libraryLoading.value = true
+  libraryError.value = ''
+  try {
+    assetTemplates.value = blueprintCards(await getBlueprints())
+  } catch (error) {
+    assetTemplates.value = []
+    libraryError.value = `Could not load the blueprint library. ${error instanceof Error ? error.message : 'Try refreshing.'}`
+  } finally {
+    libraryLoading.value = false
+  }
+}
 
 // Assets that answer over OPC UA, and so have a console worth opening. Read
 // off the type rather than probed: the shop floor draws before anything is
@@ -258,46 +272,11 @@ const updateAssetPosition = (id: string, x: number, y: number) => {
 }
 
 
-// Map Asset Types to Blueprint IDs
-const BLUEPRINT_IDS: Record<string, string> = {
-  'machine': 'https://ExampleIPA/ids/aas/MachiningCenter',
-  'metal_printer': 'https://example.com/ids/aas/Metal3DPrinter',
-  'injection_molding': 'https://example.com/ids/aas/injectionMoldingMachine',
-  'disassembly_robot': 'https://example.com/ids/aas/RoboticDisassemblyStation',
-  'agv': 'https://admin-shell.io/idta/aas/AGV',
-  'product': 'https://example.com/ids/aas/DigitalBatteryPassport',
-  'process': 'https://h2giga.frhy/ids/aas/Process',
-  'simulation': 'https://admin-shell.io/idta/aas/SimulationModels/1/0',
-  'order': 'https://frauhoferIPA/ids/aas/ProductionOrder',
-  'aps': 'https://example.com/ids/aas/aps',
-  'assemblyshop': 'https://example.com/ids/aas/assemblyshop',
-  'testing_repair': 'https://example.com/ids/aas/TestingRepair',
-  'festo_cp_lab': 'https://example.com/ids/aas/FestoWorkCenterStamping'
-}
-
-import { instantiateAAS, deleteAAS, createConnection, deleteConnection, refreshManifests } from '../services/aasService'
+import { getBlueprints, instantiateAAS, deleteAAS, createConnection, deleteConnection, refreshManifests } from '../services/aasService'
 
 const createNewAsset = async (template: AssetTemplate, x: number, y: number) => {
-  const count = assets.value.filter(a => a.type === template.type).length + 1
-  
-  // Simple ID generation
-  let prefix = ''
-  switch (template.type) {
-      case 'machine': prefix = 'MachiningCenter'; break;
-      case 'metal_printer': prefix = 'Metal3DPrinter'; break;
-      case 'injection_molding': prefix = 'InjectionMoldingMachine'; break;
-      case 'disassembly_robot': prefix = 'RoboticDisassemblyStation'; break;
-      case 'agv': prefix = 'AGV'; break;
-      case 'order': prefix = 'ProductionOrder'; break;
-      case 'product': prefix = 'DigitalBatteryPassport'; break;
-      case 'process': prefix = 'Process'; break;
-      case 'simulation': prefix = 'SimulationModel'; break;
-      case 'aps': prefix = 'APS'; break;
-      case 'assemblyshop': prefix = 'AssemblyShop'; break;
-      case 'testing_repair': prefix = 'TestingRepairStation'; break;
-      case 'festo_cp_lab': prefix = 'FestoWorkCenterStamping'; break;
-      default: prefix = 'Asset';
-  }
+  if (libraryLoading.value || !template.blueprintId) return
+  const prefix = template.type === 'simulation' ? 'SimulationModel' : template.idShort.replace(/[^a-zA-Z0-9_]/g, '_')
   
   // Random suffix for uniqueness
   const suffix = Math.floor(Math.random() * 1000).toString().padStart(3, '0')
@@ -313,16 +292,18 @@ const createNewAsset = async (template: AssetTemplate, x: number, y: number) => 
   }
   
   assets.value.push(newAsset)
+  creatingAssets.value.add(newId)
+  creationError.value = ''
 
   // Trigger AAS Instantiation
-  const blueprintId = BLUEPRINT_IDS[template.type]
+  const blueprintId = template.blueprintId
   
   if (blueprintId) {
     try {
       console.log(`Instantiating AAS for ${newId} from blueprint ${blueprintId}...`)
       // Set a visual indicator state if needed (e.g. flashing yellow)
       
-      const response = await instantiateAAS(blueprintId, newId, newId) 
+      const response = await instantiateAAS(blueprintId, newId, newId, envStore.aasServerUrl, template.blueprintEndpoint)
       
       // Update status on success
       const assetIndex = assets.value.findIndex(a => a.id === newId)
@@ -333,6 +314,11 @@ const createNewAsset = async (template: AssetTemplate, x: number, y: number) => 
       }
     } catch (error) {
       console.error(`Failed to instantiate AAS for ${newId}:`, error)
+      creationError.value = `Could not create ${template.label}. ${error instanceof Error ? error.message : 'Please try again.'}`
+      const index = assets.value.findIndex(asset => asset.id === newId)
+      if (index !== -1) assets.value.splice(index, 1)
+    } finally {
+      creatingAssets.value.delete(newId)
     }
   }
 }
@@ -340,6 +326,7 @@ const createNewAsset = async (template: AssetTemplate, x: number, y: number) => 
 // --- Interaction ---
 
 const openAssetMenu = (asset: AssetInstance) => {
+  if (creatingAssets.value.has(asset.id)) return
   selectedAsset.value = asset
 }
 
@@ -382,7 +369,7 @@ const handleAction = (mode: 'create' | 'edit' | 'view') => {
       return
   }
   
-  store.enterWizard(mode, selectedAsset.value.id)
+  store.enterWizard(mode, selectedAsset.value.aasId || selectedAsset.value.id)
   selectedAsset.value = null
 }
 
@@ -432,7 +419,7 @@ const triggerManifestRefresh = async () => {
 
 
 const getIcon = (type: string) => {
-    const t = assetTemplates.find(t => t.type === type)
+    const t = assetTemplates.value.find(t => t.type === type)
     return t ? t.icon : '📦'
 }
 
@@ -448,6 +435,7 @@ const containerSize = reactive({ width: 0, height: 0 })
 let resizeObserver: ResizeObserver | null = null
 
 onMounted(() => {
+  fetchBlueprints()
   window.addEventListener('keydown', onKeyDown)
   
   if (floorRef.value) {
@@ -775,6 +763,11 @@ const deleteAsset = async () => {
     color: #333;
 }
 
+.asset-library > button {margin:12px 0;}
+.library-message {font-size:13px;line-height:1.5;color:#87452b;overflow-wrap:anywhere;}
+.creation-message {padding:10px 14px;margin:12px 0 0;border:1px solid #d9b9a4;border-radius:6px;background:#fff5ed;color:#87452b;text-align:left;line-height:1.5;overflow-wrap:anywhere;}
+.asset-progress {font-size:12px;color:#735600;}
+
 .asset-library .subtitle {
     margin: 0 0 20px 0;
     font-size: 0.9em;
@@ -806,12 +799,15 @@ const deleteAsset = async () => {
 }
 
 .template-icon-img {
+    flex-shrink: 0;
     width: 32px;
     height: 32px;
     object-fit: contain;
 }
 
 .template-label {
+    min-width: 0;
+    overflow-wrap: anywhere;
     font-weight: 500;
     font-size: 0.95em;
     color: #333;

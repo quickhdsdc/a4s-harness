@@ -1,0 +1,105 @@
+{
+  "date": "2026-10-22",
+  "scope": "Source AASX reference types only; live repositories not reimported",
+  "packages": [
+    {
+      "file": "BaSyxMinimal/aas/injection molding machine.aasx",
+      "beforeSha256": "9252b4694515f403697adb2274ab3e84961064b18702b90470f326ac7aa6f21f",
+      "afterSha256": "cd60c0c9ddec4395dd22d796ad54667050a325fb89873423fd28a7152d5c241a",
+      "typeEdits": 2,
+      "edits": [
+        {
+          "part": "aasx/InjectionMoldingMachine/InjectionMoldingMachine.aas.xml",
+          "before": "Submodel",
+          "after": "GlobalReference",
+          "context": "External semantic identifier",
+          "value": "https://admin-shell.io/ZVEI/TechnicalData/Submodel/1/2"
+        },
+        {
+          "part": "aasx/InjectionMoldingMachine/InjectionMoldingMachine.aas.xml",
+          "before": "Submodel",
+          "after": "GlobalReference",
+          "context": "External semantic identifier",
+          "value": "https://admin-shell.io/idta/UAServerDatasheet/1/0/Submodel"
+        }
+      ]
+    },
+    {
+      "file": "BaSyxMinimal/aas/process.aasx",
+      "beforeSha256": "c91dd6578253f810807c2d22fa45281642f8e5cc09cf45985c02bb7fe9f20952",
+      "afterSha256": "44ffeed59fd29caab75fbb5d57519eb263e0c7cc4cd6ec85d6adde496a25465f",
+      "typeEdits": 6,
+      "edits": [
+        {
+          "part": "aasx/Best_ckteLeiterplatte/Best_ckteLeiterplatte.aas.xml",
+          "before": "ExternalReference",
+          "after": "ModelReference",
+          "context": "AAS-to-Submodel binding",
+          "value": "https://h2giga.frhy/ids/sm/ProcessSegment"
+        },
+        {
+          "part": "aasx/Best_ckteLeiterplatte/Best_ckteLeiterplatte.aas.xml",
+          "before": "ConceptDescription",
+          "after": "GlobalReference",
+          "context": "External semantic identifier",
+          "value": "0173-1#02-AAV646#002"
+        },
+        {
+          "part": "aasx/Best_ckteLeiterplatte/Best_ckteLeiterplatte.aas.xml",
+          "before": "ConceptDescription",
+          "after": "GlobalReference",
+          "context": "External semantic identifier",
+          "value": "0173-1#02-AAV646#002"
+        },
+        {
+          "part": "aasx/Best_ckteLeiterplatte/Best_ckteLeiterplatte.aas.xml",
+          "before": "ConceptDescription",
+          "after": "GlobalReference",
+          "context": "External semantic identifier",
+          "value": "0173-1#02-AAV646#002"
+        },
+        {
+          "part": "aasx/Best_ckteLeiterplatte/Best_ckteLeiterplatte.aas.xml",
+          "before": "ConceptDescription",
+          "after": "GlobalReference",
+          "context": "External semantic identifier",
+          "value": "0173-1#02-AAV646#002"
+        },
+        {
+          "part": "aasx/Best_ckteLeiterplatte/Best_ckteLeiterplatte.aas.xml",
+          "before": "ConceptDescription",
+          "after": "GlobalReference",
+          "context": "External semantic identifier",
+          "value": "0173-1#02-AAV646#002"
+        }
+      ]
+    },
+    {
+      "file": "BaSyxMinimal/aas/robot disassembly.aasx",
+      "beforeSha256": "a2af072d68bfe225921f01f20f81953d6be49240a71ce00b9a948c1e5fa18aad",
+      "afterSha256": "e675e0333a165b1bd15d156916900757248dd56cde8a192b014b405d285689db",
+      "typeEdits": 1,
+      "edits": [
+        {
+          "part": "aasx/robot/robot.aas.xml",
+          "before": "ExternalReference",
+          "after": "ModelReference",
+          "context": "AAS-to-Submodel binding",
+          "value": "http://fraunhoferIPA.de/ids/sm/KinematicModel_disassembly"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "correctedReferencesStrictSdk": 9,
+    "explorerNativeLoaderPassed": 3,
+    "startupSeedPackagesPassed": 14,
+    "remainingInvalidExternalFirstKeyTypes": 0,
+    "nonTypeXmlContentUnchanged": true,
+    "attachmentsAndRelationsByteIdentical": true,
+    "otherSeedPackagesUnchanged": true,
+    "protectedAasBackupZipUnchanged": true
+  },
+  "protectedZipSha256": "de492aec0b25a4c6bb296a9c0e1cc9f77747ef2b819ddff061094d2e77cd86b8",
+  "limitations": "Reference validation only, not a claim that every legacy SME and empty placeholder passes full SDK validation. Explorer loader API tested; GUI not driven."
+}

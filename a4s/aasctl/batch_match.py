@@ -14,7 +14,8 @@ AUTO_THRESHOLD = .8
 
 
 def match_all(indexes: list[Any], entities: list[match.Entity], vectors: dict[str, Any],
-              provider: Any, config: Any, *, create: bool = True, on_stage: Any = None) -> list[match.Plan]:
+              provider: Any, config: Any, *, create: bool = True, on_stage: Any = None,
+              allow_alternatives: bool = False) -> list[match.Plan]:
     from ..extract import _answered, _budgeted, parse_json_object
     from ..kernel.providers import ask_json
 
@@ -58,7 +59,7 @@ def match_all(indexes: list[Any], entities: list[match.Entity], vectors: dict[st
         gap = leaves[0][1].score - leaves[1][1].score if len(leaves) > 1 else 1
         if leaves and leaves[0][1].score >= AUTO_THRESHOLD and gap >= MIN_MARGIN:
             j, candidate = leaves[0]
-            if (j, candidate.path) not in occupied:
+            if allow_alternatives or (j, candidate.path) not in occupied:
                 decision = match.decide(entity, [candidate], theta_high=-1)
                 decision.reason = "Clear global embedding match after unit, type and AAS scope validation"
                 decision.value_type = retrievers[j].by_path[candidate.path].value_type or decision.value_type
@@ -71,8 +72,10 @@ def match_all(indexes: list[Any], entities: list[match.Entity], vectors: dict[st
             node = retrievers[j].by_path[candidate.path]
             targets[token] = (j, node)
             candidates.append({"target": token, "similarity": round(candidate.score, 4)})
-        pending.append({"index": i, "name": entity.entity, "value": entity.value,
-                        "unit": entity.unit, "description": entity.description, "candidates": candidates})
+        value_hint = f"Binary Blob ({len(entity.value or '')} encoded characters)" if entity.model_type == "Blob" else entity.value
+        pending.append({"index": i, "name": entity.entity, "value": value_hint,
+                        "unit": entity.unit, "description": entity.description,
+                        "declared_type": entity.model_type, "candidates": candidates})
     if pending:
         if on_stage:
             on_stage("LLM placement", f"Choosing destinations for {len(pending)} unresolved facts in one batch")
@@ -98,8 +101,14 @@ File holds a document URL/path and MIME type; ReferenceElement holds a reference
 Never write values into collections, operations, entities or relationships.
 Respect list child_type/value_type. Do not choose an occupied target or give
 different values to one existing SME. Never invent values or convert units.'''
+        if allow_alternatives:
+            prompt = prompt.replace('Do not choose an occupied target or give\ndifferent values to one existing SME.', '')
+            prompt += '''\nExisting AAS data and new input are alternative evidence. Different facts
+may target the SAME SME; the user will choose conflicting values during review.
+Prefer that shared SME over creating duplicate fields for the same meaning.'''
+            prompt += '\nFor existing binary input with declared_type Blob, preserve the Blob type and content.'
         payload = {"facts": pending, "graph": graph + leaves_graph,
-                   "occupied": [tokens[j, path] for j, path in occupied]}
+                   "occupied": [] if allow_alternatives else [tokens[j, path] for j, path in occupied]}
         reply = ask_json(provider, [{"role": "system", "content": prompt},
                                   {"role": "user", "content": json.dumps(payload, ensure_ascii=False)}],
                          _budgeted(config))
@@ -129,7 +138,7 @@ different values to one existing SME. Never invent values or convert units.'''
                     type_value_list_element=node.type_value_list_element)
                 shape = match.infer_element_type(entity)
                 compatible = not scope_conflict(words(entity.entity), retrievers[j]._context(node))
-                if action == "write" and compatible and retrievers[j]._compatible(entity, node, shape) and (j, node.path) not in occupied:
+                if action == "write" and compatible and retrievers[j]._compatible(entity, node, shape) and (allow_alternatives or (j, node.path) not in occupied):
                     decision = match.decide(entity, [candidate], theta_high=-1)
                     decision.band = "arbitrated"
                     decision.value_type = node.value_type or decision.value_type
@@ -137,14 +146,15 @@ different values to one existing SME. Never invent values or convert units.'''
                 elif action == "create" and compatible and node.model_type in match.CONTAINER_TYPES:
                     model_type = placement.get("model_type")
                     valid_shape = model_type not in ("Range", "File") or model_type == shape.model_type
-                    if valid_shape and model_type in match.CREATABLE_TYPES and (not node.type_value_list_element or node.type_value_list_element == model_type):
+                    allowed_types = (*match.CREATABLE_TYPES, "Blob") if entity.model_type == "Blob" else match.CREATABLE_TYPES
+                    if valid_shape and model_type in allowed_types and (not node.type_value_list_element or node.type_value_list_element == model_type):
                         spec = replace(shape, model_type=model_type)
                         decision = match.decide(entity, [candidate], theta_high=2, theta_low=2,
                             host=lambda e, c: (candidate, str(placement.get("reason", "")), spec))
                         if decision.id_short:
                             base = decision.id_short
                             suffix = 2
-                            existing = {n.path for n in indexes[j].nodes} | {p for jj, p in occupied if jj == j}
+                            existing = {n.path for n in indexes[j].nodes} | ({p for jj, p in occupied if jj == j} if not allow_alternatives else set())
                             while f"{node.path}.{decision.id_short}" in existing:
                                 decision.id_short = f"{base}_{suffix}"
                                 suffix += 1

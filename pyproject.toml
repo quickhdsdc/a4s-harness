@@ -16,6 +16,7 @@ dependencies = [
 ]
 
 [project.optional-dependencies]
+aas = ["basyx-python-sdk==2.2.0"]  # Typed validation; keep REST adapters for external/older repos.
 mes = ["tzdata==2025.2"]  # IANA zones for server-local scheduling, including Windows.
 anthropic = ["anthropic==0.75.0"]
 # There is no `semantic` extra. The source built `faiss.IndexFlatL2`, which is
@@ -29,7 +30,8 @@ documents = ["pypdfium2==5.13.0", "pillow==12.3.0", "openpyxl==3.1.5"]
 # above is worth more the fewer things it has to cover. WebSocket support is
 # what rules out the standard library here -- `machines/.../service.py` gets by
 # on `http.server` because it serves REST only, and the chat window does not.
-ui = ["fastapi==0.121.2", "uvicorn[standard]==0.41.0", "python-multipart==0.0.20"]
+ui = ["fastapi==0.121.2", "uvicorn[standard]==0.41.0", "python-multipart==0.0.20", "basyx-python-sdk==2.2.0"]
+browser = ["playwright==1.64.0"]  # Optional real-browser regression checks.
 # OPC UA, for assets whose interface is a server rather than an HTTP endpoint.
 # An extra because most of the harness never touches one, and because asyncua
 # brings `pyopenssl`, which asks for a newer `cryptography` than the pin above.

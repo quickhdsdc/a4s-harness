@@ -35,6 +35,7 @@ from fastapi import APIRouter, Body, HTTPException
 
 from ..aasctl import model, smt
 from ..aasctl.client import AasHttpError, BasyxClient
+from ..aasctl.catalog import blueprint_endpoint
 from ..ledger import Kind, Ledger
 from .aas_routes import _client, _fail, _resolve_shell
 
@@ -111,14 +112,17 @@ def instantiate_aas(body: Dict[str, Any] = Body(...)) -> Dict[str, Any]:
             detail="blueprint_id and new_aas_id are both required",
         )
 
-    with _client(endpoint) as client:
+    source_endpoint = blueprint_endpoint(body.get("blueprint_endpoint"))
+    with _client(source_endpoint) as source_client:
         try:
-            blueprint = _resolve_shell(client, blueprint_id)
+            blueprint = _resolve_shell(source_client, blueprint_id)
+            sources = _submodels_of(source_client, blueprint)
         except HTTPException:
             raise
         except Exception as exc:  # noqa: BLE001
-            raise _fail(exc, f"cannot read blueprint {blueprint_id}") from exc
+            raise _fail(exc, f"cannot read blueprint {blueprint_id}", source_endpoint) from exc
 
+    with _client(endpoint) as client:
         shell_id = _mint(requested_id, blueprint.get("id", ""))
         if _exists(client, shell_id):
             raise HTTPException(
@@ -128,7 +132,7 @@ def instantiate_aas(body: Dict[str, Any] = Body(...)) -> Dict[str, Any]:
 
         created: List[Dict[str, Any]] = []
         try:
-            for source in _submodels_of(client, blueprint):
+            for source in sources:
                 clone = _copy_submodel(source, shell_id)
                 client.create_submodel(clone)
                 created.append({
@@ -164,6 +168,7 @@ def instantiate_aas(body: Dict[str, Any] = Body(...)) -> Dict[str, Any]:
         "requested_id": requested_id,
         "idShort": _safe_id_short(id_short or requested_id),
         "blueprint_id": blueprint.get("id"),
+        "blueprint_endpoint": source_endpoint,
         "submodels": created,
         "unrecorded": unrecorded,
     }

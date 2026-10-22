@@ -142,7 +142,7 @@ export const useWizardStore = defineStore('wizard', () => {
             await api.post('/api/wizard/reset', {
                 filename,
                 uploads: (wizardData.value.uploadedFiles || []).map(file => (file as any).serverName || file.name),
-                aas_id_short: wizardData.value.targetAAS || null,
+                aas_id_short: wizardData.value.updateId ? `update_${wizardData.value.updateId}` : wizardData.value.targetAAS || null,
             })
             resetPopulation()
         } finally {
@@ -204,6 +204,8 @@ export const useWizardStore = defineStore('wizard', () => {
 
             highestVisitedStep.value = 0
             currentStep.value = 0
+            wizardData.value.updateId = null
+            wizardData.value.updateReview = null
 
             // Always drop a stale edited-entities pointer when inputs change. It is
             // persisted (persist:true) and previously survived across unrelated
@@ -233,6 +235,10 @@ export const useWizardStore = defineStore('wizard', () => {
     function nextStep() {
         setStep(currentStep.value + 1)
     }
+
+    watch(() => wizardData.value.matchedProperties, () => {
+        wizardData.value.updateReview = null
+    }, {deep:true})
 
     function previousStep() {
         if (currentStep.value > 0) {
@@ -285,6 +291,8 @@ export const useWizardStore = defineStore('wizard', () => {
         wizardData.value.pendingAgentQuestion = ''
         wizardData.value.submodelId = undefined
         wizardData.value.submodelIdShort = undefined
+        wizardData.value.updateId = null
+        wizardData.value.updateReview = null
         // Partial reset: Keep viewMode, assets, connections
         // Reset workflow data
         wizardData.value.mode = 'create'

@@ -66,6 +66,8 @@ def build_app(endpoint: Optional[str] = None, origins: Optional[Sequence[str]] =
     # and every stage ends by prompting the chat socket. These routes are the
     # handles on the files the stages pass to each other.
     app.include_router(wizard_routes.router)
+    from . import update_routes
+    app.include_router(update_routes.router)
     # Live values from the machines the AAS points at. Reads freely; writes
     # only through an Operation the model declares, so the browser names a
     # path and never a node.
